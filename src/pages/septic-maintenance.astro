@@ -1,0 +1,121 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Do septic additives replace pumping?',
+    answer:
+      'No additive removes accumulated sludge from a tank. Whatever else additives may or may not do, physical removal of solids is what pumping is for — treat additive marketing that promises otherwise with skepticism.',
+  },
+  {
+    question: 'What is the single most damaging habit for a septic system?',
+    answer:
+      'Treating drains like trash cans is the classic one — wipes, grease and heavy disposal use all push solids and fats into a system designed for wastewater. Ignoring early warning signs runs a close second.',
+  },
+  {
+    question: 'Should I keep records even for routine service?',
+    answer:
+      'Yes. Tank location, lid depth, service dates and what the provider observed each visit turn every future service call from an exploration into an appointment. Records also add real credibility when selling.',
+  },
+  {
+    question: 'Is this guide a substitute for professional advice?',
+    answer:
+      'No — it is general information. Systems, soils and rules differ by property and county, and a provider who has actually opened your tank knows things no website can.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Maintenance Guide for Property Owners"
+  description="A practical septic maintenance guide for Upper Cumberland property owners — pumping frequency factors, water use, drain habits, warning signs, records and provider questions."
+  h1="Septic System Maintenance and Warning Signs"
+  eyebrow="Owner's Guide"
+  breadcrumbLabel="Septic Maintenance Guide"
+  serviceName="Septic Maintenance Information"
+  intro="Most septic failures are slow, preventable and expensive in that order. This guide covers the habits, checks and records that keep a system boring — which is exactly what you want a septic system to be."
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: 'Septic Pumping in Cookeville', href: '/septic-pumping-cookeville-tn/', blurb: 'when maintenance means a truck visit' },
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'periodic condition checks' },
+    { label: 'Drain-Field Repair in Cookeville', href: '/drain-field-repair-cookeville-tn/', blurb: 'what field trouble looks like' },
+  ]}
+>
+  <h2>Pumping Frequency: The Factors That Actually Matter</h2>
+  <p>
+    There is no universal interval. What determines how fast a tank fills with solids:
+  </p>
+  <ul>
+    <li><strong>Tank size</strong> relative to the household — a small tank under a big family fills fast</li>
+    <li><strong>Occupancy</strong> — every person adds daily load; rentals and multi-generation households add more</li>
+    <li><strong>Water habits</strong> — spread-out laundry is kind to a system; six loads on Saturday is not</li>
+    <li><strong>Garbage disposal use</strong> — disposals meaningfully accelerate solids accumulation</li>
+    <li><strong>System condition</strong> — failing baffles and past neglect shorten the runway</li>
+  </ul>
+  <p>
+    A provider who pumps the tank can tell you how full it actually was — the single best data
+    point for setting your own interval.
+  </p>
+
+  <h2>Water Use</h2>
+  <ul>
+    <li>Fix running toilets and dripping fixtures — a running toilet can flood a drain field with clean water all day</li>
+    <li>Spread laundry across the week</li>
+    <li>Direct roof and surface drainage away from the tank and field</li>
+    <li>Be conscious of load spikes: guests, parties, holiday weekends</li>
+  </ul>
+
+  <h2>Protecting the Drains</h2>
+  <ul>
+    <li>No wipes — including the ones labeled flushable</li>
+    <li>No grease, fats or oils down the kitchen sink</li>
+    <li>No paint, solvents, or harsh chemical dumps that disrupt the tank’s biology</li>
+    <li>Minimal garbage-disposal use; compost or bin food waste instead</li>
+  </ul>
+
+  <h2>Protecting the Field</h2>
+  <ul>
+    <li>Keep vehicles, heavy equipment and structures off the drain field</li>
+    <li>Keep deep-rooted trees and shrubs away from field lines</li>
+    <li>Maintain grass cover — it helps the field breathe and shed rain</li>
+  </ul>
+
+  <h2>Warning Signs Worth Acting On</h2>
+  <ul class="two-col-list">
+    <li>Slow drains through the whole house</li>
+    <li>Gurgling after water use</li>
+    <li>Sewage odors indoors or out</li>
+    <li>Wet or soft ground over the field</li>
+    <li>Unusually green stripes of grass</li>
+    <li>Any system alarm</li>
+    <li>Backups, even ones that “fix themselves”</li>
+  </ul>
+  <p>
+    Early symptoms are cheap; late ones are excavation. The
+    <a href="/drain-field-repair-cookeville-tn/">drain-field page</a> covers what field failure
+    looks like in detail.
+  </p>
+
+  <h2>Keep Records</h2>
+  <ul>
+    <li>Tank location measured from two fixed points on the house</li>
+    <li>Lid depth and what tool it takes to open them</li>
+    <li>Every service date and what was done</li>
+    <li>Provider observations: sludge levels, baffle condition, anything watched</li>
+  </ul>
+
+  <h2>Questions Worth Asking Any Provider</h2>
+  <ul>
+    <li>How full was the tank, and what does that suggest for my interval?</li>
+    <li>What condition are the baffles and lids in?</li>
+    <li>Did anything look like it will need attention in the next few years?</li>
+    <li>What is included in this service — and what would have cost extra?</li>
+  </ul>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any
+    specific system. Systems, soil conditions and requirements vary by property and county —
+    confirm specifics with a qualified provider or the appropriate authority.
+  </p>
+</ServicePage>

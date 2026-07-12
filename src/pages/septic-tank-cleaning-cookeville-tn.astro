@@ -1,0 +1,96 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Is tank cleaning worth asking for by name?',
+    answer:
+      'Yes, if you care about what is actually removed. Asking a provider whether they remove the full contents including settled sludge, or only pump down the liquid, tells you what you are paying for and how long the result should last.',
+  },
+  {
+    question: 'Should both compartments of the tank be serviced?',
+    answer:
+      'Many tanks in the region have two compartments, and solids can accumulate in both. Ask whether the provider services each compartment and whether both access lids will need to be opened.',
+  },
+  {
+    question: 'Can the provider tell me about tank condition during cleaning?',
+    answer:
+      'Often, yes — an emptied tank is the best moment to observe baffles, inlet and outlet condition, cracks and water levels. Ask in advance whether observations are included, since it is not a formal inspection unless agreed.',
+  },
+  {
+    question: 'What if my lids have never been dug up?',
+    answer:
+      'Buried lids are common on older Cookeville-area properties. Some providers locate and excavate lids, others expect them exposed before arrival. State what you know about the lids in the request so expectations are clear.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Tank Cleaning in Cookeville, TN"
+  description="Request septic tank cleaning in Cookeville, TN. What cleaning means versus pumping, questions to ask about service scope, access lids and signs service is overdue."
+  h1="Septic Tank Cleaning in Cookeville, TN"
+  breadcrumbLabel="Septic Tank Cleaning — Cookeville"
+  serviceName="Septic Tank Cleaning"
+  areaServed="Cookeville and Putnam County, Tennessee"
+  intro="Request septic tank cleaning for Cookeville-area properties — and know exactly what to ask so the service you get matches the service you expect."
+  faqs={faqs}
+  formHeading="Request Tank Cleaning"
+  related={[
+    { label: 'Septic Pumping in Cookeville', href: '/septic-pumping-cookeville-tn/', blurb: 'the routine-maintenance starting point' },
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'when you want a documented look at system condition' },
+    { label: 'Septic Repair in Cookeville', href: '/septic-repair-cookeville-tn/', blurb: 'if cleaning reveals damaged baffles or components' },
+  ]}
+>
+  <h2>“Cleaning” Versus “Pumping” — Why the Words Matter</h2>
+  <p>
+    Around Cookeville you will hear both terms used for the same truck visit, but they are not
+    always the same job. Pumping generally means vacuuming out the tank’s contents. Cleaning, when
+    providers distinguish it, means going further: breaking up and removing the settled sludge
+    blanket and floating scum layer, sometimes rinsing tank walls, and leaving the tank genuinely
+    empty rather than just lowered. The label matters less than the scope — what will actually be
+    removed, and from which compartments.
+  </p>
+
+  <h2>Sludge and Scum: What Builds Up</h2>
+  <p>
+    Everything that goes down the drain ends up in three layers. Heavy solids sink and compact
+    into sludge. Fats, oils and lighter material float as scum. The middle layer of liquid flows
+    out to the drain field. Sludge is the layer that quietly grows for years — and compacted
+    sludge does not always leave with a quick pump-down of the liquid. A tank that gets “pumped”
+    regularly but never thoroughly cleaned can still be carrying years of accumulated solids.
+  </p>
+
+  <h2>Questions to Ask About Service Scope</h2>
+  <ul>
+    <li>Will the full contents be removed, including settled sludge — or only the liquid?</li>
+    <li>Are both compartments included, if the tank has two?</li>
+    <li>Will the sludge be agitated or back-flushed so it can actually be vacuumed out?</li>
+    <li>Will you look at baffles, inlets and outlets while the tank is open?</li>
+    <li>Is lid location or excavation included, and at what depth?</li>
+    <li>What exactly does the quoted price cover?</li>
+  </ul>
+
+  <h2>Access Lids and Maintenance History</h2>
+  <p>
+    Thorough cleaning usually requires opening the main access lid over each compartment — not
+    just the small inspection port. If you have records from previous service visits, or even a
+    rough memory of where the lids were last dug, include it in the request. Properties with
+    unknown history may benefit from <a href="/septic-tank-locating-cookeville-tn/">tank locating</a>
+    first.
+  </p>
+
+  <h2>Signs Cleaning May Be Overdue</h2>
+  <ul>
+    <li>Years since the last documented full service, especially with heavy household use</li>
+    <li>Odors that return soon after a routine pump-down</li>
+    <li>Solids visible near the outlet baffle at the last service</li>
+    <li>A garbage disposal used daily — disposals accelerate solids buildup</li>
+    <li>A recently purchased property with no service records at all</li>
+  </ul>
+  <p>
+    While the tank is open and empty, it is also the ideal moment to observe overall condition —
+    consider pairing cleaning with a
+    <a href="/septic-inspection-cookeville-tn/">maintenance inspection</a>.
+  </p>
+</ServicePage>

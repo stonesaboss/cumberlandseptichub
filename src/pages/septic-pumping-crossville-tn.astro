@@ -1,0 +1,93 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Does provider coverage reach outside Crossville city limits?',
+    answer:
+      'Requests come in from across Cumberland County — Fairfield Glade, Lake Tansi, Crab Orchard, Pleasant Hill and the rural routes between them. Coverage depends on each provider’s range and schedule, so include the property’s location precisely.',
+  },
+  {
+    question: 'My cabin is used seasonally. Does it still need pumping?',
+    answer:
+      'Yes, though usage patterns change the timeline. Part-time occupancy generally slows solids accumulation, but a tank serving decades of seasonal use can still be overdue. If the pumping history is unknown, that is worth saying in the request.',
+  },
+  {
+    question: 'The plateau is rocky. Does that affect septic service?',
+    answer:
+      'Shallow, rocky soil on the Cumberland Plateau influenced how many systems were originally designed and where tanks were placed. For pumping, it mostly matters for access and lid depth — another reason location details help.',
+  },
+  {
+    question: 'What if I don’t know where the tank is at my Crossville property?',
+    answer:
+      'Mention it in the form. Providers may locate tanks using records, line tracing, probing or electronic locating. Retirement-area properties that changed hands several times often come with no septic paperwork at all.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Pumping in Crossville, TN"
+  description="Request septic pumping in Crossville and Cumberland County, TN. Routine tank pumping for homes, cabins and rural plateau properties, plus access and preparation tips."
+  h1="Septic Pumping in Crossville, TN"
+  breadcrumbLabel="Septic Pumping — Crossville"
+  serviceName="Septic Tank Pumping"
+  areaServed="Crossville and Cumberland County, Tennessee"
+  intro="From in-town Crossville homes to golf-community houses, lake lots and remote plateau acreage, request septic tank pumping across Cumberland County and describe the property so the request lands with the right provider."
+  faqs={faqs}
+  formHeading="Request Pumping in Crossville"
+  related={[
+    { label: 'Septic Repair in Cookeville', href: '/septic-repair-cookeville-tn/', blurb: 'the regional hub page for repair symptoms and evaluation' },
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'inspection scopes and real-estate use' },
+    { label: 'Upper Cumberland Service Area', href: '/service-area/', blurb: 'full regional coverage picture' },
+  ]}
+>
+  <h2>Septic Pumping on the Cumberland Plateau</h2>
+  <p>
+    Crossville and the surrounding plateau are heavily septic country. Large parts of Cumberland
+    County sit beyond sewer lines, and the area’s mix is distinctive: established neighborhoods in
+    town, golf and retirement communities like Fairfield Glade, lake properties around Lake Tansi,
+    and long rural roads where houses sit on multiple acres. Different properties, same underlying
+    need — tanks that get pumped before solids reach the drain field.
+  </p>
+  <p>
+    Seasonal and part-time occupancy is more common here than in most of the region. A tank
+    serving a retired couple part of the year fills far slower than one serving a full household —
+    but slower is not never, and “the tank has never needed anything” is a sentence that usually
+    precedes a backup. If the pumping history is unknown, treat that as its own reason to act.
+  </p>
+
+  <h2>When Crossville Properties Request Pumping</h2>
+  <ul>
+    <li>Routine maintenance on a known schedule</li>
+    <li>New ownership with no service records — very common in the retirement market</li>
+    <li>Slow drains, gurgling or odors suggesting the tank is at capacity</li>
+    <li>Before hosting long-term guests or listing a property</li>
+    <li>After <a href="/septic-inspection-cookeville-tn/">an inspection</a> recommends it</li>
+  </ul>
+
+  <h2>Access on Plateau Properties</h2>
+  <p>
+    Vacuum trucks are heavy and hoses have practical limits. Gravel drives, gated communities,
+    steep lake lots and soft ground after rain all shape how a provider plans a Crossville-area
+    visit. Include distances, gates and parking realities in the request — and whether lids are
+    exposed, buried, or somewhere under a deck built in 1998.
+  </p>
+
+  <h2>Pumping Versus Cleaning</h2>
+  <p>
+    As elsewhere in the region, ask providers what their service includes: removing the full
+    contents including settled sludge, or a quicker pump-down. The
+    <a href="/septic-tank-cleaning-cookeville-tn/">tank cleaning page</a> explains the questions
+    worth asking about scope; they apply the same way in Cumberland County.
+  </p>
+
+  <h2>What to Include in a Crossville Request</h2>
+  <ul>
+    <li>Location — town, community or road area (Fairfield Glade, Lake Tansi, Crab Orchard, etc.)</li>
+    <li>Full-time or seasonal occupancy</li>
+    <li>Last pumping date, if known</li>
+    <li>Tank location and lid access, if known</li>
+    <li>Any current symptoms — or none, for routine service</li>
+  </ul>
+</ServicePage>

@@ -1,0 +1,839 @@
+---
+import Base from '@layouts/Base.astro';
+import LeadForm from '@components/LeadForm.astro';
+import FaqAccordion from '@components/FaqAccordion.astro';
+import CtaBand from '@components/CtaBand.astro';
+import { PHONE_DISPLAY, PHONE_TEL, REFERRAL_PROCESS_DISCLOSURE, type Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'How often should a septic tank be pumped?',
+    answer:
+      'There is no universal schedule. Tank size, household size, wastewater use, solids accumulation, garbage-disposal use and system condition can affect pumping frequency. A provider can inspect or discuss the property’s pumping history.',
+  },
+  {
+    question: 'What are the signs that a septic tank may be full?',
+    answer:
+      'Possible signs include slow drains, gurgling plumbing, sewage odors, backups and wastewater near the tank or drain field. Similar symptoms can also result from blockages or system damage, so an evaluation may be needed.',
+  },
+  {
+    question: 'Is septic tank cleaning the same as septic pumping?',
+    answer:
+      'The terms are often used interchangeably, but service scope can differ between providers. Ask what material will be removed, whether tank condition will be observed and what is included in the quoted service.',
+  },
+  {
+    question: 'Will pumping fix every septic backup?',
+    answer:
+      'No. Pumping may help when the tank is full, but recurring backups can involve clogged pipes, damaged components, pump problems, distribution issues or drain-field failure.',
+  },
+  {
+    question: 'What causes a septic drain field to fail?',
+    answer:
+      'Possible causes include age, hydraulic overload, saturated soil, damaged components, compaction, root intrusion and unsuitable site conditions. An inspection is needed to identify the cause.',
+  },
+  {
+    question: 'How much does septic pumping or repair cost?',
+    answer:
+      'Pricing depends on location, tank access, tank size, amount of material, service type, equipment access, repairs needed and each provider’s own pricing. Exact costs are quoted by the provider after reviewing the request or the property.',
+  },
+  {
+    question: 'How long does septic installation take?',
+    answer:
+      'Timing depends on site evaluation, approvals, system design, weather, equipment access, installation scope and inspection requirements.',
+  },
+  {
+    question: 'Do septic installations require permits or inspections?',
+    answer:
+      'Requirements can vary by project, property and jurisdiction. Property owners should confirm current requirements with the provider and appropriate Tennessee or local authority.',
+  },
+  {
+    question: 'Can a septic tank be located if I do not know where it is?',
+    answer:
+      'Providers may use records, plumbing layout, probing, electronic locating equipment or other methods. Availability and methods vary.',
+  },
+  {
+    question: 'Can I request service when sewage is actively backing up?',
+    answer:
+      'Yes, submit the request as urgent and avoid unnecessary water use. Provider response and availability are not guaranteed by the website.',
+  },
+];
+---
+
+<Base
+  title="Septic Pumping, Repair & Installation | Upper Cumberland TN"
+  description="Request septic pumping, tank cleaning, repairs, inspections and septic installation in Cookeville, Crossville and Upper Cumberland, Tennessee."
+>
+  <!-- SECTION 1 — HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="eyebrow">Upper Cumberland Septic Service</span>
+        <h1>Septic Pumping,<br />Repair &amp; Installation</h1>
+        <p class="hero__copy">
+          Request help for septic tank pumping, cleaning, system repairs, inspections and new
+          installations throughout Cookeville, Crossville and the Upper Cumberland region.
+        </p>
+        <div class="hero__actions">
+          <a href="/request-service/" class="btn btn--green" data-analytics="hero-request-cta">Request Septic Service</a>
+          <a href={`tel:${PHONE_TEL}`} class="btn btn--outline-light" data-analytics="hero-phone-click">Call {PHONE_DISPLAY}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- hero supporting points -->
+  <div class="trust-strip">
+    <div class="container trust-strip__inner">
+      <p>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10"/></svg>
+        Residential &amp; Commercial Requests
+      </p>
+      <p>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="9" width="13" height="8" rx="3"/><path d="M15 11h4l3 4v2h-3M5 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+        Pumping, Repairs &amp; Installation
+      </p>
+      <p>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-7.6-7-12a7 7 0 0 1 14 0c0 4.4-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Upper Cumberland Service Coverage
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 2 — SERVICE-AREA STRIP -->
+  <div class="area-strip" aria-label="Cities served">
+    <div class="container">
+      <p>
+        <strong>Serving:</strong>
+        <a href="/septic-pumping-cookeville-tn/">Cookeville</a> •
+        <a href="/septic-pumping-crossville-tn/">Crossville</a> •
+        <a href="/septic-services-sparta-tn/">Sparta</a> •
+        <a href="/septic-services-livingston-tn/">Livingston</a> •
+        <a href="/septic-services-smithville-tn/">Smithville</a> •
+        Baxter • Monterey • Algood <a href="/service-area/">&amp; surrounding areas</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- upper content + sticky form -->
+  <div class="section">
+    <div class="container home-grid">
+      <!-- SECTION 3 — CORE SEPTIC SERVICES -->
+      <div class="home-grid__a">
+        <section aria-labelledby="core-services-heading">
+          <h2 id="core-services-heading">Septic Services for Homes, Properties &amp; Businesses</h2>
+          <p class="section-intro">
+            Request help with routine maintenance, urgent septic problems, system repairs,
+            inspections and new or replacement septic systems across Upper Cumberland.
+          </p>
+
+          <div class="grid grid--2 core-cards">
+            <article class="card core-card">
+              <div class="core-card__icon" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="1.5" y="9" width="13" height="8" rx="3.5"/><path d="M14.5 11.5h4l3 4v1.5h-2.5M5 20.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm12 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM6 9V7h4v2"/></svg>
+              </div>
+              <h3>Septic Pumping &amp; Tank Cleaning</h3>
+              <p>
+                Remove accumulated sludge and waste before it contributes to backups, odors, slow
+                drainage or system damage.
+              </p>
+              <p class="core-card__links">
+                <a href="/septic-pumping-cookeville-tn/">Septic Pumping in Cookeville</a>
+                <a href="/septic-tank-cleaning-cookeville-tn/">Septic Tank Cleaning</a>
+              </p>
+            </article>
+
+            <article class="card core-card">
+              <div class="core-card__icon" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4L15 12l-3-3 2.7-2.7z"/></svg>
+              </div>
+              <h3>Septic Repair</h3>
+              <p>
+                Request evaluation and repair for system alarms, damaged components, leaks,
+                recurring backups and suspected septic-system failures.
+              </p>
+              <p class="core-card__links">
+                <a href="/septic-repair-cookeville-tn/">Septic Repair in Cookeville</a>
+              </p>
+            </article>
+
+            <article class="card core-card">
+              <div class="core-card__icon" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11l9-8 9 8M5 10v10h14V10M9 20v-5h6v5"/></svg>
+              </div>
+              <h3>Septic System Installation</h3>
+              <p>
+                Connect with local professionals for new septic systems, replacement systems, new
+                construction and property expansions.
+              </p>
+              <p class="core-card__links">
+                <a href="/septic-installation-cookeville-tn/">Septic Installation in Cookeville</a>
+              </p>
+            </article>
+
+            <article class="card core-card">
+              <div class="core-card__icon" aria-hidden="true">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3.5V6h6V3.5M9 11l2 2 4-4"/><path d="M9 16h6"/></svg>
+              </div>
+              <h3>Septic Inspections</h3>
+              <p>
+                Request septic inspections for maintenance concerns, property purchases, sales,
+                real-estate transactions and suspected system problems.
+              </p>
+              <p class="core-card__links">
+                <a href="/septic-inspection-cookeville-tn/">Septic Inspections in Cookeville</a>
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- PRIMARY LEAD FORM (sticky on desktop, after service cards on mobile) -->
+      <div class="home-grid__form">
+        <div class="home-grid__form-sticky">
+          <LeadForm heading="Request Septic Pumping, Repair or Installation" idPrefix="home" />
+        </div>
+      </div>
+
+      <div class="home-grid__b">
+        <!-- SECTION 4 — SIGNS YOU MAY NEED SEPTIC SERVICE -->
+        <section class="home-block" aria-labelledby="signs-heading">
+          <h2 id="signs-heading">Signs You May Need Septic Service</h2>
+          <div class="grid grid--3 sign-cards">
+            <article class="card sign-card">
+              <h3>Sewage Backing Up</h3>
+              <p>Wastewater returning through drains, toilets, tubs or lower plumbing fixtures may indicate a full tank, blockage or system problem.</p>
+            </article>
+            <article class="card sign-card">
+              <h3>Slow or Gurgling Drains</h3>
+              <p>Multiple slow drains or unusual gurgling sounds can signal restricted flow or a septic issue.</p>
+            </article>
+            <article class="card sign-card">
+              <h3>Septic Odors</h3>
+              <p>Persistent sewage or sulfur-like odors around plumbing fixtures, the tank area or drain field should be evaluated.</p>
+            </article>
+            <article class="card sign-card">
+              <h3>Wet or Unusually Green Areas</h3>
+              <p>Saturated soil, standing water or unusually fast vegetation growth near the drain field may indicate a problem.</p>
+            </article>
+            <article class="card sign-card">
+              <h3>Tank or System Alarms</h3>
+              <p>Pump, high-water or treatment-system alarms should not be ignored.</p>
+            </article>
+            <article class="card sign-card">
+              <h3>Overdue Tank Pumping</h3>
+              <p>Pumping needs vary by tank size, household use, occupancy and system condition.</p>
+            </article>
+          </div>
+          <p class="home-block__note">
+            Not sure which service you need? Describe the symptoms and property details so the
+            request can be directed appropriately.
+          </p>
+          <a href="/request-service/" class="btn btn--green">Describe Your Septic Problem</a>
+        </section>
+
+        <!-- SECTION 5 — PUMPING, REPAIR OR INSTALLATION -->
+        <section class="home-block" aria-labelledby="which-heading">
+          <h2 id="which-heading">Do You Need Pumping, Repair or Installation?</h2>
+          <div class="grid grid--3">
+            <div class="card which-card">
+              <h3>Pumping &amp; Cleaning</h3>
+              <p>Best suited for:</p>
+              <ul>
+                <li>Routine tank maintenance</li>
+                <li>Full or nearly full tanks</li>
+                <li>Sludge and scum removal</li>
+                <li>Preventing avoidable backups</li>
+                <li>Properties with an unknown pumping history</li>
+              </ul>
+            </div>
+            <div class="card which-card">
+              <h3>Septic Repair</h3>
+              <p>Best suited for:</p>
+              <ul>
+                <li>Damaged pipes or components</li>
+                <li>System or pump alarms</li>
+                <li>Recurring backups</li>
+                <li>Suspected leaks</li>
+                <li>Distribution problems</li>
+                <li>Drain-field concerns</li>
+              </ul>
+            </div>
+            <div class="card which-card">
+              <h3>Installation or Replacement</h3>
+              <p>Best suited for:</p>
+              <ul>
+                <li>New construction</li>
+                <li>Major home additions</li>
+                <li>Failed systems</li>
+                <li>End-of-life systems</li>
+                <li>Property-use changes</li>
+                <li>Systems beyond practical repair</li>
+              </ul>
+            </div>
+          </div>
+          <p class="home-block__note">
+            The appropriate service depends on the symptoms, tank condition, drain field, system
+            design, property use and local requirements. A qualified provider must evaluate the
+            property.
+          </p>
+          <a href="/request-service/" class="btn btn--navy">Request an Evaluation</a>
+        </section>
+
+        <!-- SECTION 6 — URGENT SEPTIC SERVICE REQUESTS -->
+        <section class="home-block urgent-block" aria-labelledby="urgent-heading">
+          <h2 id="urgent-heading">Emergency Septic Pumping and Repair Requests</h2>
+          <p>
+            Active sewage backups, overflowing access points, strong septic odors, alarms and
+            wastewater surfacing on the property may require urgent attention. Submit the property
+            location and symptoms so provider availability can be checked.
+          </p>
+          <ul class="urgent-block__list">
+            <li>Sewage entering the home</li>
+            <li>Overflow near the septic tank</li>
+            <li>Wastewater surfacing outdoors</li>
+            <li>System or pump alarm</li>
+            <li>Toilets that will not drain</li>
+            <li>Strong sewage odors</li>
+            <li>Multiple drains backing up</li>
+          </ul>
+          <p class="urgent-block__caveat">Urgent requests are subject to provider coverage and availability.</p>
+          <div class="urgent-block__actions">
+            <a href="/request-service/" class="btn btn--red">Request Urgent Septic Service</a>
+            <a href="/emergency-septic-service-cookeville-tn/" class="urgent-block__link">Emergency Septic Service in Cookeville</a>
+          </div>
+        </section>
+
+        <!-- SECTION 7 — DRAIN-FIELD REPAIR -->
+        <section class="home-block" aria-labelledby="drainfield-heading">
+          <h2 id="drainfield-heading">Drain-Field Problems and Repair Requests</h2>
+          <p class="section-intro">
+            Drain fields can be affected by hydraulic overload, soil saturation, damaged
+            components, roots, age, compaction and other system conditions. A property evaluation
+            is needed before the cause or appropriate repair can be determined.
+          </p>
+          <h3>Warning signs</h3>
+          <ul class="two-col-list">
+            <li>Wet or soft ground</li>
+            <li>Sewage odors</li>
+            <li>Slow household drainage</li>
+            <li>Wastewater surfacing</li>
+            <li>Unusually green grass</li>
+            <li>Repeated pumping without lasting improvement</li>
+            <li>System alarms</li>
+            <li>Recurring backups</li>
+          </ul>
+          <div class="home-block__actions">
+            <a href="/request-service/" class="btn btn--green">Request a Drain-Field Evaluation</a>
+            <a href="/drain-field-repair-cookeville-tn/">Drain-Field Repair in Cookeville</a>
+          </div>
+        </section>
+
+        <!-- SECTION 8 — SEPTIC INSPECTIONS -->
+        <section class="home-block" aria-labelledby="inspections-heading">
+          <h2 id="inspections-heading">Septic Inspections for Property Concerns and Transactions</h2>
+          <div class="grid grid--3">
+            <article class="card">
+              <h3>Property Purchase or Sale</h3>
+              <p>
+                An inspection may help provide information about visible system condition, access,
+                operation and possible concerns, depending on the provider’s inspection scope.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Maintenance Inspection</h3>
+              <p>
+                Inspections may help identify alarms, access problems, visible damage or
+                maintenance needs before they turn into larger issues.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Problem-Focused Inspection</h3>
+              <p>
+                Recurring odors, slow drains, backups, wet areas or alarms may require a targeted
+                evaluation of the system.
+              </p>
+            </article>
+          </div>
+          <div class="home-block__actions">
+            <a href="/septic-inspection-cookeville-tn/" class="btn btn--navy">Request a Septic Inspection</a>
+          </div>
+          <p class="disclosure">
+            Inspection scope, testing methods, reporting, regulatory acceptance and fees vary by
+            provider and purpose. Confirm requirements with the appropriate provider, lender,
+            buyer, seller, county or regulatory authority.
+          </p>
+        </section>
+
+        <!-- SECTION 9 — SEPTIC INSTALLATION -->
+        <section class="home-block" aria-labelledby="install-heading">
+          <h2 id="install-heading">New and Replacement Septic System Installation</h2>
+          <p class="section-intro">
+            Request information about septic installation for new construction, replacement
+            systems, additions and property improvements.
+          </p>
+          <ol class="install-steps">
+            <li>Property and project information</li>
+            <li>Site and soil-related evaluation where required</li>
+            <li>System planning and applicable approvals</li>
+            <li>Installation scheduling</li>
+            <li>Inspection or approval where applicable</li>
+            <li>Final property restoration as agreed with the contractor</li>
+          </ol>
+          <p class="disclosure">
+            Exact requirements vary by property, system type, county, project and applicable
+            Tennessee regulations. Do not begin work based solely on website content.
+          </p>
+          <div class="home-block__actions">
+            <a href="/request-service/" class="btn btn--green">Request Installation Information</a>
+            <a href="/septic-installation-cookeville-tn/">Septic System Installation in Cookeville</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 10 — HOW SERVICE REQUESTS WORK -->
+  <section class="section section--pale" aria-labelledby="how-heading">
+    <div class="container">
+      <h2 id="how-heading">How to Request Septic Service</h2>
+      <div class="grid grid--4 steps">
+        <div class="step">
+          <span class="step__num" aria-hidden="true">1</span>
+          <h3>Describe the Property and Problem</h3>
+          <p>Provide the property location, service requested, current symptoms, residential or commercial use and any known system details.</p>
+        </div>
+        <div class="step">
+          <span class="step__num" aria-hidden="true">2</span>
+          <h3>Request Review</h3>
+          <p>The submitted information is reviewed to determine which type of local septic provider may fit the request.</p>
+        </div>
+        <div class="step">
+          <span class="step__num" aria-hidden="true">3</span>
+          <h3>Provider Contact</h3>
+          <p>A local provider may contact you to discuss access, availability, inspection needs, scheduling and possible next steps.</p>
+        </div>
+        <div class="step">
+          <span class="step__num" aria-hidden="true">4</span>
+          <h3>Service Details</h3>
+          <p>The provider independently determines pricing, qualifications, availability, scope, warranties and service terms.</p>
+        </div>
+      </div>
+      <p class="referral-disclosure-box">{REFERRAL_PROCESS_DISCLOSURE}</p>
+    </div>
+  </section>
+
+  <!-- SECTION 11 — ADDITIONAL SEPTIC SERVICES -->
+  <section class="section" aria-labelledby="additional-heading">
+    <div class="container">
+      <h2 id="additional-heading">Additional Septic and Wastewater Services</h2>
+      <div class="grid grid--4">
+        <article class="card">
+          <h3>Septic Tank Locating</h3>
+          <p>Request help locating tank lids or access points when the tank location is unknown or records are unavailable.</p>
+          <a href="/septic-tank-locating-cookeville-tn/">Septic Tank Locating in Cookeville</a>
+        </article>
+        <article class="card">
+          <h3>Septic Maintenance</h3>
+          <p>Learn about pumping intervals, warning signs, water use and questions to discuss with a septic provider.</p>
+          <a href="/septic-maintenance/">Septic Maintenance Guide</a>
+        </article>
+        <article class="card">
+          <h3>Commercial Septic Service</h3>
+          <p>Request pumping, inspection or repair service for eligible commercial and multi-property septic systems.</p>
+          <a href="/commercial-septic-service/">Commercial Septic Service</a>
+        </article>
+        <article class="card card--separate">
+          <h3>Grease-Trap Pumping</h3>
+          <p>Restaurants, food-service businesses and commercial kitchens may require separate grease-trap pumping and maintenance.</p>
+          <a href="/grease-trap-pumping-cookeville-tn/">Commercial Grease-Trap Pumping</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12 — SERVICE AREA -->
+  <section class="section section--pale" aria-labelledby="area-heading">
+    <div class="container area-section">
+      <div>
+        <h2 id="area-heading">Septic Service Across Upper Cumberland</h2>
+        <dl class="area-list">
+          <dt>Primary area — Cookeville and Putnam County</dt>
+          <dd>The primary content hub for septic pumping, cleaning, repair, installation, inspection and urgent service requests.</dd>
+          <dt>Secondary area — Crossville and Cumberland County</dt>
+          <dd>A major secondary market for <a href="/septic-pumping-crossville-tn/">septic pumping</a> and regional service requests.</dd>
+          <dt>Supporting areas</dt>
+          <dd>
+            <a href="/septic-services-sparta-tn/">Sparta and White County</a>,
+            <a href="/septic-services-livingston-tn/">Livingston and Overton County</a>,
+            <a href="/septic-services-smithville-tn/">Smithville and DeKalb County</a>
+          </dd>
+          <dt>Surrounding communities</dt>
+          <dd>Baxter, Monterey, Algood and nearby rural communities across the region.</dd>
+        </dl>
+        <p class="disclosure">
+          Provider coverage may vary by city, county, property access, service type and scheduling
+          availability.
+        </p>
+        <a href="/service-area/" class="btn btn--navy">Check Service Availability</a>
+      </div>
+      <img
+        src="/images/service-area-map.svg"
+        alt="Illustrated map of the Upper Cumberland region of Tennessee highlighting Cookeville, Crossville, Sparta, Livingston, Smithville, Baxter, Monterey and Algood"
+        width="560"
+        height="398"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <!-- SECTION 13 — FAQS -->
+  <section class="section" id="faqs" aria-labelledby="faq-heading">
+    <div class="container">
+      <h2 id="faq-heading">Septic Service Questions</h2>
+      <FaqAccordion faqs={faqs} withSchema />
+    </div>
+  </section>
+
+  <!-- SECTION 14 — FINAL CALL TO ACTION -->
+  <CtaBand />
+</Base>
+
+<style>
+  /* hero */
+  .hero {
+    background:
+      linear-gradient(100deg, rgba(7, 28, 45, 0.93) 0%, rgba(13, 41, 66, 0.78) 45%, rgba(13, 41, 66, 0.35) 100%),
+      url('/images/hero-septic-truck.svg') right center / cover no-repeat;
+    color: #e8f0f4;
+  }
+
+  .hero__inner {
+    padding-block: clamp(3rem, 8vw, 5.5rem);
+  }
+
+  .hero__content {
+    max-width: 40rem;
+  }
+
+  .hero h1 {
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .hero__copy {
+    font-size: 1.15rem;
+    color: #cfdde6;
+    max-width: 34rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* trust strip */
+  .trust-strip {
+    background: var(--navy-dark);
+    color: #dbe7ef;
+  }
+
+  .trust-strip__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 0.5rem 2rem;
+    padding-block: 0.9rem;
+  }
+
+  .trust-strip p {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .trust-strip svg {
+    color: #7fd0a0;
+    flex-shrink: 0;
+  }
+
+  /* area strip */
+  .area-strip {
+    background: var(--bg-pale);
+    border-bottom: 1px solid var(--border-gray);
+    font-size: 0.95rem;
+  }
+
+  .area-strip p {
+    margin: 0;
+    padding-block: 0.7rem;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  .area-strip strong {
+    color: var(--navy-deep);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-right: 0.3rem;
+  }
+
+  .area-strip a {
+    font-weight: 600;
+  }
+
+  /* home grid with sticky form */
+  .home-grid {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'a' 'form' 'b';
+  }
+
+  .home-grid__a {
+    grid-area: a;
+  }
+
+  .home-grid__form {
+    grid-area: form;
+  }
+
+  .home-grid__b {
+    grid-area: b;
+    min-width: 0;
+  }
+
+  @media (min-width: 1020px) {
+    .home-grid {
+      grid-template-columns: minmax(0, 1fr) 400px;
+      grid-template-areas:
+        'a form'
+        'b form';
+      align-items: start;
+    }
+
+    .home-grid__form-sticky {
+      position: sticky;
+      top: 90px;
+    }
+  }
+
+  .home-block {
+    margin-top: 3.25rem;
+  }
+
+  .home-block:first-child {
+    margin-top: 0;
+  }
+
+  .home-block__note {
+    margin-top: 1.4rem;
+    font-weight: 600;
+    color: #3a4a55;
+    max-width: 42rem;
+  }
+
+  .home-block__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-top: 1.2rem;
+  }
+
+  /* core service cards */
+  .core-cards {
+    margin-top: 1.75rem;
+  }
+
+  .core-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: #eaf4ee;
+    color: var(--green-dark);
+    margin-bottom: 0.9rem;
+  }
+
+  .core-card__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin: 0;
+  }
+
+  .core-card__links a {
+    font-weight: 700;
+  }
+
+  /* sign cards */
+  .sign-cards {
+    margin-top: 1.5rem;
+  }
+
+  .sign-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .sign-card p {
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .which-card ul {
+    margin: 0;
+    font-size: 0.97rem;
+  }
+
+  .which-card li {
+    margin-bottom: 0.3rem;
+  }
+
+  /* urgent block */
+  .urgent-block {
+    background: #fdf4f2;
+    border: 1px solid #ecd0c8;
+    border-left: 5px solid var(--warn-red);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+  }
+
+  .urgent-block h2 {
+    color: var(--warn-red);
+  }
+
+  .urgent-block__list {
+    columns: 2;
+    column-gap: 2rem;
+    font-weight: 600;
+    color: #5a3a34;
+  }
+
+  .urgent-block__list li {
+    margin-bottom: 0.35rem;
+    break-inside: avoid;
+  }
+
+  .urgent-block__caveat {
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .urgent-block__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .urgent-block__link {
+    font-weight: 700;
+  }
+
+  @media (max-width: 560px) {
+    .urgent-block__list {
+      columns: 1;
+    }
+  }
+
+  .two-col-list {
+    columns: 2;
+    column-gap: 2rem;
+  }
+
+  .two-col-list li {
+    margin-bottom: 0.35rem;
+    break-inside: avoid;
+  }
+
+  @media (max-width: 560px) {
+    .two-col-list {
+      columns: 1;
+    }
+  }
+
+  .install-steps li {
+    margin-bottom: 0.45rem;
+    font-weight: 600;
+  }
+
+  /* how-it-works steps */
+  .steps {
+    margin-top: 1.75rem;
+  }
+
+  .step {
+    position: relative;
+  }
+
+  .step__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--green);
+    color: var(--white);
+    font-weight: 800;
+    font-size: 1.15rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .step h3 {
+    font-size: 1.05rem;
+  }
+
+  .step p {
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .referral-disclosure-box {
+    margin-top: 2.25rem;
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-left: 4px solid var(--green);
+    border-radius: var(--radius);
+    padding: 1.15rem 1.4rem;
+    font-size: 1rem;
+    color: #33434e;
+    max-width: 62rem;
+  }
+
+  .card--separate {
+    background: #f6f9fb;
+    border-style: dashed;
+  }
+
+  /* service area section */
+  .area-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .area-list dt {
+    font-weight: 800;
+    color: var(--navy-deep);
+    margin-top: 1rem;
+  }
+
+  .area-list dd {
+    margin: 0.25rem 0 0;
+  }
+
+  .area-section img {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-gray);
+    background: var(--white);
+  }
+</style>

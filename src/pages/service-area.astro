@@ -1,0 +1,86 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'How do I know if my property is covered?',
+    answer:
+      'Submit the request with a precise location. Coverage is determined by each independent provider’s range, schedule and service types — not by a fixed map — so the honest answer is always checked per request.',
+  },
+  {
+    question: 'My town is not listed. Can I still request service?',
+    answer:
+      'Yes. The named cities are content hubs, not boundaries. Nearby rural communities across Upper Cumberland can submit requests, and they are reviewed against available provider ranges the same way.',
+  },
+  {
+    question: 'Are urgent requests handled differently by area?',
+    answer:
+      'Urgent requests are flagged and reviewed with priority, but response still depends on provider coverage and availability near the property. Distance matters most in emergencies — precise locations help.',
+  },
+];
+---
+
+<ServicePage
+  title="Upper Cumberland Septic Service Area"
+  description="Septic service requests across Upper Cumberland, TN — Cookeville, Crossville, Sparta, Livingston, Smithville, Baxter, Monterey, Algood and nearby rural communities."
+  h1="Septic Service Requests Across Upper Cumberland"
+  breadcrumbLabel="Service Area"
+  serviceName="Septic Service Requests"
+  areaServed="Upper Cumberland, Tennessee"
+  intro="One region, many counties, thousands of septic systems. This page maps how requests are covered across the Upper Cumberland — from Cookeville and Crossville to the rural communities between them."
+  faqs={faqs}
+  formHeading="Check Service Availability"
+>
+  <img
+    src="/images/service-area-map.svg"
+    alt="Illustrated map of the Upper Cumberland region of Tennessee highlighting Cookeville, Crossville, Sparta, Livingston, Smithville, Baxter, Monterey and Algood"
+    width="700"
+    height="498"
+    loading="lazy"
+    style="border:1px solid var(--border-gray); border-radius:12px; background:#fff; margin-bottom:2rem;"
+  />
+
+  <h2>Primary Area — Cookeville and Putnam County</h2>
+  <p>
+    Cookeville is the region’s largest city and this website’s primary content hub. Requests for
+    <a href="/septic-pumping-cookeville-tn/">pumping</a>,
+    <a href="/septic-tank-cleaning-cookeville-tn/">tank cleaning</a>,
+    <a href="/septic-repair-cookeville-tn/">repair</a>,
+    <a href="/septic-installation-cookeville-tn/">installation</a>,
+    <a href="/septic-inspection-cookeville-tn/">inspections</a> and
+    <a href="/emergency-septic-service-cookeville-tn/">urgent service</a> center here, covering
+    the city’s edges and the Putnam County countryside around it.
+  </p>
+
+  <h2>Secondary Area — Crossville and Cumberland County</h2>
+  <p>
+    The plateau around Crossville is a major secondary market with its own
+    <a href="/septic-pumping-crossville-tn/">septic pumping page</a>, reflecting the area’s
+    retirement communities, lake properties and rural acreage.
+  </p>
+
+  <h2>Supporting Areas</h2>
+  <ul>
+    <li><a href="/septic-services-sparta-tn/">Sparta and White County</a> — farms and rural homes between the plateau and the valley</li>
+    <li><a href="/septic-services-livingston-tn/">Livingston and Overton County</a> — small-town, farm and Dale Hollow lake-country properties</li>
+    <li><a href="/septic-services-smithville-tn/">Smithville and DeKalb County</a> — Center Hill Lake properties and county farmland</li>
+  </ul>
+
+  <h2>Surrounding Communities</h2>
+  <p>
+    Baxter, Monterey and Algood sit within the Cookeville orbit and are covered through the
+    Putnam County pages. Nearby rural communities across the region — from Gainesboro to Spencer
+    to Jamestown’s direction — can submit requests the same way; each is reviewed against actual
+    provider ranges.
+  </p>
+
+  <h2>How Coverage Actually Works</h2>
+  <p>
+    Cumberland Septic Hub is a referral resource, not a fleet. Coverage is the union of
+    independent providers’ ranges, and those ranges differ by provider, service type, season and
+    workload. Provider coverage may vary by city, county, property access, service type and
+    scheduling availability — which is why every request is answered against real availability
+    rather than a promise printed on a map.
+  </p>
+</ServicePage>

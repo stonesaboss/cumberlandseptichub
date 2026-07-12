@@ -1,0 +1,694 @@
+---
+import {
+  FORM_DISCLOSURE,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  SERVICE_NEEDED_OPTIONS,
+  SYMPTOM_OPTIONS,
+  TANK_LOCATION_OPTIONS,
+  LAST_PUMPED_OPTIONS,
+  CONTACT_TIME_OPTIONS,
+} from '@data/site';
+
+interface Props {
+  heading?: string;
+  /** Unique prefix when more than one form could exist on a page. */
+  idPrefix?: string;
+  compactHeading?: boolean;
+}
+
+const {
+  heading = 'Request Septic Pumping, Repair or Installation',
+  idPrefix = 'lead',
+} = Astro.props;
+
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
+const p = idPrefix;
+---
+
+<div class="lead-form-card">
+  <div class="lead-form-card__head">
+    <h2 class="lead-form-card__heading">{heading}</h2>
+  </div>
+
+  <form
+    class="lead-form"
+    method="post"
+    action="/api/lead"
+    enctype="multipart/form-data"
+    novalidate
+    data-lead-form
+  >
+    <p class="lead-form__status visually-hidden" role="status" aria-live="polite" data-status></p>
+
+    <div class="lead-form__field">
+      <label for={`${p}-name`}>Full Name <span aria-hidden="true">*</span></label>
+      <input type="text" id={`${p}-name`} name="full_name" autocomplete="name" required maxlength="120" />
+      <p class="lead-form__error" id={`${p}-name-error`} hidden>Please enter your full name.</p>
+    </div>
+
+    <div class="lead-form__field">
+      <label for={`${p}-phone`}>Phone Number <span aria-hidden="true">*</span></label>
+      <input type="tel" id={`${p}-phone`} name="phone" autocomplete="tel" required maxlength="30" inputmode="tel" />
+      <p class="lead-form__error" id={`${p}-phone-error`} hidden>Please enter a valid phone number.</p>
+    </div>
+
+    <div class="lead-form__field">
+      <label for={`${p}-email`}>Email Address <span aria-hidden="true">*</span></label>
+      <input type="email" id={`${p}-email`} name="email" autocomplete="email" required maxlength="200" />
+      <p class="lead-form__error" id={`${p}-email-error`} hidden>Please enter a valid email address.</p>
+    </div>
+
+    <div class="lead-form__field">
+      <label for={`${p}-address`}>Property Address or Nearest Location <span aria-hidden="true">*</span></label>
+      <input type="text" id={`${p}-address`} name="property_location" autocomplete="street-address" required maxlength="250" />
+      <p class="lead-form__error" id={`${p}-address-error`} hidden>Please describe the property location.</p>
+    </div>
+
+    <div class="lead-form__field">
+      <label for={`${p}-city`}>City or County <span aria-hidden="true">*</span></label>
+      <input type="text" id={`${p}-city`} name="city_or_county" required maxlength="120" list={`${p}-city-list`} />
+      <datalist id={`${p}-city-list`}>
+        <option value="Cookeville / Putnam County"></option>
+        <option value="Crossville / Cumberland County"></option>
+        <option value="Sparta / White County"></option>
+        <option value="Livingston / Overton County"></option>
+        <option value="Smithville / DeKalb County"></option>
+        <option value="Baxter"></option>
+        <option value="Monterey"></option>
+        <option value="Algood"></option>
+      </datalist>
+      <p class="lead-form__error" id={`${p}-city-error`} hidden>Please enter the city or county.</p>
+    </div>
+
+    <div class="lead-form__field">
+      <label for={`${p}-property-type`}>Residential or Commercial? <span aria-hidden="true">*</span></label>
+      <select id={`${p}-property-type`} name="property_type" required>
+        <option value="">-- Select One --</option>
+        <option>Residential</option>
+        <option>Commercial</option>
+      </select>
+      <p class="lead-form__error" id={`${p}-property-type-error`} hidden>Please select one.</p>
+    </div>
+
+    <div class="lead-form__field">
+      <label for={`${p}-service`}>Service Needed <span aria-hidden="true">*</span></label>
+      <select id={`${p}-service`} name="service_needed" required data-analytics-field="service">
+        <option value="">-- Select a Service --</option>
+        {SERVICE_NEEDED_OPTIONS.map((opt) => (
+          <option>{opt}</option>
+        ))}
+      </select>
+      <p class="lead-form__error" id={`${p}-service-error`} hidden>Please select the service needed.</p>
+    </div>
+
+    <div class="lead-form__field">
+      <label for={`${p}-symptoms`}>Current Symptoms <span aria-hidden="true">*</span></label>
+      <select id={`${p}-symptoms`} name="symptoms" required>
+        <option value="">-- Select One --</option>
+        {SYMPTOM_OPTIONS.map((opt) => (
+          <option>{opt}</option>
+        ))}
+      </select>
+      <p class="lead-form__error" id={`${p}-symptoms-error`} hidden>Please select the closest symptom.</p>
+    </div>
+
+    <fieldset class="lead-form__field lead-form__radios" data-backup-fieldset>
+      <legend>Is sewage actively backing up? <span aria-hidden="true">*</span></legend>
+      <div class="lead-form__radio-row">
+        <label><input type="radio" name="active_backup" value="Yes" required data-analytics-field="backup" /> Yes</label>
+        <label><input type="radio" name="active_backup" value="No" /> No</label>
+      </div>
+      <p class="lead-form__error" id={`${p}-backup-error`} hidden>Please answer yes or no.</p>
+      <p class="lead-form__urgent-note" data-urgent-note hidden>
+        Reduce unnecessary water use and avoid contact with wastewater. Provider availability is not guaranteed.
+      </p>
+    </fieldset>
+
+    <div class="lead-form__field">
+      <label for={`${p}-tank-location`}>Do you know where the tank is located? <span aria-hidden="true">*</span></label>
+      <select id={`${p}-tank-location`} name="tank_location_known" required>
+        <option value="">-- Select One --</option>
+        {TANK_LOCATION_OPTIONS.map((opt) => (
+          <option>{opt}</option>
+        ))}
+      </select>
+      <p class="lead-form__error" id={`${p}-tank-location-error`} hidden>Please select one.</p>
+    </div>
+
+    <div class="lead-form__field">
+      <label for={`${p}-last-pumped`}>When was the tank last pumped? <span aria-hidden="true">*</span></label>
+      <select id={`${p}-last-pumped`} name="last_pumped" required>
+        <option value="">-- Select One --</option>
+        {LAST_PUMPED_OPTIONS.map((opt) => (
+          <option>{opt}</option>
+        ))}
+      </select>
+      <p class="lead-form__error" id={`${p}-last-pumped-error`} hidden>Please select one.</p>
+    </div>
+
+    <div class="lead-form__field">
+      <label for={`${p}-contact-time`}>Preferred Contact Time <span aria-hidden="true">*</span></label>
+      <select id={`${p}-contact-time`} name="preferred_contact_time" required>
+        <option value="">-- Select One --</option>
+        {CONTACT_TIME_OPTIONS.map((opt) => (
+          <option>{opt}</option>
+        ))}
+      </select>
+      <p class="lead-form__error" id={`${p}-contact-time-error`} hidden>Please select one.</p>
+    </div>
+
+    <div class="lead-form__field">
+      <label for={`${p}-details`}>Additional Details <span aria-hidden="true">*</span></label>
+      <textarea
+        id={`${p}-details`}
+        name="additional_details"
+        rows="4"
+        required
+        maxlength="3000"
+        placeholder=""
+      ></textarea>
+      <p class="lead-form__hint">Describe the current problem, property access and anything a provider should know.</p>
+      <p class="lead-form__error" id={`${p}-details-error`} hidden>Please describe the situation briefly.</p>
+    </div>
+
+    <details class="lead-form__optional">
+      <summary>Optional details (occupancy, alarms, real estate, timing)</summary>
+
+      <div class="lead-form__field">
+        <label for={`${p}-occupancy`}>Approximate Household or Property Occupancy</label>
+        <input type="text" id={`${p}-occupancy`} name="occupancy" maxlength="60" />
+      </div>
+
+      <div class="lead-form__field">
+        <label for={`${p}-alarm`}>Is a Septic Alarm Active?</label>
+        <select id={`${p}-alarm`} name="alarm_active">
+          <option value="">-- Select One --</option>
+          <option>Yes</option>
+          <option>No</option>
+          <option>Not Sure</option>
+        </select>
+      </div>
+
+      <div class="lead-form__field">
+        <label for={`${p}-real-estate`}>Property Sale or Purchase Involved?</label>
+        <select id={`${p}-real-estate`} name="real_estate_involved">
+          <option value="">-- Select One --</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+
+      <div class="lead-form__field">
+        <label for={`${p}-timing`}>Preferred Service Timing</label>
+        <select id={`${p}-timing`} name="service_timing">
+          <option value="">-- Select One --</option>
+          <option>As Soon As Possible</option>
+          <option>Within a Few Days</option>
+          <option>Within a Few Weeks</option>
+          <option>Flexible / Planning Ahead</option>
+        </select>
+      </div>
+    </details>
+
+    <div class="lead-form__field">
+      <label for={`${p}-photos`}>Upload Photos (optional)</label>
+      <div class="lead-form__upload">
+        <input
+          type="file"
+          id={`${p}-photos`}
+          name="photos"
+          accept=".jpg,.jpeg,.png,.heic,image/jpeg,image/png,image/heic"
+          multiple
+          data-analytics-field="photos"
+        />
+        <p class="lead-form__hint">JPG, PNG or HEIC — up to 4 photos, 10&nbsp;MB each.</p>
+      </div>
+      <p class="lead-form__error" id={`${p}-photos-error`} hidden>Please use JPG, PNG or HEIC photos under 10 MB (max 4).</p>
+    </div>
+
+    <div class="lead-form__field lead-form__consent">
+      <label>
+        <input type="checkbox" name="consent" value="yes" required id={`${p}-consent`} />
+        <span>
+          By submitting this form, you agree to be contacted regarding your service request by
+          Cumberland Septic Hub and/or an independent local septic service provider. Your request
+          may be shared with a provider for the purpose of responding to the inquiry. Submission
+          does not guarantee service availability, response time, pricing or acceptance.
+        </span>
+      </label>
+      <p class="lead-form__error" id={`${p}-consent-error`} hidden>Consent is required to submit the request.</p>
+    </div>
+
+    {turnstileSiteKey && (
+      <div class="lead-form__field">
+        <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="light"></div>
+        <p class="lead-form__error" data-turnstile-error hidden>
+          Verification failed or expired. Please complete the verification and try again.
+        </p>
+      </div>
+    )}
+
+    <input type="hidden" name="source_page" value={Astro.url.pathname} />
+
+    <button type="submit" class="btn btn--green lead-form__submit">
+      Send Septic Service Request
+    </button>
+
+    <p class="lead-form__server-error" data-server-error hidden>
+      Sorry — the request could not be sent. Your answers are still filled in below, so please try
+      again, or call <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a> instead.
+    </p>
+
+    <div class="lead-form__success" data-success hidden>
+      <h3>Request received</h3>
+      <p>
+        Reference number: <strong data-reference></strong>
+      </p>
+      <p>A provider may contact you if coverage and availability fit the request.</p>
+    </div>
+
+    <p class="lead-form__disclosure">{FORM_DISCLOSURE}</p>
+  </form>
+</div>
+
+{turnstileSiteKey && (
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/api.js" async defer></script>
+)}
+
+<style>
+  .lead-form-card {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card-hover);
+    overflow: hidden;
+  }
+
+  .lead-form-card__head {
+    background: var(--navy-deep);
+    padding: 1.1rem 1.4rem;
+  }
+
+  .lead-form-card__heading {
+    color: var(--white);
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  .lead-form {
+    padding: 1.4rem;
+  }
+
+  .lead-form__field {
+    margin-bottom: 1.05rem;
+  }
+
+  .lead-form label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.92rem;
+    margin-bottom: 0.3rem;
+    color: var(--navy-deep);
+  }
+
+  .lead-form input[type='text'],
+  .lead-form input[type='tel'],
+  .lead-form input[type='email'],
+  .lead-form select,
+  .lead-form textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 1rem;
+    padding: 0.65rem 0.75rem;
+    border: 1.5px solid var(--border-gray);
+    border-radius: var(--radius);
+    background: var(--white);
+    color: var(--text);
+    min-height: 46px;
+  }
+
+  .lead-form textarea {
+    resize: vertical;
+  }
+
+  .lead-form input:focus,
+  .lead-form select:focus,
+  .lead-form textarea:focus {
+    border-color: var(--green);
+    outline: 2px solid rgba(47, 143, 85, 0.35);
+    outline-offset: 0;
+  }
+
+  .lead-form [aria-invalid='true'] {
+    border-color: var(--warn-red);
+  }
+
+  .lead-form__error {
+    color: var(--warn-red);
+    font-size: 0.88rem;
+    margin: 0.3rem 0 0;
+    font-weight: 600;
+  }
+
+  .lead-form__hint {
+    font-size: 0.85rem;
+    color: #5a6b76;
+    margin: 0.3rem 0 0;
+  }
+
+  .lead-form__radios {
+    border: 1.5px solid var(--border-gray);
+    border-radius: var(--radius);
+    padding: 0.8rem 1rem;
+    margin: 0 0 1.05rem;
+  }
+
+  .lead-form__radios legend {
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--navy-deep);
+    padding-inline: 0.3rem;
+  }
+
+  .lead-form__radio-row {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .lead-form__radio-row label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-weight: 600;
+    margin: 0;
+    min-height: 44px;
+  }
+
+  .lead-form__radio-row input {
+    width: 1.15rem;
+    height: 1.15rem;
+    accent-color: var(--green);
+  }
+
+  .lead-form__radios[data-urgent] {
+    border-color: var(--warn-red);
+    background: #fdf2f2;
+  }
+
+  .lead-form__urgent-note {
+    margin: 0.6rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--warn-red);
+  }
+
+  .lead-form__optional {
+    border: 1px dashed var(--border-gray);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.05rem;
+  }
+
+  .lead-form__optional summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--blue-mid);
+  }
+
+  .lead-form__optional .lead-form__field:first-of-type {
+    margin-top: 0.9rem;
+  }
+
+  .lead-form__upload input[type='file'] {
+    width: 100%;
+    padding: 1.4rem 0.9rem;
+    border: 2px dashed var(--border-gray);
+    border-radius: var(--radius);
+    background: var(--bg-pale);
+    font-size: 0.92rem;
+  }
+
+  .lead-form__consent label {
+    display: flex;
+    gap: 0.6rem;
+    font-weight: 400;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #3a4a55;
+  }
+
+  .lead-form__consent input {
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.15rem;
+    accent-color: var(--green);
+  }
+
+  .lead-form__submit {
+    width: 100%;
+  }
+
+  .lead-form__submit[disabled] {
+    opacity: 0.65;
+    cursor: wait;
+  }
+
+  .lead-form__server-error {
+    margin-top: 0.9rem;
+    padding: 0.85rem 1rem;
+    background: #fdf2f2;
+    border: 1px solid #eccaca;
+    border-radius: var(--radius);
+    color: var(--warn-red);
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .lead-form__success {
+    margin-top: 0.9rem;
+    padding: 1rem 1.2rem;
+    background: #eef7f1;
+    border: 1px solid #bfe0cc;
+    border-radius: var(--radius);
+  }
+
+  .lead-form__success h3 {
+    color: var(--green-dark);
+    margin-bottom: 0.4rem;
+  }
+
+  .lead-form__success p {
+    margin-bottom: 0.35rem;
+    font-size: 0.95rem;
+  }
+
+  .lead-form__disclosure {
+    margin: 1rem 0 0;
+    font-size: 0.85rem;
+    color: #5a6b76;
+    border-top: 1px solid var(--bg-pale);
+    padding-top: 0.85rem;
+  }
+</style>
+
+<script>
+  // Progressive enhancement: validate, submit via fetch, only report
+  // success after the backend confirms. Falls back to a normal POST
+  // if JavaScript is unavailable.
+  declare global {
+    interface Window {
+      dataLayer?: Record<string, unknown>[];
+      turnstile?: { reset: (el?: Element) => void };
+    }
+  }
+
+  const track = (event: string, detail: Record<string, unknown> = {}) => {
+    // Never include names, phone numbers, emails or addresses here.
+    window.dataLayer?.push({ event, ...detail });
+  };
+
+  const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/heic', 'image/heif'];
+  const ALLOWED_EXT = /\.(jpe?g|png|heic)$/i;
+  const MAX_FILES = 4;
+  const MAX_FILE_BYTES = 10 * 1024 * 1024;
+
+  document.querySelectorAll<HTMLFormElement>('[data-lead-form]').forEach((form) => {
+    const status = form.querySelector<HTMLElement>('[data-status]');
+    const serverError = form.querySelector<HTMLElement>('[data-server-error]');
+    const successBox = form.querySelector<HTMLElement>('[data-success]');
+    const referenceEl = form.querySelector<HTMLElement>('[data-reference]');
+    const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const backupFieldset = form.querySelector<HTMLElement>('[data-backup-fieldset]');
+    const urgentNote = form.querySelector<HTMLElement>('[data-urgent-note]');
+    const turnstileError = form.querySelector<HTMLElement>('[data-turnstile-error]');
+    let started = false;
+
+    form.addEventListener(
+      'focusin',
+      () => {
+        if (!started) {
+          started = true;
+          track('lead_form_start');
+        }
+      },
+      { once: true },
+    );
+
+    // urgent backup styling + analytics field events
+    form.querySelectorAll<HTMLInputElement>('input[name="active_backup"]').forEach((radio) => {
+      radio.addEventListener('change', () => {
+        const urgent = radio.checked && radio.value === 'Yes';
+        if (urgent) {
+          backupFieldset?.setAttribute('data-urgent', '');
+          urgentNote?.removeAttribute('hidden');
+        } else {
+          backupFieldset?.removeAttribute('data-urgent');
+          urgentNote?.setAttribute('hidden', '');
+        }
+        track('lead_form_backup_selected', { active_backup: radio.value });
+      });
+    });
+
+    form.querySelector<HTMLSelectElement>('select[name="service_needed"]')?.addEventListener('change', (e) => {
+      track('lead_form_service_selected', { service: (e.target as HTMLSelectElement).value });
+    });
+
+    form.querySelector<HTMLInputElement>('input[name="city_or_county"]')?.addEventListener('change', (e) => {
+      track('lead_form_city_selected', { city: (e.target as HTMLInputElement).value });
+    });
+
+    form.querySelector<HTMLInputElement>('input[type="file"]')?.addEventListener('change', (e) => {
+      const count = (e.target as HTMLInputElement).files?.length ?? 0;
+      if (count > 0) track('lead_form_photo_upload', { count });
+    });
+
+    const setFieldError = (el: HTMLElement, invalid: boolean) => {
+      const errorEl =
+        el.closest('.lead-form__field, .lead-form__radios')?.querySelector<HTMLElement>('.lead-form__error');
+      if (invalid) {
+        el.setAttribute('aria-invalid', 'true');
+        if (errorEl) {
+          errorEl.hidden = false;
+          if (errorEl.id) el.setAttribute('aria-describedby', errorEl.id);
+        }
+      } else {
+        el.removeAttribute('aria-invalid');
+        if (errorEl) errorEl.hidden = true;
+      }
+    };
+
+    const validate = (): boolean => {
+      let firstInvalid: HTMLElement | null = null;
+
+      form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>('[required]').forEach((field) => {
+        let invalid = false;
+        if (field instanceof HTMLInputElement && field.type === 'radio') {
+          const group = form.querySelectorAll<HTMLInputElement>(`input[name="${field.name}"]`);
+          invalid = ![...group].some((r) => r.checked);
+        } else if (field instanceof HTMLInputElement && field.type === 'checkbox') {
+          invalid = !field.checked;
+        } else {
+          invalid = !field.checkValidity();
+        }
+        setFieldError(field, invalid);
+        if (invalid && !firstInvalid) firstInvalid = field;
+      });
+
+      // photo constraints
+      const fileInput = form.querySelector<HTMLInputElement>('input[type="file"]');
+      if (fileInput?.files && fileInput.files.length > 0) {
+        const files = [...fileInput.files];
+        const bad =
+          files.length > MAX_FILES ||
+          files.some(
+            (f) =>
+              f.size > MAX_FILE_BYTES ||
+              (!ALLOWED_TYPES.includes(f.type) && !ALLOWED_EXT.test(f.name)),
+          );
+        setFieldError(fileInput, bad);
+        if (bad && !firstInvalid) firstInvalid = fileInput;
+      }
+
+      if (firstInvalid) {
+        (firstInvalid as HTMLElement).focus();
+        firstInvalid.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        track('lead_form_error', { kind: 'validation' });
+      }
+      return !firstInvalid;
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      serverError?.setAttribute('hidden', '');
+      turnstileError?.setAttribute('hidden', '');
+
+      if (!validate()) {
+        if (status) {
+          status.textContent = 'Please correct the highlighted fields.';
+        }
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending Request…';
+      }
+      if (status) status.textContent = 'Sending your request…';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+
+        let data: { ok?: boolean; reference?: string; error?: string; code?: string } = {};
+        try {
+          data = await res.json();
+        } catch {
+          /* non-JSON response */
+        }
+
+        if (res.ok && data.ok && data.reference) {
+          track('lead_form_success');
+          if (status) status.textContent = 'Request sent successfully.';
+          if (referenceEl) referenceEl.textContent = data.reference;
+          successBox?.removeAttribute('hidden');
+          form
+            .querySelectorAll<HTMLElement>(
+              '.lead-form__field, .lead-form__radios, .lead-form__optional, button[type="submit"]',
+            )
+            .forEach((el) => el.setAttribute('hidden', ''));
+          successBox?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          window.location.assign(`/thank-you/?ref=${encodeURIComponent(data.reference)}`);
+          return;
+        }
+
+        track('lead_form_error', { kind: data.code ?? `http_${res.status}` });
+        if (data.code === 'turnstile' && turnstileError) {
+          turnstileError.hidden = false;
+          window.turnstile?.reset();
+        } else if (serverError) {
+          serverError.hidden = false;
+          serverError.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }
+        if (status) status.textContent = 'The request could not be sent. Please try again.';
+      } catch {
+        track('lead_form_error', { kind: 'network' });
+        if (serverError) {
+          serverError.hidden = false;
+          serverError.scrollIntoView({ block: 'center', behavior: 'smooth' });
+        }
+        if (status) status.textContent = 'The request could not be sent. Please try again.';
+      } finally {
+        if (submitBtn && successBox?.hasAttribute('hidden')) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Septic Service Request';
+        }
+      }
+    });
+  });
+</script>

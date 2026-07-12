@@ -1,0 +1,19 @@
+# Cloudflare Pages redirects — Cumberland Septic Hub
+#
+# Canonical-hostname redirect (www -> apex) is configured at the Cloudflare
+# zone level once the custom domain is attached (Bulk Redirects or a
+# redirect rule). Path-level redirects live here.
+#
+# Consistent path conventions: Astro emits directory URLs with trailing
+# slashes; add legacy paths below as pages are renamed or retired.
+# Unknown URLs intentionally fall through to the custom 404 — do NOT add
+# a catch-all redirect to the homepage.
+
+/home              /    301
+/index.html        /    301
+/services          /septic-pumping-cookeville-tn/  301
+/septic-pumping    /septic-pumping-cookeville-tn/  301
+/septic-repair     /septic-repair-cookeville-tn/   301
+/septic-installation /septic-installation-cookeville-tn/ 301
+/emergency         /emergency-septic-service-cookeville-tn/ 301
+/areas             /service-area/ 301

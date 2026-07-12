@@ -1,0 +1,77 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { SITE_NAME } from '@data/site';
+---
+
+<Base
+  title="Terms of Use | Cumberland Septic Hub"
+  description="Terms of use for the Cumberland Septic Hub website, including the nature of the referral service, content disclaimers and limitations."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Terms of Use' }]} />
+      <h1>Terms of Use</h1>
+      <p>Effective date: July 12, 2026</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container prose" style="max-width:52rem;">
+      <h2>Acceptance</h2>
+      <p>
+        By using this website, you agree to these terms. If you do not agree, please do not use
+        the website.
+      </p>
+
+      <h2>Nature of the service</h2>
+      <p>
+        {SITE_NAME} is an independent referral and information website. It does not directly
+        perform septic services unless expressly stated, and it is not a party to any agreement
+        between you and a service provider. The full
+        <a href="/referral-disclosure/">referral disclosure</a> is incorporated into these terms.
+      </p>
+
+      <h2>No professional advice</h2>
+      <p>
+        Website content is general information about septic systems and services. It is not a
+        diagnosis of any specific system, not engineering or contracting advice, and not legal or
+        regulatory guidance. Requirements vary by property, county and project — confirm specifics
+        with qualified providers and the appropriate authorities.
+      </p>
+
+      <h2>Service requests</h2>
+      <ul>
+        <li>You agree to provide accurate information in service requests.</li>
+        <li>You consent to being contacted about your request as described on the form.</li>
+        <li>Submission does not guarantee provider availability, response, pricing or acceptance.</li>
+        <li>Provider engagements — including pricing, scheduling, warranties and workmanship — are solely between you and the provider.</li>
+      </ul>
+
+      <h2>Acceptable use</h2>
+      <p>
+        You agree not to submit false requests, abuse the forms, attempt to disrupt the website,
+        or use its content to mislead others.
+      </p>
+
+      <h2>Intellectual property</h2>
+      <p>
+        Website content, design and branding belong to {SITE_NAME} or its licensors and may not be
+        reproduced for competing commercial purposes without permission.
+      </p>
+
+      <h2>Disclaimer and limitation of liability</h2>
+      <p>
+        The website is provided “as is” without warranties of any kind. To the fullest extent
+        permitted by law, {SITE_NAME} is not liable for damages arising from use of the website,
+        reliance on its content, or the acts or omissions of any independent provider.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        These terms may be updated from time to time; continued use after changes constitutes
+        acceptance. Questions can be raised via the <a href="/contact/">contact page</a>.
+      </p>
+    </div>
+  </div>
+</Base>

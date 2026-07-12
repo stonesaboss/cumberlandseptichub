@@ -1,0 +1,88 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Our property is near Dale Hollow — does lakeside location change anything?',
+    answer:
+      'Lake-area properties often involve slopes, limited truck access and seasonal occupancy, all of which are relevant to service planning. Include how the property is reached and whether it is occupied full-time.',
+  },
+  {
+    question: 'How is coverage for the far ends of Overton County?',
+    answer:
+      'Coverage depends on each provider’s range. Requests from Livingston, Monroe, Alpine, Hilham and the roads toward Byrdstown can be reviewed against providers whose territory includes Overton County — availability is not guaranteed, but precise locations get faster answers.',
+  },
+  {
+    question: 'The house is an older farmstead. What should we expect?',
+    answer:
+      'Older systems may have undocumented layouts, buried lids and aging components. Pairing tank locating with an inspection is often the practical first step; the request form has a field for what you know about the tank location.',
+  },
+  {
+    question: 'Can rental cabins near the lake request commercial service?',
+    answer:
+      'Short-term rentals are usually residential systems under heavier-than-average load. Describe the rental use and occupancy in the request — load patterns matter for both diagnosis and maintenance scheduling.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Services in Livingston, TN"
+  description="Request septic pumping, repair, inspections and installation in Livingston and Overton County, TN — rural homes, farms and Dale Hollow lake-area properties."
+  h1="Septic Services in Livingston and Overton County"
+  breadcrumbLabel="Septic Services — Livingston"
+  serviceName="Septic Services"
+  areaServed="Livingston and Overton County, Tennessee"
+  intro="Overton County runs rural — farm properties, small-town homes around the square, and lake country toward Dale Hollow. Request septic pumping, repair, inspection or installation and describe the property so coverage can be checked."
+  faqs={faqs}
+  formHeading="Request Service in Livingston"
+  related={[
+    { label: 'Septic Repair in Cookeville', href: '/septic-repair-cookeville-tn/', blurb: 'symptoms, evaluation and repair-versus-replace' },
+    { label: 'Septic Installation in Cookeville', href: '/septic-installation-cookeville-tn/', blurb: 'how installation projects generally proceed' },
+    { label: 'Upper Cumberland Service Area', href: '/service-area/' },
+  ]}
+>
+  <h2>Septic Service in Overton County</h2>
+  <p>
+    Livingston is the county seat and commercial center, but most of Overton County’s homes sit
+    outside any sewer service: farms along the highways toward Monroe and Alpine, homesteads in
+    the hollows, and a growing number of cabins and rentals in the Dale Hollow Lake country to the
+    north. Private septic systems do the county’s wastewater work, and most requests here fall
+    into a few recognizable patterns.
+  </p>
+
+  <h2>What Gets Requested Around Livingston</h2>
+  <ul>
+    <li><strong>Pumping and cleaning</strong> — routine service and tanks with unknown histories on newly purchased land</li>
+    <li><strong>Repair evaluation</strong> — recurring backups, alarms and aging components on older systems</li>
+    <li><strong>Inspections</strong> — farm and land transactions where the septic system is a major unknown</li>
+    <li><strong>Installation</strong> — new homes on family land, replacement systems, and cabins that need their own capacity</li>
+  </ul>
+
+  <h2>Lake-Area and Seasonal Properties</h2>
+  <p>
+    Dale Hollow’s cabins and short-term rentals bring a specific pattern: light use most of the
+    year, then heavy weekends that spike the load. Systems sized for a family cottage can struggle
+    under back-to-back rental turnover, and slopes near the water complicate both drain fields and
+    truck access. If the property is a rental, include typical occupancy in the request — it
+    genuinely changes the maintenance conversation.
+  </p>
+
+  <h2>Coverage Limitations, Stated Plainly</h2>
+  <p>
+    Overton County sits at the northern edge of the region this website serves, and provider
+    coverage there varies more than it does around Cookeville. Requests are reviewed and matched
+    where a provider’s range and schedule fit; some locations or service types may not have an
+    available match. Nothing on this page guarantees coverage — the
+    <a href="/service-area/">service area page</a> explains how regional matching works.
+  </p>
+
+  <h2>Making an Overton County Request Useful</h2>
+  <ul>
+    <li>Location relative to Livingston or a named community (Monroe, Alpine, Hilham, Allons)</li>
+    <li>How the property is accessed — road surface, gates, distance from the road</li>
+    <li>Full-time home, farm, or seasonal/rental use</li>
+    <li>What is known about the system: tank location, last service, age</li>
+    <li>Symptoms and urgency, if any</li>
+  </ul>
+</ServicePage>

@@ -1,0 +1,57 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { PHONE_DISPLAY, PHONE_TEL, SITE_NAME } from '@data/site';
+
+const siteUrl = (Astro.site?.href ?? 'https://cumberlandseptichub.com/').replace(/\/$/, '');
+
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: `Contact ${SITE_NAME}`,
+  url: `${siteUrl}/contact/`,
+};
+---
+
+<Base
+  title="Contact | Cumberland Septic Hub"
+  description="Contact Cumberland Septic Hub about septic service requests, provider participation or website questions across Upper Cumberland, Tennessee."
+  schema={[contactSchema]}
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
+      <h1>Contact Cumberland Septic Hub</h1>
+      <p>Service requests, provider questions and website inquiries.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container prose" style="max-width:52rem;">
+      <h2>Need septic service?</h2>
+      <p>
+        The fastest path is the <a href="/request-service/">service request form</a> — it collects
+        the property, symptom and access details a provider needs. You can also call
+        <a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a>.
+      </p>
+
+      <h2>Are you a local septic provider?</h2>
+      <p>
+        Cumberland Septic Hub connects property-owner requests with independent local septic
+        providers across the Upper Cumberland region. If you operate a septic pumping, repair,
+        inspection or installation business in the region and want to discuss receiving referrals,
+        reach out through the <a href="/request-service/">request form</a> with a note describing
+        your business and coverage area, or call the number above.
+      </p>
+
+      <h2>About this website</h2>
+      <p>
+        Cumberland Septic Hub is an independent referral service — it does not directly perform
+        septic work unless expressly stated. Read <a href="/how-referrals-work/">how referrals
+        work</a> and the full <a href="/referral-disclosure/">referral disclosure</a> for details
+        on how requests are handled, or the <a href="/privacy-policy/">privacy policy</a> for how
+        submitted information is used.
+      </p>
+    </div>
+  </div>
+</Base>

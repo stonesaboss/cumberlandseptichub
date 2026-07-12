@@ -1,0 +1,69 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import LeadForm from '@components/LeadForm.astro';
+import { PHONE_DISPLAY, PHONE_TEL, REFERRAL_PROCESS_DISCLOSURE } from '@data/site';
+---
+
+<Base
+  title="Request Septic Service | Cumberland Septic Hub"
+  description="Request septic pumping, tank cleaning, repair, inspection or installation across Cookeville, Crossville and Upper Cumberland, TN. Describe the property and symptoms to get started."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Request Service' }]} />
+      <span class="eyebrow">Upper Cumberland Septic Service</span>
+      <h1>Request Septic Service</h1>
+      <p>
+        Describe the property, the symptoms and the service you need. Urgent situations — active
+        backups, overflows, alarms — should be marked as such in the form. Prefer the phone?
+        Call <a href={`tel:${PHONE_TEL}`} style="color:#fff; font-weight:700;">{PHONE_DISPLAY}</a>.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container request-layout">
+      <div>
+        <LeadForm heading="Request Septic Pumping, Repair or Installation" idPrefix="request" />
+      </div>
+      <aside class="request-aside">
+        <div class="card">
+          <h2 style="font-size:1.15rem;">What happens next</h2>
+          <ol style="font-size:0.95rem;">
+            <li>Your request is reviewed to identify the type of provider it fits.</li>
+            <li>It may be shared with an independent local septic provider.</li>
+            <li>A provider may contact you about access, availability and next steps.</li>
+            <li>The provider determines pricing, scheduling and service terms.</li>
+          </ol>
+          <p style="font-size:0.9rem;">{REFERRAL_PROCESS_DISCLOSURE}</p>
+        </div>
+        <div class="card" style="margin-top:1.25rem;">
+          <h2 style="font-size:1.15rem;">If sewage is backing up right now</h2>
+          <ul style="font-size:0.95rem;">
+            <li>Stop unnecessary water use immediately</li>
+            <li>Keep people and pets away from wastewater</li>
+            <li>Do not open tank lids</li>
+            <li>Mark the backup question “Yes” in the form</li>
+          </ul>
+          <a href="/emergency-septic-service-cookeville-tn/">Urgent request guidance</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .request-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 960px) {
+    .request-layout {
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    }
+  }
+</style>

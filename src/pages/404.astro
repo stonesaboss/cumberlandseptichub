@@ -1,0 +1,58 @@
+---
+import Base from '@layouts/Base.astro';
+import { PHONE_DISPLAY, PHONE_TEL } from '@data/site';
+---
+
+<Base
+  title="Page Not Found | Cumberland Septic Hub"
+  description="The page you were looking for could not be found. Find septic pumping, repair and service-area pages, or request septic service."
+  noindex={true}
+>
+  <div class="section">
+    <div class="container" style="max-width:46rem; text-align:center;">
+      <img
+        src="/logos/emblem-240.png"
+        alt="Cumberland Septic Hub emblem"
+        width="120"
+        height="120"
+        style="margin-inline:auto; margin-bottom:1.5rem;"
+      />
+      <h1>Page Not Found</h1>
+      <p style="font-size:1.1rem; max-width:34rem; margin-inline:auto;">
+        The page you were looking for doesn't exist or has moved. These will get you back on
+        track:
+      </p>
+      <ul class="notfound-links">
+        <li><a href="/">Homepage</a></li>
+        <li><a href="/septic-pumping-cookeville-tn/">Septic Pumping</a></li>
+        <li><a href="/septic-repair-cookeville-tn/">Septic Repair</a></li>
+        <li><a href="/service-area/">Service Areas</a></li>
+      </ul>
+      <div class="notfound-actions">
+        <a href="/request-service/" class="btn btn--green">Request Septic Service</a>
+        <a href={`tel:${PHONE_TEL}`} class="btn btn--outline-navy">Call {PHONE_DISPLAY}</a>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .notfound-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-weight: 700;
+    margin: 1.5rem 0;
+  }
+
+  .notfound-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+</style>

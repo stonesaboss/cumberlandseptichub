@@ -1,0 +1,95 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Is a septic inspection required to sell a house in Cookeville?',
+    answer:
+      'Requirements depend on the transaction, the lender and current local rules — not on this website. Buyers, sellers and agents should confirm what is required with the lender, the county and the provider performing the inspection.',
+  },
+  {
+    question: 'What does a septic inspection usually cost?',
+    answer:
+      'Fees vary with inspection scope, whether the tank is pumped as part of the inspection, lid excavation, property access and the provider’s own pricing. Ask each provider what their fee includes before scheduling.',
+  },
+  {
+    question: 'Does an inspection include pumping the tank?',
+    answer:
+      'Sometimes. Opening and pumping the tank allows a much better look at its condition, and some inspection scopes include it. Others are visual-and-flow only. Confirm the scope explicitly.',
+  },
+  {
+    question: 'Will I get a written report?',
+    answer:
+      'Reporting varies by provider and purpose. Real-estate inspections usually produce documentation; a quick maintenance look may not. If you need a report for a transaction or a county process, say so in the request.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Inspection in Cookeville, TN"
+  description="Request septic inspections in Cookeville, TN for real-estate transactions, maintenance checks and problem evaluation. Scope questions, cost factors and reporting differences."
+  h1="Septic Inspections in Cookeville, TN"
+  breadcrumbLabel="Septic Inspections — Cookeville"
+  serviceName="Septic Inspection"
+  areaServed="Cookeville and Putnam County, Tennessee"
+  intro="Buying, selling, maintaining or troubleshooting — a septic inspection answers the question every property owner eventually asks: what condition is this system actually in?"
+  faqs={faqs}
+  formHeading="Request a Septic Inspection"
+  related={[
+    { label: 'Septic Pumping in Cookeville', href: '/septic-pumping-cookeville-tn/', blurb: 'often paired with an inspection while the tank is open' },
+    { label: 'Septic Repair in Cookeville', href: '/septic-repair-cookeville-tn/', blurb: 'when the inspection finds something' },
+    { label: 'Septic Tank Locating in Cookeville', href: '/septic-tank-locating-cookeville-tn/', blurb: 'a common first step when records are missing' },
+  ]}
+>
+  <h2>Three Reasons People Request Inspections</h2>
+
+  <h3>Property Purchase or Sale</h3>
+  <p>
+    A house on septic is a house with a private wastewater plant in the yard — and buyers rarely
+    get any history with it. Depending on the provider’s inspection scope, a real-estate
+    inspection may provide information about visible system condition, access, operation and
+    possible concerns before money changes hands. Putnam County sees plenty of rural and
+    edge-of-town transactions where the septic system is one of the biggest unknowns on the
+    property.
+  </p>
+
+  <h3>Maintenance Inspection</h3>
+  <p>
+    Periodic inspections may identify alarms, access problems, visible damage or maintenance needs
+    while they are still small. They also establish the paper trail — tank location, lid depth,
+    service dates — that makes every future service visit cheaper and faster.
+  </p>
+
+  <h3>Problem-Focused Inspection</h3>
+  <p>
+    Recurring odors, slow drains, backups, wet areas or alarms may require targeted evaluation.
+    This is the diagnostic version of an inspection: less about documentation, more about finding
+    the cause. If symptoms are severe, the
+    <a href="/septic-repair-cookeville-tn/">septic repair page</a> describes how evaluation leads
+    into repair.
+  </p>
+
+  <h2>Questions to Ask About Inspection Scope</h2>
+  <ul>
+    <li>Will the tank be opened, and will it be pumped as part of the inspection?</li>
+    <li>Are baffles, lids and accessible components visually checked?</li>
+    <li>Is a flow or load test part of the process?</li>
+    <li>Is the drain field walked and probed, or observed from the surface only?</li>
+    <li>What documentation is produced, and is it accepted for my purpose?</li>
+    <li>What is the fee, and what would add to it (lid excavation, extra compartments)?</li>
+  </ul>
+
+  <h2>Cost Factors</h2>
+  <p>
+    Inspection pricing follows scope. A visual check with the lids already exposed is a different
+    job than locating a tank, excavating lids, pumping the tank and producing a written report for
+    a closing. Access, tank size, property distance and the provider’s own pricing all factor in.
+  </p>
+
+  <p class="disclosure">
+    Inspection scope, testing methods, reporting, regulatory acceptance and fees vary by provider
+    and purpose. Confirm requirements with the appropriate provider, lender, buyer, seller, county
+    or regulatory authority.
+  </p>
+</ServicePage>

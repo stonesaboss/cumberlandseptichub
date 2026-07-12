@@ -1,0 +1,82 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Sewage is coming up in my tub right now. What should I do first?',
+    answer:
+      'Stop using water immediately — every flush and load of laundry adds to the backup. Keep people and pets away from affected areas, avoid direct contact with wastewater, and submit an urgent request or call with the property location and symptoms.',
+  },
+  {
+    question: 'Will someone come out today?',
+    answer:
+      'That depends entirely on provider coverage and availability, which this website cannot guarantee. Submitting clear information — location, symptoms, access — gives an available provider the best chance of responding quickly.',
+  },
+  {
+    question: 'Should I try to open the tank myself?',
+    answer:
+      'No. Septic tanks produce gases that can be dangerous in and around an open tank, and falling into a tank can be fatal. Leave lids closed and let a provider handle access.',
+  },
+  {
+    question: 'Is a backup always a full tank?',
+    answer:
+      'No — blockages, failed pumps and saturated drain fields cause backups too. An urgent visit often starts with pumping to relieve the immediate problem, followed by an evaluation of the cause.',
+  },
+];
+---
+
+<ServicePage
+  title="Emergency Septic Service Requests in Cookeville, TN"
+  description="Submit urgent septic service requests in Cookeville, TN for active backups, overflows and alarms. Immediate precautions and what to report. Availability varies by provider."
+  h1="Urgent Septic Pumping and Repair Requests in Cookeville"
+  breadcrumbLabel="Emergency Septic Service — Cookeville"
+  serviceName="Urgent Septic Service Requests"
+  areaServed="Cookeville and Putnam County, Tennessee"
+  intro="Active backups, overflows and alarms deserve fast attention. Submit the property location and symptoms so provider availability can be checked — and take the simple precautions below while you wait for contact."
+  faqs={faqs}
+  formHeading="Request Urgent Septic Service"
+  related={[
+    { label: 'Septic Repair in Cookeville', href: '/septic-repair-cookeville-tn/', blurb: 'for the follow-up once the immediate problem is relieved' },
+    { label: 'Septic Pumping in Cookeville', href: '/septic-pumping-cookeville-tn/', blurb: 'routine service that prevents many urgent situations' },
+    { label: 'Drain-Field Repair in Cookeville', href: '/drain-field-repair-cookeville-tn/' },
+  ]}
+>
+  <h2>Situations That Warrant an Urgent Request</h2>
+  <ul>
+    <li>Sewage entering the home through drains, toilets or tubs</li>
+    <li>Overflow at or around the septic tank lids</li>
+    <li>Wastewater surfacing in the yard or over the drain field</li>
+    <li>A system or pump alarm that will not clear</li>
+    <li>Toilets that will not drain anywhere in the house</li>
+    <li>Strong sewage odors indoors</li>
+  </ul>
+  <p class="notice-warn">
+    <strong>Urgent requests are subject to provider coverage and availability.</strong> This
+    website does not operate trucks and cannot dispatch anyone. What it can do is get a clear,
+    complete request in front of independent local providers.
+  </p>
+
+  <h2>Immediate Precautions While You Wait</h2>
+  <ul>
+    <li><strong>Reduce water use to the minimum.</strong> No laundry, no dishwasher, minimal flushing — everything you send down adds to the backup.</li>
+    <li><strong>Avoid contact with wastewater.</strong> Keep children and pets away from affected fixtures and any wet areas outdoors.</li>
+    <li><strong>Do not open tank lids.</strong> Septic gases are hazardous and open tanks are a fall risk.</li>
+    <li><strong>Skip the chemicals.</strong> Drain cleaners will not fix a septic backup and can complicate service.</li>
+    <li><strong>Note what happened.</strong> Which fixtures backed up first, when the alarm started, what the weather has been — details that help diagnosis.</li>
+  </ul>
+
+  <h2>What an Urgent Request Should Include</h2>
+  <ul>
+    <li>Property address or nearest location in the Cookeville area</li>
+    <li>Mark <strong>“Is sewage actively backing up?” — Yes</strong> in the form</li>
+    <li>Which symptoms are happening and how long they have been going on</li>
+    <li>Whether the tank location is known and how a truck can reach it</li>
+    <li>A phone number you will actually answer</li>
+  </ul>
+  <p>
+    Once the immediate situation is relieved, recurring problems usually need a proper evaluation —
+    see <a href="/septic-repair-cookeville-tn/">septic repair in Cookeville</a> for what that
+    process involves.
+  </p>
+</ServicePage>

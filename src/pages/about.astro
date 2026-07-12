@@ -1,0 +1,62 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import CtaBand from '@components/CtaBand.astro';
+---
+
+<Base
+  title="About | Cumberland Septic Hub"
+  description="What Cumberland Septic Hub is, what it does and does not do, and how it helps Upper Cumberland property owners request septic service from independent local providers."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]} />
+      <h1>About Cumberland Septic Hub</h1>
+      <p>A regional septic resource for the Upper Cumberland — built to make requesting service simpler and better informed.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container prose" style="max-width:52rem;">
+      <h2>What this website is</h2>
+      <p>
+        Cumberland Septic Hub is an independent referral and information resource focused on one
+        region — Cookeville, Crossville and the wider Upper Cumberland area of Tennessee — and one
+        subject: septic systems. It exists to do two things well. First, help property owners
+        understand what their symptoms might mean, what different services involve, and what
+        information makes a service request useful. Second, connect those requests with
+        independent local septic providers who actually do the work.
+      </p>
+
+      <h2>What this website is not</h2>
+      <p>
+        Cumberland Septic Hub is not a septic contractor. It does not employ technicians, own
+        trucks, hold contractor licenses or maintain a physical service office, and it does not
+        perform septic pumping, repair, inspection or installation unless expressly stated.
+        Provider availability, qualifications, licensing, insurance, pricing, scheduling,
+        warranties and service terms are determined independently by each provider.
+      </p>
+
+      <h2>Why the region focus matters</h2>
+      <p>
+        Septic service is local by nature — trucks, soils, county practices and provider ranges
+        all vary. A regional resource can describe the Upper Cumberland’s actual conditions:
+        plateau properties around <a href="/septic-pumping-crossville-tn/">Crossville</a>, lake
+        country near <a href="/septic-services-smithville-tn/">Smithville</a> and
+        <a href="/septic-services-livingston-tn/">Livingston</a>, farmland around
+        <a href="/septic-services-sparta-tn/">Sparta</a>, and the growing edges of
+        <a href="/septic-pumping-cookeville-tn/">Cookeville</a> itself.
+      </p>
+
+      <h2>How to use it</h2>
+      <p>
+        Read the service pages to understand what you are dealing with, then use the
+        <a href="/request-service/">request form</a> to describe the property and the problem.
+        The <a href="/how-referrals-work/">how referrals work</a> page explains what happens
+        after you submit.
+      </p>
+    </div>
+  </div>
+
+  <CtaBand />
+</Base>

@@ -1,0 +1,28 @@
+{
+  "name": "cumberlandseptichub",
+  "version": "1.0.0",
+  "description": "Cumberland Septic Hub — septic pumping, repair and installation requests across Upper Cumberland, Tennessee.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "typecheck": "astro check",
+    "lint": "astro check",
+    "format": "prettier --write \"src/**/*.{astro,ts,css}\" \"functions/**/*.ts\""
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.1",
+    "astro": "^5.12.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@cloudflare/workers-types": "^4.20260610.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "sharp": "^0.34.2",
+    "typescript": "^5.8.3"
+  }
+}

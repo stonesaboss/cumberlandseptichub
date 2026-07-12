@@ -1,0 +1,55 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+---
+
+<Base
+  title="Accessibility | Cumberland Septic Hub"
+  description="Cumberland Septic Hub's accessibility commitment — WCAG-conscious design, keyboard navigation, form accessibility and how to report barriers."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Accessibility' }]} />
+      <h1>Accessibility Statement</h1>
+      <p>Septic problems don't discriminate; neither should the website for solving them.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container prose" style="max-width:52rem;">
+      <h2>Our commitment</h2>
+      <p>
+        Cumberland Septic Hub aims to be usable by everyone, including people using screen
+        readers, keyboard navigation, magnification and other assistive technology. The website is
+        built with Web Content Accessibility Guidelines (WCAG) 2.1 AA–conscious practices.
+      </p>
+
+      <h2>What the website does</h2>
+      <ul>
+        <li>Semantic HTML with one main heading per page and a logical heading order</li>
+        <li>A skip-to-content link and consistent keyboard navigation with visible focus states</li>
+        <li>Accessible navigation dropdowns and FAQ accordions</li>
+        <li>Form fields with real labels — never placeholder-only — and error messages linked to their fields</li>
+        <li>Status messages announced to screen readers during form submission</li>
+        <li>Strong color contrast and large touch targets</li>
+        <li>Reduced-motion support respecting the <code>prefers-reduced-motion</code> setting</li>
+        <li>Descriptive link and button text and image alt text</li>
+      </ul>
+
+      <h2>Known limitations</h2>
+      <p>
+        Third-party components — such as the Cloudflare Turnstile verification widget — are
+        provided by their vendors, and their accessibility is partly outside this website’s
+        control.
+      </p>
+
+      <h2>Report a barrier</h2>
+      <p>
+        If any part of this website is difficult to use with assistive technology, please say so
+        through the <a href="/contact/">contact page</a> — reports are genuinely welcome and
+        inform fixes. If a form is unusable for you, requests can also be made by phone; the
+        number appears in the site header on every page.
+      </p>
+    </div>
+  </div>
+</Base>

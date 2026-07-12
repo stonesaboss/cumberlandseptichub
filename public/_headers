@@ -1,0 +1,28 @@
+# Cloudflare Pages headers — Cumberland Septic Hub
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://www.googletagmanager.com https://www.google-analytics.com; frame-src https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com https://www.google-analytics.com https://*.google-analytics.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+
+# fingerprinted build assets — safe to cache aggressively
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# static images and logos — long cache, revalidate
+/images/*
+  Cache-Control: public, max-age=604800
+/logos/*
+  Cache-Control: public, max-age=604800
+/icons/*
+  Cache-Control: public, max-age=604800
+
+# never cache the API
+/api/*
+  Cache-Control: no-store
+
+# thank-you must not be indexed even if linked externally
+/thank-you/
+  X-Robots-Tag: noindex, nofollow

@@ -1,0 +1,173 @@
+---
+import {
+  SITE_NAME,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  FOOTER_DISCLOSURE,
+  SERVICES_DROPDOWN,
+  AREAS_DROPDOWN,
+} from '@data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand-col">
+        <a href="/" class="site-footer__brand">
+          <img src="/logos/emblem-120.png" alt="" width="56" height="56" loading="lazy" />
+          <span>
+            <span class="site-footer__name">Cumberland Septic Hub</span>
+            <span class="site-footer__tag">Septic Pumping, Repair &amp; Installation</span>
+          </span>
+        </a>
+        <p class="site-footer__region">
+          Serving Cookeville, Crossville and the Upper Cumberland region of Tennessee.
+        </p>
+        <p class="site-footer__phone">
+          <a href={`tel:${PHONE_TEL}`}>Call {PHONE_DISPLAY}</a>
+        </p>
+      </div>
+
+      <nav aria-label="Footer — septic services">
+        <h2 class="site-footer__heading">Septic Services</h2>
+        <ul>
+          {SERVICES_DROPDOWN.map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+          <li><a href="/commercial-septic-service/">Commercial Septic Service</a></li>
+          <li><a href="/septic-maintenance/">Septic Maintenance Guide</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Footer — service areas">
+        <h2 class="site-footer__heading">Service Areas</h2>
+        <ul>
+          {AREAS_DROPDOWN.map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav aria-label="Footer — company">
+        <h2 class="site-footer__heading">Company</h2>
+        <ul>
+          <li><a href="/request-service/">Request Service</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/how-referrals-work/">How Referrals Work</a></li>
+          <li><a href="/referral-disclosure/">Referral Disclosure</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Use</a></li>
+          <li><a href="/accessibility/">Accessibility</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <p class="site-footer__disclosure">{FOOTER_DISCLOSURE}</p>
+
+    <p class="site-footer__copyright">
+      &copy; {year} {SITE_NAME}. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--navy-dark);
+    color: #b9c9d5;
+    padding-block: 3rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 2rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .site-footer__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    margin-bottom: 0.9rem;
+  }
+
+  .site-footer__name {
+    display: block;
+    font-weight: 800;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1.2;
+  }
+
+  .site-footer__tag {
+    display: block;
+    font-size: 0.8rem;
+    color: #7fd0a0;
+    letter-spacing: 0.05em;
+  }
+
+  .site-footer__region {
+    margin-bottom: 0.5rem;
+  }
+
+  .site-footer__phone a {
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .site-footer__phone a:hover {
+    text-decoration: underline;
+    color: var(--white);
+  }
+
+  .site-footer__heading {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+
+  .site-footer nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-footer nav li {
+    margin-bottom: 0.4rem;
+  }
+
+  .site-footer nav a {
+    color: #b9c9d5;
+    text-decoration: none;
+  }
+
+  .site-footer nav a:hover {
+    color: var(--white);
+    text-decoration: underline;
+  }
+
+  .site-footer__disclosure {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding-top: 1.5rem;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #cdd9e2;
+    max-width: 62rem;
+  }
+
+  .site-footer__copyright {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #8fa3b2;
+  }
+</style>

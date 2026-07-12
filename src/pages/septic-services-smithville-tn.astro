@@ -1,0 +1,87 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Our place is on the bluff above Center Hill. Can a truck even reach the tank?',
+    answer:
+      'Steep lake lots are the defining access challenge around Center Hill. Hose length, parking and slope determine what is workable — describe the driveway and where the tank sits relative to it, and a provider can judge feasibility before driving out.',
+  },
+  {
+    question: 'We rent our lake house most summer weekends. How does that affect the septic system?',
+    answer:
+      'Rental turnover concentrates heavy use into short bursts — many loads of laundry and many showers in a weekend. That pattern fills tanks faster than the occupancy count suggests and stresses drain fields. Describe the rental pattern in the request.',
+  },
+  {
+    question: 'Does coverage include the communities around the lake, not just Smithville?',
+    answer:
+      'Requests from Silver Point, Dowelltown, Liberty, Alexandria and the lake communities are reviewed against providers whose range covers DeKalb County. Coverage varies by provider; exact locations get faster availability answers.',
+  },
+  {
+    question: 'We are buying a house outside Smithville. Should the septic be inspected first?',
+    answer:
+      'A septic inspection before purchase is how buyers learn the condition of a system nobody has documentation for. Whether one is required depends on the transaction — but requesting one is straightforward, and the form has an option for real-estate involvement.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Services in Smithville, TN"
+  description="Request septic pumping, repair, inspections and installation in Smithville and DeKalb County, TN — including Center Hill Lake properties and rural homes."
+  h1="Septic Services in Smithville and DeKalb County"
+  breadcrumbLabel="Septic Services — Smithville"
+  serviceName="Septic Services"
+  areaServed="Smithville and DeKalb County, Tennessee"
+  intro="DeKalb County pairs small-town streets with steep Center Hill Lake country, and nearly all of it runs on septic. Request pumping, repair, inspection or installation for Smithville-area property and describe the site so coverage can be checked."
+  faqs={faqs}
+  formHeading="Request Service in Smithville"
+  related={[
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'inspection scopes for purchases and maintenance' },
+    { label: 'Emergency Septic Service in Cookeville', href: '/emergency-septic-service-cookeville-tn/', blurb: 'urgent backups and precautions' },
+    { label: 'Upper Cumberland Service Area', href: '/service-area/' },
+  ]}
+>
+  <h2>Septic Service in DeKalb County</h2>
+  <p>
+    Smithville anchors a county shaped by Center Hill Lake. In town, homes are modest and
+    established; outside it, the land breaks toward the lake in ridges and hollows dotted with
+    weekend houses, retirement builds and short-term rentals. Rural homes and farms fill the
+    flatter country toward Dowelltown, Liberty and Alexandria. Different properties, one common
+    denominator: private septic systems, many of them decades old and lightly documented.
+  </p>
+
+  <h2>Services Available to Request</h2>
+  <ul>
+    <li><strong>Septic pumping and cleaning</strong> — routine service, overdue tanks, pre-listing preparation</li>
+    <li><strong>Repair evaluation</strong> — backups, alarms, suspected leaks and distribution problems</li>
+    <li><strong>Inspections</strong> — lake-house purchases and maintenance checks; see <a href="/septic-inspection-cookeville-tn/">how inspection scopes differ</a></li>
+    <li><strong>Installation and replacement</strong> — new builds on family land and failed-system replacements</li>
+  </ul>
+
+  <h2>The Center Hill Factor</h2>
+  <p>
+    Lake properties concentrate three challenges at once. Access: steep drives and limited
+    parking make truck positioning genuinely difficult on some lots. Load: rental weekends push
+    brief, intense water use through systems sized for quieter lives. Terrain: slopes constrain
+    where drain fields can sit and how they behave in wet seasons. None of this makes service
+    impossible — it makes accurate property description essential. A request that says “tank is
+    forty feet below the parking pad” gets a realistic answer instead of a surprised provider.
+  </p>
+
+  <h2>Common Smithville-Area Requests</h2>
+  <ul>
+    <li>A lake house purchased sight-unseen on the septic side — locating, pumping and inspection bundled into one visit where possible</li>
+    <li>A rental cabin backing up on a holiday weekend — see <a href="/emergency-septic-service-cookeville-tn/">urgent request guidance</a></li>
+    <li>A farmhouse tank overdue by a decade, with lids somewhere under the yard</li>
+    <li>A new build on subdivided family land needing a full system</li>
+  </ul>
+
+  <h2>Coverage Notes</h2>
+  <p>
+    DeKalb County requests are matched against providers whose range and schedule fit; coverage
+    varies by provider, service type and location within the county. Availability is not
+    guaranteed. The <a href="/service-area/">service area page</a> shows the wider regional
+    picture.
+  </p>
+</ServicePage>

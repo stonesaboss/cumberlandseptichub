@@ -1,0 +1,33 @@
+{
+  // Cloudflare Pages configuration for Cumberland Septic Hub.
+  // Deployment happens through the Cloudflare Pages Git integration —
+  // this file documents bindings for local `wrangler pages dev` testing.
+  "name": "cumberlandseptichub",
+  "compatibility_date": "2026-06-01",
+  "pages_build_output_dir": "dist"
+
+  // Optional D1 lead storage. Create the database first:
+  //   npx wrangler d1 create cumberland-septic-leads
+  // then apply the migration:
+  //   npx wrangler d1 migrations apply cumberland-septic-leads --remote
+  // and uncomment:
+  //
+  // "d1_databases": [
+  //   {
+  //     "binding": "LEADS_DB",
+  //     "database_name": "cumberland-septic-leads",
+  //     "database_id": "REPLACE_WITH_DATABASE_ID"
+  //   }
+  // ],
+
+  // Optional private R2 photo storage. Create the bucket first:
+  //   npx wrangler r2 bucket create cumberland-septic-lead-uploads
+  // and uncomment:
+  //
+  // "r2_buckets": [
+  //   {
+  //     "binding": "LEAD_UPLOADS",
+  //     "bucket_name": "cumberland-septic-lead-uploads"
+  //   }
+  // ]
+}

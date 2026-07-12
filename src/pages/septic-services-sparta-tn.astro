@@ -1,0 +1,88 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Do providers actually come out to rural White County?',
+    answer:
+      'Requests from Sparta, Doyle, Walling, Quebeck and the farm roads between them can be matched with providers whose range covers White County. Coverage varies by provider and service type — the more precise the location, the faster availability can be checked.',
+  },
+  {
+    question: 'We are on a farm with multiple buildings. Can one request cover it?',
+    answer:
+      'Yes — describe each system or building that needs attention in the details field. Farmhouses, rental trailers and shop bathrooms often have separate tanks with separate histories.',
+  },
+  {
+    question: 'Our place is near the river bottoms and stays wet. Does that matter?',
+    answer:
+      'Persistently wet ground is relevant to both diagnosis and access. Saturated soil can stress a drain field and can also limit where a heavy truck can drive. Mention seasonal wetness in the request.',
+  },
+  {
+    question: 'Can I request installation for a new build outside Sparta?',
+    answer:
+      'Yes. Include the project stage, lot details and timeline. Site and soil conditions drive what is possible; confirm current requirements with the provider and the appropriate authority.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Services in Sparta, TN"
+  description="Request septic pumping, tank cleaning, repair and installation in Sparta and White County, TN. Service for farms, rural homes and properties along the Calfkiller and Caney Fork."
+  h1="Septic Pumping, Repair & Installation in Sparta, TN"
+  breadcrumbLabel="Septic Services — Sparta"
+  serviceName="Septic Services"
+  areaServed="Sparta and White County, Tennessee"
+  intro="White County properties run on septic — farmhouses, rural homes, hunting land with cabins. Request pumping, cleaning, repair or installation for the Sparta area and describe the property so availability can be checked."
+  faqs={faqs}
+  formHeading="Request Service in Sparta"
+  related={[
+    { label: 'Septic Pumping in Cookeville', href: '/septic-pumping-cookeville-tn/', blurb: 'the full pumping guide — symptoms, access, preparation' },
+    { label: 'Drain-Field Repair in Cookeville', href: '/drain-field-repair-cookeville-tn/', blurb: 'field warning signs and evaluation' },
+    { label: 'Upper Cumberland Service Area', href: '/service-area/' },
+  ]}
+>
+  <h2>Septic Service in White County</h2>
+  <p>
+    Sparta sits between the plateau and the valley farmland along the Calfkiller River, and most
+    of White County outside town depends on private septic systems. The county’s housing skews
+    older and rural: farmhouses that have been in families for generations, homes on large lots
+    along the highways toward Spencer and Smithville, and cabins on recreational land near the
+    Caney Fork and Virgin Falls country. Many of these systems have long, undocumented histories —
+    which makes clear property information the most valuable thing a request can contain.
+  </p>
+
+  <h2>Services Available to Request</h2>
+  <ul>
+    <li><strong>Septic pumping and tank cleaning</strong> — routine maintenance and overdue tanks; see the <a href="/septic-pumping-cookeville-tn/">pumping guide</a> for what to prepare</li>
+    <li><strong>Septic repair</strong> — backups, alarms, damaged components and distribution problems</li>
+    <li><strong>Drain-field evaluation</strong> — wet ground, odors and surfacing wastewater</li>
+    <li><strong>Installation and replacement</strong> — new builds and end-of-life systems</li>
+    <li><strong>Inspections</strong> — real-estate transactions and maintenance checks</li>
+  </ul>
+
+  <h2>Common White County Situations</h2>
+  <ul>
+    <li>A farmhouse tank that has not been pumped in living memory</li>
+    <li>Backups appearing when extended family visits double the household load</li>
+    <li>Wet stripes over field lines in bottomland that already drains slowly</li>
+    <li>A newly purchased rural property with no septic records — tank locating plus inspection is a sensible pairing</li>
+    <li>Adding a rental cabin or in-law dwelling that needs its own system</li>
+  </ul>
+
+  <h2>Rural Access Realities</h2>
+  <p>
+    Providers reaching rural White County plan around distance, gravel roads, creek crossings,
+    gates and livestock. A request that says exactly where the property is and how a heavy truck
+    gets to the tank saves a phone call and often a wasted trip. If the ground stays soft in
+    spring, or the tank sits behind the barn across a field, say so.
+  </p>
+
+  <h2>Regional Coverage</h2>
+  <p>
+    Provider availability in Sparta depends on each provider’s service range and schedule.
+    Requests are reviewed and may be matched with providers who cover White County; availability
+    is not guaranteed. The <a href="/service-area/">Upper Cumberland service area page</a> shows
+    how Sparta fits into the wider region.
+  </p>
+</ServicePage>

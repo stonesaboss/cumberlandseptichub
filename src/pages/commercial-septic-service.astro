@@ -1,0 +1,90 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'What makes a septic request “commercial”?',
+    answer:
+      'The property use: businesses, rental portfolios, institutions and facilities where wastewater load, scheduling and documentation differ from a single-family home. The systems themselves may be conventional or engineered.',
+  },
+  {
+    question: 'Can service be scheduled around business hours?',
+    answer:
+      'Preferred service windows can be included in the request, and providers accommodate them where practical. State the constraint plainly — “not between 11am and 2pm” is useful information.',
+  },
+  {
+    question: 'Do commercial properties need more frequent pumping?',
+    answer:
+      'Often, yes — load is the driver. A property serving dozens of people daily accumulates solids far faster than a household. Providers can help establish an interval based on observed accumulation.',
+  },
+  {
+    question: 'Is grease-trap pumping part of commercial septic service?',
+    answer:
+      'It is a separate service with its own page. Food-service facilities often need both, but they are distinct jobs — see the grease-trap pumping page and note each need in the request.',
+  },
+];
+---
+
+<ServicePage
+  title="Commercial Septic Service Requests | Upper Cumberland"
+  description="Request commercial septic pumping, inspection and repair across Upper Cumberland, TN — offices, retail, rental properties, campgrounds, churches and institutional facilities."
+  h1="Commercial Septic Pumping, Inspection and Repair Requests"
+  eyebrow="Commercial & Multi-Property"
+  breadcrumbLabel="Commercial Septic Service"
+  serviceName="Commercial Septic Service"
+  intro="Businesses, landlords and facility managers across Upper Cumberland can request pumping, inspection and repair for eligible commercial and multi-property septic systems — with scheduling and documentation handled like the business need it is."
+  faqs={faqs}
+  formHeading="Request Commercial Service"
+  related={[
+    { label: 'Grease-Trap Pumping in Cookeville', href: '/grease-trap-pumping-cookeville-tn/', blurb: 'the separate food-service requirement' },
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'scope questions apply doubly to commercial systems' },
+    { label: 'Upper Cumberland Service Area', href: '/service-area/' },
+  ]}
+>
+  <h2>Properties This Covers</h2>
+  <ul>
+    <li>Offices, retail buildings and shops outside sewer service</li>
+    <li>Rental houses and small multi-unit properties under one owner or manager</li>
+    <li>Campgrounds, RV parks and event venues</li>
+    <li>Churches, community buildings and rural institutions</li>
+    <li>Farm operations with employee facilities</li>
+  </ul>
+  <p>
+    Restaurants and commercial kitchens with grease traps have a separate, dedicated need — see
+    <a href="/grease-trap-pumping-cookeville-tn/">commercial grease-trap pumping</a>. Residential
+    septic service and grease-trap service are different jobs, and providers do not automatically
+    offer both.
+  </p>
+
+  <h2>How Commercial Requests Differ</h2>
+  <ul>
+    <li><strong>Load</strong> — daily wastewater volume driven by customers, tenants or events rather than one household</li>
+    <li><strong>Scheduling</strong> — service windows that avoid business hours, tenant disruption or event dates</li>
+    <li><strong>Documentation</strong> — owners and managers often need service records for compliance, insurance or portfolio management</li>
+    <li><strong>Stakes</strong> — a backup at a rental or a venue is a business interruption, not just a bad day</li>
+  </ul>
+
+  <h2>Typical Commercial Situations</h2>
+  <ul>
+    <li>A property manager putting several rental houses on a common pumping schedule</li>
+    <li>A campground preparing systems ahead of the season — or recovering after it</li>
+    <li>A church with a system sized decades ago for a smaller congregation</li>
+    <li>A venue with an alarm sounding two days before an event — see <a href="/emergency-septic-service-cookeville-tn/">urgent requests</a></li>
+    <li>A buyer evaluating a commercial property where the system’s condition is unknown</li>
+  </ul>
+
+  <h2>What to Include in a Commercial Request</h2>
+  <ul>
+    <li>Property type, location and how the facility is used</li>
+    <li>Approximate daily occupancy or usage pattern</li>
+    <li>Number of systems or tanks involved, if known</li>
+    <li>Scheduling constraints and site contact</li>
+    <li>Whether documentation of service is required</li>
+  </ul>
+  <p>
+    Select <strong>Commercial</strong> for the property type in the form so the request is routed
+    appropriately. Provider coverage for commercial work varies by facility type, system and
+    location.
+  </p>
+</ServicePage>

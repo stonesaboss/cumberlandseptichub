@@ -1,0 +1,82 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+---
+
+<Base
+  title="Privacy Policy | Cumberland Septic Hub"
+  description="How Cumberland Septic Hub collects, uses, shares and protects information submitted through the website, including service request details."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy' }]} />
+      <h1>Privacy Policy</h1>
+      <p>Effective date: July 12, 2026</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container prose" style="max-width:52rem;">
+      <h2>Information collected</h2>
+      <p>When you submit a service request, the website collects the information you enter, which may include:</p>
+      <ul>
+        <li>Contact details — name, phone number, email address</li>
+        <li>Property information — address or nearest location, city or county, property type</li>
+        <li>Service details — service needed, symptoms, urgency, tank and pumping history, preferred contact time, additional details you provide</li>
+        <li>Optional photos you choose to upload</li>
+        <li>Technical metadata such as the page the request came from and the submission time</li>
+      </ul>
+      <p>
+        The website may also use analytics tools that collect standard usage data (pages viewed,
+        approximate location, device type). Analytics events do not include your name, phone
+        number, email address or property address.
+      </p>
+
+      <h2>How information is used</h2>
+      <ul>
+        <li>To review, route and respond to your service request</li>
+        <li>To share the request with one or more independent local septic providers so they can respond to the inquiry — this is the core purpose of the website</li>
+        <li>To operate, secure and improve the website</li>
+        <li>To comply with legal obligations where applicable</li>
+      </ul>
+
+      <h2>Sharing</h2>
+      <p>
+        Service requests may be shared with independent local septic providers for the purpose of
+        responding to your inquiry, as stated on each form. Information may also be processed by
+        service vendors that operate the website’s infrastructure (hosting, form delivery, email,
+        spam protection such as Cloudflare Turnstile). Information is not sold to data brokers.
+      </p>
+
+      <h2>Retention</h2>
+      <p>
+        Request records are retained only as long as needed to handle inquiries and meet
+        operational or legal needs, after which they may be deleted. Uploaded photos are stored
+        privately and are not published.
+      </p>
+
+      <h2>Your choices</h2>
+      <ul>
+        <li>You may request deletion of a submitted request via the <a href="/contact/">contact page</a>.</li>
+        <li>You may decline to submit optional fields, including photos.</li>
+        <li>You can use the website without submitting any personal information.</li>
+      </ul>
+
+      <h2>Security</h2>
+      <p>
+        The website is served over HTTPS, form submissions are validated and protected against
+        automated abuse, and uploads are stored in private storage. No method of transmission or
+        storage is completely secure, but reasonable safeguards are applied.
+      </p>
+
+      <h2>Children</h2>
+      <p>This website is intended for property owners and managers and is not directed to children under 13.</p>
+
+      <h2>Changes and contact</h2>
+      <p>
+        Material changes to this policy will be posted on this page with an updated effective
+        date. Questions can be directed through the <a href="/contact/">contact page</a>.
+      </p>
+    </div>
+  </div>
+</Base>

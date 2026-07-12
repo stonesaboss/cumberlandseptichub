@@ -1,0 +1,100 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'How do I know if my tank needs pumping or if something is broken?',
+    answer:
+      'A tank that has simply filled with solids usually causes gradual symptoms — slower drains, occasional odors and eventually backups. Sudden failures, alarms or wastewater surfacing outdoors can point to a damaged component or drain-field problem instead. A provider can often tell the difference once the tank is opened.',
+  },
+  {
+    question: 'What should I have ready before requesting pumping in Cookeville?',
+    answer:
+      'The property address or nearest crossroad, whether the tank location is known, roughly when it was last pumped, and any current symptoms. Notes about driveway access, gates, pets or steep terrain also help a provider plan the visit.',
+  },
+  {
+    question: 'Does the truck need to park close to the tank?',
+    answer:
+      'Vacuum trucks work through heavy hoses with practical length limits, so access matters. Long distances, fences, slopes or soft ground can affect whether and how a provider can service the tank — mention anything unusual in the request.',
+  },
+  {
+    question: 'Will the lids be dug up as part of the service?',
+    answer:
+      'Practices differ. Some providers include shallow lid excavation, others charge separately or ask the owner to expose lids in advance. Confirm what is included when a provider contacts you.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Pumping in Cookeville, TN | Cumberland Septic Hub"
+  description="Request septic tank pumping in Cookeville and Putnam County, Tennessee. Routine pumping, full-tank symptoms, access preparation and what to include in your request."
+  h1="Septic Pumping in Cookeville, TN"
+  breadcrumbLabel="Septic Pumping — Cookeville"
+  serviceName="Septic Tank Pumping"
+  areaServed="Cookeville and Putnam County, Tennessee"
+  intro="Request septic tank pumping for homes, rental properties and rural land across Cookeville and Putnam County. Describe the property and its symptoms, and the request can be matched with an independent local pumping provider."
+  faqs={faqs}
+  formHeading="Request Septic Pumping"
+  related={[
+    { label: 'Septic Tank Cleaning in Cookeville', href: '/septic-tank-cleaning-cookeville-tn/', blurb: 'when you want the service scope spelled out, not just a quick pump-out' },
+    { label: 'Septic Repair in Cookeville', href: '/septic-repair-cookeville-tn/', blurb: 'for backups that keep returning after pumping' },
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'for maintenance checks and real-estate transactions' },
+    { label: 'Upper Cumberland Service Area', href: '/service-area/' },
+  ]}
+>
+  <h2>Routine Pumping for Putnam County Properties</h2>
+  <p>
+    Septic tanks are designed to hold back solids while liquid moves on to the drain field. Over
+    time, sludge settles at the bottom and a scum layer forms at the top. When those layers take
+    up too much of the tank, solids can escape into the drain field — and that is where expensive
+    damage tends to start. Pumping removes the accumulated material before it reaches that point.
+  </p>
+  <p>
+    Cookeville-area properties vary widely: in-town homes on older systems, newer subdivisions on
+    the edge of the city, and rural Putnam County land where the tank may not have been touched in
+    a decade. There is no single correct interval — pumping frequency depends on tank size,
+    household size, water use, garbage-disposal habits and how the system has been maintained.
+  </p>
+
+  <h2>Signs a Tank May Be Full</h2>
+  <ul>
+    <li>Drains throughout the house running slower than usual</li>
+    <li>Gurgling from toilets or tubs after water is used elsewhere</li>
+    <li>Sewage odors indoors, near the tank or over the drain field</li>
+    <li>Wastewater backing up into the lowest fixtures</li>
+    <li>Standing water or unusually lush grass near the tank or field lines</li>
+  </ul>
+  <p>
+    Similar symptoms can also come from a clogged line, a failed pump or a saturated drain field,
+    which is why recurring problems after a recent pump-out usually point to
+    <a href="/septic-repair-cookeville-tn/">septic repair</a> rather than another pumping visit.
+  </p>
+
+  <h2>Full Tank or System Failure?</h2>
+  <p>
+    A genuinely full tank is normal and expected — it is what tanks do. A system failure is
+    different: wastewater surfacing outdoors, alarms sounding, or backups that return within days
+    of pumping suggest the problem lives beyond the tank, often in the drain field or a damaged
+    component. If your symptoms match the second group, request an evaluation and say so in the
+    form; that helps route the request to the right kind of provider.
+  </p>
+
+  <h2>Property and Tank Access</h2>
+  <p>
+    Before a pumping visit, providers typically need to know where the tank is, whether the lids
+    are exposed or buried, and how close a truck can get. If the tank location is unknown,
+    <a href="/septic-tank-locating-cookeville-tn/">septic tank locating</a> may be a helpful first
+    step. Gates, livestock, steep drives and soft ground after rain are all worth mentioning.
+  </p>
+
+  <h2>What to Include in Your Request</h2>
+  <ul>
+    <li>Property address or nearest location in Cookeville / Putnam County</li>
+    <li>Residential or commercial use, and approximate occupancy</li>
+    <li>When the tank was last pumped, if known</li>
+    <li>Whether the tank location and lids are known</li>
+    <li>Current symptoms, if any, and whether sewage is actively backing up</li>
+    <li>Access notes — driveway, distance to tank, obstacles</li>
+  </ul>
+</ServicePage>

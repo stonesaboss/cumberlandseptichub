@@ -1,0 +1,96 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Why is my grass greenest in stripes over the field lines?',
+    answer:
+      'Vegetation that outgrows the surrounding lawn in lines or patches over the drain field can mean effluent is rising toward the surface instead of soaking away below root depth. On its own it is a warning sign, not a diagnosis — an evaluation is needed.',
+  },
+  {
+    question: 'Does a failed drain field always mean full replacement?',
+    answer:
+      'No single answer applies. Outcomes depend on the cause: a crushed line or a tilted distribution box is a different problem than soil that can no longer accept water. A provider must evaluate the field before any repair approach can be recommended.',
+  },
+  {
+    question: 'Can I drive or park over my drain field?',
+    answer:
+      'Vehicles compact soil and can crush field lines — traffic over the field is one of the recognized causes of damage. If part of your field doubles as parking, mention it in the request; it is relevant to diagnosis.',
+  },
+  {
+    question: 'Rain makes my drains slow. Is that a drain-field sign?',
+    answer:
+      'It can be. A field near its limits often struggles when the surrounding soil is saturated by heavy rain. Symptoms that track the weather are worth describing in the request exactly that way.',
+  },
+];
+---
+
+<ServicePage
+  title="Drain-Field Repair in Cookeville, TN"
+  description="Request septic drain-field repair in Cookeville, TN. Warning signs, possible causes of field problems, evaluation and repair considerations for Putnam County properties."
+  h1="Septic Drain-Field Repair in Cookeville, TN"
+  breadcrumbLabel="Drain-Field Repair — Cookeville"
+  serviceName="Septic Drain-Field Repair"
+  areaServed="Cookeville and Putnam County, Tennessee"
+  intro="The drain field is where most septic systems quietly succeed — or expensively fail. Request a drain-field evaluation for wet ground, odors, surfacing wastewater and backups that pumping alone has not solved."
+  faqs={faqs}
+  formHeading="Request a Drain-Field Evaluation"
+  related={[
+    { label: 'Septic Repair in Cookeville', href: '/septic-repair-cookeville-tn/', blurb: 'for tank-side components, pipes and pumps' },
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'a documented evaluation of the whole system' },
+    { label: 'Emergency Septic Service in Cookeville', href: '/emergency-septic-service-cookeville-tn/', blurb: 'if wastewater is actively surfacing' },
+  ]}
+>
+  <h2>What the Drain Field Does</h2>
+  <p>
+    After the tank holds back solids, the remaining liquid flows into buried drain-field lines and
+    filters down through the soil, which finishes the treatment. The field only works while the
+    soil can keep accepting water. When it can’t — because of overload, damage or age — effluent
+    has nowhere to go but backward into the house or upward into the yard.
+  </p>
+
+  <h2>Warning Signs</h2>
+  <ul class="two-col-list">
+    <li>Wet or soft ground over the field</li>
+    <li>Sewage odors outdoors</li>
+    <li>Slow drainage throughout the house</li>
+    <li>Wastewater surfacing</li>
+    <li>Unusually green or fast-growing grass in lines</li>
+    <li>Repeated pumping without lasting improvement</li>
+    <li>System alarms</li>
+    <li>Recurring backups</li>
+  </ul>
+
+  <h2>What Can Go Wrong in a Field</h2>
+  <ul>
+    <li><strong>Hydraulic overload</strong> — more water than the soil can absorb, from heavy household use, leaking fixtures or a diverted downspout</li>
+    <li><strong>Soil saturation</strong> — wet seasons and poor surface drainage can push a marginal field over the edge</li>
+    <li><strong>Damaged components</strong> — crushed lines, a failed distribution box, broken pipe between tank and field</li>
+    <li><strong>Root intrusion</strong> — trees and shrubs finding the moisture in field lines</li>
+    <li><strong>Compaction</strong> — vehicles, structures or livestock over the field</li>
+    <li><strong>Biological clogging and age</strong> — the soil interface gradually sealing after decades of service</li>
+  </ul>
+  <p>
+    These causes look similar from the surface but lead to very different repairs — which is why
+    <strong>a property evaluation is needed before the cause or the appropriate repair can be
+    determined.</strong> No repair method can responsibly be recommended without an inspection.
+  </p>
+
+  <h2>What an Evaluation Typically Considers</h2>
+  <ul>
+    <li>Tank condition and liquid levels — is the problem upstream of the field at all?</li>
+    <li>Water use patterns and recent changes at the property</li>
+    <li>Soil and moisture conditions over and around the field</li>
+    <li>Condition of the distribution box and accessible field lines</li>
+    <li>Age, layout and history of the system</li>
+  </ul>
+
+  <h2>Helping the Evaluation Go Well</h2>
+  <ul>
+    <li>Note where symptoms appear and when they started</li>
+    <li>Photograph wet areas and surfacing before they dry out</li>
+    <li>Share pumping and repair history if known</li>
+    <li>Describe access for equipment and where the field is believed to run</li>
+  </ul>
+</ServicePage>

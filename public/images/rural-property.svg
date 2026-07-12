@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" role="img" aria-label="Rolling rural Tennessee hills with trees at dusk">
+  <defs>
+    <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12354f"/>
+      <stop offset="1" stop-color="#1f5275"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#dusk)"/>
+  <path d="M0 430 Q 300 330 620 400 T 1200 380 T 1600 400 V 700 H 0 Z" fill="#0f2f47"/>
+  <path d="M0 520 Q 350 430 760 490 T 1600 480 V 700 H 0 Z" fill="#0b2436"/>
+  <g fill="#0a1f2e">
+    <path d="M180 520 l40 -95 40 95 z"/><path d="M262 528 l32 -74 32 74 z"/>
+    <path d="M1180 505 l44 -105 44 105 z"/><path d="M1272 515 l36 -84 36 84 z"/>
+    <path d="M1390 512 l40 -95 40 95 z"/>
+  </g>
+  <path d="M0 610 Q 400 570 800 600 T 1600 590 V 700 H 0 Z" fill="#071c2d"/>
+</svg>

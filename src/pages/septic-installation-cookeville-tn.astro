@@ -1,0 +1,88 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Do I need a soil evaluation before installing a septic system?',
+    answer:
+      'Site and soil conditions are central to how — and whether — a conventional system can be installed on a given lot. Requirements vary by property and project. Confirm the current process with the provider and the appropriate Tennessee or county authority before making plans.',
+  },
+  {
+    question: 'Can I choose where the system goes on my property?',
+    answer:
+      'Placement is constrained by soil conditions, slopes, setbacks from wells and property lines, and the layout of the home. Owners can express preferences, but the site evaluation and applicable rules generally drive the final layout.',
+  },
+  {
+    question: 'What affects installation timing?',
+    answer:
+      'Site evaluation, approvals, system design, weather, equipment access and inspection requirements all play a role. Excavation work is also weather-sensitive — saturated ground can pause a project.',
+  },
+  {
+    question: 'Does a replacement system go in the same spot as the old one?',
+    answer:
+      'Not necessarily. A failed drain field often means that soil area is exhausted, and the replacement field may need a different part of the property. This is exactly what the site evaluation determines.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Installation in Cookeville, TN"
+  description="Request septic system installation in Cookeville, TN for new construction, replacement systems and property expansions. Site evaluation, planning and what to expect."
+  h1="Septic System Installation in Cookeville, TN"
+  breadcrumbLabel="Septic Installation — Cookeville"
+  serviceName="Septic System Installation"
+  areaServed="Cookeville and Putnam County, Tennessee"
+  intro="Building outside the sewer map, replacing a failed system or expanding a property? Request installation information and the project can be connected with an independent local installation professional."
+  faqs={faqs}
+  formHeading="Request Installation Information"
+  related={[
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'useful before buying land or confirming an existing system has failed' },
+    { label: 'Upper Cumberland Service Area', href: '/service-area/', blurb: 'coverage across Putnam and surrounding counties' },
+    { label: 'Request Service', href: '/request-service/' },
+  ]}
+>
+  <h2>When Installation Is the Right Conversation</h2>
+  <ul>
+    <li><strong>New construction</strong> — homes and buildings outside Cookeville’s sewer service, common across rural Putnam County</li>
+    <li><strong>Replacement systems</strong> — when an existing tank or drain field has reached the end of its life</li>
+    <li><strong>Additions and property changes</strong> — added bedrooms, accessory dwellings or converted structures can change what a system must handle</li>
+    <li><strong>Property expansions</strong> — shops, rental cabins or secondary buildings that need their own wastewater handling</li>
+  </ul>
+
+  <h2>How the Process Generally Works</h2>
+  <p>
+    Details vary by property, system type and current requirements, but installation projects in
+    Tennessee generally move through recognizable stages:
+  </p>
+  <ol>
+    <li><strong>Property and project information</strong> — lot size, water source, planned structure and bedroom count</li>
+    <li><strong>Site and soil-related evaluation where required</strong> — soil and site conditions largely determine the system type and location</li>
+    <li><strong>System planning and applicable approvals</strong> — design and any permits the project requires</li>
+    <li><strong>Installation scheduling</strong> — excavation, tank setting and field construction, subject to weather and access</li>
+    <li><strong>Inspection or approval where applicable</strong> — verification steps required by the jurisdiction</li>
+    <li><strong>Final property restoration</strong> — grading and surface restoration as agreed with the contractor</li>
+  </ol>
+  <p class="disclosure">
+    Exact requirements vary by property, system type, county, project and applicable Tennessee
+    regulations. Confirm the current process with the provider and the appropriate authority —
+    do not begin work based solely on website content.
+  </p>
+
+  <h2>Access and Site Preparation</h2>
+  <p>
+    Installation is excavation work. Providers will want to know how equipment reaches the site,
+    whether utilities are marked, what slopes and trees are involved, and where water lines and
+    wells sit. Photos of the site and a rough sketch of the property help a provider give a more
+    useful first response.
+  </p>
+
+  <h2>What to Include in an Installation Request</h2>
+  <ul>
+    <li>New construction or replacement, and the project timeline</li>
+    <li>Property location and approximate lot size</li>
+    <li>Planned or existing bedroom count and occupancy</li>
+    <li>What is known about existing systems on the property, if any</li>
+    <li>Whether a site or soil evaluation has already been done</li>
+  </ul>
+</ServicePage>

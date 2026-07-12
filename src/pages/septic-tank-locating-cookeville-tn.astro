@@ -1,0 +1,82 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Where do septic tanks usually sit on a property?',
+    answer:
+      'Commonly between the house and the drain field, often 10–25 feet from the foundation on the side where the main sewer line exits. That is a starting point, not a rule — older rural properties in particular can surprise you.',
+  },
+  {
+    question: 'Are there records of where my tank is?',
+    answer:
+      'Sometimes. Depending on when the system was installed, county or state records may include a system sketch. Previous owners, neighbors who used the same installer, and old service receipts are also useful sources.',
+  },
+  {
+    question: 'How do providers find a tank with no records?',
+    answer:
+      'Typical methods include following the sewer line from the house, probing likely areas, and electronic locating — flushing a small transmitter that is tracked from the surface. Availability and methods vary by provider.',
+  },
+  {
+    question: 'Can I look for it myself first?',
+    answer:
+      'Careful observation is fine: look for lid-sized depressions or mounds, areas where snow melts first, or the cleanout direction leaving the house. Do not excavate blindly near utilities, and never open a tank lid you find — septic gases and open tanks are dangerous.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Tank Locating in Cookeville, TN"
+  description="Request septic tank locating in Cookeville, TN when the tank location is unknown. Records, locating methods and how to prepare the property for pumping or inspection."
+  h1="Septic Tank Locating in Cookeville, TN"
+  breadcrumbLabel="Septic Tank Locating — Cookeville"
+  serviceName="Septic Tank Locating"
+  areaServed="Cookeville and Putnam County, Tennessee"
+  intro="Bought a place with no septic records? Tank locating finds the lids and access points so pumping, inspection or repair can actually happen."
+  faqs={faqs}
+  formHeading="Request Tank Locating"
+  related={[
+    { label: 'Septic Pumping in Cookeville', href: '/septic-pumping-cookeville-tn/', blurb: 'usually the reason the tank needed finding' },
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'worth pairing once access is established' },
+    { label: 'Septic Maintenance Guide', href: '/septic-maintenance/', blurb: 'keep records so this only has to happen once' },
+  ]}
+>
+  <h2>Why Tank Location Becomes a Mystery</h2>
+  <p>
+    Lids get buried under decades of topsoil and landscaping. Properties change hands and the
+    paperwork doesn’t follow. Additions and decks get built over what used to be open lawn. It is
+    genuinely common for a new owner in the Cookeville area — especially on older rural property —
+    to have no idea where the tank sits. Nothing is wrong with the system; it has just gone quiet.
+  </p>
+
+  <h2>Start With Records and Memory</h2>
+  <ul>
+    <li>County or state septic records, where they exist for the installation era</li>
+    <li>Previous owners, long-time neighbors, or the builder</li>
+    <li>Old service receipts, closing documents or home-inspection reports</li>
+    <li>The direction the main sewer line leaves the house (visible at the cleanout or in a crawlspace)</li>
+  </ul>
+
+  <h2>How Providers Locate Tanks</h2>
+  <ul>
+    <li><strong>Line tracing</strong> — following the sewer line from the house toward the tank</li>
+    <li><strong>Probing</strong> — systematically checking likely areas with a soil probe</li>
+    <li><strong>Electronic locating</strong> — a small flushable transmitter tracked from the surface</li>
+    <li><strong>Surface reading</strong> — depressions, mounds, and grass that behaves differently over lids</li>
+  </ul>
+  <p>Availability and methods vary; some pumping providers include locating, others treat it as separate work.</p>
+
+  <h2>Preparing the Property</h2>
+  <ul>
+    <li>Clear access to the area between the house and the suspected tank zone</li>
+    <li>Know where your water line and well (if any) run, to the extent possible</li>
+    <li>Share anything you have — photos, sketches, memories of past service visits</li>
+  </ul>
+  <p>
+    Once the tank is found, record the location properly — measurements from two fixed corners of
+    the house beat memory every time. The
+    <a href="/septic-maintenance/">septic maintenance guide</a> covers what else is worth keeping
+    on file.
+  </p>
+</ServicePage>

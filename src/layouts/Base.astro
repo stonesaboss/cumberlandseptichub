@@ -1,0 +1,141 @@
+---
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import MobileStickyBar from '@components/MobileStickyBar.astro';
+import { SITE_NAME } from '@data/site';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+  ogImage?: string;
+  /** Additional JSON-LD blocks for this page. */
+  schema?: Record<string, unknown>[];
+}
+
+const { title, description, noindex = false, ogImage = '/images/og-default.png', schema = [] } = Astro.props;
+
+const siteUrl = (Astro.site?.href ?? 'https://cumberlandseptichub.com/').replace(/\/$/, '');
+const canonical = `${siteUrl}${Astro.url.pathname}`;
+
+// Cloudflare Pages preview deployments must never be indexed.
+const isPreview =
+  typeof process !== 'undefined' &&
+  !!process.env.CF_PAGES_BRANCH &&
+  process.env.CF_PAGES_BRANCH !== 'main';
+const robotsNoindex = noindex || isPreview;
+
+const analyticsId = import.meta.env.ANALYTICS_ID ?? '';
+
+const baseSchema: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${siteUrl}/#organization`,
+    name: SITE_NAME,
+    url: `${siteUrl}/`,
+    logo: `${siteUrl}/logos/emblem-512.png`,
+    description:
+      'Cumberland Septic Hub is an independent referral resource that helps property owners in Cookeville, Crossville and the Upper Cumberland region of Tennessee request septic pumping, cleaning, repair, inspection and installation from independent local providers.',
+    areaServed: [
+      'Cookeville TN',
+      'Putnam County TN',
+      'Crossville TN',
+      'Cumberland County TN',
+      'Sparta TN',
+      'Livingston TN',
+      'Smithville TN',
+      'Upper Cumberland TN',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${siteUrl}/#website`,
+    name: SITE_NAME,
+    url: `${siteUrl}/`,
+    publisher: { '@id': `${siteUrl}/#organization` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    description,
+    url: canonical,
+    isPartOf: { '@id': `${siteUrl}/#website` },
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {robotsNoindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    {baseSchema.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
+    {schema.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
+
+    <meta name="generator" content={Astro.generator} />
+
+    {analyticsId && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`}></script>
+        <script is:inline define:vars={{ analyticsId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', analyticsId);
+        </script>
+      </>
+    )}
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <MobileStickyBar />
+    <script>
+      // Configurable click events (phone + CTA clicks). No personal data is sent.
+      declare global {
+        interface Window {
+          dataLayer?: Record<string, unknown>[];
+        }
+      }
+      document.addEventListener('click', (e) => {
+        const el = (e.target as HTMLElement).closest<HTMLElement>('[data-analytics]');
+        if (el?.dataset.analytics) {
+          window.dataLayer?.push({ event: el.dataset.analytics });
+        }
+      });
+    </script>
+  </body>
+</html>

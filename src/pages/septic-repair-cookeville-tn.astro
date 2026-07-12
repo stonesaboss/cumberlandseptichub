@@ -1,0 +1,91 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'My alarm is sounding — what does that usually mean?',
+    answer:
+      'Alarms on pumped or aerated systems typically indicate high water in a chamber, a pump that is not running, or a treatment component fault. Silencing the alarm does not fix the cause. Reduce water use and request an evaluation; note the alarm in the form.',
+  },
+  {
+    question: 'The backup came back a week after pumping. Is that a repair issue?',
+    answer:
+      'Very likely. A tank refills with liquid within days of pumping — that is normal — but sewage backing up again quickly points to a blockage, a failed component or a drain field that can no longer accept water. Pumping again usually will not change the outcome.',
+  },
+  {
+    question: 'Can anyone diagnose the problem over the phone or from this website?',
+    answer:
+      'No. Symptoms overlap too much — a full tank, a crushed pipe and a saturated drain field can all look like “slow drains.” This website cannot diagnose your system; a provider needs to evaluate the property before the cause and the repair can be identified.',
+  },
+  {
+    question: 'When is replacement more practical than repair?',
+    answer:
+      'When major components have reached end of life, the drain field has failed, or repeated repairs no longer hold. That decision depends on an on-site evaluation, system age, site conditions and applicable requirements — not on a website checklist.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Repair in Cookeville, TN"
+  description="Request septic system repair in Cookeville, TN for backups, alarms, pump failures, damaged baffles and pipes, distribution problems and drain-field symptoms."
+  h1="Septic System Repair in Cookeville, TN"
+  breadcrumbLabel="Septic Repair — Cookeville"
+  serviceName="Septic System Repair"
+  areaServed="Cookeville and Putnam County, Tennessee"
+  intro="Recurring backups, alarms, odors and wet ground are the system telling you something is wrong. Describe the symptoms and the property, and the request can be matched with an independent local repair provider for evaluation."
+  faqs={faqs}
+  formHeading="Request Septic Repair"
+  related={[
+    { label: 'Drain-Field Repair in Cookeville', href: '/drain-field-repair-cookeville-tn/', blurb: 'when symptoms center on the field rather than the tank' },
+    { label: 'Emergency Septic Service in Cookeville', href: '/emergency-septic-service-cookeville-tn/', blurb: 'for active backups and overflows' },
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'for a documented evaluation before repair decisions' },
+  ]}
+>
+  <h2>What Septic Repair Can Involve</h2>
+  <p>
+    A septic system is more than a tank. Wastewater travels from the house through an inlet line
+    into the tank, past baffles that hold back solids, sometimes through a pump or distribution
+    box, and out into drain-field lines. Any link in that chain can fail — and different failures
+    need different fixes. That is why evaluation comes before repair: the visible symptom rarely
+    identifies the broken part by itself.
+  </p>
+
+  <h2>Common Repair Situations in the Cookeville Area</h2>
+  <ul>
+    <li><strong>Recurring backups</strong> — blockages in the inlet or outlet lines, collapsed or root-invaded pipes, or a field that no longer accepts water</li>
+    <li><strong>System and pump alarms</strong> — failed effluent pumps, stuck floats, electrical faults or high-water conditions</li>
+    <li><strong>Damaged baffles</strong> — deteriorated inlet or outlet baffles that let solids escape toward the drain field</li>
+    <li><strong>Broken or settled pipes</strong> — driven-over lines, shifting soil, aging materials</li>
+    <li><strong>Distribution problems</strong> — a tilted or clogged distribution box sending all flow to one field line</li>
+    <li><strong>Drain-field symptoms</strong> — surfacing wastewater and soggy ground, covered in more depth on the <a href="/drain-field-repair-cookeville-tn/">drain-field repair page</a></li>
+  </ul>
+
+  <h2>Evaluation Before Repair</h2>
+  <p>
+    A provider will typically want to open the tank, check liquid levels, look at baffles and
+    listen to how the system responds to water. High liquid above the outlet suggests trouble
+    downstream; low liquid may point at a leak. This step matters because paying to fix the wrong
+    component is the most expensive kind of repair. No diagnosis on this website — or any website —
+    substitutes for that on-site evaluation.
+  </p>
+
+  <h2>Repair or Replace?</h2>
+  <p>
+    Some failures are contained and fixable: a baffle, a pump, a section of pipe, a distribution
+    box. Others — a collapsed tank or an exhausted drain field — push the conversation toward
+    partial or full replacement, which involves site evaluation and applicable approvals. If a
+    provider recommends replacement, the
+    <a href="/septic-installation-cookeville-tn/">septic installation page</a> covers what that
+    process generally looks like in Putnam County.
+  </p>
+
+  <h2>What to Put in a Repair Request</h2>
+  <ul>
+    <li>The symptoms, when they started, and whether they are getting worse</li>
+    <li>Whether sewage is actively backing up right now</li>
+    <li>Any alarms — steady, intermittent, silenced</li>
+    <li>Service history: recent pumping, past repairs, system age if known</li>
+    <li>Property access and tank location details</li>
+  </ul>
+</ServicePage>

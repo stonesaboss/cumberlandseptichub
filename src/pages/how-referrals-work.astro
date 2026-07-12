@@ -1,0 +1,65 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import CtaBand from '@components/CtaBand.astro';
+import { REFERRAL_PROCESS_DISCLOSURE } from '@data/site';
+---
+
+<Base
+  title="How Referrals Work | Cumberland Septic Hub"
+  description="How septic service requests move from the Cumberland Septic Hub form to an independent local provider — review, matching, provider contact and service terms."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'How Referrals Work' }]} />
+      <h1>How Referrals Work</h1>
+      <p>What happens between “Send Septic Service Request” and a provider in your driveway.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container prose" style="max-width:52rem;">
+      <h2>Step 1 — You describe the property and problem</h2>
+      <p>
+        The <a href="/request-service/">request form</a> collects the property location, the
+        service needed, current symptoms, whether sewage is actively backing up, what you know
+        about the tank, and how to reach you. Better detail produces better matches — a request
+        that says “tank behind the barn, lids buried, last pumped unknown” tells a provider far
+        more than “need pumping.”
+      </p>
+
+      <h2>Step 2 — The request is reviewed</h2>
+      <p>
+        Submitted information is reviewed to determine what kind of local provider fits: a pumping
+        truck for routine service, repair capability for failures and alarms, installation
+        capability for new systems, or inspection service for transactions. Urgent flags are
+        noted.
+      </p>
+
+      <h2>Step 3 — A provider may contact you</h2>
+      <p>
+        Where coverage and availability fit, the request may be shared with an independent local
+        septic provider, who may contact you to discuss access, availability, inspection needs,
+        scheduling and possible next steps. Submission does not guarantee a match, a response
+        time, or service.
+      </p>
+
+      <h2>Step 4 — The provider runs the engagement</h2>
+      <p>
+        From first contact onward, the relationship is between you and the provider. The provider
+        independently determines pricing, qualifications, availability, scope, warranties and
+        service terms. Cumberland Septic Hub is not a party to that engagement and does not set,
+        collect or guarantee any of its terms.
+      </p>
+
+      <h2>The disclosure, in full</h2>
+      <p class="disclosure">{REFERRAL_PROCESS_DISCLOSURE}</p>
+      <p>
+        See also the <a href="/referral-disclosure/">referral disclosure</a> and
+        <a href="/privacy-policy/">privacy policy</a> for how submitted information is handled.
+      </p>
+    </div>
+  </div>
+
+  <CtaBand />
+</Base>

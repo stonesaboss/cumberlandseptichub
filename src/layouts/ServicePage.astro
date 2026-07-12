@@ -1,0 +1,129 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import LeadForm from '@components/LeadForm.astro';
+import FaqAccordion from '@components/FaqAccordion.astro';
+import CtaBand from '@components/CtaBand.astro';
+import type { Faq } from '@data/site';
+import { PHONE_DISPLAY, PHONE_TEL } from '@data/site';
+
+interface RelatedLink {
+  label: string;
+  href: string;
+  blurb?: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  eyebrow?: string;
+  intro: string;
+  breadcrumbLabel: string;
+  serviceName: string;
+  areaServed?: string;
+  faqs?: Faq[];
+  faqHeading?: string;
+  related?: RelatedLink[];
+  formHeading?: string;
+}
+
+const {
+  title,
+  description,
+  h1,
+  eyebrow = 'Upper Cumberland Septic Service',
+  intro,
+  breadcrumbLabel,
+  serviceName,
+  areaServed = 'Upper Cumberland, Tennessee',
+  faqs = [],
+  faqHeading = 'Frequently Asked Questions',
+  related = [],
+  formHeading = 'Request Septic Service',
+} = Astro.props;
+
+const siteUrl = (Astro.site?.href ?? 'https://cumberlandseptichub.com/').replace(/\/$/, '');
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: serviceName,
+  serviceType: serviceName,
+  areaServed,
+  url: `${siteUrl}${Astro.url.pathname}`,
+  provider: { '@id': `${siteUrl}/#organization` },
+  description,
+};
+---
+
+<Base title={title} description={description} schema={[serviceSchema]}>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: breadcrumbLabel }]} />
+      <span class="eyebrow">{eyebrow}</span>
+      <h1>{h1}</h1>
+      <p>{intro}</p>
+      <div class="page-hero__actions">
+        <a href="#service-form" class="btn btn--green" data-analytics="hero-request-cta">Request Septic Service</a>
+        <a href={`tel:${PHONE_TEL}`} class="btn btn--outline-light" data-analytics="hero-phone-click">Call {PHONE_DISPLAY}</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container svc-layout">
+      <article class="prose">
+        <slot />
+
+        {related.length > 0 && (
+          <section class="related">
+            <h2>Related Services and Areas</h2>
+            <ul class="related__list">
+              {related.map((link) => (
+                <li>
+                  <a href={link.href}>{link.label}</a>
+                  {link.blurb && <span> — {link.blurb}</span>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <p class="disclosure" style="margin-top:2rem;">
+          Cumberland Septic Hub is an independent referral service. Requests may be shared with an
+          independent local septic provider, and the provider determines availability,
+          qualifications, pricing and service terms. Read the full
+          <a href="/referral-disclosure/">referral disclosure</a>.
+        </p>
+      </article>
+
+      <aside class="svc-form-col" id="service-form" aria-label="Service request form">
+        <LeadForm heading={formHeading} />
+      </aside>
+    </div>
+  </div>
+
+  {faqs.length > 0 && (
+    <section class="section section--pale" aria-labelledby="faq-heading">
+      <div class="container">
+        <h2 id="faq-heading">{faqHeading}</h2>
+        <FaqAccordion faqs={faqs} withSchema />
+      </div>
+    </section>
+  )}
+
+  <CtaBand />
+</Base>
+
+<style>
+  .page-hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .related__list li {
+    margin-bottom: 0.5rem;
+  }
+</style>

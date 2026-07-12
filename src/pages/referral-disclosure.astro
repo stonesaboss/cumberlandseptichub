@@ -1,0 +1,50 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import { FOOTER_DISCLOSURE, SITE_NAME } from '@data/site';
+---
+
+<Base
+  title="Referral Disclosure | Cumberland Septic Hub"
+  description="Full referral disclosure for Cumberland Septic Hub — an independent referral service connecting Upper Cumberland property owners with independent local septic providers."
+>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Referral Disclosure' }]} />
+      <h1>Referral Disclosure</h1>
+      <p>The plain-language version of what {SITE_NAME} is and is not.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container prose" style="max-width:52rem;">
+      <p class="disclosure" style="font-size:1.05rem;">{FOOTER_DISCLOSURE}</p>
+
+      <h2>What that means in practice</h2>
+      <ul>
+        <li>{SITE_NAME} is an independent referral and information website.</li>
+        <li>It does not directly perform septic pumping, cleaning, repair, inspection or installation unless expressly stated.</li>
+        <li>It does not employ septic technicians, own service vehicles or equipment, hold contractor licenses or certifications, or operate a physical service office.</li>
+        <li>Service requests submitted through the website may be shared with one or more independent local septic providers for the purpose of responding to the inquiry.</li>
+        <li>Any provider who contacts you operates their own independent business. Their availability, qualifications, licensing, insurance, pricing, scheduling, warranties and service terms are theirs alone.</li>
+        <li>Submitting a request does not guarantee provider availability, a response, a response time, pricing or acceptance of the work.</li>
+        <li>Website content is general information, not a diagnosis of any specific system and not professional, legal or regulatory advice.</li>
+      </ul>
+
+      <h2>Your choices</h2>
+      <p>
+        You are never obligated to proceed with any provider who contacts you. Property owners
+        should evaluate providers directly — ask about licensing and insurance where applicable,
+        scope, pricing and terms — before agreeing to work.
+      </p>
+
+      <h2>Questions</h2>
+      <p>
+        Questions about this disclosure or how a request was handled can be raised through the
+        <a href="/contact/">contact page</a>. See also
+        <a href="/how-referrals-work/">how referrals work</a> and the
+        <a href="/privacy-policy/">privacy policy</a>.
+      </p>
+    </div>
+  </div>
+</Base>

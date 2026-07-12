@@ -1,0 +1,92 @@
+---
+import ServicePage from '@layouts/ServicePage.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'How often does a grease trap need pumping?',
+    answer:
+      'Frequency depends on trap size, kitchen volume, menu and any requirements that apply to the business. Many operations pump on a fixed schedule; a provider can help establish one based on how quickly the trap fills.',
+  },
+  {
+    question: 'Is an indoor trap handled differently than an outdoor interceptor?',
+    answer:
+      'Often, yes. Small under-sink traps and large in-ground interceptors involve different equipment and access. Say which type the facility has — or share a photo — in the request.',
+  },
+  {
+    question: 'Do I need service records for my grease trap?',
+    answer:
+      'Many food-service businesses are expected to keep pumping and maintenance documentation. Confirm current requirements with the relevant local authority, and ask providers what documentation they supply with each service.',
+  },
+  {
+    question: 'Can the same request cover the building’s septic system?',
+    answer:
+      'Submit them together if both need attention, but note each clearly. Grease-trap service and septic service are distinct jobs, and not every provider offers both.',
+  },
+];
+---
+
+<ServicePage
+  title="Grease-Trap Pumping in Cookeville, TN"
+  description="Request commercial grease-trap pumping in Cookeville, TN for restaurants, commercial kitchens and food-service facilities. Access, scheduling and waste handling."
+  h1="Commercial Grease-Trap Pumping in Cookeville, TN"
+  eyebrow="Commercial Food-Service"
+  breadcrumbLabel="Grease-Trap Pumping — Cookeville"
+  serviceName="Commercial Grease-Trap Pumping"
+  areaServed="Cookeville and Putnam County, Tennessee"
+  intro="Restaurants, commercial kitchens and food-service facilities in the Cookeville area can request grease-trap and interceptor pumping, maintenance scheduling and service documentation from independent local providers."
+  faqs={faqs}
+  formHeading="Request Grease-Trap Service"
+  related={[
+    { label: 'Commercial Septic Service', href: '/commercial-septic-service/', blurb: 'for the building’s wastewater system itself' },
+    { label: 'Upper Cumberland Service Area', href: '/service-area/' },
+    { label: 'Request Service', href: '/request-service/' },
+  ]}
+>
+  <h2>Who This Service Is For</h2>
+  <ul>
+    <li>Restaurants and cafés</li>
+    <li>Commercial and institutional kitchens — schools, care facilities, churches with kitchens</li>
+    <li>Food trucks and commissary kitchens with shared interceptors</li>
+    <li>Grocery, deli and catering operations</li>
+  </ul>
+  <p>
+    Grease traps and interceptors capture fats, oils and grease before they reach the sewer or a
+    septic system. When a trap fills past its working capacity, grease passes through — and
+    downstream clogs, odors and compliance problems follow. This is commercial work, separate from
+    residential septic pumping, and not every septic provider offers it.
+  </p>
+
+  <h2>Signs a Trap Needs Service</h2>
+  <ul>
+    <li>Kitchen drains running slow or backing up</li>
+    <li>Persistent grease odors near floor drains or the trap</li>
+    <li>Visible grease layer at or near the trap’s capacity</li>
+    <li>Longer-than-usual gaps since the last documented pump-out</li>
+  </ul>
+
+  <h2>Access and Scheduling</h2>
+  <p>
+    Providers will want to know where the trap or interceptor sits (indoor under-sink, outdoor
+    in-ground), lid access, parking for the truck, and the hours service can happen without
+    disrupting the kitchen. Many food-service businesses schedule recurring service at a set
+    interval so the trap never reaches capacity between visits.
+  </p>
+
+  <h2>Waste Handling and Documentation</h2>
+  <p>
+    Collected grease is a regulated waste stream that providers haul and dispose of through
+    appropriate channels. Ask what documentation comes with each service — many operations keep a
+    manifest or service log on site. Confirm any documentation requirements that apply to your
+    business with the relevant local authority.
+  </p>
+
+  <h2>What to Include in a Request</h2>
+  <ul>
+    <li>Business type and location in the Cookeville area</li>
+    <li>Trap or interceptor type and approximate size, if known</li>
+    <li>Last service date, if known</li>
+    <li>Preferred service window (before opening, after close)</li>
+    <li>Whether this is urgent (backup in progress) or scheduled maintenance</li>
+  </ul>
+</ServicePage>

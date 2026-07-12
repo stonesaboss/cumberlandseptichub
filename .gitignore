@@ -1,0 +1,31 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# environment & secrets — never commit
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+!.env.example
+
+# wrangler local state
+.wrangler/
+
+# logs
+npm-debug.log*
+*.log
+
+# editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# lead data must never live in the repository
+leads/
+uploads/
