@@ -38,11 +38,15 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@data/site';
 </Base>
 
 <script>
-  // Show the reference number passed by the form redirect. Thank-you page
-  // views are tracked without any personal data.
-  const params = new URLSearchParams(window.location.search);
-  const ref = params.get('ref');
-  if (ref && /^CSH-[A-Z2-9]{6}$/.test(ref)) {
+  // Show the reference number passed by the form redirect — either as a
+  // path segment (/thank-you/{leadId}, served via a 200 rewrite in
+  // public/_redirects) or as ?ref=. Thank-you page views are tracked
+  // without any personal data.
+  const pathRef = decodeURIComponent(
+    window.location.pathname.replace(/^\/thank-you\/?/, '').replace(/\/$/, ''),
+  );
+  const ref = pathRef || new URLSearchParams(window.location.search).get('ref');
+  if (ref && /^CSH-[A-Z0-9-]{4,30}$/.test(ref)) {
     const wrap = document.querySelector<HTMLElement>('[data-thanks-ref]');
     const value = document.querySelector<HTMLElement>('[data-thanks-ref-value]');
     if (wrap && value) {

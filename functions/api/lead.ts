@@ -1,112 +1,116 @@
-/// <reference types="@cloudflare/workers-types" />
-
 /**
- * POST /api/lead — server-validated lead intake for Cumberland Septic Hub.
+ * POST /api/lead — server-side lead intake for the septic service-request form.
  *
- * Validates every field server-side, verifies Cloudflare Turnstile,
- * delivers the lead to a configurable webhook and/or email provider,
- * and optionally stores metadata in D1 and photos in a private R2 bucket.
- *
- * Never returns secrets or stack traces. Never logs full personal data.
+ * Mirrors the cumberlandlandclearing reference architecture: validates every
+ * field, verifies Turnstile server-side, stores photo uploads in a private R2
+ * bucket, optionally persists to D1, then delivers the lead JSON to
+ * LEAD_WEBHOOK_URL. Secrets never reach the browser.
  */
 
 interface Env {
+  // Optional bindings — endpoint degrades gracefully without them.
+  LEADS_DB?: D1Database;
+  LEAD_UPLOADS?: R2Bucket;
+
+  // Secrets / vars (set in Cloudflare Pages settings or .dev.vars locally)
   TURNSTILE_SECRET_KEY?: string;
   LEAD_WEBHOOK_URL?: string;
   LEAD_WEBHOOK_SECRET?: string;
   FORM_RECIPIENT_EMAIL?: string;
   EMAIL_API_KEY?: string;
-  LEADS_DB?: D1Database;
-  LEAD_UPLOADS?: R2Bucket;
+  DEV_MODE?: string;
   CF_PAGES_BRANCH?: string;
 }
 
 const MAX_FILES = 4;
 const MAX_FILE_BYTES = 10 * 1024 * 1024;
-const MAX_TOTAL_UPLOAD_BYTES = 25 * 1024 * 1024;
-const ALLOWED_MIME = new Set(['image/jpeg', 'image/png', 'image/heic', 'image/heif']);
-const ALLOWED_EXT = /\.(jpe?g|png|heic)$/i;
+const MAX_TOTAL_BYTES = 25 * 1024 * 1024;
 
-const REQUIRED_TEXT_FIELDS = [
-  'full_name',
-  'phone',
-  'email',
-  'property_location',
-  'city_or_county',
-  'property_type',
-  'service_needed',
-  'symptoms',
-  'active_backup',
-  'tank_location_known',
-  'last_pumped',
-  'preferred_contact_time',
-  'additional_details',
-] as const;
-
-const OPTIONAL_TEXT_FIELDS = [
-  'occupancy',
-  'alarm_active',
-  'real_estate_involved',
-  'service_timing',
-  'source_page',
-] as const;
-
-const FIELD_MAX_LENGTH: Record<string, number> = {
+/** Required text fields with max lengths. Options mirror src/data/site.ts. */
+const REQUIRED_FIELDS: Record<string, number> = {
   full_name: 120,
   phone: 30,
   email: 200,
   property_location: 250,
   city_or_county: 120,
+  property_type: 30,
+  service_needed: 60,
+  symptoms: 60,
+  active_backup: 10,
+  tank_location_known: 40,
+  last_pumped: 40,
+  preferred_contact_time: 30,
   additional_details: 3000,
-  occupancy: 60,
-  source_page: 300,
 };
 
-const json = (body: Record<string, unknown>, status = 200) =>
-  new Response(JSON.stringify(body), {
+/** Optional fields (sent as empty strings when unset). */
+const OPTIONAL_FIELDS: Record<string, number> = {
+  alarm_active: 20,
+  occupancy: 60,
+  real_estate_involved: 10,
+  service_timing: 60,
+};
+
+function json(status: number, body: Record<string, unknown>): Response {
+  return new Response(JSON.stringify(body), {
     status,
     headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
   });
+}
 
-const sanitize = (value: string, maxLength = 500): string =>
-  value
-    .replace(/[\u0000-\u001f\u007f]/g, '')
+function sanitize(value: string, max: number): string {
+  // Strip control chars, collapse whitespace runs, enforce length.
+  return value
+    .split('').filter((c) => c.charCodeAt(0) >= 32 && c.charCodeAt(0) !== 127).join('')
+    .replace(/\s+/g, ' ')
     .trim()
-    .slice(0, maxLength);
+    .slice(0, max);
+}
 
-const normalizeEmail = (email: string): string => email.trim().toLowerCase();
+/**
+ * Normalize a possibly multi-valued form field (radio groups / duplicated
+ * inputs) into a single sanitized string — last non-empty value wins.
+ */
+function single(form: FormData, name: string, max: number): string {
+  const values = form
+    .getAll(name)
+    .filter((v): v is string => typeof v === 'string' && v.trim() !== '');
+  return values.length ? sanitize(values[values.length - 1] as string, max) : '';
+}
 
-const normalizePhone = (phone: string): string => phone.replace(/[^\d+()\-.\sx]/g, '').trim();
+function normalizePhone(raw: string): string | null {
+  const digits = raw.replace(/\D/g, '');
+  if (digits.length < 10 || digits.length > 15) return null;
+  return digits.length === 10 ? `+1${digits}` : `+${digits}`;
+}
 
-const isValidEmail = (email: string): boolean =>
-  /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) && email.length <= 200;
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]{1,64}@[^\s@]+\.[^\s@]{2,}$/.test(email);
+}
 
-const isValidPhone = (phone: string): boolean => {
-  const digits = phone.replace(/\D/g, '');
-  return digits.length >= 7 && digits.length <= 15;
-};
+/** Basic magic-byte check for JPEG/PNG/HEIC. Returns the safe extension or null. */
+function sniffImage(bytes: Uint8Array): string | null {
+  if (bytes.length > 3 && bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff) return 'jpg';
+  if (
+    bytes.length > 8 &&
+    bytes[0] === 0x89 && bytes[1] === 0x50 && bytes[2] === 0x4e && bytes[3] === 0x47
+  ) {
+    return 'png';
+  }
+  // HEIC/HEIF: ISO BMFF "ftyp" box with heic/heix/mif1... major brand
+  if (bytes.length > 12) {
+    const ftyp = String.fromCharCode(...bytes.subarray(4, 8));
+    const brand = String.fromCharCode(...bytes.subarray(8, 12)).toLowerCase();
+    if (ftyp === 'ftyp' && /^(heic|heix|hevc|heim|heis|mif1|msf1)/.test(brand)) return 'heic';
+  }
+  // Everything else (executables, svg, html, archives...) is rejected.
+  return null;
+}
 
-const makeReference = (): string => {
-  const chars = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
-  const bytes = crypto.getRandomValues(new Uint8Array(6));
-  let suffix = '';
-  for (const b of bytes) suffix += chars[b % chars.length];
-  return `CSH-${suffix}`;
-};
-
-async function verifyTurnstile(env: Env, token: string, ip: string | null): Promise<boolean> {
-  // If Turnstile is not configured (local development), skip verification.
-  // Production must set TURNSTILE_SECRET_KEY — see README.
-  if (!env.TURNSTILE_SECRET_KEY) return true;
-  if (!token) return false;
-
-  const body = new URLSearchParams({
-    secret: env.TURNSTILE_SECRET_KEY,
-    response: token,
-  });
-  if (ip) body.set('remoteip', ip);
-
+async function verifyTurnstile(secret: string, token: string, ip: string | null): Promise<boolean> {
   try {
+    const body = new URLSearchParams({ secret, response: token });
+    if (ip) body.set('remoteip', ip);
     const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
       body,
@@ -118,172 +122,139 @@ async function verifyTurnstile(env: Env, token: string, ip: string | null): Prom
   }
 }
 
-async function storeUploads(
-  env: Env,
-  files: File[],
-  reference: string,
-): Promise<string[]> {
-  if (!env.LEAD_UPLOADS || files.length === 0) return [];
-  const keys: string[] = [];
-  for (const file of files) {
-    // Randomized object name — never trust the original filename.
-    const ext = (file.name.match(ALLOWED_EXT)?.[0] ?? '.jpg').toLowerCase();
-    const key = `leads/${reference}/${crypto.randomUUID()}${ext}`;
-    await env.LEAD_UPLOADS.put(key, file.stream(), {
-      httpMetadata: { contentType: file.type || 'application/octet-stream' },
-    });
-    keys.push(key);
-  }
-  return keys;
-}
-
 export const onRequest: PagesFunction<Env> = async (context) => {
+  // Accept POST only; reject every other method explicitly.
+  if (context.request.method !== 'POST') {
+    return json(405, { ok: false, error: 'Method not allowed.' });
+  }
   const { request, env } = context;
+  const devMode =
+    env.DEV_MODE === 'true' || (!!env.CF_PAGES_BRANCH && env.CF_PAGES_BRANCH !== 'main');
 
-  if (request.method !== 'POST') {
-    return json({ ok: false, error: 'Method not allowed.' }, 405);
-  }
-
-  let formData: FormData;
+  let form: FormData;
   try {
-    formData = await request.formData();
+    form = await request.formData();
   } catch {
-    return json({ ok: false, error: 'Malformed request.', code: 'malformed' }, 400);
+    return json(400, { ok: false, error: 'The form could not be read. Please try again.' });
   }
 
-  // --- validate required fields ---
-  const fields: Record<string, string> = {};
-  const missing: string[] = [];
+  // Honeypot: silently accept but do nothing.
+  if (single(form, 'website', 200) !== '') {
+    return json(200, { ok: true, leadId: 'CSH-OK' });
+  }
 
-  for (const name of REQUIRED_TEXT_FIELDS) {
-    const raw = formData.get(name);
-    const value = typeof raw === 'string' ? sanitize(raw, FIELD_MAX_LENGTH[name] ?? 200) : '';
-    if (!value) missing.push(name);
+  // ── Validate text fields ──
+  const fields: Record<string, string> = {};
+  for (const [name, max] of Object.entries(REQUIRED_FIELDS)) {
+    const value = single(form, name, max);
+    if (!value) {
+      return json(422, { ok: false, error: `Missing required field: ${name.replace(/_/g, ' ')}.` });
+    }
     fields[name] = value;
   }
-
-  for (const name of OPTIONAL_TEXT_FIELDS) {
-    const raw = formData.get(name);
-    fields[name] = typeof raw === 'string' ? sanitize(raw, FIELD_MAX_LENGTH[name] ?? 200) : '';
+  for (const [name, max] of Object.entries(OPTIONAL_FIELDS)) {
+    fields[name] = single(form, name, max);
   }
 
-  if (formData.get('consent') !== 'yes') {
-    return json({ ok: false, error: 'Consent is required.', code: 'consent' }, 400);
+  const phone = normalizePhone(fields.phone);
+  if (!phone) return json(422, { ok: false, error: 'Please provide a valid phone number.' });
+  if (!isValidEmail(fields.email)) {
+    return json(422, { ok: false, error: 'Please provide a valid email address.' });
   }
 
-  if (missing.length > 0) {
-    return json(
-      { ok: false, error: 'Required fields are missing.', code: 'validation', fields: missing },
-      400,
+  if (form.get('consent') !== 'yes') {
+    return json(422, { ok: false, error: 'Consent is required to submit the request.' });
+  }
+
+  const sourcePage = single(form, 'source_page', 200);
+
+  // ── Turnstile (reject 400 on failure) ──
+  if (env.TURNSTILE_SECRET_KEY) {
+    const token = String(form.get('cf-turnstile-response') ?? '');
+    const ip = request.headers.get('CF-Connecting-IP');
+    if (!token || !(await verifyTurnstile(env.TURNSTILE_SECRET_KEY, token, ip))) {
+      return json(400, {
+        ok: false,
+        code: 'turnstile',
+        error: 'Spam check failed or expired. Please complete the verification and try again.',
+      });
+    }
+  } else if (!devMode) {
+    console.warn(
+      'lead: TURNSTILE_SECRET_KEY not configured on production — submission accepted without verification',
     );
   }
 
-  fields.email = normalizeEmail(fields.email);
-  fields.phone = normalizePhone(fields.phone);
+  // ── Lead identity ──
+  const leadId = `CSH-${Date.now().toString(36).toUpperCase()}-${crypto.randomUUID().slice(0, 6).toUpperCase()}`;
+  const createdAt = new Date().toISOString();
 
-  if (!isValidEmail(fields.email)) {
-    return json({ ok: false, error: 'Invalid email address.', code: 'validation', fields: ['email'] }, 400);
-  }
-  if (!isValidPhone(fields.phone)) {
-    return json({ ok: false, error: 'Invalid phone number.', code: 'validation', fields: ['phone'] }, 400);
-  }
-
-  // --- validate uploads ---
-  // workers-types declares getAll() as string[]; at runtime multipart file
-  // parts arrive as File objects, so narrow via instanceof.
-  const uploads = (formData.getAll('photos') as unknown as (File | string)[]).filter(
+  // ── File uploads → private R2 ──
+  const files = (form.getAll('photos') as unknown as (File | string)[]).filter(
     (f): f is File => typeof f !== 'string' && f instanceof File && f.size > 0,
   );
-
-  if (uploads.length > MAX_FILES) {
-    return json({ ok: false, error: 'Too many photos.', code: 'validation', fields: ['photos'] }, 400);
+  if (files.length > MAX_FILES) {
+    return json(422, { ok: false, error: `Please upload at most ${MAX_FILES} photos.` });
   }
-  let totalBytes = 0;
-  for (const file of uploads) {
-    totalBytes += file.size;
-    const typeOk = ALLOWED_MIME.has(file.type) || ALLOWED_EXT.test(file.name);
-    if (file.size > MAX_FILE_BYTES || totalBytes > MAX_TOTAL_UPLOAD_BYTES || !typeOk) {
-      return json(
-        { ok: false, error: 'Photo uploads must be JPG, PNG or HEIC under 10 MB.', code: 'validation', fields: ['photos'] },
-        400,
-      );
+  const totalBytes = files.reduce((sum, f) => sum + f.size, 0);
+  if (files.some((f) => f.size > MAX_FILE_BYTES) || totalBytes > MAX_TOTAL_BYTES) {
+    return json(422, { ok: false, error: 'Photos must be 10 MB or less each (25 MB total).' });
+  }
+
+  const uploadRefs: string[] = [];
+  for (const file of files) {
+    const bytes = new Uint8Array(await file.arrayBuffer());
+    const ext = sniffImage(bytes);
+    if (!ext) {
+      return json(422, { ok: false, error: 'Only JPG, PNG and HEIC photos are supported.' });
+    }
+    if (env.LEAD_UPLOADS) {
+      // Randomized object name; visitor filename never used.
+      const key = `${devMode ? 'test/' : ''}${leadId}/${crypto.randomUUID()}.${ext}`;
+      try {
+        await env.LEAD_UPLOADS.put(key, bytes, {
+          httpMetadata: {
+            contentType:
+              ext === 'png' ? 'image/png' : ext === 'heic' ? 'image/heic' : 'image/jpeg',
+          },
+        });
+        uploadRefs.push(key);
+      } catch (err) {
+        console.error(`lead ${leadId}: R2 upload failed`, err);
+        // Photos are optional context — do not fail the whole lead over storage.
+      }
     }
   }
 
-  // --- Turnstile ---
-  const token = formData.get('cf-turnstile-response');
-  const ip = request.headers.get('CF-Connecting-IP');
-  const human = await verifyTurnstile(env, typeof token === 'string' ? token : '', ip);
-  if (!human) {
-    return json({ ok: false, error: 'Verification failed. Please try again.', code: 'turnstile' }, 400);
-  }
-
-  // --- assemble lead ---
-  const reference = makeReference();
-  const now = new Date().toISOString();
-  const isPreview = !!env.CF_PAGES_BRANCH && env.CF_PAGES_BRANCH !== 'main';
-
-  let uploadKeys: string[] = [];
-  try {
-    uploadKeys = await storeUploads(env, uploads, reference);
-  } catch {
-    // Photo storage is optional — the lead must never be lost because of it.
-    uploadKeys = [];
-  }
-
+  // Webhook payload — key set is a stable contract with the receiving
+  // automation; do not rename or remove keys without updating the consumer.
   const lead = {
-    reference,
-    created_at: now,
-    environment: isPreview ? 'preview-test' : 'production',
-    ...fields,
-    upload_references: uploadKeys,
+    leadId,
+    created_at: createdAt,
+    full_name: fields.full_name,
+    phone,
+    email: fields.email,
+    property_location: fields.property_location,
+    city_or_county: fields.city_or_county,
+    property_type: fields.property_type,
+    service_needed: fields.service_needed,
+    symptoms: fields.symptoms,
+    active_backup: fields.active_backup,
+    tank_location_known: fields.tank_location_known,
+    last_pumped: fields.last_pumped,
+    alarm_active: fields.alarm_active,
+    occupancy: fields.occupancy,
+    real_estate_involved: fields.real_estate_involved,
+    service_timing: fields.service_timing,
+    preferred_contact_time: fields.preferred_contact_time,
+    additional_details: fields.additional_details,
+    upload_references: uploadRefs,
+    source_page: sourcePage,
+    consent_recorded_at: createdAt,
+    test_submission: devMode,
   };
 
-  // --- deliver ---
-  let delivered = false;
-
-  if (env.LEAD_WEBHOOK_URL) {
-    try {
-      const res = await fetch(env.LEAD_WEBHOOK_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(env.LEAD_WEBHOOK_SECRET ? { 'X-Webhook-Secret': env.LEAD_WEBHOOK_SECRET } : {}),
-        },
-        body: JSON.stringify(lead),
-      });
-      delivered = res.ok;
-    } catch {
-      delivered = false;
-    }
-  }
-
-  if (env.FORM_RECIPIENT_EMAIL && env.EMAIL_API_KEY) {
-    try {
-      // Generic transactional-email delivery (Resend-compatible endpoint).
-      const res = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${env.EMAIL_API_KEY}`,
-        },
-        body: JSON.stringify({
-          from: 'Cumberland Septic Hub <leads@cumberlandseptichub.com>',
-          to: [env.FORM_RECIPIENT_EMAIL],
-          subject: `${lead.environment === 'preview-test' ? '[TEST] ' : ''}Septic lead ${reference} — ${fields.service_needed} (${fields.city_or_county})`,
-          text: Object.entries(lead)
-            .map(([k, v]) => `${k}: ${Array.isArray(v) ? v.join(', ') : v}`)
-            .join('\n'),
-        }),
-      });
-      delivered = delivered || res.ok;
-    } catch {
-      /* fall through to storage check */
-    }
-  }
-
-  // --- optional D1 storage ---
-  let stored = false;
+  // ── Optional D1 persistence (migrations/0001_create_leads.sql) ──
   if (env.LEADS_DB) {
     try {
       await env.LEADS_DB.prepare(
@@ -292,51 +263,97 @@ export const onRequest: PagesFunction<Env> = async (context) => {
           property_type, service_needed, symptoms, active_backup, tank_location_known,
           last_pumped, preferred_contact_time, additional_details, upload_references,
           source_page, consent_recorded_at, lead_status
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
       )
         .bind(
-          reference,
-          now,
-          fields.full_name,
-          fields.phone,
-          fields.email,
-          fields.property_location,
-          fields.city_or_county,
-          fields.property_type,
-          fields.service_needed,
-          fields.symptoms,
-          fields.active_backup,
-          fields.tank_location_known,
-          fields.last_pumped,
-          fields.preferred_contact_time,
-          fields.additional_details,
-          JSON.stringify(uploadKeys),
-          fields.source_page,
-          now,
-          'new',
+          leadId, createdAt, lead.full_name, lead.phone, lead.email,
+          lead.property_location, lead.city_or_county, lead.property_type,
+          lead.service_needed, lead.symptoms, lead.active_backup, lead.tank_location_known,
+          lead.last_pumped, lead.preferred_contact_time, lead.additional_details,
+          JSON.stringify(uploadRefs), lead.source_page, lead.consent_recorded_at,
+          devMode ? 'test' : 'new',
         )
         .run();
-      stored = true;
-    } catch {
-      stored = false;
+    } catch (err) {
+      console.error(`lead ${leadId}: D1 insert failed`, err);
+      // Continue — webhook delivery below is the primary channel.
     }
   }
 
-  const noDeliveryConfigured = !env.LEAD_WEBHOOK_URL && !(env.FORM_RECIPIENT_EMAIL && env.EMAIL_API_KEY);
+  // ── Delivery: webhook and/or email. Skipped in dev mode (safe local testing). ──
+  let delivered = false;
+  if (!devMode) {
+    if (env.LEAD_WEBHOOK_URL) {
+      try {
+        const res = await fetch(env.LEAD_WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(env.LEAD_WEBHOOK_SECRET ? { 'X-Webhook-Secret': env.LEAD_WEBHOOK_SECRET } : {}),
+          },
+          body: JSON.stringify(lead),
+        });
+        delivered = res.ok;
+        if (!res.ok) console.error(`lead ${leadId}: webhook returned ${res.status}`);
+      } catch (err) {
+        console.error(`lead ${leadId}: webhook delivery failed`, err);
+      }
+    }
 
-  if (!delivered && !stored && !noDeliveryConfigured) {
-    // Delivery was configured but every channel failed — never silently drop a lead.
-    console.error(`lead delivery failed: ${reference} (${fields.service_needed})`);
-    return json(
-      { ok: false, error: 'The request could not be delivered. Please try again or call instead.', code: 'delivery' },
-      502,
-    );
+    if (env.FORM_RECIPIENT_EMAIL && env.EMAIL_API_KEY) {
+      // Generic transactional-email delivery (Resend-compatible endpoint).
+      try {
+        const res = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${env.EMAIL_API_KEY}`,
+          },
+          body: JSON.stringify({
+            from: 'Cumberland Septic Hub <leads@cumberlandseptichub.com>',
+            to: [env.FORM_RECIPIENT_EMAIL],
+            subject: `Septic lead ${leadId} — ${lead.service_needed} (${lead.city_or_county})${lead.active_backup === 'Yes' ? ' [URGENT: active backup]' : ''}`,
+            text: [
+              `Lead ${leadId} (${createdAt})`,
+              `Name: ${lead.full_name}`,
+              `Phone: ${lead.phone}`,
+              `Email: ${lead.email}`,
+              `Location: ${lead.property_location} (${lead.city_or_county})`,
+              `Property type: ${lead.property_type}`,
+              `Service: ${lead.service_needed}`,
+              `Symptoms: ${lead.symptoms}`,
+              `Active backup: ${lead.active_backup} · Alarm: ${lead.alarm_active || 'n/a'}`,
+              `Tank location known: ${lead.tank_location_known} · Last pumped: ${lead.last_pumped}`,
+              `Occupancy: ${lead.occupancy || 'n/a'} · Real estate involved: ${lead.real_estate_involved || 'n/a'}`,
+              `Timing: ${lead.service_timing || 'n/a'} · Contact time: ${lead.preferred_contact_time}`,
+              `Details: ${lead.additional_details}`,
+              `Photos: ${uploadRefs.length ? uploadRefs.join(', ') : 'none'}`,
+              `Source page: ${lead.source_page}`,
+            ].join('\n'),
+          }),
+        });
+        delivered = delivered || res.ok;
+        if (!res.ok) console.error(`lead ${leadId}: email API returned ${res.status}`);
+      } catch (err) {
+        console.error(`lead ${leadId}: email delivery failed`, err);
+      }
+    }
+
+    // Never silently discard: if nothing delivered and nothing persisted, tell the visitor.
+    if (!delivered && !env.LEADS_DB) {
+      console.error(`lead ${leadId}: no delivery channel succeeded and no D1 configured`);
+      return json(502, {
+        ok: false,
+        error: 'The request could not be delivered right now. Please try again or call instead.',
+      });
+    }
+  } else {
+    console.log(`lead ${leadId}: TEST submission (dev mode) — delivery skipped`, {
+      service: lead.service_needed,
+      city: lead.city_or_county,
+      urgent: lead.active_backup,
+    });
   }
 
-  if (noDeliveryConfigured && !stored) {
-    // Local development fallback: log non-sensitive metadata only.
-    console.log(`[dev] lead received: ${reference} service=${fields.service_needed} area=${fields.city_or_county} urgent=${fields.active_backup}`);
-  }
-
-  return json({ ok: true, reference });
+  return json(200, { ok: true, leadId });
 };

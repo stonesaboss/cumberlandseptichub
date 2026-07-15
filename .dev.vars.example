@@ -1,0 +1,26 @@
+# Local development secrets for `wrangler pages dev` — copy to .dev.vars
+# (gitignored) and fill in real values. Never commit .dev.vars.
+#
+# Production equivalents are set as encrypted secrets in the Cloudflare
+# Pages dashboard (Settings → Environment variables → Secret).
+
+# Turnstile server-side verification. For local testing use Cloudflare's
+# test secret (always passes): 1x0000000000000000000000000000000AA
+# Leave unset to skip verification locally (DEV_MODE below also works).
+TURNSTILE_SECRET_KEY=
+
+# Webhook that receives the lead JSON payload (Zapier / Make / custom).
+# Point at a request-bin URL for local testing.
+LEAD_WEBHOOK_URL=
+
+# Optional: sent as X-Webhook-Secret header with every webhook POST.
+LEAD_WEBHOOK_SECRET=
+
+# Optional email delivery (Resend-compatible).
+FORM_RECIPIENT_EMAIL=
+EMAIL_API_KEY=
+
+# Force dev-mode handling (delivery skipped, leads tagged test_submission,
+# uploads stored under test/). Preview branches get this automatically via
+# CF_PAGES_BRANCH.
+DEV_MODE=true

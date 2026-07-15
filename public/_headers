@@ -24,5 +24,8 @@
   Cache-Control: no-store
 
 # thank-you must not be indexed even if linked externally
+# (covers both /thank-you/ and /thank-you/{leadId})
 /thank-you/
+  X-Robots-Tag: noindex, nofollow
+/thank-you/*
   X-Robots-Tag: noindex, nofollow

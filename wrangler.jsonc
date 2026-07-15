@@ -1,33 +1,48 @@
 {
-  // Cloudflare Pages configuration for Cumberland Septic Hub.
-  // Deployment happens through the Cloudflare Pages Git integration —
-  // this file documents bindings for local `wrangler pages dev` testing.
+  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "cumberlandseptichub",
   "compatibility_date": "2026-06-01",
-  "pages_build_output_dir": "dist"
+  "pages_build_output_dir": "dist",
 
-  // Optional D1 lead storage. Create the database first:
-  //   npx wrangler d1 create cumberland-septic-leads
-  // then apply the migration:
-  //   npx wrangler d1 migrations apply cumberland-septic-leads --remote
-  // and uncomment:
+  // Browser-safe values only — never put secrets here.
   //
+  // Secrets (set as encrypted Pages secrets in the dashboard, or in a local
+  // .dev.vars file — see .dev.vars.example):
+  //   TURNSTILE_SECRET_KEY  — Turnstile server-side verification
+  //   LEAD_WEBHOOK_URL      — webhook that receives the lead JSON
+  //   LEAD_WEBHOOK_SECRET   — optional, sent as X-Webhook-Secret
+  //
+  // NOTE: these vars reach the Functions runtime, NOT the `npm run build`
+  // step. The static build reads PUBLIC_* from the Pages build environment;
+  // src/components/LeadForm.astro carries Cloudflare's always-passing TEST
+  // site key as its built-in fallback so the widget renders even without a
+  // dashboard build var — set the real PUBLIC_TURNSTILE_SITE_KEY build var
+  // before launch.
+  "vars": {
+    "PUBLIC_TURNSTILE_SITE_KEY": "<TURNSTILE_SITE_KEY>",
+    "PUBLIC_ANALYTICS_ID": ""
+  },
+
+  // Private R2 bucket for visitor photo uploads. The bucket stays private:
+  // leads carry object keys in upload_references, not public URLs. View the
+  // photos in the Cloudflare dashboard under R2 → cumberlandseptichub-lead-photos.
+  // Create it once with:
+  //   npx wrangler r2 bucket create cumberlandseptichub-lead-photos
+  "r2_buckets": [
+    {
+      "binding": "LEAD_UPLOADS",
+      "bucket_name": "cumberlandseptichub-lead-photos"
+    }
+  ]
+
+  // ── Optional binding (not enabled) ────────────────────────────────
+  // D1 lead storage (see migrations/0001_create_leads.sql). To enable,
+  // create the database, paste the real ID, and uncomment:
   // "d1_databases": [
   //   {
   //     "binding": "LEADS_DB",
   //     "database_name": "cumberland-septic-leads",
-  //     "database_id": "REPLACE_WITH_DATABASE_ID"
-  //   }
-  // ],
-
-  // Optional private R2 photo storage. Create the bucket first:
-  //   npx wrangler r2 bucket create cumberland-septic-lead-uploads
-  // and uncomment:
-  //
-  // "r2_buckets": [
-  //   {
-  //     "binding": "LEAD_UPLOADS",
-  //     "bucket_name": "cumberland-septic-lead-uploads"
+  //     "database_id": "<D1_DATABASE_ID>"
   //   }
   // ]
 }

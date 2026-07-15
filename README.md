@@ -37,10 +37,12 @@ npm run build
 npx wrangler pages dev dist
 ```
 
-With no `TURNSTILE_SECRET_KEY` set locally, the function skips Turnstile verification and,
-with no delivery configured, logs a non-sensitive summary line — safe development behavior
-that never notifies a real contractor. Preview-branch submissions are tagged
-`environment: "preview-test"` in the payload.
+Copy `.dev.vars.example` to `.dev.vars` first (gitignored). With `DEV_MODE=true`, delivery
+is skipped, leads are logged locally and tagged `test_submission: true`, and any uploads go
+under a `test/` prefix — safe development behavior that never notifies a real contractor.
+Preview branches (any non-`main` `CF_PAGES_BRANCH`) get the same dev-mode handling
+automatically. With no `TURNSTILE_SECRET_KEY` set, the function skips Turnstile
+verification (locally only — always set it in production).
 
 ## Deployment — Cloudflare Pages
 
@@ -73,8 +75,16 @@ names. **Secrets** (encrypt in the dashboard; locally keep them in `.dev.vars`, 
 | `LEAD_WEBHOOK_SECRET`       | Sent as `X-Webhook-Secret` header. **Secret.**                 |
 | `FORM_RECIPIENT_EMAIL`      | Email recipient for leads (used with `EMAIL_API_KEY`).         |
 | `EMAIL_API_KEY`             | Transactional email API key (Resend-compatible). **Secret.**   |
-| `ANALYTICS_ID`              | GA4 measurement ID. Analytics load only when set. Build-time.  |
+| `PUBLIC_ANALYTICS_ID`       | GA4 measurement ID. Analytics load only when set. Build-time.  |
 | `TAG_MANAGER_ID`            | Reserved for GTM if adopted later.                             |
+| `DEV_MODE`                  | `true` in `.dev.vars` for safe local testing (delivery skipped, leads tagged `test_submission`). |
+
+`wrangler.jsonc` documents the Functions-runtime vars and carries the R2 binding
+`LEAD_UPLOADS` → bucket `cumberlandseptichub-lead-photos` (create it once with
+`npx wrangler r2 bucket create cumberlandseptichub-lead-photos`). The Turnstile widget
+ships with Cloudflare's always-passing **test** site key as a committed fallback, so it
+renders in every environment — set the real `PUBLIC_TURNSTILE_SITE_KEY` build var (and the
+`TURNSTILE_SECRET_KEY` secret) before launch.
 
 Build-time variables (`PUBLIC_*`, `ANALYTICS_ID`) require a redeploy to take effect.
 

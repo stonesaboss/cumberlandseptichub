@@ -26,7 +26,8 @@ const isPreview =
   process.env.CF_PAGES_BRANCH !== 'main';
 const robotsNoindex = noindex || isPreview;
 
-const analyticsId = import.meta.env.ANALYTICS_ID ?? '';
+const analyticsId =
+  import.meta.env.PUBLIC_ANALYTICS_ID ?? import.meta.env.ANALYTICS_ID ?? '';
 
 const baseSchema: Record<string, unknown>[] = [
   {

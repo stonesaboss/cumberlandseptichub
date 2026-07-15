@@ -9,6 +9,11 @@
 # Unknown URLs intentionally fall through to the custom 404 — do NOT add
 # a catch-all redirect to the homepage.
 
+# /thank-you/{leadId} — serve the static thank-you page for any reference
+# path segment (200 rewrite, not a redirect, so the leadId stays in the URL
+# for the page script to display).
+/thank-you/*       /thank-you/    200
+
 /home              /    301
 /index.html        /    301
 /services          /septic-pumping-cookeville-tn/  301

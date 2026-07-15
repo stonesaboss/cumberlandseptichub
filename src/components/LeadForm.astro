@@ -22,7 +22,15 @@ const {
   idPrefix = 'lead',
 } = Astro.props;
 
-const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
+/**
+ * Cloudflare Turnstile site key — browser-safe and public by design (it is
+ * shipped in the HTML). PUBLIC_TURNSTILE_SITE_KEY overrides at build time;
+ * the committed fallback is Cloudflare's official "always passes" test key
+ * so the widget renders in every environment. Set the real site key as a
+ * Pages build variable before launch. The secret key is server-only.
+ */
+const turnstileSiteKey =
+  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA';
 const p = idPrefix;
 ---
 
@@ -240,14 +248,18 @@ const p = idPrefix;
       <p class="lead-form__error" id={`${p}-consent-error`} hidden>Consent is required to submit the request.</p>
     </div>
 
-    {turnstileSiteKey && (
-      <div class="lead-form__field">
-        <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="light"></div>
-        <p class="lead-form__error" data-turnstile-error hidden>
-          Verification failed or expired. Please complete the verification and try again.
-        </p>
-      </div>
-    )}
+    <div class="lead-form__field">
+      <div class="turnstile-slot" data-sitekey={turnstileSiteKey} data-theme="light"></div>
+      <p class="lead-form__error" data-turnstile-error hidden>
+        Verification failed or expired. Please complete the verification and try again.
+      </p>
+    </div>
+
+    <!-- Honeypot: invisible to humans, filled only by bots. -->
+    <div class="lead-form__hp" aria-hidden="true">
+      <label for={`${p}-website`}>Website</label>
+      <input type="text" id={`${p}-website`} name="website" tabindex="-1" autocomplete="off" />
+    </div>
 
     <input type="hidden" name="source_page" value={Astro.url.pathname} />
 
@@ -272,11 +284,19 @@ const p = idPrefix;
   </form>
 </div>
 
-{turnstileSiteKey && (
-  <script is:inline src="https://challenges.cloudflare.com/turnstile/api.js" async defer></script>
-)}
-
 <style>
+  .lead-form__hp {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .turnstile-slot {
+    min-height: 66px;
+  }
+
   .lead-form-card {
     background: var(--white);
     border: 1px solid var(--border-gray);
@@ -526,6 +546,21 @@ const p = idPrefix;
     const turnstileError = form.querySelector<HTMLElement>('[data-turnstile-error]');
     let started = false;
 
+    // Turnstile: load the script lazily once a keyed form exists on the page,
+    // then let its auto-render pick up the .cf-turnstile class. The token is
+    // added to the form as a hidden cf-turnstile-response input by the widget.
+    const tsSlot = form.querySelector<HTMLElement>('.turnstile-slot');
+    if (tsSlot) {
+      if (!document.querySelector('script[src*="challenges.cloudflare.com"]')) {
+        const s = document.createElement('script');
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+        s.async = true;
+        s.defer = true;
+        document.head.appendChild(s);
+      }
+      tsSlot.classList.add('cf-turnstile');
+    }
+
     form.addEventListener(
       'focusin',
       () => {
@@ -645,17 +680,18 @@ const p = idPrefix;
           headers: { Accept: 'application/json' },
         });
 
-        let data: { ok?: boolean; reference?: string; error?: string; code?: string } = {};
+        let data: { ok?: boolean; leadId?: string; error?: string; code?: string } = {};
         try {
           data = await res.json();
         } catch {
           /* non-JSON response */
         }
 
-        if (res.ok && data.ok && data.reference) {
+        if (res.ok && data.ok && data.leadId) {
+          const leadId = data.leadId;
           track('lead_form_success');
           if (status) status.textContent = 'Request sent successfully.';
-          if (referenceEl) referenceEl.textContent = data.reference;
+          if (referenceEl) referenceEl.textContent = leadId;
           successBox?.removeAttribute('hidden');
           form
             .querySelectorAll<HTMLElement>(
@@ -663,7 +699,10 @@ const p = idPrefix;
             )
             .forEach((el) => el.setAttribute('hidden', ''));
           successBox?.scrollIntoView({ block: 'center', behavior: 'smooth' });
-          window.location.assign(`/thank-you/?ref=${encodeURIComponent(data.reference)}`);
+          // Route to the thank-you page, keeping only the non-identifying reference.
+          setTimeout(() => {
+            window.location.assign(`/thank-you/${encodeURIComponent(leadId)}`);
+          }, 1200);
           return;
         }
 
