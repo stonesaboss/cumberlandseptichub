@@ -18,7 +18,7 @@
   // fallback so the widget renders even without a dashboard build var.
   "vars": {
     "PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAD2dWoga-skUOQxV",
-    "PUBLIC_ANALYTICS_ID": ""
+    "PUBLIC_ANALYTICS_ID": "G-7M8Y0RDTGV"
   },
 
   // Private R2 bucket for visitor photo uploads. The bucket stays private:

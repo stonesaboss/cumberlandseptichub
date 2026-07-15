@@ -26,8 +26,11 @@ const isPreview =
   process.env.CF_PAGES_BRANCH !== 'main';
 const robotsNoindex = noindex || isPreview;
 
+// GA4 measurement ID — public by design (shipped in the HTML), so the
+// production ID doubles as the committed fallback. PUBLIC_ANALYTICS_ID
+// overrides it at build time.
 const analyticsId =
-  import.meta.env.PUBLIC_ANALYTICS_ID ?? import.meta.env.ANALYTICS_ID ?? '';
+  import.meta.env.PUBLIC_ANALYTICS_ID || import.meta.env.ANALYTICS_ID || 'G-7M8Y0RDTGV';
 
 const baseSchema: Record<string, unknown>[] = [
   {
