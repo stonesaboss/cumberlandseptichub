@@ -503,8 +503,16 @@ const faqs: Faq[] = [
   .hero {
     background:
       linear-gradient(100deg, rgba(7, 28, 45, 0.93) 0%, rgba(13, 41, 66, 0.78) 45%, rgba(13, 41, 66, 0.35) 100%),
-      url('/images/hero-septic-truck.svg') right center / cover no-repeat;
+      url('/images/hero/hero-septic-service-desktop.webp') right center / cover no-repeat;
     color: #e8f0f4;
+  }
+
+  @media (max-width: 767px) {
+    .hero {
+      background:
+        linear-gradient(100deg, rgba(7, 28, 45, 0.93) 0%, rgba(13, 41, 66, 0.78) 45%, rgba(13, 41, 66, 0.35) 100%),
+        url('/images/hero/hero-septic-service-mobile.webp') center center / cover no-repeat;
+    }
   }
 
   .hero__inner {
