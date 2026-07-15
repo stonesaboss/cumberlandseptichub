@@ -107,7 +107,11 @@ function sniffImage(bytes: Uint8Array): string | null {
   return null;
 }
 
-async function verifyTurnstile(secret: string, token: string, ip: string | null): Promise<boolean> {
+async function verifyTurnstile(
+  secret: string,
+  token: string,
+  ip: string | null,
+): Promise<{ success: boolean; errorCodes: string[] }> {
   try {
     const body = new URLSearchParams({ secret, response: token });
     if (ip) body.set('remoteip', ip);
@@ -115,10 +119,10 @@ async function verifyTurnstile(secret: string, token: string, ip: string | null)
       method: 'POST',
       body,
     });
-    const data = (await res.json()) as { success?: boolean };
-    return data.success === true;
+    const data = (await res.json()) as { success?: boolean; 'error-codes'?: string[] };
+    return { success: data.success === true, errorCodes: data['error-codes'] ?? [] };
   } catch {
-    return false;
+    return { success: false, errorCodes: ['siteverify-fetch-failed'] };
   }
 }
 
@@ -172,11 +176,18 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   if (env.TURNSTILE_SECRET_KEY) {
     const token = String(form.get('cf-turnstile-response') ?? '');
     const ip = request.headers.get('CF-Connecting-IP');
-    if (!token || !(await verifyTurnstile(env.TURNSTILE_SECRET_KEY, token, ip))) {
+    const verdict = token
+      ? await verifyTurnstile(env.TURNSTILE_SECRET_KEY, token, ip)
+      : { success: false, errorCodes: ['missing-input-response(client)'] };
+    if (!verdict.success) {
+      // TEMPORARY DEBUG (remove after diagnosis): error-codes also logged
+      // for `wrangler pages deployment tail`.
+      console.error(`lead turnstile reject: ${JSON.stringify(verdict.errorCodes)}`);
       return json(400, {
         ok: false,
         code: 'turnstile',
         error: 'Spam check failed or expired. Please complete the verification and try again.',
+        debug_error_codes: verdict.errorCodes,
       });
     }
   } else if (!devMode) {
