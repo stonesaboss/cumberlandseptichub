@@ -159,11 +159,11 @@ preview sitemaps to search engines.
 
 ## Content maintenance
 
-### Replacing the placeholder phone number
+### Changing the phone number
 
-`(931) 555-0123` is a **placeholder**. Before launch, edit `PHONE_DISPLAY` and `PHONE_TEL`
-in [`src/data/site.ts`](src/data/site.ts) — every header, footer, CTA and sticky-bar
-reference derives from those two constants.
+The tracking number lives in [`src/data/site.ts`](src/data/site.ts) as `PHONE_DISPLAY` and
+`PHONE_TEL` — every header, footer, CTA and sticky-bar reference derives from those two
+constants. Current number: (629) 888-3733.
 
 ### Updating the logo
 

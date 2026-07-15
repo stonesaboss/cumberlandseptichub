@@ -5,9 +5,8 @@ export const SITE_NAME = 'Cumberland Septic Hub';
 export const SITE_TAGLINE = 'Septic Pumping, Repair & Installation';
 export const REGION = 'Upper Cumberland, Tennessee';
 
-// TRACKING PHONE PLACEHOLDER — replace with the real tracking number.
-export const PHONE_DISPLAY = '(931) 555-0123';
-export const PHONE_TEL = '+19315550123';
+export const PHONE_DISPLAY = '(629) 888-3733';
+export const PHONE_TEL = '+16298883733';
 
 export const UTILITY_BAR_TEXT = 'Serving Cookeville, Crossville & Upper Cumberland';
 
