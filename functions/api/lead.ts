@@ -292,11 +292,18 @@ export const onRequest: PagesFunction<Env> = async (context) => {
 
   // ── Delivery: webhook and/or email. Skipped in dev mode (safe local testing). ──
   let delivered = false;
+  // TEMPORARY DIAGNOSTICS (remove after webhook debugging): captures secret
+  // presence (never the value), the webhook's HTTP status and response head.
+  const webhookDebug: Record<string, unknown> = {
+    webhook_configured: !!env.LEAD_WEBHOOK_URL,
+    webhook_url_length: env.LEAD_WEBHOOK_URL?.length ?? 0,
+  };
   if (!devMode) {
     if (env.LEAD_WEBHOOK_URL) {
       try {
         const res = await fetch(env.LEAD_WEBHOOK_URL, {
           method: 'POST',
+          redirect: 'follow',
           headers: {
             'Content-Type': 'application/json',
             ...(env.LEAD_WEBHOOK_SECRET ? { 'X-Webhook-Secret': env.LEAD_WEBHOOK_SECRET } : {}),
@@ -304,11 +311,15 @@ export const onRequest: PagesFunction<Env> = async (context) => {
           body: JSON.stringify(lead),
         });
         delivered = res.ok;
+        webhookDebug.webhook_status = res.status;
+        webhookDebug.webhook_body_head = (await res.text()).slice(0, 200);
         if (!res.ok) console.error(`lead ${leadId}: webhook returned ${res.status}`);
       } catch (err) {
+        webhookDebug.webhook_fetch_error = String(err).slice(0, 200);
         console.error(`lead ${leadId}: webhook delivery failed`, err);
       }
     }
+    console.error(`lead ${leadId}: webhook debug ${JSON.stringify(webhookDebug)}`);
 
     if (env.FORM_RECIPIENT_EMAIL && env.EMAIL_API_KEY) {
       // Generic transactional-email delivery (Resend-compatible endpoint).
@@ -355,6 +366,8 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       return json(502, {
         ok: false,
         error: 'The request could not be delivered right now. Please try again or call instead.',
+        // TEMPORARY DIAGNOSTICS — remove after webhook debugging.
+        debug_webhook: webhookDebug,
       });
     }
   } else {
@@ -365,5 +378,6 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     });
   }
 
-  return json(200, { ok: true, leadId });
+  // TEMPORARY DIAGNOSTICS — remove after webhook debugging.
+  return json(200, { ok: true, leadId, debug_webhook: webhookDebug });
 };
