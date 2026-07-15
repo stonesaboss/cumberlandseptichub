@@ -180,14 +180,13 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       ? await verifyTurnstile(env.TURNSTILE_SECRET_KEY, token, ip)
       : { success: false, errorCodes: ['missing-input-response(client)'] };
     if (!verdict.success) {
-      // TEMPORARY DEBUG (remove after diagnosis): error-codes also logged
-      // for `wrangler pages deployment tail`.
+      // error-codes go to logs only (readable via wrangler pages deployment
+      // tail) — never into the public response.
       console.error(`lead turnstile reject: ${JSON.stringify(verdict.errorCodes)}`);
       return json(400, {
         ok: false,
         code: 'turnstile',
         error: 'Spam check failed or expired. Please complete the verification and try again.',
-        debug_error_codes: verdict.errorCodes,
       });
     }
   } else if (!devMode) {
