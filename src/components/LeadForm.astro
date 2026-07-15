@@ -24,13 +24,13 @@ const {
 
 /**
  * Cloudflare Turnstile site key — browser-safe and public by design (it is
- * shipped in the HTML). PUBLIC_TURNSTILE_SITE_KEY overrides at build time;
- * the committed fallback is Cloudflare's official "always passes" test key
- * so the widget renders in every environment. Set the real site key as a
- * Pages build variable before launch. The secret key is server-only.
+ * shipped in the HTML), so the production key doubles as the committed
+ * fallback. PUBLIC_TURNSTILE_SITE_KEY overrides it when set at build time
+ * (e.g. local .env with Cloudflare's test key 1x00000000000000000000AA).
+ * The secret key is server-only.
  */
 const turnstileSiteKey =
-  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA';
+  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAD2dWoga-skUOQxV';
 const p = idPrefix;
 ---
 

@@ -14,12 +14,10 @@
   //
   // NOTE: these vars reach the Functions runtime, NOT the `npm run build`
   // step. The static build reads PUBLIC_* from the Pages build environment;
-  // src/components/LeadForm.astro carries Cloudflare's always-passing TEST
-  // site key as its built-in fallback so the widget renders even without a
-  // dashboard build var — set the real PUBLIC_TURNSTILE_SITE_KEY build var
-  // before launch.
+  // src/components/LeadForm.astro also carries this site key as its built-in
+  // fallback so the widget renders even without a dashboard build var.
   "vars": {
-    "PUBLIC_TURNSTILE_SITE_KEY": "<TURNSTILE_SITE_KEY>",
+    "PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAD2dWoga-skUOQxV",
     "PUBLIC_ANALYTICS_ID": ""
   },
 

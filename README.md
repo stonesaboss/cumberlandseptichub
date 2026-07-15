@@ -81,10 +81,11 @@ names. **Secrets** (encrypt in the dashboard; locally keep them in `.dev.vars`, 
 
 `wrangler.jsonc` documents the Functions-runtime vars and carries the R2 binding
 `LEAD_UPLOADS` → bucket `cumberlandseptichub-lead-photos` (create it once with
-`npx wrangler r2 bucket create cumberlandseptichub-lead-photos`). The Turnstile widget
-ships with Cloudflare's always-passing **test** site key as a committed fallback, so it
-renders in every environment — set the real `PUBLIC_TURNSTILE_SITE_KEY` build var (and the
-`TURNSTILE_SECRET_KEY` secret) before launch.
+`npx wrangler r2 bucket create cumberlandseptichub-lead-photos`). The production Turnstile
+site key (browser-safe by design) is committed as the widget's built-in fallback, so it
+renders without any build var; override with `PUBLIC_TURNSTILE_SITE_KEY` (e.g. Cloudflare's
+test key `1x00000000000000000000AA` in a local `.env`). The matching `TURNSTILE_SECRET_KEY`
+secret must be set in the Pages dashboard before launch.
 
 Build-time variables (`PUBLIC_*`, `ANALYTICS_ID`) require a redeploy to take effect.
 
