@@ -520,14 +520,14 @@ const p = idPrefix;
   // if JavaScript is unavailable.
   declare global {
     interface Window {
-      dataLayer?: Record<string, unknown>[];
       turnstile?: { reset: (el?: Element) => void };
     }
   }
 
   const track = (event: string, detail: Record<string, unknown> = {}) => {
+    // Sent as a GA4 event; detail keys become event parameters.
     // Never include names, phone numbers, emails or addresses here.
-    window.dataLayer?.push({ event, ...detail });
+    window.gtag?.('event', event, detail);
   };
 
   const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/heic', 'image/heif'];
@@ -561,16 +561,21 @@ const p = idPrefix;
       tsSlot.classList.add('cf-turnstile');
     }
 
-    form.addEventListener(
-      'focusin',
-      () => {
-        if (!started) {
-          started = true;
-          track('lead_form_start');
-        }
-      },
-      { once: true },
-    );
+    // Fire form_start on the first real field interaction — the Turnstile
+    // widget focuses inside the form as it initializes, which must not count.
+    form.addEventListener('focusin', (e) => {
+      if (started) return;
+      const t = e.target as HTMLElement;
+      if (t.closest('.turnstile-slot')) return;
+      if (
+        !(t instanceof HTMLInputElement) &&
+        !(t instanceof HTMLSelectElement) &&
+        !(t instanceof HTMLTextAreaElement)
+      )
+        return;
+      started = true;
+      track('lead_form_start');
+    });
 
     // urgent backup styling + analytics field events
     form.querySelectorAll<HTMLInputElement>('input[name="active_backup"]').forEach((radio) => {

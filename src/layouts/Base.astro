@@ -109,12 +109,14 @@ const baseSchema: Record<string, unknown>[] = [
       <>
         <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`}></script>
         <script is:inline define:vars={{ analyticsId }}>
+          // define:vars wraps this in an IIFE — assign gtag to window
+          // explicitly so site scripts can send events.
           window.dataLayer = window.dataLayer || [];
-          function gtag() {
+          window.gtag = function gtag() {
             dataLayer.push(arguments);
-          }
-          gtag('js', new Date());
-          gtag('config', analyticsId);
+          };
+          window.gtag('js', new Date());
+          window.gtag('config', analyticsId);
         </script>
       </>
     )}
@@ -128,16 +130,19 @@ const baseSchema: Record<string, unknown>[] = [
     <Footer />
     <MobileStickyBar />
     <script>
-      // Configurable click events (phone + CTA clicks). No personal data is sent.
+      // Configurable click events (phone + CTA clicks) sent as GA4 events.
+      // No personal data is sent. Hyphenated data-analytics names are
+      // normalized to GA4's snake_case convention.
       declare global {
         interface Window {
           dataLayer?: Record<string, unknown>[];
+          gtag?: (...args: unknown[]) => void;
         }
       }
       document.addEventListener('click', (e) => {
         const el = (e.target as HTMLElement).closest<HTMLElement>('[data-analytics]');
         if (el?.dataset.analytics) {
-          window.dataLayer?.push({ event: el.dataset.analytics });
+          window.gtag?.('event', el.dataset.analytics.replace(/-/g, '_'));
         }
       });
     </script>

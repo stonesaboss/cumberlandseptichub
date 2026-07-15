@@ -54,7 +54,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from '@data/site';
       wrap.hidden = false;
     }
   }
-  window.dataLayer?.push({ event: 'thank_you_view' });
+  window.gtag?.('event', 'thank_you_view');
 </script>
 
 <style>
