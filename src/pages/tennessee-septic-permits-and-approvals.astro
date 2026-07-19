@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Questions About Tennessee Septic Permits and Approvals"
  * Cluster: upper-cumberland-septic-guide
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -15,31 +13,31 @@ import type { Faq } from '@data/site';
 const faqs: Faq[] = [
   {
     question: "Who handles septic permits in Tennessee?",
-    answer: "The appropriate government authority handles permitting and approvals, and requirements vary by property and county.",
+    answer: "Permitting and approvals for subsurface sewage disposal systems are handled by the appropriate government authority, and requirements can vary by property and county. This guide is general orientation; for anything specific to your property, the authority is the source of record.",
   },
   {
-    question: "Does my installer handle approvals?",
-    answer: "Often a qualified provider coordinates approvals for a project, but confirm this in advance.",
+    question: "Do septic requirements really differ by county?",
+    answer: "Yes. Requirements, and sometimes the specifics of how approvals work, can vary by property and county. That's why it's important to verify your situation with the appropriate authority rather than relying on what applied to a friend's property or a neighboring county.",
   },
   {
-    question: "Do requirements differ by county?",
-    answer: "Yes. Rules vary by property and county, so verify specifics with the appropriate authority.",
+    question: "Does my installer handle the approvals?",
+    answer: "Often a qualified installer coordinates the applicable approvals as part of an installation or major project — but it's worth confirming who's responsible up front so nothing falls through the cracks. Ask directly when you discuss the work.",
   },
   {
-    question: "Is this guide legal or regulatory advice?",
-    answer: "No — it is general orientation. Confirm all specifics with the appropriate authority and a qualified provider.",
+    question: "When do I need to think about permits and approvals?",
+    answer: "Primarily before a new installation, a replacement, or major work — the applicable approval process typically applies to those projects. For routine service like pumping, it usually isn't a factor. When a project is on the horizon, confirm requirements with the authority early.",
   },
 ];
 ---
 
 <ServicePage
   title={"Questions About Tennessee Septic Permits and Approvals"}
-  description={"Where to direct septic permit and approval questions in Tennessee, and what to confirm before installation or major work."}
+  description={"Where to direct septic permit and approval questions in Tennessee, why requirements vary by property and county, and what to confirm before installation or major work — with the honest caveat to verify specifics with the authority."}
   h1={"Tennessee Septic Permits and Approvals: Where to Start"}
   eyebrow={"Upper Cumberland Septic Guide"}
   breadcrumbLabel={"Tennessee Septic Permits and Approvals"}
   serviceName={"Upper Cumberland Septic Information"}
-  intro={"Permit and approval questions are best answered by the appropriate authority. This guide explains where to direct them and what to confirm."}
+  intro={"Permit and approval questions are among the most common in septic ownership — and the ones where getting your information from the right source matters most. This guide explains where those questions belong, why answers vary, and what to confirm, while pointing you to the authority for the specifics."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,66 @@ const faqs: Faq[] = [
     { label: "Septic Inspections and Property Buying", href: "/resources/septic-inspections-property-buying/", blurb: "rural purchases" },
   ]}
 >
-  <p>Septic permitting and approvals in Tennessee are handled by the appropriate government authority, and requirements vary by property and county. The right move is to confirm specifics with them.</p>
+  <p>
+    Few septic topics generate more questions — or more secondhand misinformation — than permits and
+    approvals. The single most useful thing to know is where the questions belong: with the
+    appropriate government authority, whose requirements are the ones that actually govern your
+    property. This guide is orientation to help you ask the right questions in the right place, not a
+    substitute for that authority.
+  </p>
 
   {/* Intended asset: /images/resources/tennessee-septic-permits-and-approvals-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration representing septic permit and approval paperwork for a Tennessee property"}
+    alt={"Septic permit and approval paperwork for a Tennessee property"}
     width={1600}
     height={900}
   />
 
-  <h2>Where to Direct Questions</h2>
-  <ul>
-    <li><strong>The appropriate authority.</strong> Permitting, approvals and requirements are theirs to confirm.</li>
-    <li><strong>Your provider.</strong> A qualified installer often coordinates approvals for a project.</li>
-    <li><strong>County-specific rules.</strong> Requirements differ by property and county.</li>
-  </ul>
-
-  <h2>What to Confirm</h2>
+  <h2>Where These Questions Belong</h2>
   <p>
-    Before installation or major work, confirm what approvals apply and who handles them. Because rules vary and change, treat this page as general orientation and verify details with the authority. To start a project, <a href="/request-service/">request septic service</a>.
+    In Tennessee, permitting and approvals for subsurface sewage disposal systems — septic systems —
+    are handled by the appropriate government authority. They administer the applicable rules, review
+    designs, and issue approvals. Because they're the source of record, anything specific to your
+    property is best confirmed with them directly rather than inferred from general information,
+    including this page.
   </p>
 
+  <h2>Why Answers Vary</h2>
+  <p>
+    A common source of confusion is assuming that what applied to one property applies to another.
+    Requirements can vary by property and county, and can change over time. A neighbor's experience, or
+    the way things worked on a lot in the next county, is a useful starting point for what to ask — but
+    not a reliable answer for your situation. This is exactly why verifying with the authority matters.
+  </p>
+
+  <h2>Who Coordinates Approvals</h2>
+  <p>
+    For an installation, a replacement, or major work, a qualified installer often coordinates the
+    applicable approvals as part of the project. That's convenient, but it's still worth confirming who
+    is responsible for what up front, so nothing is assumed. When you discuss a project, ask directly
+    which approvals apply and who will handle them — our guide on
+    <a href="/questions-to-ask-before-septic-installation/">questions to ask before installation</a>
+    includes this among the essentials.
+  </p>
+
+  <h2>When Approvals Come Into Play</h2>
+  <p>
+    Permit and approval questions typically arise before the bigger projects — a new
+    <a href="/the-septic-installation-process/">installation</a>, a
+    <a href="/replacing-an-older-septic-system/">replacement</a>, or major work. Routine service like
+    pumping usually doesn't involve them. When one of those larger projects is on the horizon, the time
+    to confirm requirements with the authority is early, before design and budget are locked in.
+  </p>
+
+  <h2>The Honest Caveat</h2>
+  <p>
+    Treat everything here as general orientation. Because rules vary by property and county and can
+    change, confirm the specifics that apply to your property with the appropriate authority and a
+    qualified provider. When you're ready to start a project that needs approvals,
+    <a href="/request-service/">request septic service</a> and ask the provider how approvals will be
+    handled.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

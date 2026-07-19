@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "How to Find Septic Records and Tank Locations"
  * Cluster: septic-inspections-property-buying
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "Where can I find my septic records?",
-    answer: "Check property and permit records with the appropriate authority, past service receipts, and any documentation from prior owners.",
+    question: "Where can I find records for my septic system?",
+    answer: "Start with the appropriate authority, which may hold the original permit and site records; then check any documentation from previous owners and past service or pumping receipts. Real-estate files from when you bought the property sometimes include a prior inspection. Together these often reconstruct a usable history.",
   },
   {
-    question: "What if there are no records?",
-    answer: "A provider can locate the tank and evaluate the system; recording the details afterward builds the history going forward.",
+    question: "What if no records exist at all?",
+    answer: "It's common, especially on older rural properties. When paperwork is missing, a provider can locate the tank and evaluate the system directly, and you build the record forward from there — noting the location and condition so the next service starts with information instead of a search.",
   },
   {
-    question: "How is a lost tank located?",
-    answer: "Providers use locating methods to find the tank; once found, note its position from fixed points for next time.",
+    question: "How does a provider find a tank when nobody knows where it is?",
+    answer: "Providers use locating methods to find a buried tank, and physical clues on the property often help narrow the search first. Once the tank is found, recording its position from fixed points — and ideally adding risers to bring the lids to the surface — means it never has to be hunted for again.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. Confirm specifics with a provider and the appropriate authority.",
+    question: "Why does knowing the tank's location matter so much?",
+    answer: "Because not knowing it costs time (and money) on every service call — the tank has to be located and often dug up before any work happens. A recorded location, and accessible lids, turn each future visit from an exploration into a simple appointment.",
   },
 ];
 ---
 
 <ServicePage
   title={"How to Find Septic Records and Tank Locations"}
-  description={"Where septic system history tends to hide and how providers locate tanks when records are incomplete."}
+  description={"Where septic system history tends to hide, how to track down permits and service records, and how a provider locates a tank when the paperwork is missing — plus how to keep it findable afterward."}
   h1={"Finding Septic Records and Locating the Tank"}
   eyebrow={"Septic Inspections & Property Buying"}
   breadcrumbLabel={"Finding Records and Tank Locations"}
   serviceName={"Septic Inspection Information"}
-  intro={"Older properties often come with little septic paperwork. This guide covers where records tend to hide and how a tank gets located when they don't exist."}
+  intro={"Older properties often come with a septic system and almost no paperwork. Knowing where the tank is and what the system's history holds makes every future service faster and cheaper — and this guide covers where records hide, how to find them, and what to do when they simply don't exist."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,72 @@ const faqs: Faq[] = [
     { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "rural property context" },
   ]}
 >
-  <p>Knowing where the tank is and what the system's history is makes every future service easier. When records are thin, there are still reliable ways to find both.</p>
+  <p>
+    Buy or inherit a property with a septic system that's been in the ground for decades, and you'll
+    often find the same thing: a system that works, and a folder that's empty. Where's the tank? When
+    was it last pumped? What's been repaired? Reconstructing that history — or building it from
+    scratch — is genuinely worthwhile, because knowing where the tank is and what shape it's in makes
+    every future service faster, cheaper, and less of a guessing game.
+  </p>
 
   {/* Intended asset: /images/resources/how-to-find-septic-records-and-tank-locations-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of locating a septic tank in a rural yard and gathering system records"}
+    alt={"Locating a septic tank in a rural yard and gathering system records"}
     width={1600}
     height={900}
   />
 
-  <h2>Where History Hides</h2>
+  <h2>Where the History Hides</h2>
+  <p>
+    Septic records tend to be scattered rather than missing entirely. The likeliest places to look:
+  </p>
   <ul>
-    <li>Property and permit records held by the appropriate authority.</li>
-    <li>Prior service receipts and any documentation from past owners.</li>
-    <li>Physical clues in the yard and around the home.</li>
+    <li>
+      <strong>The appropriate authority.</strong> Original permits and site records for the system may
+      be on file, sometimes including a diagram of where the tank and field were placed.
+    </li>
+    <li>
+      <strong>Previous owners' documentation.</strong> Anything handed over at purchase, or that a
+      prior owner kept, can hold service history and locations.
+    </li>
+    <li>
+      <strong>Past service and pumping receipts.</strong> These often note the tank's location and
+      condition at the time, and establish when it was last serviced.
+    </li>
+    <li>
+      <strong>Real-estate files.</strong> If a septic inspection was done when the property changed
+      hands, that report can be a goldmine.
+    </li>
   </ul>
 
-  <h2>When the Tank Must Be Located</h2>
+  <h2>When the Records Simply Don't Exist</h2>
   <p>
-    If the tank's location is unknown, a provider can locate it — see <a href="/septic-tank-locating-cookeville-tn/">septic tank locating</a>. Recording the location afterward turns future service into a simple appointment. To start, <a href="/request-service/">request septic service</a>.
+    Often, especially on older rural properties across the Upper Cumberland, there's just nothing to
+    find — and that's okay. When the paperwork is gone, a provider can locate the tank and evaluate the
+    system directly, effectively starting the record fresh. Physical clues on the property (the path of
+    the sewer line out of the house, slightly greener or settled ground, cleanout access) often help
+    narrow the search before locating tools confirm the spot.
   </p>
 
+  <h2>How a Lost Tank Gets Found</h2>
+  <p>
+    Finding a buried tank is a routine task for a provider, who uses locating methods to pinpoint it
+    when surface clues aren't enough — see <a href="/septic-tank-locating-cookeville-tn/">septic tank
+    locating</a>. The valuable part is what you do once it's found: record its position measured from
+    two fixed points on the house, and consider adding risers that bring the lids up to grade. That one
+    step means the tank never has to be located — or dug up — again.
+  </p>
+
+  <h2>Why It's Worth the Effort</h2>
+  <p>
+    Not knowing where the tank is quietly taxes every future service call, because locating and
+    uncovering it comes before any actual work. A recorded location and accessible lids turn each visit
+    from an exploration into an appointment — a point our guide on
+    <a href="/septic-pumping-cost-factors/">pumping cost factors</a> returns to. Whether you're
+    settling into a new property or getting ready to sell one, building this record pays off.
+    <a href="/request-service/">Request septic service</a> to locate the tank and start the history.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

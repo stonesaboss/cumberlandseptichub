@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "How Terrain and Access Affect Septic Service"
  * Cluster: upper-cumberland-septic-guide
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -15,31 +13,31 @@ import type { Faq } from '@data/site';
 const faqs: Faq[] = [
   {
     question: "How does terrain affect septic service?",
-    answer: "Slopes, rock, soft ground and distance all influence how a truck reaches the tank and how systems are designed and serviced.",
+    answer: "In two main ways: it affects how a truck reaches the tank (distance, slope, soft ground, gates), and it affects what systems a site can support and how they're designed. Both matter — access shapes the day-to-day service, while soil and slope shape the system itself. Rural lots simply have more of both variables.",
   },
   {
-    question: "Does access affect what I should include in a request?",
-    answer: "Yes — noting long drives, gates, slopes or soft ground helps a provider arrive prepared.",
+    question: "Why does the distance from the truck to the tank matter?",
+    answer: "Because vacuum hoses have a practical working length. A tank a short walk from where the truck can park is straightforward; one at the far end of a long drive, downhill, or behind the house can require extra hose and setup, and occasionally a different approach. Distance is one of the most common access variables.",
   },
   {
-    question: "Is rural service always harder?",
-    answer: "Not always, but access realities are more common on rural lots and are worth planning around.",
+    question: "Does soft or wet ground really affect a service call?",
+    answer: "It can. Septic trucks are heavy, and soft or saturated ground — common in low-lying and river-valley areas after wet weather — can make access difficult or require waiting for better conditions. It's worth mentioning if your property has spots that stay soft.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. A provider can advise for your specific property.",
+    question: "What should I include in a service request about my property?",
+    answer: "Note anything that affects access: a long or steep driveway, gates, soft or muddy areas, distance from where a truck can park to the tank, and whether the tank location and lids are known. Those details let a provider arrive prepared and keep the visit efficient.",
   },
 ];
 ---
 
 <ServicePage
   title={"How Terrain and Access Affect Septic Service"}
-  description={"Slopes, rock, soft ground and hose distance — how Upper Cumberland terrain and access shape septic service."}
+  description={"Why two similar homes can be very different to service — how slope, rock, soft ground, and the distance from truck to tank shape septic work across the Upper Cumberland, and how to plan around it."}
   h1={"How Terrain and Access Affect Septic Service"}
   eyebrow={"Upper Cumberland Septic Guide"}
   breadcrumbLabel={"How Terrain and Access Affect Service"}
   serviceName={"Upper Cumberland Septic Information"}
-  intro={"The lay of the land has a real effect on septic service. This guide explains how slopes, rock, soft ground and distance come into play across the region."}
+  intro={"The lay of the land has a real, practical effect on septic service — sometimes more than the tank itself. This guide explains how the Upper Cumberland's slopes, rock, soft ground, and long distances come into play, and how noting your access realities gets you better, faster service."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,72 @@ const faqs: Faq[] = [
     { label: "Septic Inspections and Property Buying", href: "/resources/septic-inspections-property-buying/", blurb: "rural purchases" },
   ]}
 >
-  <p>Two similar homes can be very different to service if one sits at the end of a long, soft, sloped drive. Terrain and access shape both the work and the planning.</p>
+  <p>
+    Two nearly identical homes can be completely different to service if one sits at the end of a long,
+    soft, sloping drive and the other is a few steps from the road. In septic work, terrain and access
+    aren't background details — they're often the biggest practical variables in how a job goes,
+    especially across the varied ground of the Upper Cumberland. Understanding how they come into play
+    helps you plan and helps a provider serve you efficiently.
+  </p>
 
   {/* Intended asset: /images/resources/how-terrain-and-access-affect-septic-service-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of a septic service truck navigating sloped, wooded Upper Cumberland terrain to reach a tank"}
+    alt={"Septic service truck navigating sloped, wooded Upper Cumberland terrain to reach a tank"}
     width={1600}
     height={900}
   />
 
-  <h2>What Comes Into Play</h2>
+  <h2>Getting the Truck to the Tank</h2>
+  <p>
+    The most immediate way terrain matters is simply reaching the tank. Several things come into play:
+  </p>
   <ul>
-    <li><strong>Hose distance.</strong> Vacuum hoses have practical limits from truck to tank.</li>
-    <li><strong>Slopes and rock.</strong> Plateau terrain affects access and system design.</li>
-    <li><strong>Soft ground.</strong> River-valley and spring conditions can complicate truck access.</li>
+    <li>
+      <strong>Distance.</strong> Vacuum hoses have a practical length, so how far the tank is from
+      where a truck can park is a real factor — a tank behind the house or down a long drive is more
+      involved than one near the road.
+    </li>
+    <li>
+      <strong>Slope.</strong> The plateau's grades affect how a heavy truck approaches and where it can
+      safely position.
+    </li>
+    <li>
+      <strong>Soft ground.</strong> Low-lying and river-valley areas can stay soft or saturated after
+      wet weather, and heavy trucks and soft ground don't mix well.
+    </li>
+    <li>
+      <strong>Route obstacles.</strong> Narrow or locked gates, low branches, and tight turns all
+      shape whether — and how easily — a truck gets close.
+    </li>
   </ul>
+
+  <h2>How Terrain Shapes the System Itself</h2>
+  <p>
+    Beyond service-day access, terrain and soil shape what system a property can have in the first
+    place. Rocky plateau ground, heavy clay, shallow soil, and slope all influence whether a
+    conventional system works or an alternative design is needed, and how the field is laid out. This
+    is why the region's soils make a soil evaluation so important — our guide on
+    <a href="/septic-planning-for-rural-upper-cumberland-properties/">planning for rural properties</a>
+    goes into how that plays out across the Upper Cumberland.
+  </p>
 
   <h2>Planning Around It</h2>
   <p>
-    Noting your access realities in a service request helps a provider come prepared. For regional planning, see <a href="/resources/upper-cumberland-septic-guide/">the Upper Cumberland guide</a>, or <a href="/request-service/">request septic service</a>.
+    You can't change your terrain, but you can plan around it. Keeping access clear and the tank
+    location known removes the variables you control — our guide on
+    <a href="/preparing-a-property-for-septic-service/">preparing a property for septic service</a>
+    covers how. And when you request service, describing your access realities up front lets a provider
+    bring the right approach and equipment, which keeps the visit efficient and avoids a wasted trip.
   </p>
 
+  <h2>Getting Service That Fits Your Property</h2>
+  <p>
+    The more a provider knows about your terrain and access before arriving, the better the visit goes.
+    When you <a href="/request-service/">request septic service</a>, mention the driveway, any gates or
+    soft spots, the distance to the tank, and whether the tank and lids are known and accessible —
+    those few details make all the difference on a rural call.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

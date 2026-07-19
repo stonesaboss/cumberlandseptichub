@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Preparing a Property for Septic Service"
  * Cluster: upper-cumberland-septic-guide
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "How do I prepare for a septic service visit?",
-    answer: "Clear truck access, expose or point out the lids, and know roughly where the tank is relative to where a truck can park.",
+    question: "How do I prepare my property for a septic service visit?",
+    answer: "Three things cover most of it: clear a route the truck can actually reach, make sure the tank lids are accessible (or at least know exactly where they are), and know roughly where the tank sits relative to where a truck can park. Each removes a step a provider would otherwise spend billable time on.",
   },
   {
-    question: "Why does lid access matter?",
-    answer: "Buried lids add a digging step. Keeping them accessible — or adding risers — speeds up service.",
+    question: "Why does lid access matter so much?",
+    answer: "Because buried lids have to be dug up before any work can happen, and that digging is often the single biggest add-on to a service visit. Keeping lids accessible — or installing risers that bring them to ground level — eliminates that step on every future visit.",
   },
   {
-    question: "What if I don't know where my tank is?",
-    answer: "A provider can locate it; recording the location afterward makes future visits simpler.",
+    question: "What if I don't know where my septic tank is?",
+    answer: "A provider can locate it, but that takes time on the day. If you can, find it in advance using records or physical clues, and once it's located, record its position from two fixed points on the house so it never has to be hunted for again. Our guide on finding records and tank locations helps.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. Your provider can advise for your specific property.",
+    question: "Does clearing access really affect the visit?",
+    answer: "Yes, especially on rural lots. Vacuum hoses have a limited working length and trucks are heavy, so gates, mud, low branches, and long distances all matter. A clear, reachable path lets the crew get to work instead of solving access problems first.",
   },
 ];
 ---
 
 <ServicePage
   title={"Preparing a Property for Septic Service"}
-  description={"What to do before the truck arrives — clearing access, exposing lids, and knowing distances — so septic service goes smoothly."}
+  description={"Simple steps that make a septic service visit faster, cheaper, and smoother — clearing truck access, exposing or marking the lids, knowing distances, and what to do if you're not sure where the tank is."}
   h1={"How to Prepare Your Property for Septic Service"}
   eyebrow={"Upper Cumberland Septic Guide"}
   breadcrumbLabel={"Preparing for Septic Service"}
   serviceName={"Upper Cumberland Septic Information"}
-  intro={"A little preparation makes a septic service visit faster and can avoid extra steps. Here is what to have ready before the truck arrives."}
+  intro={"A little preparation before the truck arrives can shave real time — and cost — off a septic service visit, and it makes the whole appointment go smoothly. Here's exactly what to have ready, and why each step helps."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,67 @@ const faqs: Faq[] = [
     { label: "Septic Inspections and Property Buying", href: "/resources/septic-inspections-property-buying/", blurb: "rural purchases" },
   ]}
 >
-  <p>Providers work fastest when they can reach the tank easily. A few simple steps beforehand help the visit go smoothly.</p>
+  <p>
+    A septic service visit goes fastest — and costs least — when the crew can get straight to the tank
+    and start working. Most of what slows a visit down is avoidable with a few minutes of preparation
+    beforehand. None of it is complicated; it's just the difference between a crew that arrives and
+    works and one that arrives and first has to solve a series of access puzzles on your dime.
+  </p>
 
   {/* Intended asset: /images/resources/preparing-a-property-for-septic-service-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of a homeowner clearing access to a septic tank lid ahead of a service visit"}
+    alt={"Homeowner clearing access to a septic tank lid ahead of a service visit"}
     width={1600}
     height={900}
   />
 
-  <h2>Before the Truck Arrives</h2>
-  <ul>
-    <li><strong>Clear access.</strong> Make a path a truck can use — mind gates, mud and low branches.</li>
-    <li><strong>Expose the lids.</strong> Accessible lids avoid a digging step.</li>
-    <li><strong>Know the distances.</strong> Hose length is limited; note where the tank sits relative to truck access.</li>
-  </ul>
-
-  <h2>If You're Not Sure Where the Tank Is</h2>
+  <h2>Clear a Path the Truck Can Reach</h2>
   <p>
-    If the tank location is unknown, a provider can locate it — see <a href="/septic-tank-locating-cookeville-tn/">tank locating</a>. When ready, <a href="/request-service/">request septic service</a>.
+    Septic trucks are heavy, and the vacuum hose only reaches so far, so the truck has to get
+    reasonably close to the tank. Before the appointment, think about the route: unlock or open gates,
+    clear anything blocking the drive, watch for low branches a tall truck won't clear, and consider
+    soft or muddy ground after rain. On the rural and wooded lots common across the Upper Cumberland,
+    access is often the biggest variable in how a visit goes — our guide on
+    <a href="/how-terrain-and-access-affect-septic-service/">how terrain and access affect service</a>
+    covers why.
   </p>
 
+  <h2>Make the Lids Accessible</h2>
+  <p>
+    This is the big one. If the tank lids are buried under soil, mulch, a deck, or landscaping, they
+    have to be uncovered before pumping can begin — and that digging is frequently the largest single
+    add-on to a service bill. If you know where the lids are, expose them (or clear what's on top)
+    before the crew arrives. Better yet, if you find yourself uncovering lids every time, ask about
+    risers that bring them up to ground level permanently; they pay for themselves by removing the dig
+    on every future visit. Our guide on <a href="/septic-pumping-cost-factors/">pumping cost
+    factors</a> explains how much access drives the price.
+  </p>
+
+  <h2>Know Where the Tank Is</h2>
+  <p>
+    If the tank's location is known, point it out or mark it. If it isn't, that's worth solving in
+    advance, because otherwise the provider spends time locating it on the day. Records, past service
+    receipts, or physical clues can help you find it — and our guide on
+    <a href="/how-to-find-septic-records-and-tank-locations/">finding septic records and tank
+    locations</a> walks through where to look. Once it's found, write down its position measured from
+    two fixed points on the house so this is the last time anyone has to search.
+  </p>
+
+  <h2>If You're Still Not Sure Where It Is</h2>
+  <p>
+    Don't worry if you genuinely can't find the tank — it's common, especially on older properties. A
+    provider can locate it as part of the visit; see
+    <a href="/septic-tank-locating-cookeville-tn/">septic tank locating</a>. Just flag it when you book
+    so they arrive prepared for it.
+  </p>
+
+  <h2>Ready to Schedule</h2>
+  <p>
+    With access cleared, lids reachable, and the tank's location known, a routine service visit is
+    quick and straightforward. When you're set, <a href="/request-service/">request septic service</a>
+    and mention anything about your property's access that would help the crew arrive prepared.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

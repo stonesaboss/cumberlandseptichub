@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "New Septic Installation Cost Factors"
  * Cluster: septic-costs
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "Why can't installation be priced from a standard figure?",
-    answer: "Because the system is designed for your specific soil, site and needs, which are established during planning.",
+    question: "Why can two installation bids for the same house be so different?",
+    answer: "Often because they aren't actually for the same system. Soil results can point to different system types, and bids may include different scopes — design, approvals, access work, and property restoration. Comparing bids means comparing what each one includes, not just the bottom line.",
   },
   {
-    question: "What is the biggest cost driver?",
-    answer: "Usually soil and site conditions, since they determine the system type and the amount of work involved.",
+    question: "What is a perc test and why does it matter so much?",
+    answer: "A percolation (perc) or soil evaluation measures how well the ground accepts water. It's the foundation of the whole project because it determines what system type the site can support — a conventional field, or a more involved alternative design when soils are poor. See our guide on the septic installation process for where it fits.",
   },
   {
-    question: "Is a replacement cheaper than a new install?",
-    answer: "Not necessarily — replacement adds removing or working around an old system, which can offset other factors. It depends on the site.",
+    question: "What's the difference between a conventional and an alternative system?",
+    answer: "A conventional system uses a tank and a gravity drain field and suits sites with good soil and space. Alternative systems — mound, drip, or aerobic treatment units, among others — are used when soil, space, or slope won't support a conventional field. They involve more components and design, which affects the project.",
   },
   {
-    question: "Is this guide a price quote?",
-    answer: "No. It explains what shapes an installation budget; the provider prices the project after site evaluation and design.",
+    question: "Does replacing an old system cost the same as a fresh install?",
+    answer: "Not necessarily. Replacement adds removing or working around the existing system and accounting for how the property has been used, which can offset or add to other factors. It's site-specific — see our guide on replacing an older septic system.",
   },
 ];
 ---
 
 <ServicePage
   title={"New Septic Installation Cost Factors"}
-  description={"How site conditions, soil, system type, access and approvals shape the budget for a new or replacement septic system."}
+  description={"How soil and site evaluation, system type, access, design, approvals and restoration shape the budget for a new or replacement septic system — and why two bids for 'the same' system can differ."}
   h1={"What Shapes the Cost of a New Septic System"}
   eyebrow={"Septic Costs & Pricing"}
   breadcrumbLabel={"New Septic Installation Cost Factors"}
   serviceName={"Septic Service Information"}
-  intro={"Installing or replacing a septic system is the largest septic project, and its budget comes together during planning rather than from a standard figure. Here are the factors that shape it."}
+  intro={"A new septic system is the largest project in septic ownership, and its budget is built during planning rather than read off a price list. This guide walks through the factors that shape it — starting with the soil, which drives almost everything else."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,29 +51,90 @@ const faqs: Faq[] = [
     { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "where repair costs come from" },
   ]}
 >
-  <p>A new system is designed for a specific site, so the budget reflects that site. Understanding the drivers helps you plan and ask good questions before ground breaks.</p>
+  <p>
+    Installing or replacing a septic system is the biggest undertaking in owning one, and unlike a
+    routine pump-out, its budget genuinely can't be read off a chart. That's not vagueness — it's
+    because the system is engineered for a specific piece of ground, and the ground varies enormously
+    across the Upper Cumberland, from plateau rock to river-valley bottomland. Understanding the
+    factors that shape the budget helps you plan realistically and ask good questions before ground
+    breaks.
+  </p>
 
   {/* Intended asset: /images/resources/new-septic-installation-cost-factors-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of a new residential septic system installation in progress on a rural Tennessee lot"}
+    alt={"New residential septic system installation in progress on a rural Tennessee lot"}
     width={1600}
     height={900}
   />
 
-  <h2>The Budget Drivers</h2>
-  <ul>
-    <li><strong>Soil and site evaluation.</strong> What the ground allows shapes the system that can be installed.</li>
-    <li><strong>System type and design.</strong> Conventional and alternative systems involve different work.</li>
-    <li><strong>Access and layout.</strong> Equipment access, slope and distance affect the project.</li>
-    <li><strong>Approvals and restoration.</strong> Applicable approvals and putting the property back together both matter.</li>
-  </ul>
-
-  <h2>Planning Comes First</h2>
+  <h2>The Soil Comes First — and Drives the Rest</h2>
   <p>
-    Budgets firm up after the site is evaluated and a design is chosen — see the <a href="/resources/septic-installation-replacement/">installation and replacement hub</a> for how these projects generally proceed. To begin, <a href="/request-service/">request septic service</a> with your property details.
+    Every installation starts with a soil evaluation (a percolation or "perc" test and site
+    assessment) that measures how readily the ground accepts and processes water. This isn't a
+    formality — it's the decision that shapes the entire project. Good, deep, well-draining soil can
+    support a straightforward conventional system. Poor, shallow, rocky, or wet soils may require an
+    alternative design, which involves more components and more work. Because so much flows from this
+    one result, it's the reason a firm budget only comes together after the site is evaluated. Our
+    <a href="/the-septic-installation-process/">septic installation process</a> guide shows where this
+    step sits in the sequence.
   </p>
 
+  <h2>System Type and Design</h2>
+  <p>
+    What the soil allows determines the system, and the system determines a large share of the cost:
+  </p>
+  <ul>
+    <li>
+      <strong>Conventional systems</strong> — a tank and a gravity-fed drain field — suit sites with
+      suitable soil and enough space, and are the most direct to install.
+    </li>
+    <li>
+      <strong>Alternative systems</strong> — such as mound systems, drip distribution, or aerobic
+      treatment units — are used when soil, space, or slope won't support a conventional field. They
+      add components, design work, and sometimes ongoing maintenance, all of which factor in.
+    </li>
+  </ul>
+  <p>
+    Sizing matters too: the system is designed for the home's expected use, so a larger household or
+    more bedrooms generally means a larger system.
+  </p>
+
+  <h2>Access, Layout, and Restoration</h2>
+  <p>
+    A septic system is heavy construction. How easily equipment can reach the work area, how the tank
+    and field are laid out on the lot, and how much of the property has to be restored afterward all
+    contribute. Long drives, slopes, trees, and tight lots — common on rural Upper Cumberland
+    properties — can add to the work. Planning the layout well also protects the future: a field
+    placed where it can be reached and maintained is cheaper to live with for decades.
+  </p>
+
+  <h2>Approvals</h2>
+  <p>
+    New systems follow the applicable approval process with the appropriate authority, and
+    requirements vary by property and county. Often a qualified installer coordinates approvals as
+    part of the project — worth confirming up front. Our guide on
+    <a href="/tennessee-septic-permits-and-approvals/">Tennessee septic permits and approvals</a>
+    covers where to direct those questions.
+  </p>
+
+  <h2>Why Bids Differ — and How to Compare Them</h2>
+  <p>
+    Two bids that look like they're "for the same system" often aren't. One may assume a conventional
+    field while another accounts for an alternative design the soil actually requires; one may include
+    design, approvals, and full restoration while another leaves them out. The way to compare fairly
+    is to compare scope — what's included, what system type, and what happens if the soil results
+    require a change — rather than just the total. Our guide on
+    <a href="/questions-to-ask-before-septic-installation/">questions to ask before installation</a>
+    lists what to confirm.
+  </p>
+
+  <h2>Getting Started</h2>
+  <p>
+    Because the budget is built during planning, the first step is an evaluation, not a quote. Share
+    your property details and what you're planning, and a provider can begin the assessment that leads
+    to a real number. When you're ready, <a href="/request-service/">request septic service</a>.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

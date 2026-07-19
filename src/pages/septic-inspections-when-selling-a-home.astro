@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Septic Inspections When Selling a Home"
  * Cluster: septic-inspections-property-buying
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "Should I inspect my septic before selling?",
-    answer: "It is often worth it — knowing the condition in advance avoids surprises during the buyer's inspection and gives you time to act.",
+    question: "Should I inspect my septic system before selling?",
+    answer: "It's often worth it. Knowing the system's condition before you list means no surprises during the buyer's inspection, time to address any issues on your own schedule rather than under a closing deadline, and documentation that reassures buyers. It turns a potential deal-threatening unknown into a settled question.",
   },
   {
-    question: "Does an inspection help the sale?",
-    answer: "Documentation and a recent inspection can reassure buyers and reduce back-and-forth during the transaction.",
+    question: "Does a pre-listing inspection actually help the sale?",
+    answer: "It can, in two ways. Documentation and a recent inspection reduce a buyer's uncertainty, which reduces back-and-forth and renegotiation. And by finding any issues early, you control how and when they're addressed instead of scrambling when the buyer's inspector finds them at the worst moment.",
   },
   {
-    question: "Who pays for a pre-listing inspection?",
-    answer: "That is up to the seller in this case; costs and customs vary, so confirm details when arranging it.",
+    question: "What if the inspection finds a problem?",
+    answer: "Better to find it now than during escrow. With time on your side you can get it evaluated, understand the options, and decide how to handle it — repair before listing, disclose and price accordingly, or negotiate from a position of knowledge rather than surprise. Discovering it under a deadline is where problems become expensive.",
   },
   {
-    question: "Is this guide real-estate advice?",
-    answer: "No — it is general information. Confirm specifics with your agent, a provider and the appropriate authority.",
+    question: "Who pays for a pre-listing septic inspection?",
+    answer: "When it's a seller's decision to inspect before listing, the seller typically arranges and pays for it. Costs and customs vary, so confirm the details when arranging it — the point is that you control the timing and the information.",
   },
 ];
 ---
 
 <ServicePage
   title={"Septic Inspections When Selling a Home"}
-  description={"How sellers get ahead of septic questions — what a pre-listing inspection can surface and why documentation helps a sale."}
+  description={"How sellers get ahead of septic questions — what a pre-listing inspection surfaces, why documentation reassures buyers, and how handling issues on your own schedule beats discovering them under deadline."}
   h1={"Septic Inspections When Selling a Home"}
   eyebrow={"Septic Inspections & Property Buying"}
   breadcrumbLabel={"Inspections When Selling a Home"}
   serviceName={"Septic Inspection Information"}
-  intro={"Sellers who get ahead of septic questions tend to have smoother sales. This guide covers why a pre-listing look and good records help."}
+  intro={"Every buyer of a home on septic will eventually ask about the system. Sellers who answer that question before it's asked — with a pre-listing inspection and good records — tend to have smoother sales and stronger negotiating positions. Here's why, and how to prepare."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,76 @@ const faqs: Faq[] = [
     { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "rural property context" },
   ]}
 >
-  <p>A buyer will eventually ask about the septic system. Knowing its condition before you list means fewer surprises and a stronger position in negotiation.</p>
+  <p>
+    When you sell a home on a septic system, there's one question you can count on: a serious buyer,
+    or their inspector, will want to know the condition of the system they can't see. You can let that
+    question surface at the worst possible moment — mid-negotiation, on a deadline — or you can answer
+    it before you list. Sellers who choose the second path tend to have calmer sales and more
+    leverage.
+  </p>
 
   {/* Intended asset: /images/resources/septic-inspections-when-selling-a-home-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of a septic inspection at a home being prepared for sale, with documentation being recorded"}
+    alt={"Septic inspection at a home being prepared for sale, with documentation being recorded"}
     width={1600}
     height={900}
   />
 
-  <h2>Why Sellers Benefit</h2>
+  <h2>Why Getting Ahead of It Pays</h2>
+  <p>
+    A pre-listing septic inspection changes the dynamics of a sale in three concrete ways:
+  </p>
   <ul>
-    <li><strong>Fewer surprises.</strong> Knowing the condition avoids a last-minute discovery during the buyer's inspection.</li>
-    <li><strong>Documentation.</strong> Records and a recent inspection reassure buyers.</li>
-    <li><strong>Time to act.</strong> Any issues can be addressed on your schedule, not under deadline pressure.</li>
+    <li>
+      <strong>No surprises.</strong> You learn the system's condition on your terms, not when a
+      buyer's inspector delivers unexpected news during escrow.
+    </li>
+    <li>
+      <strong>Time to act.</strong> Any issue can be evaluated and addressed on your own schedule,
+      when you can weigh options calmly — not under the pressure of a pending closing.
+    </li>
+    <li>
+      <strong>Buyer reassurance.</strong> A recent inspection and clear records reduce a buyer's
+      uncertainty, which tends to reduce renegotiation and keep deals on track.
+    </li>
   </ul>
 
-  <h2>Getting Ready to List</h2>
+  <h2>What Buyers Will Want to Know</h2>
   <p>
-    Locating the tank, gathering records and a condition check are a good start — see <a href="/how-to-find-septic-records-and-tank-locations/">how to find septic records</a>. To arrange an inspection, <a href="/request-service/">request septic service</a>.
+    Buyers of septic properties (and their agents) increasingly treat a septic inspection as
+    essential — our companion guide on
+    <a href="/septic-inspections-when-buying-a-home/">inspections when buying a home</a> lays out
+    exactly what they're looking for. Knowing what the other side will ask helps you prepare the right
+    answers: the system's condition, its location and layout, service history, and any documentation
+    you can provide.
   </p>
 
+  <h2>Gather Your Records</h2>
+  <p>
+    Half of a smooth septic conversation is simply having the paperwork. Before you list, pull together
+    whatever you have: the tank's location, service and pumping dates, any past repairs, and prior
+    inspection reports. If records are thin — common on properties you've owned a while or bought
+    without them — our guide on
+    <a href="/how-to-find-septic-records-and-tank-locations/">finding septic records and tank
+    locations</a> covers where to look and how a provider can fill the gaps.
+  </p>
+
+  <h2>If the Inspection Finds Something</h2>
+  <p>
+    Finding an issue before listing isn't bad news — it's the whole point of doing it early. With time
+    on your side, you can have it evaluated, understand what it would take to address, and choose your
+    approach: fix it before listing, disclose it and price accordingly, or negotiate from a position of
+    knowledge. The expensive version of any septic issue is the one discovered under a closing
+    deadline; the early version is just a decision.
+  </p>
+
+  <h2>Getting Started</h2>
+  <p>
+    A pre-listing inspection is straightforward to arrange, and the earlier you do it, the more room
+    you have to act on whatever it finds. <a href="/request-service/">Request septic service</a> to
+    set one up, and start pulling your records together in parallel.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

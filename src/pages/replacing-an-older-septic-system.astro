@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Replacing an Older Septic System"
  * Cluster: septic-installation-replacement
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "How is replacing different from a new install?",
-    answer: "It adds evaluating and working around or removing the existing system, plus accounting for how the property has been used.",
+    question: "How is replacing a system different from a new install?",
+    answer: "A replacement adds the existing system to the equation — it has to be evaluated and then worked around or removed — and it accounts for how the property has been used over the years. It's also designed to current site conditions and requirements, which may differ from when the original was installed.",
   },
   {
-    question: "When is replacement the right call?",
-    answer: "Often after a failed field or repeated problems on an aging system. An evaluation helps confirm it.",
+    question: "When is it time to replace rather than keep repairing?",
+    answer: "Usually after the drain field has failed or an aging system has accumulated repeated problems where each repair buys only a little time. An evaluation confirms whether you've reached that point — see our guide on repair versus replacement for how to weigh it.",
   },
   {
-    question: "Can I reuse parts of the old system?",
-    answer: "Sometimes, depending on condition and design. A provider determines what is practical during planning.",
+    question: "Can any part of the old system be reused?",
+    answer: "Sometimes, depending on condition. In some cases a sound tank can remain while the field is replaced, or vice versa; in others a full replacement makes more sense. A provider determines what's practical during the evaluation and design.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. A qualified provider plans the specific project.",
+    question: "Will a replacement have to meet current requirements?",
+    answer: "Generally a replacement is designed to current site conditions and the applicable requirements, which can differ from the standards in place when the original system went in. This is one reason replacement is designed fresh rather than simply copied.",
   },
 ];
 ---
 
 <ServicePage
   title={"Replacing an Older Septic System"}
-  description={"What end-of-life septic systems involve that new builds do not — evaluating the old system, planning the new one, and site realities."}
+  description={"What replacing an aging septic system involves that a fresh installation doesn't — assessing the old system, accounting for how the property has been used, and designing a replacement for today's needs and rules."}
   h1={"What to Know About Replacing an Older Septic System"}
   eyebrow={"Septic Installation & Replacement"}
   breadcrumbLabel={"Replacing an Older Septic System"}
   serviceName={"Septic Installation Information"}
-  intro={"Replacing a system adds considerations a fresh install does not have. This guide covers what changes when there is already a system in the ground."}
+  intro={"Replacing a system is a new installation plus a set of realities a bare lot never has: an old system in the ground, years of property use, and standards that may have changed since the original was built. This guide covers what makes replacement its own project."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,58 @@ const faqs: Faq[] = [
     { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "regional planning" },
   ]}
 >
-  <p>A replacement is a new installation plus the realities of the old system and how the property has been used. Planning accounts for both.</p>
+  <p>
+    Replacing a septic system shares its bones with a new installation — soil evaluation, design,
+    approvals, installation, restoration — but it carries extra weight a bare building lot never does.
+    There's already a system in the ground, the property has a history of use, and the rules and
+    standards may have moved since the original was put in. Those differences are what make
+    replacement its own kind of project.
+  </p>
 
   {/* Intended asset: /images/resources/replacing-an-older-septic-system-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of an aging septic system being assessed for replacement on a residential property"}
+    alt={"Aging septic system being assessed for replacement on a residential property"}
     width={1600}
     height={900}
   />
 
-  <h2>What Makes Replacement Different</h2>
-  <ul>
-    <li><strong>The existing system.</strong> It has to be evaluated and worked around or removed.</li>
-    <li><strong>Site history.</strong> How the property has been used affects the plan.</li>
-    <li><strong>Design for today.</strong> A replacement is designed to current site conditions and needs.</li>
-  </ul>
+  <h2>The Existing System Is Part of the Job</h2>
+  <p>
+    On a new build, the ground is a blank slate. On a replacement, the old system has to be assessed
+    first — what's failed, what's still sound, and where everything sits. From there it has to be
+    worked around or removed. Sometimes a component in good condition can stay: a sound tank paired
+    with a new field, for instance. Other times a clean replacement is the more sensible path. That
+    assessment is part of what the evaluation determines.
+  </p>
+
+  <h2>Years of Property Use Matter</h2>
+  <p>
+    A replacement also has to reckon with how the property has actually been lived on. Where structures,
+    driveways, landscaping, wells, and mature trees now sit can shape where a new tank and field can
+    go — constraints a fresh lot doesn't have. Good planning works with those realities rather than
+    against them, which is part of why a replacement is designed specifically rather than copied from
+    the original.
+  </p>
+
+  <h2>Designed for Today, Not Yesterday</h2>
+  <p>
+    A replacement system is designed to current site conditions and the requirements in force now,
+    which may differ from the standards that applied when the original was installed. The soil is
+    re-evaluated, the system is sized for the home's current use, and the design reflects today's
+    rules. This is why replacement isn't a matter of simply reinstalling the same thing — it's a fresh
+    design informed by the old system's lessons.
+  </p>
 
   <h2>Deciding to Replace</h2>
   <p>
-    Replacement usually enters the conversation after repeated problems or a failed field — see <a href="/septic-repair-versus-system-replacement/">repair versus replacement</a>. When you are planning one, <a href="/request-service/">request septic service</a> to start with an evaluation.
+    Replacement usually enters the conversation after a failed drain field or a pattern of repeated
+    problems on an aging system. Weighing that choice well is the subject of our guide on
+    <a href="/septic-repair-versus-system-replacement/">repair versus replacement</a>, and what shapes
+    the budget is covered in <a href="/new-septic-installation-cost-factors/">installation cost
+    factors</a>. If you're at that crossroads, the first step is an evaluation, not a quote.
+    <a href="/request-service/">Request septic service</a> to start.
   </p>
-
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Signs of Drain-Field Trouble"
  * Cluster: septic-repairs-drain-fields
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "What is the first sign of drain-field trouble?",
-    answer: "Often wet or unusually green ground over the field, sometimes with odors or drains that back up again after pumping.",
+    question: "What's usually the first sign of drain-field trouble?",
+    answer: "Often it's the ground itself — soft, soggy, or unusually green areas over the field with no recent rain to explain them. Backups or slow drains that return soon after the tank is pumped are another strong early sign, because they suggest the problem is downstream of the tank in the field itself.",
   },
   {
-    question: "Does lush grass always mean a problem?",
-    answer: "Not always, but a bright patch over the field that stands out from the rest of the yard is worth having checked.",
+    question: "Does greener grass over the field really mean a problem?",
+    answer: "Not always, but a bright green stripe or patch that clearly stands out from the rest of the yard is worth taking seriously. It can mean nutrient-rich wastewater is reaching close to the surface instead of being absorbed and treated deeper in the soil — a sign the field is overloaded.",
   },
   {
-    question: "Can a struggling field be saved?",
-    answer: "Sometimes function can be restored if caught early; the sooner it is evaluated, the more options tend to exist.",
+    question: "Why does my system back up again right after I pump it?",
+    answer: "That's a classic drain-field clue. If pumping the tank only helps for a short time before the backup returns, the tank probably wasn't the real problem — the field can't accept water, so the tank refills and backs up again. This pattern is worth an evaluation rather than repeated pumping.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. An on-site evaluation confirms the cause.",
+    question: "Can a struggling drain field be saved?",
+    answer: "Sometimes, if it's caught early — clearing a blockage, correcting a distribution problem, or resting and rehabilitating the field. The longer it's overloaded, though, the more the soil's capacity is used up, and the more likely replacement becomes. Early action genuinely expands your options.",
   },
 ];
 ---
 
 <ServicePage
   title={"Signs of Drain-Field Trouble"}
-  description={"Surface clues that a septic drain field is struggling — wet spots, odors, lush grass and slow drains — and why early action matters."}
+  description={"How to read the surface clues that a septic drain field is struggling — soggy ground, lush green stripes, odors, and backups that return after pumping — and why acting early keeps a repair from becoming a replacement."}
   h1={"Signs Your Drain Field May Be Struggling"}
   eyebrow={"Septic Repairs & Drain Fields"}
   breadcrumbLabel={"Signs of Drain-Field Trouble"}
   serviceName={"Septic Repair Information"}
-  intro={"The drain field is where wastewater returns to the soil, and it gives surface clues when it starts to struggle. Catching them early is what keeps a repair from becoming a replacement."}
+  intro={"The drain field is buried and silent, so it announces trouble through the ground above it. Learning to read those signals is one of the most valuable things a septic owner can do, because the difference between catching a field problem early and late is often the difference between a repair and a full replacement."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,29 +51,75 @@ const faqs: Faq[] = [
     { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "the replacement path" },
   ]}
 >
-  <p>A drain field rarely fails overnight. The ground above it tends to signal trouble first, and those signals are your chance to act while options are still simpler.</p>
+  <p>
+    A drain field rarely fails all at once. It sends signals for weeks or months first — and because
+    the field is underground, those signals show up at the surface, in the ground above it. Every one
+    of them is a chance to act while the problem is still small. The owners who end up replacing a
+    field are almost always the ones who waited; the ones who catch it early often have far cheaper
+    options.
+  </p>
 
   {/* Intended asset: /images/resources/signs-of-drain-field-trouble-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of a residential drain field showing wet spots and unusually green grass as warning signs"}
+    alt={"Residential drain field showing wet spots and unusually green grass as warning signs"}
     width={1600}
     height={900}
   />
 
-  <h2>What to Watch For</h2>
-  <ul>
-    <li>Wet, soggy or spongy ground over the field with no recent rain.</li>
-    <li>Unusually lush, green grass in a stripe or patch over the field.</li>
-    <li>Odors over the field area.</li>
-    <li>Slow drains or backups that return after pumping.</li>
-  </ul>
-
-  <h2>Why Early Action Matters</h2>
+  <h2>What the Field Does — and What Failure Looks Like</h2>
   <p>
-    Field problems sit at the expensive end of septic ownership, so acting early genuinely pays. A <a href="/drain-field-repair-cookeville-tn/">drain-field evaluation</a> identifies what is happening before it grows. If you are seeing these signs, <a href="/request-service/">request septic service</a>.
+    After the tank holds back solids, liquid flows to the drain field and seeps into the soil, where
+    it's treated naturally. Trouble begins when the soil can no longer accept water at the rate it's
+    arriving — usually because solids have clogged it, it's been overloaded with water, or it's simply
+    aged. When that happens, water backs up or surfaces, and the ground tells the story.
   </p>
 
+  <h2>The Surface Clues to Watch</h2>
+  <ul>
+    <li>
+      <strong>Wet, soggy, or spongy ground</strong> over the field with no recent rain — water that
+      should be soaking in is instead pooling near the surface.
+    </li>
+    <li>
+      <strong>Unusually lush, green grass</strong> in a stripe or patch over the field, standing out
+      from the surrounding yard — a sign nutrient-rich water is reaching the surface.
+    </li>
+    <li>
+      <strong>Odors</strong> over the field area, especially alongside the wet or green signs.
+    </li>
+    <li>
+      <strong>Slow drains or backups that return after pumping</strong> — perhaps the most telling
+      sign, because it points downstream of the tank to the field itself.
+    </li>
+  </ul>
+
+  <h2>Why "It Backs Up Again After Pumping" Matters So Much</h2>
+  <p>
+    If pumping the tank fixes a backup for only a short time before it returns, that's a strong hint
+    the tank was never the real problem. A healthy field accepts the tank's outflow; a failing one
+    can't, so the tank refills and backs up again no matter how often it's pumped. Recognizing this
+    pattern saves money — repeated pumping treats a symptom while the field problem grows.
+  </p>
+
+  <h2>Why Early Action Changes the Outcome</h2>
+  <p>
+    Field problems sit at the expensive end of septic ownership, and time works against you. Early on,
+    a struggling field may be recoverable — a blockage cleared, a
+    <a href="/septic-distribution-box-problems/">distribution box</a> corrected, or the field rested
+    and rehabilitated. The longer it's overloaded, the more of the soil's finite capacity is consumed,
+    and the more likely a <a href="/drain-field-repair-or-replacement-costs/">replacement</a> becomes.
+    Acting at the first signs genuinely widens your options and lowers the likely cost.
+  </p>
+
+  <h2>What to Do</h2>
+  <p>
+    If you're seeing any of these signs, the smart move is an evaluation before the situation grows —
+    and in the meantime, easing water use takes load off the field. A
+    <a href="/drain-field-repair-cookeville-tn/">drain-field evaluation</a> identifies what's actually
+    happening. <a href="/request-service/">Request septic service</a> and describe what you're seeing
+    and how long it's been going on.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

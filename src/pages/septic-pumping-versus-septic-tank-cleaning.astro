@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Septic Pumping Versus Septic Tank Cleaning"
  * Cluster: septic-pumping-maintenance
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -15,31 +13,31 @@ import type { Faq } from '@data/site';
 const faqs: Faq[] = [
   {
     question: "Is cleaning always better than pumping?",
-    answer: "Not necessarily — it depends on the tank's condition and your goals. Confirm the scope so the service matches your need.",
+    answer: "Not necessarily — it depends on the tank's condition and how long it's been. What matters is that the service matches the need and that you know which one you're getting. A thorough removal is more complete; a quick liquid pump can leave the compacted sludge that actually causes problems behind.",
   },
   {
-    question: "Can a tank be pumped but still not clean?",
-    answer: "Yes. Removing liquid without fully removing the settled sludge can leave material behind, which is the distinction between the two.",
+    question: "Can a tank be 'pumped' but still not really empty?",
+    answer: "Yes, and this is the crux of the issue. If only the liquid is removed and the settled sludge blanket at the bottom is left in place, the tank looks serviced but still holds the material most likely to cause trouble. That's why confirming the scope beforehand matters more than the label used.",
   },
   {
-    question: "Which do I need?",
-    answer: "Describe the situation to a provider; they can recommend the appropriate scope after seeing the tank.",
+    question: "How do I know which service I need?",
+    answer: "Describe the situation to the provider — how long since the last service, any symptoms, and the tank's history — and let them recommend the scope after seeing the tank. When in doubt, a more thorough removal after a long gap is usually the safer choice.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. The provider determines the right service for your specific tank.",
+    question: "Why does the settled sludge matter so much?",
+    answer: "The sludge layer is compacted solids at the bottom of the tank. As it builds, it reduces the tank's working capacity and eventually carries over into the drain field, which is the expensive part to repair. Removing it — not just the liquid above it — is what actually protects the system.",
   },
 ];
 ---
 
 <ServicePage
   title={"Septic Pumping Versus Septic Tank Cleaning"}
-  description={"Two terms, sometimes two different jobs — what pumping and cleaning each mean and what to confirm when you request service."}
+  description={"Two terms that sometimes mean two different jobs. Learn what pumping and cleaning each actually remove, why a 'pumped' tank can still be full of sludge, and exactly what to confirm before you book."}
   h1={"Septic Pumping vs. Septic Tank Cleaning: What's the Difference?"}
   eyebrow={"Septic Pumping & Maintenance"}
   breadcrumbLabel={"Pumping Versus Tank Cleaning"}
   serviceName={"Septic Pumping Information"}
-  intro={"\"Pumping\" and \"cleaning\" are often used interchangeably, but they can describe different scopes of work. Knowing the difference helps you ask for what you actually want."}
+  intro={"'Pumping' and 'cleaning' get used interchangeably, but they can describe genuinely different levels of service — and the difference determines whether your tank is actually empty or just lighter. Here's what each means and how to make sure you get the service you're paying for."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,70 @@ const faqs: Faq[] = [
     { label: "Septic Problems and Warning Signs", href: "/resources/septic-problems/", blurb: "symptoms to watch" },
   ]}
 >
-  <p>Removing the liquid from a tank is one job; agitating and removing the settled sludge blanket from every compartment is a more thorough one. Both are useful, but they are not always the same service.</p>
+  <p>
+    Ask three companies to "pump the tank" and you might get three slightly different jobs. The words
+    pumping and cleaning are used loosely in the industry, and the gap between them isn't just
+    semantics — it's the difference between a tank that's genuinely empty and one that's merely
+    lighter. Knowing the distinction lets you compare quotes fairly and make sure the service actually
+    protects your system.
+  </p>
 
   {/* Intended asset: /images/resources/septic-pumping-versus-septic-tank-cleaning-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration contrasting pumping liquid from a septic tank with fully cleaning the settled sludge from each compartment"}
+    alt={"Comparison of pumping liquid from a septic tank versus fully cleaning the settled sludge from each compartment"}
     width={1600}
     height={900}
   />
 
-  <h2>What Each Typically Means</h2>
-  <ul>
-    <li><strong>Pumping.</strong> Generally removing the liquid and accessible contents from the tank.</li>
-    <li><strong>Cleaning.</strong> Generally a more thorough removal of the settled sludge from each compartment.</li>
-    <li><strong>Why it matters.</strong> A tank that looks pumped can still hold a compacted sludge layer.</li>
-  </ul>
-
-  <h2>What to Confirm</h2>
+  <h2>What's Actually Inside the Tank</h2>
   <p>
-    When you request service, confirm which scope a quote covers so expectations match. If you are unsure which you need, describe the situation and let the provider advise. See <a href="/septic-tank-cleaning-cookeville-tn/">septic tank cleaning</a>, or <a href="/request-service/">request septic service</a>.
+    To understand the difference, picture the tank's three layers. Solids settle to the bottom and
+    compact into a dense <strong>sludge</strong> layer. Fats and lighter material float on top as a
+    <strong>scum</strong> layer. In between sits the <strong>liquid</strong> (effluent) that normally
+    flows out to the drain field. The liquid is the easy part to remove; the compacted sludge is the
+    part that takes real work — and the part most responsible for problems if it's left to build.
   </p>
 
+  <h2>Pumping vs. Cleaning — the Practical Difference</h2>
+  <ul>
+    <li>
+      <strong>Pumping</strong> generally means removing the liquid and the accessible contents of the
+      tank. It lowers the level and can relieve a symptom, but on its own it may leave the settled
+      sludge blanket behind.
+    </li>
+    <li>
+      <strong>Cleaning</strong> generally means a more thorough job — agitating and removing the
+      settled sludge from every compartment so the tank is genuinely emptied, not just lowered.
+    </li>
+  </ul>
+  <p>
+    The catch is that a tank can be "pumped" and still hold a thick, compacted layer. It looks
+    serviced, but the material most likely to reduce capacity and reach the drain field is still
+    there. That's why the label on the service matters less than knowing what it actually includes.
+  </p>
+
+  <h2>Why the Sludge Layer Is the Point</h2>
+  <p>
+    Everything about septic maintenance comes back to keeping solids out of the drain field, because
+    the field is the expensive part to repair or replace. The sludge layer is those solids. As it
+    grows, it shrinks the tank's working volume — so the tank fills faster and problems come sooner —
+    and eventually it carries over into the field and clogs the soil. Removing that layer, not just
+    the liquid above it, is what genuinely protects the system. Our guide on
+    <a href="/drain-field-repair-or-replacement-costs/">drain-field costs</a> shows why that
+    protection is worth it.
+  </p>
+
+  <h2>What to Confirm Before You Book</h2>
+  <p>
+    You don't need to master the terminology — you just need to ask the right question. Before
+    comparing two quotes, confirm what each one actually covers: is it removing the liquid, or fully
+    removing the settled sludge from every compartment? A cheaper number for a lighter service isn't
+    really cheaper if the tank isn't actually empty. If you're unsure which you need, describe how
+    long it's been and any symptoms, and let the provider advise. See
+    <a href="/septic-tank-cleaning-cookeville-tn/">septic tank cleaning</a>, or
+    <a href="/request-service/">request septic service</a> and ask them to confirm the scope.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

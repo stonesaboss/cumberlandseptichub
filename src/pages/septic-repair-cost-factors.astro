@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Septic Repair Cost Factors"
  * Cluster: septic-costs
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "Why can't I get a flat repair price up front?",
-    answer: "Because the fix depends on which component failed, and that is confirmed by an on-site evaluation rather than from symptoms alone.",
+    question: "Why can't a provider quote a repair before looking at the system?",
+    answer: "Because the same symptom can come from very different failures. Slow drains might be a full tank, a clogged line, a failed effluent pump, or a struggling drain field — each a different repair. Quoting before diagnosis would be guessing, so a responsible provider evaluates first, then prices the actual problem.",
   },
   {
-    question: "Will pumping fix my repair problem?",
-    answer: "Sometimes it relieves a symptom, but if a component or the drain field has failed, pumping is temporary and the underlying issue still needs repair.",
+    question: "Will pumping the tank fix my problem?",
+    answer: "Sometimes it relieves a symptom temporarily, but if the cause is a failed component or a drain field that can no longer accept water, the problem returns. Pumping is not a repair; it's sometimes a first step that also lets the provider see what's really going on.",
   },
   {
-    question: "What is usually the most expensive repair?",
-    answer: "Drain-field problems, because they can involve soil, excavation and replacement planning.",
+    question: "What makes a repair expensive versus cheap?",
+    answer: "Two things mostly: which component failed and how hard it is to reach. Replacing an accessible part is modest; work that requires significant excavation — especially anything involving the drain field — is where costs climb, because it can involve soil, digging, and restoring the property.",
   },
   {
-    question: "Is this guide a price quote?",
-    answer: "No. It explains the variables behind repair pricing; the provider sets the price after evaluating the system.",
+    question: "How do I avoid surprise repair costs?",
+    answer: "Maintain the system so small issues are caught early, act on warning signs instead of waiting, and ask the provider to explain the diagnosis and the options — including doing nothing yet — before work begins. Early problems are almost always cheaper than the failures they turn into.",
   },
 ];
 ---
 
 <ServicePage
   title={"Septic Repair Cost Factors"}
-  description={"Why two septic repairs can cost very different amounts — the component, the diagnosis, access and system condition all shape repair pricing."}
+  description={"Why two 'septic repairs' can cost very different amounts — the component that failed, why diagnosis comes first, how access changes the job, and why drain-field problems sit at the expensive end."}
   h1={"Why Septic Repair Pricing Varies So Much"}
   eyebrow={"Septic Costs & Pricing"}
   breadcrumbLabel={"Septic Repair Cost Factors"}
   serviceName={"Septic Service Information"}
-  intro={"Repair pricing follows the diagnosis, and the diagnosis follows an evaluation. This guide explains why similar-sounding repairs can differ widely and what drives the range."}
+  intro={"'Septic repair' isn't one job — it's a category covering everything from a small baffle fix to a failed drain field. This guide explains what drives repair pricing, why an evaluation always comes before a real number, and how to tell a modest repair from a major one."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,29 +51,98 @@ const faqs: Faq[] = [
     { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "where repair costs come from" },
   ]}
 >
-  <p>A deteriorated baffle is a different job than a failed effluent pump, which is different again from a crushed line or a drain field that no longer accepts water. Because symptoms alone rarely identify the failed part, providers evaluate before they price.</p>
+  <p>
+    When people say a septic repair "cost a fortune" or "was no big deal," they're often describing
+    completely different jobs under the same word. A septic system is a chain of parts — the tank and
+    its baffles, sometimes a pump, the pipes between them, a distribution box, and the drain field —
+    and each can fail in its own way and at its own cost. Understanding that chain is the key to
+    understanding why repair pricing swings so widely, and why a real number always follows a look at
+    the system.
+  </p>
 
   {/* Intended asset: /images/resources/septic-repair-cost-factors-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of a septic professional evaluating tank components before recommending a repair"}
+    alt={"Septic professional evaluating tank components before recommending a repair"}
     width={1600}
     height={900}
   />
 
-  <h2>What Shapes a Repair Estimate</h2>
-  <ul>
-    <li><strong>Which component failed.</strong> Baffles, pumps, pipes, boxes and drain fields each involve different work.</li>
-    <li><strong>Access and excavation.</strong> A repair under a driveway or deep in the yard costs more to reach.</li>
-    <li><strong>Diagnosis first.</strong> An evaluation identifies the real cause; the same slow drains can come from several sources.</li>
-    <li><strong>System age and history.</strong> Recurring problems and older systems can change the repair conversation.</li>
-  </ul>
-
-  <h2>Drain Fields Sit at the Expensive End</h2>
+  <h2>The Diagnosis Comes First — for a Reason</h2>
   <p>
-    Drain-field concerns can involve soil, excavation and, in some cases, replacement planning — which is why a <a href="/drain-field-repair-cookeville-tn/">drain-field evaluation</a> comes before any responsible recommendation. To start, <a href="/request-service/">request septic service</a> and describe the symptoms and history.
+    Repair costs follow the diagnosis, and the diagnosis follows an evaluation. This order matters
+    because symptoms are ambiguous. Slow drains, gurgling, odors, or a backup can each come from
+    several different failures, and the fix for one is nothing like the fix for another. A deteriorated
+    baffle, a failed effluent pump, a crushed line under a driveway, and a drain field that no longer
+    accepts water can all produce similar signs inside the house. A provider who quotes before
+    evaluating is guessing; one who evaluates first is pricing the actual problem. That's why the
+    trustworthy sequence is always evaluate, explain, then price.
   </p>
 
+  <h2>Which Component Failed</h2>
+  <p>
+    The part that failed is the biggest driver of what a repair involves:
+  </p>
+  <ul>
+    <li>
+      <strong>Baffles.</strong> These keep solids in the tank and out of the drain field. A
+      deteriorated baffle is often a comparatively contained repair — but left alone it can let solids
+      migrate to the field, which is a far bigger problem.
+    </li>
+    <li>
+      <strong>Effluent pumps.</strong> Systems that move water uphill or to a mound rely on a pump
+      that can wear out or fail electrically. Replacing one is a defined job, but access and the pump
+      type matter.
+    </li>
+    <li>
+      <strong>Pipes and lines.</strong> Roots, crushing under a driveway, or a collapsed section
+      restrict flow. Cost depends heavily on where the damage is and what's on top of it.
+    </li>
+    <li>
+      <strong>Distribution box.</strong> A small component that shares flow across the field; when it
+      shifts or clogs it can unbalance the whole system — see
+      <a href="/septic-distribution-box-problems/">distribution-box problems</a>.
+    </li>
+  </ul>
+
+  <h2>Access and Excavation</h2>
+  <p>
+    As with pumping, how hard it is to reach the failed part matters as much as the part itself. A
+    repair near the surface in an open yard is one thing; a line under a concrete driveway, or a
+    component deep in the ground far from truck access, is another. Excavation, and then putting the
+    property back together afterward, is often where a modest-sounding repair grows.
+  </p>
+
+  <h2>Why Drain-Field Problems Are the Expensive End</h2>
+  <p>
+    Repairs sit on a spectrum, and drain-field concerns anchor the expensive end. The field is where
+    treated water returns to the soil, and problems there can involve the soil itself, significant
+    excavation, and in some cases planning a replacement rather than a repair. That range is exactly
+    why a <a href="/drain-field-repair-cookeville-tn/">drain-field evaluation</a> comes before any
+    responsible recommendation, and why our separate guide on
+    <a href="/drain-field-repair-or-replacement-costs/">drain-field repair or replacement costs</a>
+    treats it as its own topic. It's also the strongest argument for maintenance: most field failures
+    trace back to solids that escaped a tank that wasn't pumped on time.
+  </p>
+
+  <h2>System Age, History, and Use</h2>
+  <p>
+    A one-off failure on a well-maintained system is a different conversation than recurring problems
+    on an aging one. When repairs start stacking up, the question quietly shifts from "what's the fix"
+    to "is repair still the right investment" — the subject of our guide on
+    <a href="/septic-repair-versus-system-replacement/">repair versus replacement</a>. How the
+    property is used (occupancy, water habits, heavy disposal use) feeds into both the failure and the
+    durability of any repair.
+  </p>
+
+  <h2>How to Approach a Repair</h2>
+  <p>
+    Start with an evaluation, ask the provider to explain what failed and why, and ask for the
+    options — including whether it's safe to wait. Good providers explain trade-offs rather than
+    defaulting to the biggest job. To get that process started,
+    <a href="/request-service/">request septic service</a> and describe the symptoms, when they
+    started, and any history you have.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

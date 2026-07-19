@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Septic Repair Versus System Replacement"
  * Cluster: septic-repairs-drain-fields
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -15,31 +13,31 @@ import type { Faq } from '@data/site';
 const faqs: Faq[] = [
   {
     question: "When does replacement make more sense than repair?",
-    answer: "Often when the drain field has failed, the system is aging with repeated problems, or repairs would no longer be reliable. An evaluation clarifies it.",
+    answer: "Most often when the drain field itself has failed and the soil's capacity is exhausted, or when an aging system is accumulating repeated, escalating problems. At that point continued repairs can become throwing good money after bad. An evaluation is what confirms whether you've reached that point.",
   },
   {
-    question: "Is repair always cheaper than replacement?",
-    answer: "Usually in the short term, but repeated repairs on a failing system can point toward replacement being the practical choice.",
+    question: "Is repairing always cheaper than replacing?",
+    answer: "In the short term, usually. But repeated repairs on a failing system add up, and if each one buys only a little time, replacement can be the better value over a few years. The right comparison isn't a single repair versus replacement — it's the likely total cost of keeping the old system going versus starting fresh.",
   },
   {
-    question: "How do I decide?",
-    answer: "Start with an evaluation; a provider can lay out the trade-offs for your specific system and site.",
+    question: "How do I know which situation I'm in?",
+    answer: "Start with an evaluation. A good provider will explain what failed, whether it's an isolated problem or part of a broader decline, what the site can support, and lay out the trade-offs — including whether it's reasonable to repair now and plan for replacement later.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. The provider assesses your system and site.",
+    question: "How can I avoid facing this decision prematurely?",
+    answer: "Maintenance. Most systems reach the repair-or-replace crossroads early because a tank wasn't pumped on schedule and solids ruined the drain field. Routine pumping and sensible water and drain habits are what let a system reach its full lifespan before this question ever comes up.",
   },
 ];
 ---
 
 <ServicePage
   title={"Septic Repair Versus System Replacement"}
-  description={"The considerations behind the biggest septic decision — when a repair makes sense and when planning a replacement is the practical path."}
+  description={"The biggest decision in septic ownership, laid out clearly — what pushes toward a repair, what points to replacement, and the questions that lead to a sound choice rather than a default to the biggest job."}
   h1={"Should You Repair or Replace Your Septic System?"}
   eyebrow={"Septic Repairs & Drain Fields"}
   breadcrumbLabel={"Repair Versus System Replacement"}
   serviceName={"Septic Repair Information"}
-  intro={"Repair or replace is the biggest decision in septic ownership. This guide lays out the considerations that shape it so the conversation with a provider is clearer."}
+  intro={"Repair or replace is the largest decision a septic owner faces, and there's no single rule that answers it. It comes down to what failed, the system's age and history, and what the site allows — which is why the conversation should start with an evaluation and honest options, not a sales pitch."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,76 @@ const faqs: Faq[] = [
     { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "the replacement path" },
   ]}
 >
-  <p>There is no single rule for repair versus replacement. It depends on what failed, the system's age and condition, and what the site allows — which is why an evaluation comes first.</p>
+  <p>
+    Sooner or later many septic owners face the big question: keep repairing the system they have, or
+    replace it. It's the most consequential — and most expensive — decision in septic ownership, and
+    it deserves a clear-eyed process rather than a snap judgment. The honest answer is that it
+    depends, and the factors it depends on are ones you can understand and weigh.
+  </p>
 
   {/* Intended asset: /images/resources/septic-repair-versus-system-replacement-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration weighing a targeted septic repair against a full system replacement on a rural property"}
+    alt={"Weighing a targeted septic repair against a full system replacement on a rural property"}
     width={1600}
     height={900}
   />
 
-  <h2>What Feeds the Decision</h2>
-  <ul>
-    <li><strong>What failed and how.</strong> A single component is a different story than a failed field.</li>
-    <li><strong>Age and history.</strong> Repeated problems on an older system change the math.</li>
-    <li><strong>Site conditions.</strong> What the soil and layout allow shapes the options.</li>
-  </ul>
-
-  <h2>Approaching the Choice</h2>
+  <h2>What Pushes Toward Repair</h2>
   <p>
-    A good provider explains the trade-offs rather than defaulting to the biggest job. The <a href="/resources/septic-installation-replacement/">installation and replacement hub</a> covers how replacements proceed. To weigh your situation, <a href="/request-service/">request septic service</a>.
+    Repair is usually the right call when the failure is a specific, identifiable component on a system
+    that is otherwise sound — a deteriorated baffle, a failed pump, a clogged line, or a
+    <a href="/septic-distribution-box-problems/">distribution box</a> that's overloading part of the
+    field. If the tank is in good shape and the drain field still has capacity, fixing the one thing
+    that failed restores the system, often for a fraction of a replacement.
   </p>
 
+  <h2>What Points Toward Replacement</h2>
+  <p>
+    Replacement enters the picture mainly in two situations. The first is a genuinely failed drain
+    field — when the soil can no longer accept and treat water, no repair to the tank or lines will
+    fix that, and a new field (or system) is the path. The second is an aging system that's
+    accumulating repeated problems: when repairs start stacking up and each one buys only a little
+    time, continuing to patch it can quietly cost more than starting fresh.
+  </p>
+
+  <h2>The Factors That Feed the Decision</h2>
+  <ul>
+    <li>
+      <strong>What failed, and how.</strong> A single component is a different story than the field
+      itself.
+    </li>
+    <li>
+      <strong>Age and history.</strong> One problem on a young, maintained system versus a pattern of
+      problems on an old one.
+    </li>
+    <li>
+      <strong>Site conditions.</strong> What the soil and layout allow shapes both the repair options
+      and any replacement design.
+    </li>
+    <li>
+      <strong>The math over time.</strong> Not this repair versus replacement, but the likely total
+      of keeping the old system running versus replacing it.
+    </li>
+  </ul>
+
+  <h2>Insist on Trade-offs, Not a Default</h2>
+  <p>
+    The most important thing you can bring to this decision is a provider who explains options rather
+    than defaulting to the biggest job. A trustworthy evaluation lays out what failed, whether it's
+    isolated or part of a decline, what the site can support, and the realistic trade-offs — sometimes
+    including a sensible middle path, like repairing now while planning for replacement down the road.
+    Our guides on <a href="/drain-field-repair-or-replacement-costs/">drain-field costs</a> and the
+    <a href="/resources/septic-installation-replacement/">installation and replacement</a> process
+    fill in what each path involves.
+  </p>
+
+  <h2>Getting a Sound Answer</h2>
+  <p>
+    Because so much rides on the diagnosis, start with an evaluation rather than a quote. Describe the
+    system's history and the problems you've had, and a provider can help you weigh the choice for your
+    specific system and site. <a href="/request-service/">Request septic service</a> to begin.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

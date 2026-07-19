@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Drain-Field Repair or Replacement Costs"
  * Cluster: septic-costs
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -15,31 +13,31 @@ import type { Faq } from '@data/site';
 const faqs: Faq[] = [
   {
     question: "Can a failing drain field always be repaired?",
-    answer: "Not always. Sometimes function can be restored; other times the practical path is planning a replacement. An evaluation determines which.",
+    answer: "Not always. Sometimes function can be restored — clearing a blockage, fixing a distribution box, or resting and rehabilitating the field. Other times the soil's ability to accept water is genuinely exhausted and the practical path is a new field. Only an on-site evaluation can tell which situation you're in.",
   },
   {
-    question: "Why is drain-field work so variable in cost?",
-    answer: "Because it depends on soil, site access, design and restoration — all of which differ property to property.",
+    question: "Why is drain-field work so much more variable than other repairs?",
+    answer: "Because it depends on the ground itself. Soil type, how saturated the site is, how much area is available, the system design, how easily equipment can reach the field, and how much of the yard has to be restored afterward all differ property to property — and each one moves the scope.",
   },
   {
-    question: "How can I avoid drain-field replacement?",
-    answer: "Pump on schedule, manage water use, and act early on warning signs. Most failures are the result of long-neglected maintenance.",
+    question: "What causes drain fields to fail in the first place?",
+    answer: "The most common cause is solids escaping a tank that wasn't pumped on schedule and clogging the soil. Other causes include too much water over time, physical damage from vehicles or roots, saturated ground, and simple age. Most of these are slow and preventable.",
   },
   {
-    question: "Is this guide a price quote?",
-    answer: "No. It explains the cost variables; the provider prices the work after evaluating the site.",
+    question: "How can I protect my drain field?",
+    answer: "Pump the tank on a sensible schedule so solids never reach the field, keep vehicles and structures off it, keep deep-rooted trees away, direct roof and surface water elsewhere, and manage household water use. The field is the expensive part; the tank is the cheap part that protects it.",
   },
 ];
 ---
 
 <ServicePage
   title={"Drain-Field Repair or Replacement Costs"}
-  description={"The variables behind the most expensive septic problem — why drain-field repair or replacement pricing depends on soil, access, design and site restoration."}
+  description={"The variables behind the most expensive septic problem — how a drain field works, why it fails, what separates a repair from a replacement, and how soil, access, design and restoration shape the range."}
   h1={"What Drives Drain-Field Repair and Replacement Costs"}
   eyebrow={"Septic Costs & Pricing"}
   breadcrumbLabel={"Drain-Field Repair or Replacement Costs"}
   serviceName={"Septic Service Information"}
-  intro={"A failing drain field is the septic problem owners most want to avoid, and its cost varies more than any other. This guide explains the factors that shape the range so you can plan sensibly."}
+  intro={"The drain field is the part of a septic system owners most want to avoid replacing, and its cost varies more than any other repair. This guide explains what the field does, how it fails, and the specific variables that decide whether you're looking at a targeted repair or a full replacement."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,29 +51,97 @@ const faqs: Faq[] = [
     { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "where repair costs come from" },
   ]}
 >
-  <p>Drain-field work spans a wide range because it depends on what the soil and site allow. Some situations call for targeted repair; others point toward planning a replacement — and the difference is established by evaluation, not from a chart.</p>
+  <p>
+    Of all septic problems, a failing drain field is the one owners dread — and the one whose cost is
+    hardest to pin down, because it depends on the ground itself. To understand the range, it helps to
+    understand what the field actually does and how it gets into trouble, because that's what
+    determines whether you're facing a contained repair or a full replacement.
+  </p>
 
   {/* Intended asset: /images/resources/drain-field-repair-or-replacement-costs-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of a residential drain field being evaluated for repair or replacement on a rural property"}
+    alt={"Residential drain field being evaluated for repair or replacement on a rural property"}
     width={1600}
     height={900}
   />
 
-  <h2>The Cost Variables</h2>
-  <ul>
-    <li><strong>Repair versus replacement.</strong> Restoring function is a different scope than designing and installing a new field.</li>
-    <li><strong>Soil and site conditions.</strong> The ground itself drives what is possible and how much excavation is involved.</li>
-    <li><strong>Access and restoration.</strong> Reaching the field and restoring the property afterward both factor in.</li>
-    <li><strong>Design and approvals.</strong> A replacement field involves planning appropriate to the site.</li>
-  </ul>
-
-  <h2>Why Maintenance Pays Off</h2>
+  <h2>What the Drain Field Does</h2>
   <p>
-    Because this is the expensive end of septic ownership, routine <a href="/resources/septic-pumping-maintenance/">pumping and maintenance</a> is the cheapest protection you have. If you are seeing field symptoms, <a href="/request-service/">request septic service</a> for an evaluation before the situation grows.
+    After the tank separates solids and holds them back, the liquid (effluent) flows out to the drain
+    field — a network of perforated pipes in gravel-filled trenches — where it slowly seeps into the
+    soil and is treated naturally as it filters down. The whole system depends on the soil's ability
+    to accept and process that water. When that ability is compromised, water has nowhere to go, and
+    the problems show up at the surface: soggy ground, odors, lush green stripes, and drains that back
+    up even after the tank is pumped. Our guide on
+    <a href="/signs-of-drain-field-trouble/">signs of drain-field trouble</a> covers those clues.
   </p>
 
+  <h2>Repair vs. Replacement — the Core Difference</h2>
+  <p>
+    The biggest cost fork is whether the field can be repaired or needs to be replaced, and those are
+    genuinely different scopes:
+  </p>
+  <ul>
+    <li>
+      <strong>Repair</strong> addresses a specific, correctable problem — a clogged line, a failed or
+      shifted distribution box that's overloading one part of the field, or a field that can be rested
+      and rehabilitated. When the soil itself is still capable, restoring function is the smaller job.
+    </li>
+    <li>
+      <strong>Replacement</strong> becomes the path when the soil's capacity is exhausted or the field
+      has failed beyond recovery. This means designing and installing a new field appropriate to the
+      site — a project on the scale of an installation rather than a repair.
+    </li>
+  </ul>
+  <p>
+    Which one applies isn't a guess or a preference; it's established by evaluation. That's why any
+    responsible recommendation starts there rather than with a number.
+  </p>
+
+  <h2>The Variables That Move the Cost</h2>
+  <ul>
+    <li>
+      <strong>Soil and site conditions.</strong> The ground drives everything — what's possible, how
+      much excavation is involved, and whether a conventional field or an alternative design is
+      needed.
+    </li>
+    <li>
+      <strong>Available area and layout.</strong> Whether there's suitable space for a repair in place
+      or a new field elsewhere on the lot.
+    </li>
+    <li>
+      <strong>Access.</strong> How easily equipment reaches the field — a real consideration on
+      sloped, wooded, or hard-to-reach Upper Cumberland lots.
+    </li>
+    <li>
+      <strong>Design and approvals.</strong> A replacement field is designed for the site and follows
+      the applicable approval process.
+    </li>
+    <li>
+      <strong>Restoration.</strong> Putting the yard back together after excavation is part of the
+      job.
+    </li>
+  </ul>
+
+  <h2>Why Maintenance Is the Real Money-Saver</h2>
+  <p>
+    Because this is the expensive end of septic ownership, the cheapest thing you can do about
+    drain-field cost is prevent the failure. The most common cause is straightforward: a tank that
+    isn't pumped on schedule lets solids carry over and clog the soil. Routine
+    <a href="/resources/septic-pumping-maintenance/">pumping and maintenance</a> — plus keeping
+    vehicles, structures, and deep-rooted trees off the field and managing water use — is what keeps a
+    field working for decades. A modest, regular pump-out is inexpensive insurance against the biggest
+    bill in the system.
+  </p>
+
+  <h2>If You're Seeing Field Symptoms</h2>
+  <p>
+    Drain-field problems only get more expensive with time, so early action genuinely pays. If you're
+    noticing wet spots, odors, or backups that return after pumping, the right move is an evaluation
+    before the situation grows. <a href="/request-service/">Request septic service</a> and describe
+    what you're seeing and how long it's been happening.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "What Happens During a Septic Pumping Appointment"
  * Cluster: septic-pumping-maintenance
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -15,31 +13,31 @@ import type { Faq } from '@data/site';
 const faqs: Faq[] = [
   {
     question: "How long does a septic pumping appointment take?",
-    answer: "Often under an hour for an accessible tank, though locating a buried tank or digging up lids adds time.",
+    answer: "For an accessible tank in good condition, often under an hour. Time gets added when the tank has to be located, when buried lids must be dug up, or when a long-neglected tank holds a thick sludge layer that takes longer to remove. Clearing access and knowing the tank's location beforehand are the main ways to keep it quick.",
   },
   {
-    question: "Do I need to be home?",
-    answer: "Usually it helps for access and to hear what the provider observed, but arrangements vary by provider.",
+    question: "Do I need to be home for the pumping?",
+    answer: "It often helps — you can point out the tank's location, confirm access, and hear firsthand what the provider observed about the tank's condition and how full it was. That conversation is one of the most useful parts of the visit. Arrangements vary by provider, so confirm when you schedule.",
   },
   {
-    question: "What should I do to prepare?",
-    answer: "Clear truck access, make the lids reachable, and know the tank's approximate location to avoid a locating step.",
+    question: "What's the most useful thing to do during the visit?",
+    answer: "Ask questions while the tank is open, because that's the only time anyone can actually see inside it. Ask how full it was, what condition the baffles and lids are in, and whether anything looks like it will need attention in the next few years. The answers help you set your own pumping interval and catch small problems early.",
   },
   {
-    question: "Is this guide a substitute for the provider's guidance?",
-    answer: "No — it is general information. Your provider's observations about your specific tank are what matter most.",
+    question: "Will the provider tell me if something's wrong?",
+    answer: "A good provider will note what they observe — sludge and scum levels, baffle condition, signs of a struggling drain field, and anything worth watching. Pumping is often when hidden problems first become visible, so treat their observations as valuable information, not upselling, and ask them to explain anything unclear.",
   },
 ];
 ---
 
 <ServicePage
   title={"What Happens During a Septic Pumping Appointment"}
-  description={"A plain walkthrough of a septic pumping visit — truck positioning, locating and opening the tank, pumping, and what the provider observes."}
+  description={"A step-by-step walkthrough of a septic pumping visit — how the truck sets up, how the tank is located and opened, what pumping actually removes, and what a good provider checks while the tank is down."}
   h1={"What to Expect During a Septic Pumping Appointment"}
   eyebrow={"Septic Pumping & Maintenance"}
   breadcrumbLabel={"What Happens During a Pumping Appointment"}
   serviceName={"Septic Pumping Information"}
-  intro={"Knowing how a pumping visit goes takes the mystery out of it and helps you prepare the property. Here is the general flow, start to finish."}
+  intro={"A pump-out is a routine visit, but knowing how it unfolds helps you prepare the property, avoid extra charges, and — most valuable of all — know what to ask while the tank is open and the provider can actually see inside it."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,29 +51,75 @@ const faqs: Faq[] = [
     { label: "Septic Problems and Warning Signs", href: "/resources/septic-problems/", blurb: "symptoms to watch" },
   ]}
 >
-  <p>A routine pump-out is a straightforward visit, but a little preparation makes it faster and gives the provider a chance to note anything worth watching.</p>
+  <p>
+    Most people never see what happens during a septic pump-out — the truck arrives, some time
+    passes, and it leaves. But the appointment follows a clear sequence, and understanding it does two
+    useful things: it helps you prepare the property so the visit goes quickly and cheaply, and it
+    tells you what to ask at the one moment when your tank is actually open and visible.
+  </p>
 
   {/* Intended asset: /images/resources/what-happens-during-a-septic-pumping-appointment-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of a septic pumping appointment showing a truck, an opened tank lid and a technician at work"}
+    alt={"Septic pumping appointment showing a truck, an opened tank lid and a technician servicing the tank"}
     width={1600}
     height={900}
   />
 
-  <h2>The General Steps</h2>
-  <ul>
-    <li><strong>Truck positioning.</strong> The provider parks within hose reach of the tank.</li>
-    <li><strong>Locating and opening.</strong> The tank is found (if needed) and the lids are opened.</li>
-    <li><strong>Pumping.</strong> Liquid and settled solids are removed from each compartment.</li>
-    <li><strong>A look at condition.</strong> The provider can observe sludge levels, baffles and obvious concerns.</li>
-  </ul>
+  <h2>1. The Truck Sets Up</h2>
+  <p>
+    The provider positions the truck within working reach of the tank, because the vacuum hose has a
+    practical length. On an open lot with a short run to the tank this is quick; on a long drive,
+    a slope, or soft ground it takes more thought and setup. This is why a clear, reachable path
+    matters — anything that makes the truck's approach harder adds time to the visit.
+  </p>
+
+  <h2>2. Locating and Opening the Tank</h2>
+  <p>
+    Next the lids have to be reached. If the tank's location is known and the lids are at or near
+    grade, this is fast. If no one knows where the tank is, the provider has to locate it first; and
+    if the lids are buried under soil, a deck, or landscaping, they have to be dug up before anything
+    else happens. Both are real steps that take time — and both are avoidable on future visits by
+    recording the tank's location and, ideally, adding risers that bring the lids to the surface.
+  </p>
+
+  <h2>3. Pumping the Tank</h2>
+  <p>
+    With the tank open, the provider pumps out its contents — both the liquid and, in a thorough
+    service, the settled sludge blanket at the bottom and the scum layer on top. A tank serviced on a
+    reasonable schedule empties cleanly; a long-overdue tank holds compacted material that has to be
+    broken up and worked loose, which is slower. This is also the point where the distinction between
+    a light "pump" and a full "cleaning" shows up — worth confirming in advance, as our guide on
+    <a href="/septic-pumping-versus-septic-tank-cleaning/">pumping versus cleaning</a> explains.
+  </p>
+
+  <h2>4. A Look at the Tank's Condition</h2>
+  <p>
+    While the tank is down, a good provider takes the opportunity to observe things you can't see any
+    other time: how full the tank actually was, the condition of the baffles that keep solids out of
+    the drain field, the state of the lids, and any signs that the drain field may be struggling.
+    This is genuinely valuable information — pumping is frequently when a hidden problem first becomes
+    visible — so it's the moment to ask questions rather than let the truck pull away.
+  </p>
 
   <h2>How to Prepare — and What to Ask</h2>
   <p>
-    Clear a path for the truck, make sure the lids are accessible, and know roughly where the tank is. Afterward, ask how full the tank was and what that suggests for your <a href="/how-often-to-pump-septic-tank/">pumping interval</a>. When you are ready, <a href="/request-service/">request septic service</a>.
+    A little preparation keeps the visit fast: clear a path the truck can use, make the lids
+    accessible, and know roughly where the tank is. Our guide on
+    <a href="/preparing-a-property-for-septic-service/">preparing a property for septic service</a>
+    covers this in detail. Then, while the tank is open, ask:
   </p>
-
+  <ul>
+    <li>How full was the tank, and what does that suggest for how often I should pump?</li>
+    <li>What condition are the baffles and lids in?</li>
+    <li>Does anything look like it will need attention in the next few years?</li>
+    <li>What did this service include — and what would have cost extra?</li>
+  </ul>
+  <p>
+    The answer to the first question is the best possible input for setting your interval — see
+    <a href="/how-often-to-pump-septic-tank/">how often a septic tank should be pumped</a>. When
+    you're ready to schedule, <a href="/request-service/">request septic service</a>.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

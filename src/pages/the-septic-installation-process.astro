@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "The Septic Installation Process"
  * Cluster: septic-installation-replacement
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
+    question: "What's the first step in installing a septic system?",
+    answer: "A soil and site evaluation — often including a percolation ('perc') test. It measures how well the ground accepts water and determines what kind of system the site can support. Almost every later decision, including the budget, flows from this result, which is why it comes first.",
+  },
+  {
     question: "How long does a septic installation take?",
-    answer: "It varies with system type, site conditions and approvals. A provider can give a timeline after evaluating the site.",
+    answer: "It varies widely with the system type, site conditions, and the approval process. Once the site is evaluated and a design is chosen, a provider can give a realistic timeline. Weather and ground conditions on rural lots can also affect scheduling.",
   },
   {
-    question: "What is the most important stage?",
-    answer: "The site evaluation, because it determines the system design and much of the project that follows.",
+    question: "Can any type of system go on any lot?",
+    answer: "No. The soil, available space, and slope determine what's appropriate — a conventional gravity system on good soil, or an alternative design where soils are poor or space is tight. That's established during the evaluation, not chosen from a catalog.",
   },
   {
-    question: "Can any system go on any lot?",
-    answer: "No — the soil and site determine what is appropriate, which is established during evaluation.",
-  },
-  {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. Confirm specifics with a qualified provider and the appropriate authority.",
+    question: "Who handles the permits and approvals?",
+    answer: "New systems follow the applicable approval process with the appropriate authority, and requirements vary by county. Often a qualified installer coordinates approvals as part of the project — worth confirming up front. See our guide on Tennessee septic permits and approvals.",
   },
 ];
 ---
 
 <ServicePage
   title={"The Septic Installation Process"}
-  description={"Stage by stage, how a new septic system generally comes together — from property information and site evaluation to installation and final grading."}
+  description={"A stage-by-stage walkthrough of how a new septic system comes together — soil evaluation, design, approvals, installation, and restoration — so you know what to expect and why the soil test drives everything."}
   h1={"The Septic Installation Process, Stage by Stage"}
   eyebrow={"Septic Installation & Replacement"}
   breadcrumbLabel={"The Septic Installation Process"}
   serviceName={"Septic Installation Information"}
-  intro={"A new septic system is a project with a logical sequence. Knowing the stages helps you plan and ask the right questions before ground breaks."}
+  intro={"A new septic system is a real construction project with a logical sequence, and the order matters: each stage depends on the one before it, starting with a soil evaluation that shapes everything else. Knowing the stages helps you plan, budget realistically, and ask good questions before ground breaks."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,29 +51,76 @@ const faqs: Faq[] = [
     { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "regional planning" },
   ]}
 >
-  <p>Installations follow a general arc from planning to restoration. The specifics depend on the site, but the shape of the project is consistent.</p>
+  <p>
+    Installing a septic system isn't a single task — it's a sequence of stages, each building on the
+    last. Understanding that sequence does two things for you: it sets realistic expectations for
+    timing and budget, and it explains why a firm price can't come before the very first stage is
+    done. Above all, it shows why the soil evaluation, not the shovel, is where every installation
+    truly begins.
+  </p>
 
   {/* Intended asset: /images/resources/the-septic-installation-process-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of the septic installation process stages on a rural Tennessee property"}
+    alt={"The stages of the septic installation process on a rural Tennessee property"}
     width={1600}
     height={900}
   />
 
-  <h2>The General Stages</h2>
-  <ul>
-    <li><strong>Property information and site evaluation.</strong> Understanding the soil and layout.</li>
-    <li><strong>Design and approvals.</strong> Choosing a system appropriate to the site.</li>
-    <li><strong>Installation.</strong> Placing the tank and drain field.</li>
-    <li><strong>Restoration.</strong> Final grading and putting the property back together.</li>
-  </ul>
-
-  <h2>Planning Well</h2>
+  <h2>Stage 1 — Property Information and Soil Evaluation</h2>
   <p>
-    The evaluation stage shapes everything after it, so it is worth doing carefully — especially on rural lots. For regional considerations, see the <a href="/resources/upper-cumberland-septic-guide/">Upper Cumberland guide</a>. To begin, <a href="/request-service/">request septic service</a>.
+    Everything starts with understanding the ground. A soil and site evaluation — typically including a
+    percolation ("perc") test — measures how readily the soil accepts and processes water, and
+    assesses depth, slope, and layout. This is the single most important stage, because its results
+    decide what kind of system the site can support and, therefore, most of what the project will
+    involve. It's also why a real budget only comes together after this step. Our guide on
+    <a href="/new-septic-installation-cost-factors/">installation cost factors</a> explains how much
+    flows from this one result.
   </p>
 
+  <h2>Stage 2 — Design and Approvals</h2>
+  <p>
+    With the soil understood, the system is designed for the site: the tank sized for the home's
+    expected use, and either a conventional gravity drain field or an alternative design where the soil
+    or space calls for one. The design then goes through the applicable approval process with the
+    appropriate authority. Requirements vary by property and county, and often the installer
+    coordinates approvals as part of the project — see
+    <a href="/tennessee-septic-permits-and-approvals/">Tennessee septic permits and approvals</a>.
+  </p>
+
+  <h2>Stage 3 — Installation</h2>
+  <p>
+    This is the construction most people picture: placing the tank, building the drain field, and
+    connecting everything. It's heavy work involving excavation, so equipment access and the lot's
+    layout matter — considerations that are more pronounced on the sloped, wooded, or hard-to-reach
+    properties common across the Upper Cumberland.
+  </p>
+
+  <h2>Stage 4 — Restoration</h2>
+  <p>
+    A septic installation disturbs a good deal of ground, so the final stage is putting the property
+    back together — final grading, and restoring the disturbed areas. Thoughtful layout in the earlier
+    stages pays off here and for years afterward: a field placed where it can be reached and maintained
+    is easier and cheaper to live with over its whole life.
+  </p>
+
+  <h2>Why the Order Matters</h2>
+  <p>
+    The reason installations follow this sequence — and can't be quoted from a chart — is that each
+    stage depends on the discoveries of the one before it. You can't design without the soil results,
+    can't price without the design, and can't build without approvals. For new construction, this is
+    also why the septic system is best planned early rather than squeezed in late, as our guide on
+    <a href="/septic-planning-for-new-construction/">septic planning for new construction</a> explains.
+  </p>
+
+  <h2>Getting Started</h2>
+  <p>
+    Because the project begins with an evaluation rather than a quote, the first step is to share your
+    property details and plans so a provider can assess the site.
+    <a href="/request-service/">Request septic service</a> to begin, and see the
+    <a href="/resources/septic-installation-replacement/">installation and replacement hub</a> for
+    related guides.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

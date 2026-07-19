@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Septic Planning for Rural Upper Cumberland Properties"
  * Cluster: upper-cumberland-septic-guide
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "What makes rural septic planning different here?",
-    answer: "Long drives, slopes, rock and hollows all affect access and what systems are practical, so planning around them matters.",
+    question: "What makes septic planning different on rural Upper Cumberland land?",
+    answer: "The terrain. Long gravel drives, steep slopes, plateau rock, clay soils, and low-lying hollows all affect how a truck reaches a tank and what kind of system a site can support. Planning around those realities up front — rather than discovering them mid-project — is what keeps rural septic work smooth.",
   },
   {
-    question: "Does terrain affect service cost?",
-    answer: "It can — access difficulty and distance influence the work, which is worth mentioning in a service request.",
+    question: "Does the region's soil affect what system I can install?",
+    answer: "Yes. Soil is the single biggest factor in system design anywhere, and the Upper Cumberland's mix of rocky plateau ground, clay, and river-valley bottomland varies a great deal from lot to lot. A soil evaluation determines whether a conventional system fits or an alternative design is needed.",
   },
   {
-    question: "How do I plan for a rural lot?",
-    answer: "Start with a site evaluation that accounts for access, terrain and layout before service or construction.",
+    question: "How does terrain affect the cost and ease of service?",
+    answer: "Access difficulty and distance from where a truck can park to the tank both add to the work, and rural lots have more of both. Noting your access realities when you request service helps a provider arrive prepared, which keeps visits efficient.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. Confirm specifics with a provider and the appropriate authority.",
+    question: "What should I plan for before building on a rural lot?",
+    answer: "Start with a soil and site evaluation early, because on rural land the septic system can influence where the home, well, and drive can go. Accounting for access and terrain before the layout is fixed avoids costly rework — see our guide on septic planning for new construction.",
   },
 ];
 ---
 
 <ServicePage
   title={"Septic Planning for Rural Upper Cumberland Properties"}
-  description={"Access, terrain and layout considerations for septic service and construction on rural Upper Cumberland properties."}
+  description={"How the Upper Cumberland's terrain — plateau rock, slopes, hollows, and long gravel drives — shapes septic access, system design, and planning for both service and new construction on rural lots."}
   h1={"Septic Planning for Rural Upper Cumberland Properties"}
   eyebrow={"Upper Cumberland Septic Guide"}
   breadcrumbLabel={"Planning for Rural Properties"}
   serviceName={"Upper Cumberland Septic Information"}
-  intro={"Rural land across the Upper Cumberland has its own realities — long drives, slopes, rock and hollows. This guide connects general septic planning to the region's conditions."}
+  intro={"Septic service is local by nature, and rural Upper Cumberland land has a character all its own — rock, slope, hollows, and long drives. This guide connects general septic planning to the region's real conditions, so you can anticipate what your property means for service and construction."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,79 @@ const faqs: Faq[] = [
     { label: "Septic Inspections and Property Buying", href: "/resources/septic-inspections-property-buying/", blurb: "rural purchases" },
   ]}
 >
-  <p>Septic service is local by nature, and rural Upper Cumberland lots are distinctive. Planning around access and terrain up front avoids problems later.</p>
+  <p>
+    Septic systems don't exist in the abstract — they exist in the ground, and the ground in the Upper
+    Cumberland is distinctive. Plateau rock, wooded slopes, farm hollows, clay soils, and long gravel
+    drives all shape what a septic system can do and how it gets serviced. Planning that starts from
+    the region's real conditions, rather than a generic template, is what keeps rural septic work from
+    turning into a series of surprises.
+  </p>
 
   {/* Intended asset: /images/resources/septic-planning-for-rural-upper-cumberland-properties-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of a rural Upper Cumberland property with wooded terrain and a septic system layout"}
+    alt={"Rural Upper Cumberland property with wooded terrain and a septic system layout"}
     width={1600}
     height={900}
   />
 
-  <h2>Regional Realities</h2>
+  <h2>The Terrain Realities</h2>
   <ul>
-    <li><strong>Access.</strong> Long gravel drives, gates and distance affect how trucks reach a tank.</li>
-    <li><strong>Terrain.</strong> Plateau rock, slopes and hollows shape what is possible.</li>
-    <li><strong>Layout.</strong> Where the tank and field sit matters for both service and construction.</li>
+    <li>
+      <strong>Access.</strong> Long gravel drives, gates, and distance between where a truck can park
+      and where the tank sits all affect service — vacuum hoses have a practical reach, and heavy
+      trucks need a route they can manage.
+    </li>
+    <li>
+      <strong>Slope and rock.</strong> The plateau's terrain influences both how equipment reaches a
+      site and what system designs are practical; rocky or shallow ground can rule out a simple
+      conventional field.
+    </li>
+    <li>
+      <strong>Soil variety.</strong> From well-draining spots to heavy clay to saturated bottomland,
+      the ground can change dramatically across a single property — which is why the soil evaluation
+      matters so much here.
+    </li>
+    <li>
+      <strong>Seasonal conditions.</strong> Wet springs and soft ground in low-lying areas can
+      complicate both access and how well a field drains.
+    </li>
   </ul>
 
-  <h2>Planning Ahead</h2>
+  <h2>How Terrain Shapes System Design</h2>
   <p>
-    Thinking about access and terrain before service or construction saves time and cost. For service coverage, see the <a href="/service-area/">Upper Cumberland service area</a>, or <a href="/request-service/">request septic service</a>.
+    What the ground allows determines the system. Good soil and space can support a straightforward
+    conventional system; poor, shallow, rocky, or wet soils may require an alternative design. Because
+    the region's soils vary so widely, two neighboring lots can call for very different systems — which
+    is exactly why a soil and site evaluation, not an assumption, is the starting point. Our guide on
+    <a href="/how-terrain-and-access-affect-septic-service/">how terrain and access affect service</a>
+    goes deeper on the day-to-day effects.
   </p>
 
+  <h2>Planning for Service</h2>
+  <p>
+    For an existing system, the practical work is making it serviceable: knowing where the tank is,
+    keeping the lids accessible, and maintaining a route a truck can reach. Our guide on
+    <a href="/preparing-a-property-for-septic-service/">preparing a property for septic service</a>
+    covers the specifics. Noting your access realities when you request service lets a provider come
+    prepared for a rural call.
+  </p>
+
+  <h2>Planning for Construction</h2>
+  <p>
+    If you're building, the septic system deserves a seat at the table early, because on rural land it
+    can influence where the house, well, and driveway can reasonably go. Starting the soil evaluation
+    before the layout is locked keeps your options open — the subject of our guide on
+    <a href="/septic-planning-for-new-construction/">septic planning for new construction</a>.
+  </p>
+
+  <h2>Getting Started</h2>
+  <p>
+    Whether you're maintaining a rural system or planning a new one, the first step is understanding
+    your specific ground and access. Share your property details and a provider can help.
+    <a href="/request-service/">Request septic service</a>, or see the full
+    <a href="/service-area/">Upper Cumberland service area</a>.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

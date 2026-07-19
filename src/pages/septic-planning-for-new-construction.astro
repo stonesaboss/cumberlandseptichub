@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Septic Planning for New Construction"
  * Cluster: septic-installation-replacement
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "When should septic planning happen in a build?",
-    answer: "Early — the site evaluation influences the plot plan and where the home can go, so it is best done before layout is fixed.",
+    question: "When should septic planning happen in a building project?",
+    answer: "As early as possible — ideally before the home's location on the lot is locked in. The soil evaluation can influence where the house, well, and drive can go, so bringing septic into the plan early prevents having to rework decisions later.",
   },
   {
-    question: "Can septic constrain where I build?",
-    answer: "Yes. The system needs suitable space and soil, which is why planning it early matters.",
+    question: "Can the septic system really affect where I build?",
+    answer: "Yes. The system needs suitable soil and enough space for the tank and drain field, plus separation from wells and other features. On some lots the best septic location shapes where the home can reasonably sit, which is exactly why it's a planning decision, not an afterthought.",
   },
   {
-    question: "Who evaluates the site?",
-    answer: "A qualified provider, in coordination with the appropriate authority for approvals.",
+    question: "What happens if septic is left until late in the build?",
+    answer: "You risk discovering that the ideal house location has poor soil, or that there isn't good space for a field where you'd assumed — forcing costly redesigns, a more involved alternative system, or compromises. Early planning turns those late surprises into early, cheaper decisions.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. Confirm specifics with a provider and the appropriate authority.",
+    question: "Who evaluates the site for new construction?",
+    answer: "A qualified provider performs the soil and site evaluation, coordinating with the appropriate authority for approvals. Doing this early gives your overall site plan the information it needs before other elements are committed.",
   },
 ];
 ---
 
 <ServicePage
   title={"Septic Planning for New Construction"}
-  description={"How to sequence a septic system into a building project so the system fits the site and the schedule."}
+  description={"Why the septic system belongs early in a building project, not late — how the soil evaluation can shape where you build, and how to sequence septic into new construction so it fits the site and the schedule."}
   h1={"Sequencing Septic Into a New-Construction Project"}
   eyebrow={"Septic Installation & Replacement"}
   breadcrumbLabel={"Septic Planning for New Construction"}
   serviceName={"Septic Installation Information"}
-  intro={"On new construction, the septic system is best planned early rather than squeezed in late. This guide covers how it fits into a build."}
+  intro={"On new construction, the septic system is one of the few elements that can dictate where and how you build — so planning it early, before the site layout is fixed, avoids expensive surprises. This guide explains how septic fits into a build and why the soil comes first."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,63 @@ const faqs: Faq[] = [
     { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "regional planning" },
   ]}
 >
-  <p>A septic system shapes where and how you can build, so bringing it into the plan early avoids expensive surprises later.</p>
+  <p>
+    In a new-construction project full of choices, the septic system is unusual: it's one of the few
+    elements that can tell you where you can and can't build, rather than simply fitting in wherever
+    it's told. That's why it belongs near the front of the planning process. Left until late, it can
+    force expensive rework; planned early, it quietly shapes a site plan that works.
+  </p>
 
   {/* Intended asset: /images/resources/septic-planning-for-new-construction-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of septic system planning integrated into a new-construction site layout"}
+    alt={"Septic system planning integrated into a new-construction site layout"}
     width={1600}
     height={900}
   />
 
-  <h2>Plan It Early</h2>
-  <ul>
-    <li><strong>Evaluate the site first.</strong> Soil and layout influence the whole plot plan.</li>
-    <li><strong>Coordinate the sequence.</strong> The system fits into the construction schedule at the right stage.</li>
-    <li><strong>Design for the finished property.</strong> Account for how the home will actually be used.</li>
-  </ul>
+  <h2>Why Septic Comes Early</h2>
+  <p>
+    A septic system needs suitable soil, enough space for the tank and drain field, and appropriate
+    separation from wells, structures, and property lines. On many lots — especially the varied terrain
+    of the Upper Cumberland — the places that work well for a septic system aren't unlimited. So the
+    soil evaluation doesn't just answer "what system can we install"; it can influence where the house,
+    the well, and the driveway can reasonably go. Learning that early, while the site plan is still
+    flexible, is far cheaper than discovering it after the foundation location is set.
+  </p>
+
+  <h2>Evaluate the Site First</h2>
+  <p>
+    The foundation of the plan is the same soil and site evaluation that begins any installation, done
+    early enough to inform the whole layout. It establishes what the ground can support and where the
+    system can go — and therefore what constraints the rest of the build should design around. Our
+    <a href="/the-septic-installation-process/">installation process</a> guide shows where this fits in
+    the overall sequence.
+  </p>
+
+  <h2>Coordinate the Sequence</h2>
+  <p>
+    Once the system is designed, it slots into the construction schedule at the right stage — after the
+    site is prepared and at the point where excavation and connections make sense relative to the rest
+    of the build. Coordinating this with the overall project avoids conflicts, like finishing
+    landscaping or hardscaping over an area the field or its access needs.
+  </p>
+
+  <h2>Design for the Finished Property</h2>
+  <p>
+    A good plan looks past construction to how the home will actually be lived in — sizing the system
+    for the household, and placing the field where it can be reached and maintained for decades. The
+    goal isn't just a system that passes on day one, but one that's easy to service and protect for its
+    whole life.
+  </p>
 
   <h2>Getting Started</h2>
   <p>
-    Early evaluation is the theme — it keeps the system from constraining the build after decisions are locked in. See the <a href="/resources/septic-installation-replacement/">installation hub</a>, or <a href="/request-service/">request septic service</a> to begin planning.
+    Because the soil evaluation is what informs the rest of the plan, the earlier you start it, the
+    more options you keep. Share your lot and building plans, and a provider can begin the assessment.
+    <a href="/request-service/">Request septic service</a>, and for regional considerations see the
+    <a href="/resources/upper-cumberland-septic-guide/">Upper Cumberland septic guide</a>.
   </p>
-
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

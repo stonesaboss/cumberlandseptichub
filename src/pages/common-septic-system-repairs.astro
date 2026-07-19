@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Common Septic-System Repairs"
  * Cluster: septic-repairs-drain-fields
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -15,31 +13,31 @@ import type { Faq } from '@data/site';
 const faqs: Faq[] = [
   {
     question: "What septic parts most commonly need repair?",
-    answer: "Baffles, pumps, pipes and distribution boxes are common, along with drain-field issues, which are the most involved.",
+    answer: "Baffles, effluent pumps, the pipes and lines between components, and distribution boxes are the usual suspects, along with drain-field issues, which are the most involved. Which one is behind a given problem depends on the system and can only be confirmed by looking, since symptoms overlap.",
   },
   {
-    question: "Can symptoms tell me which part failed?",
-    answer: "Rarely on their own — the same slow drains can come from several components, which is why evaluation matters.",
+    question: "Can the symptom tell me which part failed?",
+    answer: "Rarely on its own. Slow drains, gurgling, odors, or a backup can each come from several different components. That's why a provider evaluates before recommending a repair — the same sign can mean a full tank, a clogged line, a failed pump, or a struggling field.",
   },
   {
-    question: "Is a repair always possible?",
-    answer: "Often, though some situations point toward replacement. An evaluation determines the practical path.",
+    question: "Is a septic repair always possible, or will I need a whole new system?",
+    answer: "Most individual component failures are repairable. Replacement enters the conversation mainly when the drain field has failed or an aging system is accumulating repeated problems. An evaluation determines whether a targeted repair is the practical path — see our guide on repair versus replacement.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. A provider diagnoses and repairs the specific system.",
+    question: "How do I prevent common repairs?",
+    answer: "Maintain the system: pump on schedule so solids don't damage baffles or reach the field, keep roots and vehicles away from lines and the field, keep harsh chemicals out so the tank's biology stays healthy, and act on early warning signs before they escalate.",
   },
 ];
 ---
 
 <ServicePage
   title={"Common Septic-System Repairs"}
-  description={"Baffles, pumps, pipes and boxes — the components that commonly need repair on a septic system and how they are evaluated."}
+  description={"A guided tour of the components that commonly need repair — baffles, effluent pumps, pipes, and distribution boxes — what each does, how it fails, and why the same symptom can point to different parts."}
   h1={"Common Septic-System Repairs, Explained"}
   eyebrow={"Septic Repairs & Drain Fields"}
   breadcrumbLabel={"Common Septic-System Repairs"}
   serviceName={"Septic Repair Information"}
-  intro={"Between the house and the soil sits a chain of components, each of which can fail in its own way. This guide covers the usual suspects and how providers approach them."}
+  intro={"'Septic repair' covers a lot of ground because the system is a chain of parts, each of which can fail differently. This guide walks through the components that most often need attention, what each one does, and how failures show up — so an evaluation and its recommendation make sense."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,29 +51,76 @@ const faqs: Faq[] = [
     { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "the replacement path" },
   ]}
 >
-  <p>"Septic repair" covers a lot of ground because the system has several parts. Knowing the common ones helps you understand an evaluation and the repair that follows.</p>
+  <p>
+    When one person says their septic repair was minor and another says theirs was major, they're
+    usually talking about different parts of the same kind of system. A septic setup is a chain: the
+    tank and its baffles, sometimes a pump, the pipes connecting everything, a distribution box, and
+    the drain field. Each link can fail in its own way, and knowing the chain is what makes a
+    provider's diagnosis and recommendation understandable rather than mysterious.
+  </p>
 
   {/* Intended asset: /images/resources/common-septic-system-repairs-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of common septic components that need repair: baffles, an effluent pump, pipes and a distribution box"}
+    alt={"Common septic components that need repair: baffles, an effluent pump, pipes and a distribution box"}
     width={1600}
     height={900}
   />
 
-  <h2>The Usual Suspects</h2>
-  <ul>
-    <li><strong>Baffles.</strong> They keep solids where they belong; when they deteriorate, solids can escape toward the field.</li>
-    <li><strong>Effluent pumps.</strong> Systems that pump uphill rely on a pump that can fail.</li>
-    <li><strong>Pipes and lines.</strong> Crushed or root-invaded lines restrict flow.</li>
-    <li><strong>Distribution boxes.</strong> A small box that unbalances the whole field — see <a href="/septic-distribution-box-problems/">distribution-box problems</a>.</li>
-  </ul>
-
-  <h2>Evaluation Comes First</h2>
+  <h2>Baffles</h2>
   <p>
-    Similar symptoms can come from different components, so a provider evaluates before recommending a repair. To get started, <a href="/request-service/">request septic service</a> and describe what you are seeing.
+    Baffles (or tees) sit at the tank's inlet and outlet. Their job is to direct flow and keep the
+    floating scum and settled solids inside the tank, so that only relatively clear liquid moves on to
+    the drain field. Over time baffles can corrode, crack, or break off. A deteriorated baffle is often
+    a comparatively contained repair — but it's an important one, because a failed outlet baffle lets
+    solids escape toward the field, and solids in the field are the beginning of the most expensive
+    problem in the system.
   </p>
 
+  <h2>Effluent Pumps</h2>
+  <p>
+    Not every system relies on gravity. When the drain field sits uphill of the tank, or the design
+    calls for it, an effluent pump moves liquid where it needs to go. Like any pump, it can wear out or
+    fail electrically. Replacing one is a defined job, but the specifics — the pump type, the
+    controls, and how accessible the pump chamber is — shape the work. A system with a pump also has an
+    alarm; if it sounds, it's telling you the pump needs attention promptly.
+  </p>
+
+  <h2>Pipes and Lines</h2>
+  <p>
+    The pipes carrying wastewater between the house, tank, and field can be restricted or broken by
+    invading roots, by crushing under a driveway or heavy traffic, or by a collapsed section. The
+    repair itself may be simple, but the cost depends heavily on where the damage is and what sits on
+    top of it — a line under an open lawn is very different from one under a concrete drive.
+  </p>
+
+  <h2>The Distribution Box</h2>
+  <p>
+    Where a field has multiple lines, a distribution box shares the flow among them so the whole field
+    does its share of the work. It's a small component with an outsized effect: if it settles, shifts
+    out of level, or clogs, it can overload one part of the field while the rest sits idle — which
+    looks like field failure but can be a more contained fix. Our guide on
+    <a href="/septic-distribution-box-problems/">distribution-box problems</a> covers this in detail.
+  </p>
+
+  <h2>Why Diagnosis Comes First</h2>
+  <p>
+    The reason a provider evaluates before quoting is that these components produce overlapping
+    symptoms. The same slow drains can come from a full tank, a clogged line, a failed pump, or a
+    struggling field — and the fix for each is entirely different. An evaluation identifies the actual
+    cause so the repair addresses the real problem rather than the most obvious guess. For how that
+    shapes cost, see <a href="/septic-repair-cost-factors/">septic repair cost factors</a>.
+  </p>
+
+  <h2>When Repair Becomes Replacement</h2>
+  <p>
+    Most individual component failures are repairable. The conversation shifts toward replacement
+    mainly when the drain field has genuinely failed, or when an aging system starts stacking up
+    repeated problems — the subject of our guide on
+    <a href="/septic-repair-versus-system-replacement/">repair versus replacement</a>. To find out
+    what's actually going on with your system, <a href="/request-service/">request septic service</a>
+    and describe the symptoms and any history.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "Septic Distribution-Box Problems"
  * Cluster: septic-repairs-drain-fields
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "What does a distribution box do?",
-    answer: "It shares wastewater evenly among the drain-field lines. Even distribution is what lets the whole field do its job.",
+    question: "What does a distribution box actually do?",
+    answer: "It receives the liquid leaving the tank and divides it evenly among the drain-field lines, so each part of the field does its share of absorbing and treating water. Even distribution is what lets the whole field work as designed and last as long as possible.",
   },
   {
-    question: "Can a distribution box problem look like field failure?",
-    answer: "Yes, which is why evaluation matters — the fix for a box issue can be more contained than a full field repair.",
+    question: "How does a distribution box cause problems?",
+    answer: "Mainly by settling out of level or clogging. If it tilts, gravity sends too much flow to one line and starves the others — overloading part of the field while the rest sits unused. Clogs from solids or roots can block outlets and do the same thing. Either way, distribution becomes uneven.",
   },
   {
-    question: "How is a box problem found?",
-    answer: "Through an on-site evaluation of the box and how flow is reaching the field lines.",
+    question: "Can a distribution-box problem look like a failed drain field?",
+    answer: "Yes, and that's the important point. Overloading one section of the field produces the same surface signs as field failure — wet spots, odors, slow drainage. But if the underlying cause is the box rather than the soil, the fix can be far more contained, which is why an evaluation matters before assuming the worst.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. A provider evaluates and addresses the specific system.",
+    question: "How is a distribution-box problem found and fixed?",
+    answer: "Through an on-site evaluation that looks at the box and how flow is reaching each field line. Depending on what's found, the fix may involve cleaning, re-leveling, or repairing the box — often more targeted than a field replacement. A provider determines what's appropriate.",
   },
 ];
 ---
 
 <ServicePage
   title={"Septic Distribution-Box Problems"}
-  description={"How a small distribution box can unbalance an entire drain field, the signs of trouble, and why evaluation matters."}
+  description={"How a small distribution box can unbalance an entire drain field, the signs that one has shifted or clogged, and why the fix is sometimes more contained than a full field repair."}
   h1={"How a Distribution Box Affects Your Drain Field"}
   eyebrow={"Septic Repairs & Drain Fields"}
   breadcrumbLabel={"Septic Distribution-Box Problems"}
   serviceName={"Septic Repair Information"}
-  intro={"The distribution box is a small component with an outsized job: sharing wastewater evenly across the drain field. When it shifts or clogs, the whole field can suffer."}
+  intro={"The distribution box is one of the smallest parts of a septic system and one of the most consequential. Its job is to spread wastewater evenly across the drain field, so when it shifts or clogs, the whole field can suffer — sometimes in ways that look worse than they are."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,69 @@ const faqs: Faq[] = [
     { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "the replacement path" },
   ]}
 >
-  <p>A drain field only works well when flow is spread across it. The distribution box is what does that spreading — so a small problem there can look like a big field problem.</p>
+  <p>
+    In a septic system full of large components — a tank, a field of buried trenches — the
+    distribution box is easy to overlook. It's small, it's simple, and it has no moving parts. But it
+    does a job that affects everything downstream of it, and when it goes wrong it can make a healthy
+    drain field behave like a failing one. Understanding it can save you from assuming the most
+    expensive diagnosis.
+  </p>
 
   {/* Intended asset: /images/resources/septic-distribution-box-problems-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of a septic distribution box directing flow to drain-field lines, with one line overloaded"}
+    alt={"Septic distribution box directing flow to drain-field lines, with one line overloaded"}
     width={1600}
     height={900}
   />
 
-  <h2>What Can Go Wrong</h2>
-  <ul>
-    <li><strong>Settling or shifting.</strong> A box that is no longer level can send too much flow to one line.</li>
-    <li><strong>Clogging.</strong> Solids or roots can block outlets and unbalance distribution.</li>
-    <li><strong>The result.</strong> One part of the field is overloaded while the rest sits idle.</li>
-  </ul>
-
-  <h2>Why It Needs Evaluation</h2>
+  <h2>What the Distribution Box Does</h2>
   <p>
-    Because the symptoms resemble general field trouble, a provider evaluates to tell them apart — sometimes a box issue is a more contained fix than a field problem. See <a href="/signs-of-drain-field-trouble/">signs of drain-field trouble</a>, or <a href="/request-service/">request septic service</a>.
+    After liquid leaves the tank, it arrives at the distribution box (or "D-box"), which sits between
+    the tank and a drain field made up of several lines or trenches. The box's only job is to divide
+    that flow evenly among the lines, so each one absorbs its fair share and no single section is
+    overworked. A drain field is designed to last precisely because the load is spread across all of
+    it. Even distribution isn't a detail — it's the whole principle the field depends on.
   </p>
 
+  <h2>How It Goes Wrong</h2>
+  <ul>
+    <li>
+      <strong>Settling or shifting.</strong> Ground movement over time can tip the box out of level.
+      Once it's tilted, gravity funnels too much flow to the lowest outlet and starves the higher
+      ones — so one line is drowned while the others sit idle.
+    </li>
+    <li>
+      <strong>Clogging.</strong> Solids that shouldn't have reached the box, or invading roots, can
+      block one or more outlets, again forcing uneven distribution.
+    </li>
+    <li>
+      <strong>The result.</strong> Part of the field is chronically overloaded and starts to fail at
+      the surface, while the rest of the field never gets the chance to help.
+    </li>
+  </ul>
+
+  <h2>Why It Can Look Like Field Failure</h2>
+  <p>
+    Here's the reason this component deserves its own guide: an overloaded section of field produces
+    exactly the signs of a failing field — wet ground, odors, slow drainage over one area. An owner
+    (or an unlucky diagnosis) might conclude the whole field is done. But if the real culprit is the
+    box sending everything to one line, the field itself may be fine, and the fix can be far more
+    contained than a replacement. That gap — between "the field failed" and "the box needs
+    attention" — is why an evaluation matters before committing to major work. Our guide on
+    <a href="/signs-of-drain-field-trouble/">signs of drain-field trouble</a> covers the surface signs
+    these problems share.
+  </p>
+
+  <h2>How It's Found and Addressed</h2>
+  <p>
+    Diagnosing a distribution-box problem means looking at the box itself and how flow is reaching each
+    line — something an on-site evaluation is designed to do. Depending on what's found, addressing it
+    may involve cleaning out a clog, re-leveling the box so flow divides evenly again, or repairing it.
+    Often that's a more targeted job than working on the field as a whole. A provider determines what's
+    appropriate for your system. To get it looked at, <a href="/request-service/">request septic
+    service</a> and describe where you're seeing the wet or troubled area.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

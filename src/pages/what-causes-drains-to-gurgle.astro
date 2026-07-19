@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "What Causes Drains to Gurgle"
  * Cluster: septic-problems
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "Is a gurgling drain serious?",
-    answer: "It can be a minor venting quirk or an early sign of a backing-up system. Paired with slow drains or odors, it is worth checking.",
+    question: "Is a gurgling drain something to worry about?",
+    answer: "Sometimes yes, sometimes no. An occasional gurgle with otherwise normal drainage can be a minor venting quirk. But gurgling paired with slow drains, odors, or wet spots over the field is often an early sign the system is starting to back up — and that's worth acting on before it becomes a full backup.",
   },
   {
-    question: "Why does my toilet gurgle when the washer drains?",
-    answer: "A surge of water can force air through the system; if it happens often, it may signal restricted flow worth evaluating.",
+    question: "Why does my toilet gurgle when the washing machine drains?",
+    answer: "A large, sudden surge of water — like a washer emptying — can force air through a system that isn't flowing freely, and that air escapes as a gurgle at the nearest fixture. If it happens regularly, it suggests the system is struggling to handle the flow and is worth having evaluated.",
   },
   {
-    question: "Will pumping stop the gurgling?",
-    answer: "If a full tank is the cause, sometimes. If it is a blockage or venting issue, that needs to be addressed directly.",
+    question: "Will pumping the tank stop the gurgling?",
+    answer: "If a full tank is the cause, often yes. But if the gurgling comes from a blockage in the line or a drain field that can't accept water, pumping may only help briefly while the underlying issue remains. A provider can determine which situation you're in.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. A provider can identify the cause on site.",
+    question: "Is gurgling ever just a plumbing issue and not the septic system?",
+    answer: "Yes. Plumbing vents that are blocked or improperly sized can cause gurgling that has nothing to do with the tank or field. That's one reason an evaluation is useful — it distinguishes a vent issue from a genuine septic problem rather than guessing.",
   },
 ];
 ---
 
 <ServicePage
   title={"What Causes Drains to Gurgle"}
-  description={"The plumbing physics behind gurgling drains and toilets on a septic system, and when the sound is worth acting on."}
+  description={"The plumbing physics behind gurgling drains and toilets on a septic system — what the sound means, the difference between a harmless quirk and an early warning, and when to have it checked."}
   h1={"What Causes Gurgling Drains on a Septic System?"}
   eyebrow={"Septic Problems & Warning Signs"}
   breadcrumbLabel={"What Causes Drains to Gurgle"}
   serviceName={"Septic Problem Information"}
-  intro={"Gurgling is the sound everyone ignores until it isn't. This guide explains what causes it on a septic system and when it is worth a closer look."}
+  intro={"Gurgling is the sound most people tune out — until it isn't. On a septic system that noise is air escaping where water should be flowing freely, and it can mean anything from a minor venting quirk to an early sign the system is backing up. Here's how to tell the difference."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,28 +51,70 @@ const faqs: Faq[] = [
     { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "how issues are evaluated" },
   ]}
 >
-  <p>A gurgle is air finding its way through the plumbing when water isn't flowing freely. On a septic system, that can be a small venting quirk — or an early hint that the system is backing up.</p>
+  <p>
+    Everyone knows the sound: a toilet or drain that bubbles and gurgles after you run water
+    somewhere else in the house. It's easy to ignore, but on a septic system it's worth a moment's
+    attention, because a gurgle is literally the sound of air going where water should be flowing
+    smoothly — and sometimes that's a small quirk, and sometimes it's an early warning.
+  </p>
 
   {/* Intended asset: /images/resources/what-causes-drains-to-gurgle-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration showing air moving through household drains connected to a septic system, causing a gurgle"}
+    alt={"Air moving through household drains connected to a septic system, causing a gurgle"}
     width={1600}
     height={900}
   />
 
-  <h2>Why It Happens</h2>
-  <ul>
-    <li><strong>Restricted flow.</strong> When water can't move freely, trapped air escapes as a gurgle.</li>
-    <li><strong>Venting issues.</strong> Plumbing vents help air balance; when they don't, drains can gurgle.</li>
-    <li><strong>A filling or blocked system.</strong> Gurgling with slow drains can mean the tank or line needs attention.</li>
-  </ul>
-
-  <h2>When to Act</h2>
+  <h2>Why a Drain Gurgles</h2>
   <p>
-    An occasional gurgle with otherwise normal drains is worth noting; gurgling alongside slow drains, odors or wet spots is worth acting on. See <a href="/signs-a-septic-tank-may-be-full/">signs a tank may be full</a>, or <a href="/request-service/">request septic service</a> if the pattern continues.
+    Household plumbing is designed so that water flows down and out while air moves freely to balance
+    the pressure — that's what the vent pipes on your roof are for. When something restricts that
+    smooth flow, water and air compete in the pipes, and trapped air escapes past the water as a
+    gurgle at whatever fixture is nearby. So a gurgle always means flow is being restricted somewhere;
+    the question is where, and how seriously.
   </p>
 
+  <h2>The Common Causes</h2>
+  <ul>
+    <li>
+      <strong>A filling or full tank.</strong> When the tank is near capacity, the system can't accept
+      water as readily, and the resulting restriction shows up as gurgling — often the first audible
+      sign a tank is due. See <a href="/signs-a-septic-tank-may-be-full/">signs a tank may be full</a>.
+    </li>
+    <li>
+      <strong>A partial blockage.</strong> Roots, grease buildup, or debris in the line between the
+      house and tank can restrict flow and cause air to gurgle back.
+    </li>
+    <li>
+      <strong>A venting issue.</strong> If the plumbing vents that balance air pressure are blocked or
+      inadequate, drains can gurgle even when the tank and field are fine — a plumbing problem rather
+      than a septic one.
+    </li>
+    <li>
+      <strong>A drain field that can't keep up.</strong> When the field is struggling to accept water,
+      the backup of pressure can reach the house as gurgling, usually alongside other symptoms.
+    </li>
+  </ul>
+
+  <h2>Harmless Quirk or Early Warning?</h2>
+  <p>
+    Context is everything. An occasional, isolated gurgle with drains that otherwise run normally is
+    usually low-concern and worth simply noting. Gurgling that's getting more frequent, or that
+    arrives with slow drains, odors, or wet ground over the field, is a different story — that
+    combination is often the system's early announcement that it's starting to back up, and it's much
+    cheaper to address at the gurgle stage than at the backup stage. If you're already seeing a
+    backup, see <a href="/what-to-do-when-sewage-backs-up/">what to do when sewage backs up</a>.
+  </p>
+
+  <h2>What to Do</h2>
+  <p>
+    If the gurgling is persistent or paired with any other symptom, have the cause identified rather
+    than waiting to see if it clears. Because the sound can come from the tank, the line, the vents,
+    or the field, an evaluation is what tells them apart instead of guessing.
+    <a href="/request-service/">Request septic service</a> and describe when the gurgling happens (for
+    example, after the washer drains) and any other signs you've noticed.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a

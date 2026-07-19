@@ -3,10 +3,8 @@
  * Knowledge-catalog guide — "What May Be Included in a Septic Inspection"
  * Cluster: septic-inspections-property-buying
  * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
- * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
- *   comments and rich alt text; intended filenames + generation briefs live in
- *   public/images/resources/README.md. OpenClaw discovers these empty slots
- *   during its repository scan.
+ * Images: ResourceImageSlot placeholder(s) (src={null}) discovered by OpenClaw
+ *   during its repository scan; briefs live in public/images/resources/README.md.
  */
 import ServicePage from '@layouts/ServicePage.astro';
 import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
@@ -14,32 +12,32 @@ import type { Faq } from '@data/site';
 
 const faqs: Faq[] = [
   {
-    question: "What does a septic inspection include?",
-    answer: "It ranges from a visual check to locating and opening the tank, fuller evaluation with pumping or flow testing, and written documentation.",
+    question: "What does a septic inspection actually include?",
+    answer: "It depends on the level. At the lighter end, a visual check of an accessible, already-open tank. More thorough inspections add locating and opening the tank, evaluating the components, and sometimes pumping and flow testing to see how the system handles use — plus written documentation of what was found.",
   },
   {
-    question: "Why do inspection scopes differ so much?",
-    answer: "Because a quick visual look and a full evaluation are genuinely different services. Confirm the scope before comparing.",
+    question: "Why do septic inspection scopes vary so much?",
+    answer: "Because a quick visual look and a full functional evaluation are genuinely different services with different amounts of work. Neither is 'wrong' — they answer different questions. The key is to confirm the scope so you're comparing like with like and getting the depth the situation calls for.",
   },
   {
-    question: "Do inspections include pumping?",
-    answer: "Some do and some don't — it depends on the scope, which is why it is worth confirming in advance.",
+    question: "Do all inspections include pumping the tank?",
+    answer: "No. Some do — pumping can be part of a fuller inspection because it lets the inspector see the tank's interior and baffles clearly — and some don't. Since it affects both the thoroughness and the price, it's worth confirming whether pumping is included.",
   },
   {
-    question: "Is this guide professional advice?",
-    answer: "No — it is general information. The provider defines the inspection for your situation.",
+    question: "Which level of inspection do I need?",
+    answer: "It depends on the purpose. A real-estate transaction usually warrants a more thorough, documented inspection because a lot rides on it; a routine check for an owner might be lighter. Describe the situation to a provider and let them recommend the appropriate scope.",
   },
 ];
 ---
 
 <ServicePage
   title={"What May Be Included in a Septic Inspection"}
-  description={"Visual checks, tank locating, flow testing, pumping and reporting — how septic inspection scope varies and what to confirm."}
+  description={"Septic inspections range from a quick visual look to a thorough evaluation with pumping and flow testing. Learn what each level covers so you can compare inspections on scope, not just price."}
   h1={"What Does a Septic Inspection Include?"}
   eyebrow={"Septic Inspections & Property Buying"}
   breadcrumbLabel={"What May Be Included in an Inspection"}
   serviceName={"Septic Inspection Information"}
-  intro={"Not all septic inspections are the same. This guide explains the range of what an inspection can include so you can compare options meaningfully."}
+  intro={"'Septic inspection' describes a spectrum of services, from a brief visual check to a comprehensive evaluation with testing and documentation. Knowing the range lets you understand what you're actually getting — and why two 'inspections' can differ so much in price and value."}
   faqs={faqs}
   formHeading="Request Septic Service"
   related={[
@@ -53,29 +51,72 @@ const faqs: Faq[] = [
     { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "rural property context" },
   ]}
 >
-  <p>"Inspection" covers a spectrum, from a quick visual look to a thorough evaluation with testing and documentation. Knowing the scope lets you compare quotes fairly.</p>
+  <p>
+    If you ask three companies for a "septic inspection," you may get three quite different services —
+    and that's not a sign of anything shady, it's just that the word covers a wide range. An inspection
+    can be a brief visual look or a comprehensive functional evaluation, and everything in between.
+    Understanding the spectrum lets you get the depth your situation actually needs and compare quotes
+    fairly.
+  </p>
 
   {/* Intended asset: /images/resources/what-may-be-included-in-a-septic-inspection-hero.webp — see public/images/resources/README.md */}
   <ResourceImageSlot
     src={null}
-    alt={"Illustration of a septic inspection in progress showing tank access, evaluation and documentation"}
+    alt={"Septic inspection in progress showing tank access, evaluation and documentation"}
     width={1600}
     height={900}
   />
 
-  <h2>The Range of Scope</h2>
+  <h2>The Spectrum of Scope</h2>
   <ul>
-    <li><strong>Visual check.</strong> A look at an accessible, already-open tank.</li>
-    <li><strong>Locating and opening.</strong> Finding the tank and opening the lids.</li>
-    <li><strong>Fuller evaluation.</strong> Pumping, flow testing and component checks.</li>
-    <li><strong>Documentation.</strong> A written record of findings.</li>
+    <li>
+      <strong>Visual check.</strong> A look at an accessible, already-open tank and the readily visible
+      parts of the system. It's quick and low-cost, but limited — it can miss anything not visible on
+      the surface.
+    </li>
+    <li>
+      <strong>Locating and opening.</strong> Finding the tank (if its location isn't known) and
+      opening the lids so the interior can actually be seen — a meaningful step up in what can be
+      assessed.
+    </li>
+    <li>
+      <strong>Functional evaluation.</strong> A fuller inspection that may include pumping and flow or
+      dye testing to see how the system handles real use, plus a closer look at the tank's components
+      and, where possible, signs of how the drain field is performing.
+    </li>
+    <li>
+      <strong>Documentation.</strong> A written record of what was found — which is what makes an
+      inspection useful in a transaction or as a baseline for the future.
+    </li>
   </ul>
 
-  <h2>Ask Before You Compare</h2>
+  <h2>Why Pumping Is Sometimes Part of It</h2>
   <p>
-    Because scope varies, ask what a given inspection includes before comparing prices — a visual check and a full evaluation are different services. To arrange one, <a href="/septic-inspection-cookeville-tn/">see inspections</a> or <a href="/request-service/">request septic service</a>.
+    A thorough inspection sometimes includes pumping the tank, and there's a good reason: with the tank
+    emptied, the inspector can clearly see the interior walls, the baffles, and the true condition of
+    things that are hidden when the tank is full. It also confirms the tank actually empties and
+    refills as it should. Because pumping adds both thoroughness and cost, whether it's included is one
+    of the clearest things to confirm when comparing inspections.
   </p>
 
+  <h2>Matching the Inspection to the Purpose</h2>
+  <p>
+    The right level depends on why you're inspecting. A real-estate purchase usually justifies a more
+    thorough, documented inspection, because a major decision rests on it — our guide on
+    <a href="/septic-inspections-when-buying-a-home/">inspections when buying a home</a> explains why.
+    A routine owner's check, or a look driven by a specific symptom, might be lighter. If you're not
+    sure, describe the situation and let the provider recommend the scope.
+  </p>
+
+  <h2>Compare Scope, Not Just Price</h2>
+  <p>
+    The practical takeaway is simple: before comparing two inspection quotes, ask what each one
+    actually includes — visual only, or locating, opening, testing, and documentation? A lower price
+    for a lighter service isn't really cheaper if it doesn't answer the question you need answered. To
+    arrange an inspection at the right depth, see
+    <a href="/septic-inspection-cookeville-tn/">septic inspections</a> or
+    <a href="/request-service/">request septic service</a> and describe the purpose.
+  </p>
   <p class="disclosure">
     This guide is general information for property owners, not professional advice for any specific
     system. Systems, soils and requirements vary by property and county — confirm specifics with a
