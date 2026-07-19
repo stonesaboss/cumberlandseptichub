@@ -147,6 +147,9 @@ import {
     gap: 0.6rem;
     text-decoration: none;
     padding-block: 0.4rem;
+    /* never flex-shrink below the logo text's natural width — a squeezed
+       anchor lets the brand name paint over the first nav link */
+    flex-shrink: 0;
   }
 
   .site-header__emblem {
@@ -162,18 +165,20 @@ import {
 
   .site-header__name-top {
     font-weight: 900;
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: var(--navy-deep);
+    white-space: nowrap;
   }
 
   .site-header__name-bottom {
     font-weight: 800;
-    font-size: 0.85rem;
-    letter-spacing: 0.22em;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--green);
+    white-space: nowrap;
   }
 
   .nav-toggle {
@@ -231,7 +236,7 @@ import {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    padding: 0.6rem 0.55rem;
+    padding: 0.6rem 0.4rem;
     font-size: 0.9rem;
     font-weight: 700;
     white-space: nowrap;
@@ -301,12 +306,12 @@ import {
 
   .site-nav__cta {
     font-size: 0.8rem;
-    padding: 0.65rem 0.9rem;
+    padding: 0.65rem 0.8rem;
     margin-left: 0.35rem;
     white-space: nowrap;
   }
 
-  @media (max-width: 1220px) {
+  @media (max-width: 1240px) {
     .nav-toggle {
       display: inline-flex;
     }
