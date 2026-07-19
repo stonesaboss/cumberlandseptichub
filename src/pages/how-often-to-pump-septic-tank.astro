@@ -1,0 +1,150 @@
+---
+/**
+ * Knowledge-catalog guide — "How Often Septic Tanks May Need Pumping"
+ * Cluster: septic-pumping-maintenance
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: two ResourceImageSlot placeholders (src={null}) with intended-asset
+ *   comments and rich alt text. Intended filenames + generation briefs are
+ *   documented in public/images/resources/README.md. OpenClaw's
+ *   placeholder-image-replacement skill discovers these empty slots during its
+ *   repository scan — no custom marker or manifest contract is required.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Is there a standard interval for pumping a septic tank?',
+    answer:
+      'There is no single number that fits every property. How quickly a tank fills with solids depends on tank size, how many people use the system, daily water habits and the system’s condition. The most reliable guide is how full your tank actually was at the last service — a provider who pumps it can tell you.',
+  },
+  {
+    question: 'How do I find out how full my tank is?',
+    answer:
+      'The tank has to be opened and measured. When a provider pumps or inspects the tank, they can see the sludge and scum layers directly and tell you how much runway you had — which is the best data point for setting your own interval.',
+  },
+  {
+    question: 'Does a garbage disposal change how often I should pump?',
+    answer:
+      'It generally can. Disposals send more solids into the tank, which can build the sludge layer faster than a household that composts or bins food waste. Heavy use is worth mentioning when you request service.',
+  },
+  {
+    question: 'Do lightly used or seasonal properties still need pumping?',
+    answer:
+      'Usually yes, just less often. Even a cabin used a few weekends a year accumulates solids over time, so periodic checks are still worthwhile rather than assuming a rarely-used system never needs attention.',
+  },
+  {
+    question: 'Is this guide a substitute for a professional evaluation?',
+    answer:
+      'No — it is general information. Systems, soils and requirements differ by property and county, and only an on-site evaluation can tell you what your specific system needs.',
+  },
+];
+---
+
+<ServicePage
+  title="How Often Should a Septic Tank Be Pumped? | Cumberland Septic Hub"
+  description="What actually determines how often a septic tank needs pumping in the Upper Cumberland — tank size, household size, water habits and system condition — and how to set the right interval for your property."
+  h1="How Often Should a Septic Tank Be Pumped?"
+  eyebrow="Septic Pumping & Maintenance"
+  breadcrumbLabel="How Often to Pump a Septic Tank"
+  serviceName="Septic Pumping Information"
+  intro="The honest answer to “how often should I pump?” is “it depends” — and the factors it depends on are ones you can actually understand. This guide walks through what makes a tank fill faster or slower, and how to land on the right interval for your property."
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: 'Septic Pumping in Cookeville', href: '/septic-pumping-cookeville-tn/', blurb: 'when it’s time for a truck visit' },
+    { label: 'Septic Tank Cleaning in Cookeville', href: '/septic-tank-cleaning-cookeville-tn/', blurb: 'pumping vs. full cleaning' },
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'checking condition and levels' },
+  ]}
+  guides={[
+    { label: 'Septic Maintenance Guide for Property Owners', href: '/septic-maintenance/', blurb: 'the full owner’s guide' },
+    { label: 'Septic Pumping and Maintenance', href: '/resources/septic-pumping-maintenance/', blurb: 'more guides in this topic' },
+    { label: 'Septic Costs and Pricing Factors', href: '/resources/septic-costs/', blurb: 'what service pricing depends on' },
+  ]}
+>
+  <p>
+    Every time water leaves the house, solids settle to the bottom of the septic tank and slowly
+    build into a sludge layer, while lighter material forms a scum layer on top. Pumping removes
+    those layers before they build far enough to carry over into the drain field — which is the
+    outcome worth avoiding, because drain-field trouble sits at the expensive end of septic
+    problems. So the real question behind “how often” is “how fast does my tank fill,” and that
+    varies from property to property.
+  </p>
+
+  {/* Intended asset: /images/resources/how-often-to-pump-septic-tank-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt="Cutaway illustration of a residential septic tank showing the settled sludge layer, liquid layer and floating scum layer"
+    width={1600}
+    height={900}
+  />
+
+  <h2>The Factors That Set Your Pumping Interval</h2>
+  <ul>
+    <li>
+      <strong>Tank size relative to the household.</strong> A smaller tank serving a full house
+      fills faster than a larger tank serving the same number of people.
+    </li>
+    <li>
+      <strong>Number of people using the system.</strong> Every person adds daily load. Larger
+      and multi-generation households — and rentals — reach service intervals sooner.
+    </li>
+    <li>
+      <strong>Water habits.</strong> Steady, spread-out water use is gentle on a system; heavy
+      spikes (several loads of laundry in a day, long guest weekends) push more through at once.
+    </li>
+    <li>
+      <strong>Garbage-disposal use.</strong> Disposals send extra solids into the tank and can
+      meaningfully speed up how fast the sludge layer builds.
+    </li>
+    <li>
+      <strong>System condition and age.</strong> Failing baffles, past neglect or an aging system
+      can shorten the practical interval between services.
+    </li>
+  </ul>
+
+  <h2>Why the Best Interval Comes From Your Last Service</h2>
+  <p>
+    Charts and rules of thumb can only generalize. The most useful number for your property comes
+    from the tank itself: when a provider pumps or inspects it, they can see how full it actually
+    was and tell you how much runway you had. That single observation turns “how often should I
+    pump” from a guess into a plan tailored to how your household actually uses the system.
+  </p>
+
+  {/* Intended asset: /images/resources/how-often-to-pump-septic-tank-factors.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt="Illustration comparing factors that affect septic pumping frequency: household size, tank size, water use and garbage-disposal use"
+    width={1600}
+    height={900}
+  />
+
+  <h2>Signs You May Be Due Sooner Than Expected</h2>
+  <p>
+    Between services, the system will usually tell you if it is filling faster than planned. Slow
+    drains throughout the house, gurgling after water use, odors indoors or over the tank, or wet
+    and unusually green areas over the drain field are all worth acting on rather than waiting for
+    the calendar. Our guide to
+    <a href="/resources/septic-problems/">septic problems and warning signs</a> covers what these
+    symptoms can mean.
+  </p>
+
+  <h2>Setting Your Own Schedule</h2>
+  <p>
+    A workable approach is simple: have the tank serviced, ask the provider how full it was and
+    what that suggests for your household, and use that to set your next interval — then adjust as
+    your water use or household changes. Keeping a short record of service dates and what the
+    provider observed makes every future decision easier. When it’s time, or if you’re simply not
+    sure when the tank was last done, <a href="/request-service/">request septic service</a> and a
+    local provider can check the levels and advise.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soil conditions and requirements vary by property and county — confirm
+    specifics with a qualified provider or the appropriate authority. Cumberland Septic Hub is an
+    independent referral service; provider availability, qualifications, pricing and service terms
+    are determined by the provider.
+  </p>
+</ServicePage>

@@ -1,0 +1,402 @@
+{
+  "updated": "2026-07-19",
+  "note": "Knowledge-catalog articles pushed live 2026-07-19. Lives outside OpenClaw scanned paths. Image slots are placeholders until OpenClaw generates the WebP assets.",
+  "count": 28,
+  "articles": [
+    {
+      "topic": "How Often Septic Tanks May Need Pumping",
+      "cluster": "septic-pumping-maintenance",
+      "status": "in-repo",
+      "articleLocation": "src/pages/how-often-to-pump-septic-tank.astro",
+      "slug": "/how-often-to-pump-septic-tank/",
+      "intendedImages": [
+        "public/images/resources/how-often-to-pump-septic-tank-hero.webp",
+        "public/images/resources/how-often-to-pump-septic-tank-factors.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "What to Do When Sewage Backs Up",
+      "cluster": "septic-problems",
+      "status": "in-repo",
+      "articleLocation": "src/pages/what-to-do-when-sewage-backs-up.astro",
+      "slug": "/what-to-do-when-sewage-backs-up/",
+      "intendedImages": [
+        "public/images/resources/what-to-do-when-sewage-backs-up-hero.webp",
+        "public/images/resources/what-to-do-when-sewage-backs-up-causes.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Signs a Septic Tank May Be Full",
+      "cluster": "septic-problems",
+      "status": "in-repo",
+      "articleLocation": "src/pages/signs-a-septic-tank-may-be-full.astro",
+      "slug": "/signs-a-septic-tank-may-be-full/",
+      "intendedImages": [
+        "public/images/resources/signs-a-septic-tank-may-be-full-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Septic Inspections When Buying a Home",
+      "cluster": "septic-inspections-property-buying",
+      "status": "in-repo",
+      "articleLocation": "src/pages/septic-inspections-when-buying-a-home.astro",
+      "slug": "/septic-inspections-when-buying-a-home/",
+      "intendedImages": [
+        "public/images/resources/septic-inspections-when-buying-a-home-hero.webp",
+        "public/images/resources/septic-inspections-when-buying-a-home-checklist.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Septic Pumping Cost Factors",
+      "cluster": "septic-costs",
+      "status": "in-repo",
+      "articleLocation": "src/pages/septic-pumping-cost-factors.astro",
+      "slug": "/septic-pumping-cost-factors/",
+      "intendedImages": [
+        "public/images/resources/septic-pumping-cost-factors-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Septic Repair Cost Factors",
+      "cluster": "septic-costs",
+      "status": "in-repo",
+      "articleLocation": "src/pages/septic-repair-cost-factors.astro",
+      "slug": "/septic-repair-cost-factors/",
+      "intendedImages": [
+        "public/images/resources/septic-repair-cost-factors-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Drain-Field Repair or Replacement Costs",
+      "cluster": "septic-costs",
+      "status": "in-repo",
+      "articleLocation": "src/pages/drain-field-repair-or-replacement-costs.astro",
+      "slug": "/drain-field-repair-or-replacement-costs/",
+      "intendedImages": [
+        "public/images/resources/drain-field-repair-or-replacement-costs-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "New Septic Installation Cost Factors",
+      "cluster": "septic-costs",
+      "status": "in-repo",
+      "articleLocation": "src/pages/new-septic-installation-cost-factors.astro",
+      "slug": "/new-septic-installation-cost-factors/",
+      "intendedImages": [
+        "public/images/resources/new-septic-installation-cost-factors-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "What Happens During a Septic Pumping Appointment",
+      "cluster": "septic-pumping-maintenance",
+      "status": "in-repo",
+      "articleLocation": "src/pages/what-happens-during-a-septic-pumping-appointment.astro",
+      "slug": "/what-happens-during-a-septic-pumping-appointment/",
+      "intendedImages": [
+        "public/images/resources/what-happens-during-a-septic-pumping-appointment-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Septic Pumping Versus Septic Tank Cleaning",
+      "cluster": "septic-pumping-maintenance",
+      "status": "in-repo",
+      "articleLocation": "src/pages/septic-pumping-versus-septic-tank-cleaning.astro",
+      "slug": "/septic-pumping-versus-septic-tank-cleaning/",
+      "intendedImages": [
+        "public/images/resources/septic-pumping-versus-septic-tank-cleaning-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Septic Maintenance Checklist for Property Owners",
+      "cluster": "septic-pumping-maintenance",
+      "status": "in-repo",
+      "articleLocation": "src/pages/septic-maintenance-checklist.astro",
+      "slug": "/septic-maintenance-checklist/",
+      "intendedImages": [
+        "public/images/resources/septic-maintenance-checklist-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Why Septic Systems Produce Odors",
+      "cluster": "septic-problems",
+      "status": "in-repo",
+      "articleLocation": "src/pages/why-septic-systems-produce-odors.astro",
+      "slug": "/why-septic-systems-produce-odors/",
+      "intendedImages": [
+        "public/images/resources/why-septic-systems-produce-odors-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "What Causes Drains to Gurgle",
+      "cluster": "septic-problems",
+      "status": "in-repo",
+      "articleLocation": "src/pages/what-causes-drains-to-gurgle.astro",
+      "slug": "/what-causes-drains-to-gurgle/",
+      "intendedImages": [
+        "public/images/resources/what-causes-drains-to-gurgle-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Signs of Drain-Field Trouble",
+      "cluster": "septic-repairs-drain-fields",
+      "status": "in-repo",
+      "articleLocation": "src/pages/signs-of-drain-field-trouble.astro",
+      "slug": "/signs-of-drain-field-trouble/",
+      "intendedImages": [
+        "public/images/resources/signs-of-drain-field-trouble-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Common Septic-System Repairs",
+      "cluster": "septic-repairs-drain-fields",
+      "status": "in-repo",
+      "articleLocation": "src/pages/common-septic-system-repairs.astro",
+      "slug": "/common-septic-system-repairs/",
+      "intendedImages": [
+        "public/images/resources/common-septic-system-repairs-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Septic Distribution-Box Problems",
+      "cluster": "septic-repairs-drain-fields",
+      "status": "in-repo",
+      "articleLocation": "src/pages/septic-distribution-box-problems.astro",
+      "slug": "/septic-distribution-box-problems/",
+      "intendedImages": [
+        "public/images/resources/septic-distribution-box-problems-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Septic Repair Versus System Replacement",
+      "cluster": "septic-repairs-drain-fields",
+      "status": "in-repo",
+      "articleLocation": "src/pages/septic-repair-versus-system-replacement.astro",
+      "slug": "/septic-repair-versus-system-replacement/",
+      "intendedImages": [
+        "public/images/resources/septic-repair-versus-system-replacement-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "The Septic Installation Process",
+      "cluster": "septic-installation-replacement",
+      "status": "in-repo",
+      "articleLocation": "src/pages/the-septic-installation-process.astro",
+      "slug": "/the-septic-installation-process/",
+      "intendedImages": [
+        "public/images/resources/the-septic-installation-process-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Replacing an Older Septic System",
+      "cluster": "septic-installation-replacement",
+      "status": "in-repo",
+      "articleLocation": "src/pages/replacing-an-older-septic-system.astro",
+      "slug": "/replacing-an-older-septic-system/",
+      "intendedImages": [
+        "public/images/resources/replacing-an-older-septic-system-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Septic Planning for New Construction",
+      "cluster": "septic-installation-replacement",
+      "status": "in-repo",
+      "articleLocation": "src/pages/septic-planning-for-new-construction.astro",
+      "slug": "/septic-planning-for-new-construction/",
+      "intendedImages": [
+        "public/images/resources/septic-planning-for-new-construction-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Questions to Ask Before Septic Installation",
+      "cluster": "septic-installation-replacement",
+      "status": "in-repo",
+      "articleLocation": "src/pages/questions-to-ask-before-septic-installation.astro",
+      "slug": "/questions-to-ask-before-septic-installation/",
+      "intendedImages": [
+        "public/images/resources/questions-to-ask-before-septic-installation-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Septic Inspections When Selling a Home",
+      "cluster": "septic-inspections-property-buying",
+      "status": "in-repo",
+      "articleLocation": "src/pages/septic-inspections-when-selling-a-home.astro",
+      "slug": "/septic-inspections-when-selling-a-home/",
+      "intendedImages": [
+        "public/images/resources/septic-inspections-when-selling-a-home-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "What May Be Included in a Septic Inspection",
+      "cluster": "septic-inspections-property-buying",
+      "status": "in-repo",
+      "articleLocation": "src/pages/what-may-be-included-in-a-septic-inspection.astro",
+      "slug": "/what-may-be-included-in-a-septic-inspection/",
+      "intendedImages": [
+        "public/images/resources/what-may-be-included-in-a-septic-inspection-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "How to Find Septic Records and Tank Locations",
+      "cluster": "septic-inspections-property-buying",
+      "status": "in-repo",
+      "articleLocation": "src/pages/how-to-find-septic-records-and-tank-locations.astro",
+      "slug": "/how-to-find-septic-records-and-tank-locations/",
+      "intendedImages": [
+        "public/images/resources/how-to-find-septic-records-and-tank-locations-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Septic Planning for Rural Upper Cumberland Properties",
+      "cluster": "upper-cumberland-septic-guide",
+      "status": "in-repo",
+      "articleLocation": "src/pages/septic-planning-for-rural-upper-cumberland-properties.astro",
+      "slug": "/septic-planning-for-rural-upper-cumberland-properties/",
+      "intendedImages": [
+        "public/images/resources/septic-planning-for-rural-upper-cumberland-properties-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Preparing a Property for Septic Service",
+      "cluster": "upper-cumberland-septic-guide",
+      "status": "in-repo",
+      "articleLocation": "src/pages/preparing-a-property-for-septic-service.astro",
+      "slug": "/preparing-a-property-for-septic-service/",
+      "intendedImages": [
+        "public/images/resources/preparing-a-property-for-septic-service-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "Questions About Tennessee Septic Permits and Approvals",
+      "cluster": "upper-cumberland-septic-guide",
+      "status": "in-repo",
+      "articleLocation": "src/pages/tennessee-septic-permits-and-approvals.astro",
+      "slug": "/tennessee-septic-permits-and-approvals/",
+      "intendedImages": [
+        "public/images/resources/tennessee-septic-permits-and-approvals-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    },
+    {
+      "topic": "How Terrain and Access Affect Septic Service",
+      "cluster": "upper-cumberland-septic-guide",
+      "status": "in-repo",
+      "articleLocation": "src/pages/how-terrain-and-access-affect-septic-service.astro",
+      "slug": "/how-terrain-and-access-affect-septic-service/",
+      "intendedImages": [
+        "public/images/resources/how-terrain-and-access-affect-septic-service-hero.webp"
+      ],
+      "imageContext": "public/images/resources/README.md",
+      "imageStatus": "placeholders-in-place",
+      "registeredInResourcesTs": true,
+      "published": true
+    }
+  ]
+}

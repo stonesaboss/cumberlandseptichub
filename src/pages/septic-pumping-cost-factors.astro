@@ -1,0 +1,87 @@
+---
+/**
+ * Knowledge-catalog guide — "Septic Pumping Cost Factors"
+ * Cluster: septic-costs
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "What makes one pump-out cost more than another?",
+    answer: "Usually a larger tank, buried or hard-to-reach lids, a long distance from the truck to the tank, or a system that is well overdue. Each adds time or labor.",
+  },
+  {
+    question: "Does the tank need to be dug up every time?",
+    answer: "Only if the lids are buried. Keeping the lids accessible — or installing risers to grade — reduces the digging portion of future service.",
+  },
+  {
+    question: "Can I get an exact price over the phone?",
+    answer: "A provider can give a realistic range from a good description, but the exact price is confirmed at the property, since access and tank condition vary.",
+  },
+  {
+    question: "Is this guide a price quote?",
+    answer: "No. It explains the factors behind pricing; the provider sets the actual price after reviewing the property and requested service.",
+  },
+];
+---
+
+<ServicePage
+  title={"Septic Pumping Cost Factors"}
+  description={"What determines the price of a routine septic pump-out — tank size, lid access, distance and service scope — and why a good request gets a firmer quote."}
+  h1={"What Affects the Cost of a Septic Pump-Out?"}
+  eyebrow={"Septic Costs & Pricing"}
+  breadcrumbLabel={"Septic Pumping Cost Factors"}
+  serviceName={"Septic Service Information"}
+  intro={"Routine pumping is the septic service people ask about most, and the price depends on a handful of practical factors. Understanding them helps quotes make sense and helps you describe your property well."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "routine pump-outs" },
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "when repairs are needed" },
+    { label: "Septic Installation in Cookeville", href: "/septic-installation-cookeville-tn/", blurb: "new and replacement systems" },
+  ]}
+  guides={[
+    { label: "Septic Costs and Pricing Factors", href: "/resources/septic-costs/", blurb: "the cost topic hub" },
+    { label: "Septic Pumping and Maintenance", href: "/resources/septic-pumping-maintenance/", blurb: "routine service basics" },
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "where repair costs come from" },
+  ]}
+>
+  <p>Ask what a pump-out costs and any honest answer starts with the property. The work genuinely differs from one home to the next, so rather than a single figure, it helps to know the levers that move the price up or down.</p>
+
+  {/* Intended asset: /images/resources/septic-pumping-cost-factors-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a septic pump truck servicing a residential tank, with factors like tank size and access highlighted"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>The Main Factors</h2>
+  <ul>
+    <li><strong>Tank size and compartments.</strong> A larger, multi-compartment tank holds more material and takes longer to service.</li>
+    <li><strong>Lid access.</strong> Exposed lids at grade are the easy case; lids buried under soil or a deck add locating and digging.</li>
+    <li><strong>Distance and truck access.</strong> Vacuum hoses have practical limits — long drives, gates, slopes and soft ground all matter.</li>
+    <li><strong>Time since the last service.</strong> A long-overdue tank holds compacted solids that take more effort to remove.</li>
+    <li><strong>Scope.</strong> Removing liquid is one job; fully removing the settled sludge from every compartment is a bigger one.</li>
+  </ul>
+
+  <h2>How to Get a Firmer Quote</h2>
+  <p>
+    Providers quote confidently when they can picture the job. A request that notes the tank size (if known), whether the lids are exposed, how a truck reaches the tank, and when the system was last serviced gets a much tighter estimate. Exact pricing is always set by the provider — <a href="/request-service/">request septic service</a> with those details and the estimate conversation gets shorter.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

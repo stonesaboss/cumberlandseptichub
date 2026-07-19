@@ -1,0 +1,115 @@
+---
+/**
+ * Knowledge-catalog guide — "Signs a Septic Tank May Be Full"
+ * Cluster: septic-problems
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholders (src={null}) with intended-asset
+ *   comments and rich alt text. Intended filenames + generation briefs are
+ *   documented in public/images/resources/README.md. OpenClaw discovers these
+ *   empty slots during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'What are the early signs a septic tank is getting full?',
+    answer:
+      'Drains across the house slowing down together, gurgling after water use, and faint odors indoors or near the tank are common early signs. Because these can also point to other issues, they are best treated as a prompt to have the tank checked rather than a definite diagnosis.',
+  },
+  {
+    question: 'Does a full tank always cause a backup?',
+    answer:
+      'Not always right away. A tank can be overdue and show mild symptoms for a while before a backup happens. Acting on the early signs is what helps you avoid the backup stage entirely.',
+  },
+  {
+    question: 'Can I tell how full the tank is myself?',
+    answer:
+      'Not reliably from the surface. Confirming the level means opening and measuring the tank, which a provider does during pumping or an inspection. Opening a tank yourself is hazardous and generally not advisable.',
+  },
+  {
+    question: 'How is this different from a failing system?',
+    answer:
+      'A full tank and a failing drain field can produce similar symptoms, which is exactly why an on-site evaluation matters — the fix for a full tank is very different from the fix for a struggling field.',
+  },
+  {
+    question: 'Is this guide a substitute for an inspection?',
+    answer:
+      'No — it is general information to help you recognize when service may be due. Only an on-site evaluation can confirm the tank level and the right next step.',
+  },
+];
+---
+
+<ServicePage
+  title="Signs a Septic Tank May Be Full | Cumberland Septic Hub"
+  description="Recognize the signs a septic tank may be getting full — slow drains, gurgling, odors and wet spots — what they can mean, and why confirming the level takes an on-site check."
+  h1="Signs a Septic Tank May Be Full"
+  eyebrow="Septic Problems & Warning Signs"
+  breadcrumbLabel="Signs a Septic Tank May Be Full"
+  serviceName="Septic Pumping Information"
+  intro="A filling tank usually gives you warning before it becomes a backup. This guide covers the signs worth noticing, what they can (and cannot) tell you, and how the tank level actually gets confirmed."
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: 'Septic Pumping in Cookeville', href: '/septic-pumping-cookeville-tn/', blurb: 'the usual next step' },
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'confirming condition and levels' },
+    { label: 'Septic Tank Locating in Cookeville', href: '/septic-tank-locating-cookeville-tn/', blurb: 'if the tank location is unknown' },
+  ]}
+  guides={[
+    { label: 'What to Do When Sewage Backs Up', href: '/what-to-do-when-sewage-backs-up/', blurb: 'if the signs were missed' },
+    { label: 'Septic Problems and Warning Signs', href: '/resources/septic-problems/', blurb: 'the full symptom guide' },
+    { label: 'How Often Should a Septic Tank Be Pumped?', href: '/how-often-to-pump-septic-tank/', blurb: 'setting the right interval' },
+  ]}
+>
+  <p>
+    A septic tank rarely fills without warning. As the sludge and scum layers build, the system
+    starts to signal that it is running short on room — and those signals are your chance to
+    schedule a routine pump instead of dealing with a backup. The signs below are worth acting on;
+    just keep in mind that similar symptoms can have other causes, so they point toward a check
+    rather than a certainty.
+  </p>
+
+  {/* Intended asset: /images/resources/signs-a-septic-tank-may-be-full-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt="Illustration of a homeowner noticing slow drains and a wet area over the septic tank in the yard"
+    width={1600}
+    height={900}
+  />
+
+  <h2>Signs Worth Noticing</h2>
+  <ul>
+    <li><strong>Whole-house slow drains.</strong> One slow sink is usually a local clog; every drain slowing together points at the system.</li>
+    <li><strong>Gurgling after water use.</strong> Trapped air escaping through drains and toilets can mean the system isn’t flowing freely.</li>
+    <li><strong>Odors indoors or near the tank.</strong> Smells suggest waste isn’t being contained or moved along the way it should.</li>
+    <li><strong>Wet or spongy ground over the tank or field.</strong> Soft, soggy areas without recent rain can mean the system is over capacity.</li>
+    <li><strong>Unusually lush, green grass over the tank or field.</strong> A bright patch can indicate nutrient-rich water reaching the surface.</li>
+    <li><strong>It’s simply been a long time.</strong> If you can’t recall the last pump-out, the tank may be closer to full than you think.</li>
+  </ul>
+
+  <h2>Why the Level Has to Be Confirmed On Site</h2>
+  <p>
+    None of these signs measures how full the tank actually is — they only suggest it. Confirming
+    the level means opening and measuring the tank, which a provider does during a pump-out or an
+    inspection. That is also the moment to learn how full it really was, which helps set your next
+    <a href="/how-often-to-pump-septic-tank/">pumping interval</a>. Opening a septic tank yourself
+    is hazardous and best left to a provider.
+  </p>
+
+  <h2>What to Do Next</h2>
+  <p>
+    If you’re seeing one or more of these signs, the low-stress move is to have the tank checked
+    before it becomes a backup. Describe what you’re noticing and when the system was last serviced,
+    and <a href="/request-service/">request septic service</a> — a provider can confirm the level and
+    advise on timing. If you’re already seeing a backup, see
+    <a href="/what-to-do-when-sewage-backs-up/">what to do when sewage backs up</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Symptoms vary and can have multiple causes — confirm specifics with a qualified provider
+    or the appropriate authority. Cumberland Septic Hub is an independent referral service; provider
+    availability, qualifications, pricing and service terms are determined by the provider.
+  </p>
+</ServicePage>

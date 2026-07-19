@@ -1,0 +1,87 @@
+---
+/**
+ * Knowledge-catalog guide — "Septic Maintenance Checklist for Property Owners"
+ * Cluster: septic-pumping-maintenance
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "What is the most important maintenance habit?",
+    answer: "Pumping on a sensible interval and keeping non-degradable items out of the drains. Together they prevent most avoidable failures.",
+  },
+  {
+    question: "Why keep septic records?",
+    answer: "They make future service faster and cheaper and add real credibility when selling the property.",
+  },
+  {
+    question: "How do I know my pumping interval?",
+    answer: "Have the tank checked; a provider can tell you how full it was, which is the best guide for your household.",
+  },
+  {
+    question: "Is this checklist a substitute for professional service?",
+    answer: "No — it is general guidance. On-site service and evaluation address your specific system.",
+  },
+];
+---
+
+<ServicePage
+  title={"Septic Maintenance Checklist for Property Owners"}
+  description={"A simple, practical checklist of septic maintenance habits and records that extend system life and prevent costly problems."}
+  h1={"A Septic Maintenance Checklist for Property Owners"}
+  eyebrow={"Septic Pumping & Maintenance"}
+  breadcrumbLabel={"Septic Maintenance Checklist"}
+  serviceName={"Septic Pumping Information"}
+  intro={"Good septic maintenance is mostly a set of small habits done consistently. This checklist gathers them in one place so a healthy system stays boring — which is exactly what you want."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "book a pump-out" },
+    { label: "Septic Tank Cleaning in Cookeville", href: "/septic-tank-cleaning-cookeville-tn/", blurb: "pumping vs cleaning" },
+    { label: "Septic Inspections in Cookeville", href: "/septic-inspection-cookeville-tn/", blurb: "condition checks" },
+  ]}
+  guides={[
+    { label: "Septic Pumping and Maintenance", href: "/resources/septic-pumping-maintenance/", blurb: "the maintenance hub" },
+    { label: "Septic Maintenance Guide for Property Owners", href: "/septic-maintenance/", blurb: "the full owner guide" },
+    { label: "Septic Problems and Warning Signs", href: "/resources/septic-problems/", blurb: "symptoms to watch" },
+  ]}
+>
+  <p>Most septic failures are slow, preventable and expensive in that order. A short routine keeps small issues small and gives you records that pay off later.</p>
+
+  {/* Intended asset: /images/resources/septic-maintenance-checklist-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a septic maintenance checklist alongside a residential septic system and drain field"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>The Habits</h2>
+  <ul>
+    <li>Pump on a sensible interval and adjust it based on how full the tank actually is.</li>
+    <li>Spread out water use and fix running toilets and drips promptly.</li>
+    <li>Keep wipes, grease and harsh chemicals out of the drains.</li>
+    <li>Keep vehicles, structures and deep-rooted trees off the drain field.</li>
+    <li>Watch for early warning signs and act on them.</li>
+  </ul>
+
+  <h2>The Records Worth Keeping</h2>
+  <p>
+    Note the tank location, lid depth, every service date and what the provider observed. Those records turn future service calls into simple appointments and add credibility when selling. For the full picture, see the <a href="/septic-maintenance/">maintenance guide</a>, or <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

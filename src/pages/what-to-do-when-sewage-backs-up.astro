@@ -1,0 +1,125 @@
+---
+/**
+ * Knowledge-catalog guide — "What to Do When Sewage Backs Up"
+ * Cluster: septic-problems
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: two ResourceImageSlot placeholders (src={null}) with intended-asset
+ *   comments and rich alt text. Intended filenames + generation briefs are
+ *   documented in public/images/resources/README.md. OpenClaw's
+ *   placeholder-image-replacement skill discovers these empty slots during its
+ *   repository scan — no custom marker or manifest contract is required.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'What should I do first when sewage backs up?',
+    answer:
+      'Stop using water throughout the house — no flushing, laundry or dishwasher — so nothing more is added to the system. Keep people and pets away from any sewage, and avoid pouring drain chemicals down the line. Then request service so a provider can identify the cause.',
+  },
+  {
+    question: 'Is a sewage backup an emergency?',
+    answer:
+      'If sewage is entering the home, or multiple drains are backing up at once, treat it as urgent and request help promptly. Early, isolated signs — a single slow drain or occasional gurgle — are less urgent but still worth prompt attention before they escalate.',
+  },
+  {
+    question: 'Why did my septic back up?',
+    answer:
+      'Common causes include a full tank, a blockage in the line, a drain field that can no longer accept water, too much water entering at once, or saturated ground after heavy rain. The causes look similar from inside the house, so an on-site evaluation is what tells them apart.',
+  },
+  {
+    question: 'Will pumping the tank fix it?',
+    answer:
+      'Sometimes — if the cause is simply a full tank. If the backup comes from a blockage or a struggling drain field, pumping may relieve it temporarily while the underlying issue still needs to be evaluated. A provider can tell you which situation you are in.',
+  },
+  {
+    question: 'Is this guide a substitute for professional help?',
+    answer:
+      'No — it is general safety information. An active backup involves a specific system on a specific property, and only an on-site provider can diagnose and resolve the cause.',
+  },
+];
+---
+
+<ServicePage
+  title="What to Do When Sewage Backs Up | Cumberland Septic Hub"
+  description="Calm, practical steps for a septic or sewage backup — what to do first, how to stay safe, why backups happen, and when to request urgent septic service in the Upper Cumberland."
+  h1="What to Do When Sewage Backs Up"
+  eyebrow="Septic Problems & Warning Signs"
+  breadcrumbLabel="What to Do When Sewage Backs Up"
+  serviceName="Emergency Septic Information"
+  intro="A backup is stressful, but the first steps are simple and they matter. This guide covers what to do right away, how to stay safe, and what tends to cause backups — so you can act calmly and get the right help."
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: 'Emergency Septic Service Requests', href: '/emergency-septic-service-cookeville-tn/', blurb: 'request urgent help' },
+    { label: 'Septic Pumping in Cookeville', href: '/septic-pumping-cookeville-tn/', blurb: 'if the tank is full' },
+    { label: 'Septic Repair in Cookeville', href: '/septic-repair-cookeville-tn/', blurb: 'if a component has failed' },
+    { label: 'Drain-Field Repair in Cookeville', href: '/drain-field-repair-cookeville-tn/', blurb: 'if the field is struggling' },
+  ]}
+  guides={[
+    { label: 'Septic Problems and Warning Signs', href: '/resources/septic-problems/', blurb: 'more on symptoms and causes' },
+    { label: 'Septic Maintenance Guide for Property Owners', href: '/septic-maintenance/', blurb: 'preventing the next one' },
+  ]}
+>
+  <p>
+    A sewage backup means wastewater has nowhere to go and is coming back toward the house. The
+    good news is that your first moves are straightforward, and doing them calmly protects both
+    your home and your health while a provider is on the way.
+  </p>
+
+  {/* Intended asset: /images/resources/what-to-do-when-sewage-backs-up-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt="Illustration of a homeowner turning off water use at home while wastewater backs up in a lower drain"
+    width={1600}
+    height={900}
+  />
+
+  <h2>First Steps, in Order</h2>
+  <ul>
+    <li><strong>Stop using water.</strong> No flushing, laundry, dishwasher or showers — every gallon you add makes the backup worse.</li>
+    <li><strong>Keep people and pets away.</strong> Backed-up wastewater carries bacteria; wear gloves if you must be near it and keep children clear.</li>
+    <li><strong>Don’t pour chemicals or drain cleaner in.</strong> They rarely clear a septic backup and can make the situation harder — and more hazardous — for whoever services it.</li>
+    <li><strong>Note whether it’s one drain or the whole house.</strong> A single affected fixture may be a local clog; multiple or the lowest drains backing up points to the septic system itself.</li>
+    <li><strong>Request service.</strong> A backup rarely resolves on its own and usually worsens — the sooner it’s evaluated, the better.</li>
+  </ul>
+
+  <h2>Why Backups Happen</h2>
+  <p>
+    Knowing the usual causes helps you understand what a provider will check. A tank that is full
+    has no room, so wastewater backs up. A blockage — roots, grease or a collapsed line — can stop
+    flow between the house, tank and field. A drain field that can no longer absorb water pushes
+    wastewater back through the system, which tends to be the more serious case. And sometimes a
+    marginal system is simply overwhelmed by heavy use or by ground that is saturated after heavy
+    rain. From inside the house these can look alike, which is why an on-site evaluation matters.
+    The <a href="/resources/septic-repairs-drain-fields/">repairs and drain-fields hub</a> explains
+    how these components are assessed.
+  </p>
+
+  {/* Intended asset: /images/resources/what-to-do-when-sewage-backs-up-causes.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt="Diagram of common septic backup causes: a full tank, a blocked line and a saturated drain field"
+    width={1600}
+    height={900}
+  />
+
+  <h2>Is It an Emergency?</h2>
+  <p>
+    Treat it as urgent when sewage is entering the home or several drains are backing up at once.
+    It is less urgent — though still worth prompt attention — when you are catching an early sign
+    such as a single slow drain, occasional gurgling or a faint odor. Either way, acting sooner
+    tends to keep the problem smaller. For an active backup,
+    <a href="/emergency-septic-service-cookeville-tn/">request emergency septic service</a> or
+    <a href="/request-service/">send a service request</a> describing what you are seeing.
+  </p>
+
+  <p class="disclosure">
+    This guide is general safety information, not professional advice for any specific system. An
+    active backup should be evaluated on site by a qualified provider. Cumberland Septic Hub is an
+    independent referral service; provider availability, qualifications, pricing and service terms
+    are determined by the provider.
+  </p>
+</ServicePage>

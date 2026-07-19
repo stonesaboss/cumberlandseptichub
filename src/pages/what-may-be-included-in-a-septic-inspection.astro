@@ -1,0 +1,86 @@
+---
+/**
+ * Knowledge-catalog guide — "What May Be Included in a Septic Inspection"
+ * Cluster: septic-inspections-property-buying
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "What does a septic inspection include?",
+    answer: "It ranges from a visual check to locating and opening the tank, fuller evaluation with pumping or flow testing, and written documentation.",
+  },
+  {
+    question: "Why do inspection scopes differ so much?",
+    answer: "Because a quick visual look and a full evaluation are genuinely different services. Confirm the scope before comparing.",
+  },
+  {
+    question: "Do inspections include pumping?",
+    answer: "Some do and some don't — it depends on the scope, which is why it is worth confirming in advance.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. The provider defines the inspection for your situation.",
+  },
+];
+---
+
+<ServicePage
+  title={"What May Be Included in a Septic Inspection"}
+  description={"Visual checks, tank locating, flow testing, pumping and reporting — how septic inspection scope varies and what to confirm."}
+  h1={"What Does a Septic Inspection Include?"}
+  eyebrow={"Septic Inspections & Property Buying"}
+  breadcrumbLabel={"What May Be Included in an Inspection"}
+  serviceName={"Septic Inspection Information"}
+  intro={"Not all septic inspections are the same. This guide explains the range of what an inspection can include so you can compare options meaningfully."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Inspections in Cookeville", href: "/septic-inspection-cookeville-tn/", blurb: "request an inspection" },
+    { label: "Septic Tank Locating in Cookeville", href: "/septic-tank-locating-cookeville-tn/", blurb: "finding the tank" },
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "often part of inspection" },
+  ]}
+  guides={[
+    { label: "Septic Inspections and Property Buying", href: "/resources/septic-inspections-property-buying/", blurb: "the inspections hub" },
+    { label: "Septic Inspections When Buying a Home", href: "/septic-inspections-when-buying-a-home/", blurb: "the buyer guide" },
+    { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "rural property context" },
+  ]}
+>
+  <p>"Inspection" covers a spectrum, from a quick visual look to a thorough evaluation with testing and documentation. Knowing the scope lets you compare quotes fairly.</p>
+
+  {/* Intended asset: /images/resources/what-may-be-included-in-a-septic-inspection-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a septic inspection in progress showing tank access, evaluation and documentation"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>The Range of Scope</h2>
+  <ul>
+    <li><strong>Visual check.</strong> A look at an accessible, already-open tank.</li>
+    <li><strong>Locating and opening.</strong> Finding the tank and opening the lids.</li>
+    <li><strong>Fuller evaluation.</strong> Pumping, flow testing and component checks.</li>
+    <li><strong>Documentation.</strong> A written record of findings.</li>
+  </ul>
+
+  <h2>Ask Before You Compare</h2>
+  <p>
+    Because scope varies, ask what a given inspection includes before comparing prices — a visual check and a full evaluation are different services. To arrange one, <a href="/septic-inspection-cookeville-tn/">see inspections</a> or <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

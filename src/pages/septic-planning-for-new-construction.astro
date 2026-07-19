@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "Septic Planning for New Construction"
+ * Cluster: septic-installation-replacement
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "When should septic planning happen in a build?",
+    answer: "Early — the site evaluation influences the plot plan and where the home can go, so it is best done before layout is fixed.",
+  },
+  {
+    question: "Can septic constrain where I build?",
+    answer: "Yes. The system needs suitable space and soil, which is why planning it early matters.",
+  },
+  {
+    question: "Who evaluates the site?",
+    answer: "A qualified provider, in coordination with the appropriate authority for approvals.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. Confirm specifics with a provider and the appropriate authority.",
+  },
+];
+---
+
+<ServicePage
+  title={"Septic Planning for New Construction"}
+  description={"How to sequence a septic system into a building project so the system fits the site and the schedule."}
+  h1={"Sequencing Septic Into a New-Construction Project"}
+  eyebrow={"Septic Installation & Replacement"}
+  breadcrumbLabel={"Septic Planning for New Construction"}
+  serviceName={"Septic Installation Information"}
+  intro={"On new construction, the septic system is best planned early rather than squeezed in late. This guide covers how it fits into a build."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Installation in Cookeville", href: "/septic-installation-cookeville-tn/", blurb: "installation requests" },
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "repair vs replace" },
+    { label: "Upper Cumberland Service Area", href: "/service-area/", blurb: "regional coverage" },
+  ]}
+  guides={[
+    { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "the installation hub" },
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "when repair stops making sense" },
+    { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "regional planning" },
+  ]}
+>
+  <p>A septic system shapes where and how you can build, so bringing it into the plan early avoids expensive surprises later.</p>
+
+  {/* Intended asset: /images/resources/septic-planning-for-new-construction-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of septic system planning integrated into a new-construction site layout"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>Plan It Early</h2>
+  <ul>
+    <li><strong>Evaluate the site first.</strong> Soil and layout influence the whole plot plan.</li>
+    <li><strong>Coordinate the sequence.</strong> The system fits into the construction schedule at the right stage.</li>
+    <li><strong>Design for the finished property.</strong> Account for how the home will actually be used.</li>
+  </ul>
+
+  <h2>Getting Started</h2>
+  <p>
+    Early evaluation is the theme — it keeps the system from constraining the build after decisions are locked in. See the <a href="/resources/septic-installation-replacement/">installation hub</a>, or <a href="/request-service/">request septic service</a> to begin planning.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "How to Find Septic Records and Tank Locations"
+ * Cluster: septic-inspections-property-buying
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "Where can I find my septic records?",
+    answer: "Check property and permit records with the appropriate authority, past service receipts, and any documentation from prior owners.",
+  },
+  {
+    question: "What if there are no records?",
+    answer: "A provider can locate the tank and evaluate the system; recording the details afterward builds the history going forward.",
+  },
+  {
+    question: "How is a lost tank located?",
+    answer: "Providers use locating methods to find the tank; once found, note its position from fixed points for next time.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. Confirm specifics with a provider and the appropriate authority.",
+  },
+];
+---
+
+<ServicePage
+  title={"How to Find Septic Records and Tank Locations"}
+  description={"Where septic system history tends to hide and how providers locate tanks when records are incomplete."}
+  h1={"Finding Septic Records and Locating the Tank"}
+  eyebrow={"Septic Inspections & Property Buying"}
+  breadcrumbLabel={"Finding Records and Tank Locations"}
+  serviceName={"Septic Inspection Information"}
+  intro={"Older properties often come with little septic paperwork. This guide covers where records tend to hide and how a tank gets located when they don't exist."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Inspections in Cookeville", href: "/septic-inspection-cookeville-tn/", blurb: "request an inspection" },
+    { label: "Septic Tank Locating in Cookeville", href: "/septic-tank-locating-cookeville-tn/", blurb: "finding the tank" },
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "often part of inspection" },
+  ]}
+  guides={[
+    { label: "Septic Inspections and Property Buying", href: "/resources/septic-inspections-property-buying/", blurb: "the inspections hub" },
+    { label: "Septic Inspections When Buying a Home", href: "/septic-inspections-when-buying-a-home/", blurb: "the buyer guide" },
+    { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "rural property context" },
+  ]}
+>
+  <p>Knowing where the tank is and what the system's history is makes every future service easier. When records are thin, there are still reliable ways to find both.</p>
+
+  {/* Intended asset: /images/resources/how-to-find-septic-records-and-tank-locations-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of locating a septic tank in a rural yard and gathering system records"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>Where History Hides</h2>
+  <ul>
+    <li>Property and permit records held by the appropriate authority.</li>
+    <li>Prior service receipts and any documentation from past owners.</li>
+    <li>Physical clues in the yard and around the home.</li>
+  </ul>
+
+  <h2>When the Tank Must Be Located</h2>
+  <p>
+    If the tank's location is unknown, a provider can locate it — see <a href="/septic-tank-locating-cookeville-tn/">septic tank locating</a>. Recording the location afterward turns future service into a simple appointment. To start, <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

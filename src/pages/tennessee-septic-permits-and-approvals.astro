@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "Questions About Tennessee Septic Permits and Approvals"
+ * Cluster: upper-cumberland-septic-guide
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "Who handles septic permits in Tennessee?",
+    answer: "The appropriate government authority handles permitting and approvals, and requirements vary by property and county.",
+  },
+  {
+    question: "Does my installer handle approvals?",
+    answer: "Often a qualified provider coordinates approvals for a project, but confirm this in advance.",
+  },
+  {
+    question: "Do requirements differ by county?",
+    answer: "Yes. Rules vary by property and county, so verify specifics with the appropriate authority.",
+  },
+  {
+    question: "Is this guide legal or regulatory advice?",
+    answer: "No — it is general orientation. Confirm all specifics with the appropriate authority and a qualified provider.",
+  },
+];
+---
+
+<ServicePage
+  title={"Questions About Tennessee Septic Permits and Approvals"}
+  description={"Where to direct septic permit and approval questions in Tennessee, and what to confirm before installation or major work."}
+  h1={"Tennessee Septic Permits and Approvals: Where to Start"}
+  eyebrow={"Upper Cumberland Septic Guide"}
+  breadcrumbLabel={"Tennessee Septic Permits and Approvals"}
+  serviceName={"Upper Cumberland Septic Information"}
+  intro={"Permit and approval questions are best answered by the appropriate authority. This guide explains where to direct them and what to confirm."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Upper Cumberland Service Area", href: "/service-area/", blurb: "regional coverage" },
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "service in Cookeville" },
+    { label: "Septic Pumping in Crossville", href: "/septic-pumping-crossville-tn/", blurb: "service in Crossville" },
+  ]}
+  guides={[
+    { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "the regional hub" },
+    { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "regional planning" },
+    { label: "Septic Inspections and Property Buying", href: "/resources/septic-inspections-property-buying/", blurb: "rural purchases" },
+  ]}
+>
+  <p>Septic permitting and approvals in Tennessee are handled by the appropriate government authority, and requirements vary by property and county. The right move is to confirm specifics with them.</p>
+
+  {/* Intended asset: /images/resources/tennessee-septic-permits-and-approvals-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration representing septic permit and approval paperwork for a Tennessee property"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>Where to Direct Questions</h2>
+  <ul>
+    <li><strong>The appropriate authority.</strong> Permitting, approvals and requirements are theirs to confirm.</li>
+    <li><strong>Your provider.</strong> A qualified installer often coordinates approvals for a project.</li>
+    <li><strong>County-specific rules.</strong> Requirements differ by property and county.</li>
+  </ul>
+
+  <h2>What to Confirm</h2>
+  <p>
+    Before installation or major work, confirm what approvals apply and who handles them. Because rules vary and change, treat this page as general orientation and verify details with the authority. To start a project, <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

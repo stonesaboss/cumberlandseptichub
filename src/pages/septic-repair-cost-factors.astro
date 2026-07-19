@@ -1,0 +1,86 @@
+---
+/**
+ * Knowledge-catalog guide — "Septic Repair Cost Factors"
+ * Cluster: septic-costs
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "Why can't I get a flat repair price up front?",
+    answer: "Because the fix depends on which component failed, and that is confirmed by an on-site evaluation rather than from symptoms alone.",
+  },
+  {
+    question: "Will pumping fix my repair problem?",
+    answer: "Sometimes it relieves a symptom, but if a component or the drain field has failed, pumping is temporary and the underlying issue still needs repair.",
+  },
+  {
+    question: "What is usually the most expensive repair?",
+    answer: "Drain-field problems, because they can involve soil, excavation and replacement planning.",
+  },
+  {
+    question: "Is this guide a price quote?",
+    answer: "No. It explains the variables behind repair pricing; the provider sets the price after evaluating the system.",
+  },
+];
+---
+
+<ServicePage
+  title={"Septic Repair Cost Factors"}
+  description={"Why two septic repairs can cost very different amounts — the component, the diagnosis, access and system condition all shape repair pricing."}
+  h1={"Why Septic Repair Pricing Varies So Much"}
+  eyebrow={"Septic Costs & Pricing"}
+  breadcrumbLabel={"Septic Repair Cost Factors"}
+  serviceName={"Septic Service Information"}
+  intro={"Repair pricing follows the diagnosis, and the diagnosis follows an evaluation. This guide explains why similar-sounding repairs can differ widely and what drives the range."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "routine pump-outs" },
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "when repairs are needed" },
+    { label: "Septic Installation in Cookeville", href: "/septic-installation-cookeville-tn/", blurb: "new and replacement systems" },
+  ]}
+  guides={[
+    { label: "Septic Costs and Pricing Factors", href: "/resources/septic-costs/", blurb: "the cost topic hub" },
+    { label: "Septic Pumping and Maintenance", href: "/resources/septic-pumping-maintenance/", blurb: "routine service basics" },
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "where repair costs come from" },
+  ]}
+>
+  <p>A deteriorated baffle is a different job than a failed effluent pump, which is different again from a crushed line or a drain field that no longer accepts water. Because symptoms alone rarely identify the failed part, providers evaluate before they price.</p>
+
+  {/* Intended asset: /images/resources/septic-repair-cost-factors-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a septic professional evaluating tank components before recommending a repair"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>What Shapes a Repair Estimate</h2>
+  <ul>
+    <li><strong>Which component failed.</strong> Baffles, pumps, pipes, boxes and drain fields each involve different work.</li>
+    <li><strong>Access and excavation.</strong> A repair under a driveway or deep in the yard costs more to reach.</li>
+    <li><strong>Diagnosis first.</strong> An evaluation identifies the real cause; the same slow drains can come from several sources.</li>
+    <li><strong>System age and history.</strong> Recurring problems and older systems can change the repair conversation.</li>
+  </ul>
+
+  <h2>Drain Fields Sit at the Expensive End</h2>
+  <p>
+    Drain-field concerns can involve soil, excavation and, in some cases, replacement planning — which is why a <a href="/drain-field-repair-cookeville-tn/">drain-field evaluation</a> comes before any responsible recommendation. To start, <a href="/request-service/">request septic service</a> and describe the symptoms and history.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

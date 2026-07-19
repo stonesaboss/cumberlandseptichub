@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "Septic Distribution-Box Problems"
+ * Cluster: septic-repairs-drain-fields
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "What does a distribution box do?",
+    answer: "It shares wastewater evenly among the drain-field lines. Even distribution is what lets the whole field do its job.",
+  },
+  {
+    question: "Can a distribution box problem look like field failure?",
+    answer: "Yes, which is why evaluation matters — the fix for a box issue can be more contained than a full field repair.",
+  },
+  {
+    question: "How is a box problem found?",
+    answer: "Through an on-site evaluation of the box and how flow is reaching the field lines.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. A provider evaluates and addresses the specific system.",
+  },
+];
+---
+
+<ServicePage
+  title={"Septic Distribution-Box Problems"}
+  description={"How a small distribution box can unbalance an entire drain field, the signs of trouble, and why evaluation matters."}
+  h1={"How a Distribution Box Affects Your Drain Field"}
+  eyebrow={"Septic Repairs & Drain Fields"}
+  breadcrumbLabel={"Septic Distribution-Box Problems"}
+  serviceName={"Septic Repair Information"}
+  intro={"The distribution box is a small component with an outsized job: sharing wastewater evenly across the drain field. When it shifts or clogs, the whole field can suffer."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "repair requests" },
+    { label: "Drain-Field Repair in Cookeville", href: "/drain-field-repair-cookeville-tn/", blurb: "field evaluation" },
+    { label: "Septic Installation in Cookeville", href: "/septic-installation-cookeville-tn/", blurb: "when replacement is needed" },
+  ]}
+  guides={[
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "the repairs hub" },
+    { label: "Septic Problems and Warning Signs", href: "/resources/septic-problems/", blurb: "symptoms that lead here" },
+    { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "the replacement path" },
+  ]}
+>
+  <p>A drain field only works well when flow is spread across it. The distribution box is what does that spreading — so a small problem there can look like a big field problem.</p>
+
+  {/* Intended asset: /images/resources/septic-distribution-box-problems-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a septic distribution box directing flow to drain-field lines, with one line overloaded"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>What Can Go Wrong</h2>
+  <ul>
+    <li><strong>Settling or shifting.</strong> A box that is no longer level can send too much flow to one line.</li>
+    <li><strong>Clogging.</strong> Solids or roots can block outlets and unbalance distribution.</li>
+    <li><strong>The result.</strong> One part of the field is overloaded while the rest sits idle.</li>
+  </ul>
+
+  <h2>Why It Needs Evaluation</h2>
+  <p>
+    Because the symptoms resemble general field trouble, a provider evaluates to tell them apart — sometimes a box issue is a more contained fix than a field problem. See <a href="/signs-of-drain-field-trouble/">signs of drain-field trouble</a>, or <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

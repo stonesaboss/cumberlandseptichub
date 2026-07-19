@@ -120,36 +120,49 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
         blurb: "the largest septic projects, explained",
       },
     ],
-    plannedGuides: [
+    plannedGuides: [],
+    publishedGuides: [
       {
         title: "Septic Pumping Cost Factors",
         description:
-          "What determines the price of a routine pump-out, from tank size to lid access.",
+          "What determines the price of a routine septic pump-out — tank size, lid access, distance and service scope — and why a good request gets a firmer quote.",
         category: "septic-costs",
-        status: "planned",
+        status: "published",
+        href: "/septic-pumping-cost-factors/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "Septic Repair Cost Factors",
         description:
-          "Why two “septic repairs” can cost very different amounts.",
+          "Why two septic repairs can cost very different amounts — the component, the diagnosis, access and system condition all shape repair pricing.",
         category: "septic-costs",
-        status: "planned",
+        status: "published",
+        href: "/septic-repair-cost-factors/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "Drain-Field Repair or Replacement Costs",
-        description: "The variables behind the most expensive septic problem.",
+        description:
+          "The variables behind the most expensive septic problem — why drain-field repair or replacement pricing depends on soil, access, design and site restoration.",
         category: "septic-costs",
-        status: "planned",
+        status: "published",
+        href: "/drain-field-repair-or-replacement-costs/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "New Septic Installation Cost Factors",
         description:
-          "How site conditions and system design shape installation budgets.",
+          "How site conditions, soil, system type, access and approvals shape the budget for a new or replacement septic system.",
         category: "septic-costs",
-        status: "planned",
+        status: "published",
+        href: "/new-septic-installation-cost-factors/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
     ],
-    publishedGuides: [],
   },
   {
     title: "Septic Pumping and Maintenance",
@@ -201,35 +214,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
         blurb: "the documentation side of good maintenance",
       },
     ],
-    plannedGuides: [
-      {
-        title: "How Often Septic Tanks May Need Pumping",
-        description:
-          "The household and system factors behind pumping frequency.",
-        category: "septic-pumping-maintenance",
-        status: "planned",
-      },
-      {
-        title: "What Happens During a Pumping Appointment",
-        description:
-          "From truck positioning to lid access to what the provider observes.",
-        category: "septic-pumping-maintenance",
-        status: "planned",
-      },
-      {
-        title: "Septic Pumping Versus Septic Tank Cleaning",
-        description:
-          "Two terms, sometimes two different jobs — what to ask for.",
-        category: "septic-pumping-maintenance",
-        status: "planned",
-      },
-      {
-        title: "Septic Maintenance Checklist for Property Owners",
-        description: "The habits and records that extend system life.",
-        category: "septic-pumping-maintenance",
-        status: "planned",
-      },
-    ],
+    plannedGuides: [],
     publishedGuides: [
       {
         title: "Septic Maintenance Guide for Property Owners",
@@ -238,6 +223,48 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
         category: "septic-pumping-maintenance",
         status: "published",
         href: "/septic-maintenance/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
+      },
+      {
+        title: "How Often Should a Septic Tank Be Pumped?",
+        description:
+          "What actually determines pumping frequency — tank size, household size, water habits and system condition — and how to set the right interval.",
+        category: "septic-pumping-maintenance",
+        status: "published",
+        href: "/how-often-to-pump-septic-tank/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
+      },
+      {
+        title: "What Happens During a Septic Pumping Appointment",
+        description:
+          "A plain walkthrough of a septic pumping visit — truck positioning, locating and opening the tank, pumping, and what the provider observes.",
+        category: "septic-pumping-maintenance",
+        status: "published",
+        href: "/what-happens-during-a-septic-pumping-appointment/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
+      },
+      {
+        title: "Septic Pumping Versus Septic Tank Cleaning",
+        description:
+          "Two terms, sometimes two different jobs — what pumping and cleaning each mean and what to confirm when you request service.",
+        category: "septic-pumping-maintenance",
+        status: "published",
+        href: "/septic-pumping-versus-septic-tank-cleaning/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
+      },
+      {
+        title: "Septic Maintenance Checklist for Property Owners",
+        description:
+          "A simple, practical checklist of septic maintenance habits and records that extend system life and prevent costly problems.",
+        category: "septic-pumping-maintenance",
+        status: "published",
+        href: "/septic-maintenance-checklist/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
     ],
   },
@@ -295,34 +322,49 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
         blurb: "what fixing problems tends to depend on",
       },
     ],
-    plannedGuides: [
+    plannedGuides: [],
+    publishedGuides: [
       {
         title: "Signs a Septic Tank May Be Full",
-        description: "How a filling tank announces itself before a backup.",
+        description:
+          "The slow drains, gurgling, odors and wet spots that suggest a tank is filling — and why the level is confirmed on site.",
         category: "septic-problems",
-        status: "planned",
-      },
-      {
-        title: "Why Septic Systems Produce Odors",
-        description: "Indoor and outdoor odor patterns and what they suggest.",
-        category: "septic-problems",
-        status: "planned",
-      },
-      {
-        title: "What Causes Drains to Gurgle",
-        description: "The plumbing physics behind the sound everyone ignores.",
-        category: "septic-problems",
-        status: "planned",
+        status: "published",
+        href: "/signs-a-septic-tank-may-be-full/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "What to Do When Sewage Backs Up",
         description:
-          "Immediate steps, safety precautions and requesting urgent help.",
+          "Calm first steps, safety basics, common causes and when to request urgent septic service.",
         category: "septic-problems",
-        status: "planned",
+        status: "published",
+        href: "/what-to-do-when-sewage-backs-up/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
+      },
+      {
+        title: "Why Septic Systems Produce Odors",
+        description:
+          "Indoor and outdoor septic odor patterns and what they can suggest — from simple venting issues to signs the system needs attention.",
+        category: "septic-problems",
+        status: "published",
+        href: "/why-septic-systems-produce-odors/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
+      },
+      {
+        title: "What Causes Drains to Gurgle",
+        description:
+          "The plumbing physics behind gurgling drains and toilets on a septic system, and when the sound is worth acting on.",
+        category: "septic-problems",
+        status: "published",
+        href: "/what-causes-drains-to-gurgle/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
     ],
-    publishedGuides: [],
   },
   {
     title: "Septic Repairs and Drain Fields",
@@ -378,34 +420,49 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
         blurb: "why repair pricing varies",
       },
     ],
-    plannedGuides: [
+    plannedGuides: [],
+    publishedGuides: [
       {
         title: "Signs of Drain-Field Trouble",
         description:
-          "Surface clues that the soil absorption system is struggling.",
+          "Surface clues that a septic drain field is struggling — wet spots, odors, lush grass and slow drains — and why early action matters.",
         category: "septic-repairs-drain-fields",
-        status: "planned",
+        status: "published",
+        href: "/signs-of-drain-field-trouble/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "Common Septic-System Repairs",
-        description: "Baffles, pumps, pipes and boxes — the usual suspects.",
+        description:
+          "Baffles, pumps, pipes and boxes — the components that commonly need repair on a septic system and how they are evaluated.",
         category: "septic-repairs-drain-fields",
-        status: "planned",
+        status: "published",
+        href: "/common-septic-system-repairs/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "Septic Distribution-Box Problems",
-        description: "How a small component unbalances an entire field.",
+        description:
+          "How a small distribution box can unbalance an entire drain field, the signs of trouble, and why evaluation matters.",
         category: "septic-repairs-drain-fields",
-        status: "planned",
+        status: "published",
+        href: "/septic-distribution-box-problems/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "Septic Repair Versus System Replacement",
-        description: "The considerations behind the biggest septic decision.",
+        description:
+          "The considerations behind the biggest septic decision — when a repair makes sense and when planning a replacement is the practical path.",
         category: "septic-repairs-drain-fields",
-        status: "planned",
+        status: "published",
+        href: "/septic-repair-versus-system-replacement/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
     ],
-    publishedGuides: [],
   },
   {
     title: "Septic Installation and Replacement",
@@ -458,35 +515,49 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
         blurb: "the variables behind installation budgets",
       },
     ],
-    plannedGuides: [
+    plannedGuides: [],
+    publishedGuides: [
       {
         title: "The Septic Installation Process",
         description:
-          "Stage by stage, from property information to final grading.",
+          "Stage by stage, how a new septic system generally comes together — from property information and site evaluation to installation and final grading.",
         category: "septic-installation-replacement",
-        status: "planned",
+        status: "published",
+        href: "/the-septic-installation-process/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "Replacing an Older Septic System",
-        description: "What end-of-life systems involve that new builds do not.",
+        description:
+          "What end-of-life septic systems involve that new builds do not — evaluating the old system, planning the new one, and site realities.",
         category: "septic-installation-replacement",
-        status: "planned",
+        status: "published",
+        href: "/replacing-an-older-septic-system/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "Septic Planning for New Construction",
-        description: "Sequencing the septic system into a building project.",
+        description:
+          "How to sequence a septic system into a building project so the system fits the site and the schedule.",
         category: "septic-installation-replacement",
-        status: "planned",
+        status: "published",
+        href: "/septic-planning-for-new-construction/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "Questions to Ask Before Septic Installation",
         description:
-          "The conversation to have before committing to a contractor.",
+          "The conversation to have before committing to a septic installation — scope, design, timeline, access and what is included.",
         category: "septic-installation-replacement",
-        status: "planned",
+        status: "published",
+        href: "/questions-to-ask-before-septic-installation/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
     ],
-    publishedGuides: [],
   },
   {
     title: "Septic Inspections and Property Buying",
@@ -538,36 +609,49 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
         blurb: "symptoms that justify a problem-focused inspection",
       },
     ],
-    plannedGuides: [
+    plannedGuides: [],
+    publishedGuides: [
       {
         title: "Septic Inspections When Buying a Home",
         description:
-          "Protecting the biggest purchase from the biggest unknown.",
+          "Why buyers get a dedicated septic inspection, what it may include, and how findings fit a transaction before closing.",
         category: "septic-inspections-property-buying",
-        status: "planned",
+        status: "published",
+        href: "/septic-inspections-when-buying-a-home/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "Septic Inspections When Selling a Home",
-        description: "How sellers get ahead of septic questions.",
+        description:
+          "How sellers get ahead of septic questions — what a pre-listing inspection can surface and why documentation helps a sale.",
         category: "septic-inspections-property-buying",
-        status: "planned",
+        status: "published",
+        href: "/septic-inspections-when-selling-a-home/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "What May Be Included in a Septic Inspection",
         description:
-          "Visual checks, flow tests, pumping and reporting differences.",
+          "Visual checks, tank locating, flow testing, pumping and reporting — how septic inspection scope varies and what to confirm.",
         category: "septic-inspections-property-buying",
-        status: "planned",
+        status: "published",
+        href: "/what-may-be-included-in-a-septic-inspection/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "How to Find Septic Records and Tank Locations",
         description:
-          "Where system history hides and how providers locate tanks.",
+          "Where septic system history tends to hide and how providers locate tanks when records are incomplete.",
         category: "septic-inspections-property-buying",
-        status: "planned",
+        status: "published",
+        href: "/how-to-find-septic-records-and-tank-locations/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
     ],
-    publishedGuides: [],
   },
   {
     title: "Upper Cumberland Septic Guide",
@@ -624,36 +708,49 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
         blurb: "routine care under rural access conditions",
       },
     ],
-    plannedGuides: [
+    plannedGuides: [],
+    publishedGuides: [
       {
         title: "Septic Planning for Rural Upper Cumberland Properties",
         description:
-          "Access, terrain and layout considerations before service or construction.",
+          "Access, terrain and layout considerations for septic service and construction on rural Upper Cumberland properties.",
         category: "upper-cumberland-septic-guide",
-        status: "planned",
+        status: "published",
+        href: "/septic-planning-for-rural-upper-cumberland-properties/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "Preparing a Property for Septic Service",
         description:
-          "What to do before the truck arrives — gates, lids, distances.",
+          "What to do before the truck arrives — clearing access, exposing lids, and knowing distances — so septic service goes smoothly.",
         category: "upper-cumberland-septic-guide",
-        status: "planned",
+        status: "published",
+        href: "/preparing-a-property-for-septic-service/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "Questions About Tennessee Septic Permits and Approvals",
         description:
-          "Where to direct regulatory questions and what to confirm.",
+          "Where to direct septic permit and approval questions in Tennessee, and what to confirm before installation or major work.",
         category: "upper-cumberland-septic-guide",
-        status: "planned",
+        status: "published",
+        href: "/tennessee-septic-permits-and-approvals/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
       {
         title: "How Terrain and Access Affect Septic Service",
-        description: "Slopes, rock, soft ground and hose distance, explained.",
+        description:
+          "Slopes, rock, soft ground and hose distance — how Upper Cumberland terrain and access shape septic service.",
         category: "upper-cumberland-septic-guide",
-        status: "planned",
+        status: "published",
+        href: "/how-terrain-and-access-affect-septic-service/",
+        authorName: "Cumberland Septic Hub Editorial Team",
+        publishedDate: "2026-07-19",
       },
     ],
-    publishedGuides: [],
   },
 ];
 

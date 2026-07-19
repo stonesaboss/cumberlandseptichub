@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "Septic Inspections When Selling a Home"
+ * Cluster: septic-inspections-property-buying
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "Should I inspect my septic before selling?",
+    answer: "It is often worth it — knowing the condition in advance avoids surprises during the buyer's inspection and gives you time to act.",
+  },
+  {
+    question: "Does an inspection help the sale?",
+    answer: "Documentation and a recent inspection can reassure buyers and reduce back-and-forth during the transaction.",
+  },
+  {
+    question: "Who pays for a pre-listing inspection?",
+    answer: "That is up to the seller in this case; costs and customs vary, so confirm details when arranging it.",
+  },
+  {
+    question: "Is this guide real-estate advice?",
+    answer: "No — it is general information. Confirm specifics with your agent, a provider and the appropriate authority.",
+  },
+];
+---
+
+<ServicePage
+  title={"Septic Inspections When Selling a Home"}
+  description={"How sellers get ahead of septic questions — what a pre-listing inspection can surface and why documentation helps a sale."}
+  h1={"Septic Inspections When Selling a Home"}
+  eyebrow={"Septic Inspections & Property Buying"}
+  breadcrumbLabel={"Inspections When Selling a Home"}
+  serviceName={"Septic Inspection Information"}
+  intro={"Sellers who get ahead of septic questions tend to have smoother sales. This guide covers why a pre-listing look and good records help."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Inspections in Cookeville", href: "/septic-inspection-cookeville-tn/", blurb: "request an inspection" },
+    { label: "Septic Tank Locating in Cookeville", href: "/septic-tank-locating-cookeville-tn/", blurb: "finding the tank" },
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "often part of inspection" },
+  ]}
+  guides={[
+    { label: "Septic Inspections and Property Buying", href: "/resources/septic-inspections-property-buying/", blurb: "the inspections hub" },
+    { label: "Septic Inspections When Buying a Home", href: "/septic-inspections-when-buying-a-home/", blurb: "the buyer guide" },
+    { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "rural property context" },
+  ]}
+>
+  <p>A buyer will eventually ask about the septic system. Knowing its condition before you list means fewer surprises and a stronger position in negotiation.</p>
+
+  {/* Intended asset: /images/resources/septic-inspections-when-selling-a-home-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a septic inspection at a home being prepared for sale, with documentation being recorded"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>Why Sellers Benefit</h2>
+  <ul>
+    <li><strong>Fewer surprises.</strong> Knowing the condition avoids a last-minute discovery during the buyer's inspection.</li>
+    <li><strong>Documentation.</strong> Records and a recent inspection reassure buyers.</li>
+    <li><strong>Time to act.</strong> Any issues can be addressed on your schedule, not under deadline pressure.</li>
+  </ul>
+
+  <h2>Getting Ready to List</h2>
+  <p>
+    Locating the tank, gathering records and a condition check are a good start — see <a href="/how-to-find-septic-records-and-tank-locations/">how to find septic records</a>. To arrange an inspection, <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

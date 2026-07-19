@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "Replacing an Older Septic System"
+ * Cluster: septic-installation-replacement
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "How is replacing different from a new install?",
+    answer: "It adds evaluating and working around or removing the existing system, plus accounting for how the property has been used.",
+  },
+  {
+    question: "When is replacement the right call?",
+    answer: "Often after a failed field or repeated problems on an aging system. An evaluation helps confirm it.",
+  },
+  {
+    question: "Can I reuse parts of the old system?",
+    answer: "Sometimes, depending on condition and design. A provider determines what is practical during planning.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. A qualified provider plans the specific project.",
+  },
+];
+---
+
+<ServicePage
+  title={"Replacing an Older Septic System"}
+  description={"What end-of-life septic systems involve that new builds do not — evaluating the old system, planning the new one, and site realities."}
+  h1={"What to Know About Replacing an Older Septic System"}
+  eyebrow={"Septic Installation & Replacement"}
+  breadcrumbLabel={"Replacing an Older Septic System"}
+  serviceName={"Septic Installation Information"}
+  intro={"Replacing a system adds considerations a fresh install does not have. This guide covers what changes when there is already a system in the ground."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Installation in Cookeville", href: "/septic-installation-cookeville-tn/", blurb: "installation requests" },
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "repair vs replace" },
+    { label: "Upper Cumberland Service Area", href: "/service-area/", blurb: "regional coverage" },
+  ]}
+  guides={[
+    { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "the installation hub" },
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "when repair stops making sense" },
+    { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "regional planning" },
+  ]}
+>
+  <p>A replacement is a new installation plus the realities of the old system and how the property has been used. Planning accounts for both.</p>
+
+  {/* Intended asset: /images/resources/replacing-an-older-septic-system-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of an aging septic system being assessed for replacement on a residential property"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>What Makes Replacement Different</h2>
+  <ul>
+    <li><strong>The existing system.</strong> It has to be evaluated and worked around or removed.</li>
+    <li><strong>Site history.</strong> How the property has been used affects the plan.</li>
+    <li><strong>Design for today.</strong> A replacement is designed to current site conditions and needs.</li>
+  </ul>
+
+  <h2>Deciding to Replace</h2>
+  <p>
+    Replacement usually enters the conversation after repeated problems or a failed field — see <a href="/septic-repair-versus-system-replacement/">repair versus replacement</a>. When you are planning one, <a href="/request-service/">request septic service</a> to start with an evaluation.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

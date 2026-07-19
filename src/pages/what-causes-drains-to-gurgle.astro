@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "What Causes Drains to Gurgle"
+ * Cluster: septic-problems
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "Is a gurgling drain serious?",
+    answer: "It can be a minor venting quirk or an early sign of a backing-up system. Paired with slow drains or odors, it is worth checking.",
+  },
+  {
+    question: "Why does my toilet gurgle when the washer drains?",
+    answer: "A surge of water can force air through the system; if it happens often, it may signal restricted flow worth evaluating.",
+  },
+  {
+    question: "Will pumping stop the gurgling?",
+    answer: "If a full tank is the cause, sometimes. If it is a blockage or venting issue, that needs to be addressed directly.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. A provider can identify the cause on site.",
+  },
+];
+---
+
+<ServicePage
+  title={"What Causes Drains to Gurgle"}
+  description={"The plumbing physics behind gurgling drains and toilets on a septic system, and when the sound is worth acting on."}
+  h1={"What Causes Gurgling Drains on a Septic System?"}
+  eyebrow={"Septic Problems & Warning Signs"}
+  breadcrumbLabel={"What Causes Drains to Gurgle"}
+  serviceName={"Septic Problem Information"}
+  intro={"Gurgling is the sound everyone ignores until it isn't. This guide explains what causes it on a septic system and when it is worth a closer look."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Emergency Septic Service Requests", href: "/emergency-septic-service-cookeville-tn/", blurb: "urgent help" },
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "repairs after diagnosis" },
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "if the tank is full" },
+  ]}
+  guides={[
+    { label: "Septic Problems and Warning Signs", href: "/resources/septic-problems/", blurb: "the problems hub" },
+    { label: "What to Do When Sewage Backs Up", href: "/what-to-do-when-sewage-backs-up/", blurb: "backup safety steps" },
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "how issues are evaluated" },
+  ]}
+>
+  <p>A gurgle is air finding its way through the plumbing when water isn't flowing freely. On a septic system, that can be a small venting quirk — or an early hint that the system is backing up.</p>
+
+  {/* Intended asset: /images/resources/what-causes-drains-to-gurgle-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration showing air moving through household drains connected to a septic system, causing a gurgle"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>Why It Happens</h2>
+  <ul>
+    <li><strong>Restricted flow.</strong> When water can't move freely, trapped air escapes as a gurgle.</li>
+    <li><strong>Venting issues.</strong> Plumbing vents help air balance; when they don't, drains can gurgle.</li>
+    <li><strong>A filling or blocked system.</strong> Gurgling with slow drains can mean the tank or line needs attention.</li>
+  </ul>
+
+  <h2>When to Act</h2>
+  <p>
+    An occasional gurgle with otherwise normal drains is worth noting; gurgling alongside slow drains, odors or wet spots is worth acting on. See <a href="/signs-a-septic-tank-may-be-full/">signs a tank may be full</a>, or <a href="/request-service/">request septic service</a> if the pattern continues.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

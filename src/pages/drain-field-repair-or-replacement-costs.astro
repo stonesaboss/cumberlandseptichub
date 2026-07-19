@@ -1,0 +1,86 @@
+---
+/**
+ * Knowledge-catalog guide — "Drain-Field Repair or Replacement Costs"
+ * Cluster: septic-costs
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "Can a failing drain field always be repaired?",
+    answer: "Not always. Sometimes function can be restored; other times the practical path is planning a replacement. An evaluation determines which.",
+  },
+  {
+    question: "Why is drain-field work so variable in cost?",
+    answer: "Because it depends on soil, site access, design and restoration — all of which differ property to property.",
+  },
+  {
+    question: "How can I avoid drain-field replacement?",
+    answer: "Pump on schedule, manage water use, and act early on warning signs. Most failures are the result of long-neglected maintenance.",
+  },
+  {
+    question: "Is this guide a price quote?",
+    answer: "No. It explains the cost variables; the provider prices the work after evaluating the site.",
+  },
+];
+---
+
+<ServicePage
+  title={"Drain-Field Repair or Replacement Costs"}
+  description={"The variables behind the most expensive septic problem — why drain-field repair or replacement pricing depends on soil, access, design and site restoration."}
+  h1={"What Drives Drain-Field Repair and Replacement Costs"}
+  eyebrow={"Septic Costs & Pricing"}
+  breadcrumbLabel={"Drain-Field Repair or Replacement Costs"}
+  serviceName={"Septic Service Information"}
+  intro={"A failing drain field is the septic problem owners most want to avoid, and its cost varies more than any other. This guide explains the factors that shape the range so you can plan sensibly."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "routine pump-outs" },
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "when repairs are needed" },
+    { label: "Septic Installation in Cookeville", href: "/septic-installation-cookeville-tn/", blurb: "new and replacement systems" },
+  ]}
+  guides={[
+    { label: "Septic Costs and Pricing Factors", href: "/resources/septic-costs/", blurb: "the cost topic hub" },
+    { label: "Septic Pumping and Maintenance", href: "/resources/septic-pumping-maintenance/", blurb: "routine service basics" },
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "where repair costs come from" },
+  ]}
+>
+  <p>Drain-field work spans a wide range because it depends on what the soil and site allow. Some situations call for targeted repair; others point toward planning a replacement — and the difference is established by evaluation, not from a chart.</p>
+
+  {/* Intended asset: /images/resources/drain-field-repair-or-replacement-costs-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a residential drain field being evaluated for repair or replacement on a rural property"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>The Cost Variables</h2>
+  <ul>
+    <li><strong>Repair versus replacement.</strong> Restoring function is a different scope than designing and installing a new field.</li>
+    <li><strong>Soil and site conditions.</strong> The ground itself drives what is possible and how much excavation is involved.</li>
+    <li><strong>Access and restoration.</strong> Reaching the field and restoring the property afterward both factor in.</li>
+    <li><strong>Design and approvals.</strong> A replacement field involves planning appropriate to the site.</li>
+  </ul>
+
+  <h2>Why Maintenance Pays Off</h2>
+  <p>
+    Because this is the expensive end of septic ownership, routine <a href="/resources/septic-pumping-maintenance/">pumping and maintenance</a> is the cheapest protection you have. If you are seeing field symptoms, <a href="/request-service/">request septic service</a> for an evaluation before the situation grows.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

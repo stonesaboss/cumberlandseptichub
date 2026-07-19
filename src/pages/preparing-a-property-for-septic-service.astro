@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "Preparing a Property for Septic Service"
+ * Cluster: upper-cumberland-septic-guide
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "How do I prepare for a septic service visit?",
+    answer: "Clear truck access, expose or point out the lids, and know roughly where the tank is relative to where a truck can park.",
+  },
+  {
+    question: "Why does lid access matter?",
+    answer: "Buried lids add a digging step. Keeping them accessible — or adding risers — speeds up service.",
+  },
+  {
+    question: "What if I don't know where my tank is?",
+    answer: "A provider can locate it; recording the location afterward makes future visits simpler.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. Your provider can advise for your specific property.",
+  },
+];
+---
+
+<ServicePage
+  title={"Preparing a Property for Septic Service"}
+  description={"What to do before the truck arrives — clearing access, exposing lids, and knowing distances — so septic service goes smoothly."}
+  h1={"How to Prepare Your Property for Septic Service"}
+  eyebrow={"Upper Cumberland Septic Guide"}
+  breadcrumbLabel={"Preparing for Septic Service"}
+  serviceName={"Upper Cumberland Septic Information"}
+  intro={"A little preparation makes a septic service visit faster and can avoid extra steps. Here is what to have ready before the truck arrives."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Upper Cumberland Service Area", href: "/service-area/", blurb: "regional coverage" },
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "service in Cookeville" },
+    { label: "Septic Pumping in Crossville", href: "/septic-pumping-crossville-tn/", blurb: "service in Crossville" },
+  ]}
+  guides={[
+    { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "the regional hub" },
+    { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "regional planning" },
+    { label: "Septic Inspections and Property Buying", href: "/resources/septic-inspections-property-buying/", blurb: "rural purchases" },
+  ]}
+>
+  <p>Providers work fastest when they can reach the tank easily. A few simple steps beforehand help the visit go smoothly.</p>
+
+  {/* Intended asset: /images/resources/preparing-a-property-for-septic-service-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a homeowner clearing access to a septic tank lid ahead of a service visit"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>Before the Truck Arrives</h2>
+  <ul>
+    <li><strong>Clear access.</strong> Make a path a truck can use — mind gates, mud and low branches.</li>
+    <li><strong>Expose the lids.</strong> Accessible lids avoid a digging step.</li>
+    <li><strong>Know the distances.</strong> Hose length is limited; note where the tank sits relative to truck access.</li>
+  </ul>
+
+  <h2>If You're Not Sure Where the Tank Is</h2>
+  <p>
+    If the tank location is unknown, a provider can locate it — see <a href="/septic-tank-locating-cookeville-tn/">tank locating</a>. When ready, <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

@@ -1,0 +1,86 @@
+---
+/**
+ * Knowledge-catalog guide — "The Septic Installation Process"
+ * Cluster: septic-installation-replacement
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "How long does a septic installation take?",
+    answer: "It varies with system type, site conditions and approvals. A provider can give a timeline after evaluating the site.",
+  },
+  {
+    question: "What is the most important stage?",
+    answer: "The site evaluation, because it determines the system design and much of the project that follows.",
+  },
+  {
+    question: "Can any system go on any lot?",
+    answer: "No — the soil and site determine what is appropriate, which is established during evaluation.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. Confirm specifics with a qualified provider and the appropriate authority.",
+  },
+];
+---
+
+<ServicePage
+  title={"The Septic Installation Process"}
+  description={"Stage by stage, how a new septic system generally comes together — from property information and site evaluation to installation and final grading."}
+  h1={"The Septic Installation Process, Stage by Stage"}
+  eyebrow={"Septic Installation & Replacement"}
+  breadcrumbLabel={"The Septic Installation Process"}
+  serviceName={"Septic Installation Information"}
+  intro={"A new septic system is a project with a logical sequence. Knowing the stages helps you plan and ask the right questions before ground breaks."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Installation in Cookeville", href: "/septic-installation-cookeville-tn/", blurb: "installation requests" },
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "repair vs replace" },
+    { label: "Upper Cumberland Service Area", href: "/service-area/", blurb: "regional coverage" },
+  ]}
+  guides={[
+    { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "the installation hub" },
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "when repair stops making sense" },
+    { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "regional planning" },
+  ]}
+>
+  <p>Installations follow a general arc from planning to restoration. The specifics depend on the site, but the shape of the project is consistent.</p>
+
+  {/* Intended asset: /images/resources/the-septic-installation-process-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of the septic installation process stages on a rural Tennessee property"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>The General Stages</h2>
+  <ul>
+    <li><strong>Property information and site evaluation.</strong> Understanding the soil and layout.</li>
+    <li><strong>Design and approvals.</strong> Choosing a system appropriate to the site.</li>
+    <li><strong>Installation.</strong> Placing the tank and drain field.</li>
+    <li><strong>Restoration.</strong> Final grading and putting the property back together.</li>
+  </ul>
+
+  <h2>Planning Well</h2>
+  <p>
+    The evaluation stage shapes everything after it, so it is worth doing carefully — especially on rural lots. For regional considerations, see the <a href="/resources/upper-cumberland-septic-guide/">Upper Cumberland guide</a>. To begin, <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

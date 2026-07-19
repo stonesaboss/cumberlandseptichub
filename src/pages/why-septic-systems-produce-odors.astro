@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "Why Septic Systems Produce Odors"
+ * Cluster: septic-problems
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "Is a septic smell an emergency?",
+    answer: "Not always, but it is never normal. It should be checked promptly before it develops into a backup or field problem.",
+  },
+  {
+    question: "Why do I smell septic only sometimes?",
+    answer: "Odors can come and go with weather, water use and wind. Noting when and where you smell it helps a provider narrow the cause.",
+  },
+  {
+    question: "Can I fix a septic odor myself?",
+    answer: "Some indoor smells relate to simple plumbing venting, but persistent or outdoor odors point to the system and should be evaluated.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. An on-site evaluation identifies the actual cause.",
+  },
+];
+---
+
+<ServicePage
+  title={"Why Septic Systems Produce Odors"}
+  description={"Indoor and outdoor septic odor patterns and what they can suggest — from simple venting issues to signs the system needs attention."}
+  h1={"Why Does My Septic System Smell?"}
+  eyebrow={"Septic Problems & Warning Signs"}
+  breadcrumbLabel={"Why Septic Systems Produce Odors"}
+  serviceName={"Septic Problem Information"}
+  intro={"A septic odor is never quite normal, but it does not always mean an emergency. This guide explains the common indoor and outdoor patterns and what they can point to."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Emergency Septic Service Requests", href: "/emergency-septic-service-cookeville-tn/", blurb: "urgent help" },
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "repairs after diagnosis" },
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "if the tank is full" },
+  ]}
+  guides={[
+    { label: "Septic Problems and Warning Signs", href: "/resources/septic-problems/", blurb: "the problems hub" },
+    { label: "What to Do When Sewage Backs Up", href: "/what-to-do-when-sewage-backs-up/", blurb: "backup safety steps" },
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "how issues are evaluated" },
+  ]}
+>
+  <p>Smells are one of the earliest signals a septic system gives. Where and when you notice the odor is a useful clue to what is going on.</p>
+
+  {/* Intended asset: /images/resources/why-septic-systems-produce-odors-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a homeowner noticing a septic odor indoors and near the tank area in the yard"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>Common Odor Patterns</h2>
+  <ul>
+    <li><strong>Indoors.</strong> Can relate to plumbing traps or venting, or to a system not moving waste along properly.</li>
+    <li><strong>Near the tank or lids.</strong> May point to the tank or its access.</li>
+    <li><strong>Over the drain field.</strong> Can suggest the field is struggling to absorb wastewater.</li>
+  </ul>
+
+  <h2>What to Do</h2>
+  <p>
+    Because similar smells can have different causes, an odor is best treated as a prompt to have the system checked rather than a diagnosis. If odors come with slow drains, gurgling or wet spots, see <a href="/resources/septic-problems/">septic warning signs</a> — or <a href="/request-service/">request septic service</a> to have it evaluated.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

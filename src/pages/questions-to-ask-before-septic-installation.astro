@@ -1,0 +1,87 @@
+---
+/**
+ * Knowledge-catalog guide — "Questions to Ask Before Septic Installation"
+ * Cluster: septic-installation-replacement
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "What should I ask before a septic install?",
+    answer: "Ask about the system type for your site, what's included, timeline, access and restoration, and which approvals apply and who handles them.",
+  },
+  {
+    question: "Why does the system type matter?",
+    answer: "Because the site's soil and layout make some systems appropriate and others not — the type shapes the whole project.",
+  },
+  {
+    question: "Who handles approvals?",
+    answer: "Often the provider coordinates them with the appropriate authority; confirm this in advance.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. A provider advises on your specific project.",
+  },
+];
+---
+
+<ServicePage
+  title={"Questions to Ask Before Septic Installation"}
+  description={"The conversation to have before committing to a septic installation — scope, design, timeline, access and what is included."}
+  h1={"Questions to Ask Before a Septic Installation"}
+  eyebrow={"Septic Installation & Replacement"}
+  breadcrumbLabel={"Questions to Ask Before Installation"}
+  serviceName={"Septic Installation Information"}
+  intro={"A little questioning up front makes an installation go smoothly. Here are the questions worth asking before you commit."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Installation in Cookeville", href: "/septic-installation-cookeville-tn/", blurb: "installation requests" },
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "repair vs replace" },
+    { label: "Upper Cumberland Service Area", href: "/service-area/", blurb: "regional coverage" },
+  ]}
+  guides={[
+    { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "the installation hub" },
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "when repair stops making sense" },
+    { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "regional planning" },
+  ]}
+>
+  <p>Installations go best when expectations are clear from the start. These questions surface the things that most often cause surprises.</p>
+
+  {/* Intended asset: /images/resources/questions-to-ask-before-septic-installation-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a property owner discussing septic installation plans with a provider on site"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>Worth Asking</h2>
+  <ul>
+    <li>What system type suits my site, and why?</li>
+    <li>What does the project include — and what would be extra?</li>
+    <li>What is the expected timeline and sequence?</li>
+    <li>How will access and property restoration be handled?</li>
+    <li>What approvals apply, and who handles them?</li>
+  </ul>
+
+  <h2>Then Get Started</h2>
+  <p>
+    Good answers to these lead to a smoother project and fewer surprises. When you are ready, <a href="/request-service/">request septic service</a> and bring these questions to the conversation.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

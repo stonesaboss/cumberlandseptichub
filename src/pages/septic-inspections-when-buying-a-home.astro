@@ -1,0 +1,133 @@
+---
+/**
+ * Knowledge-catalog guide — "Septic Inspections When Buying a Home"
+ * Cluster: septic-inspections-property-buying
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholders (src={null}) with intended-asset
+ *   comments and rich alt text. Intended filenames + generation briefs are
+ *   documented in public/images/resources/README.md. OpenClaw discovers these
+ *   empty slots during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: 'Why get a separate septic inspection when buying a home?',
+    answer:
+      'A standard home inspection usually does not open or evaluate the septic system in depth. Because the system is buried and repairs can be significant, a dedicated septic inspection is how buyers understand the condition of something they cannot see before closing.',
+  },
+  {
+    question: 'What might a septic inspection include?',
+    answer:
+      'Scope varies. It can range from a visual check to locating the tank, opening lids, evaluating components and, in fuller inspections, pumping and flow testing with documentation. Ask what a given inspection includes before comparing options.',
+  },
+  {
+    question: 'Who arranges and pays for it?',
+    answer:
+      'That is negotiable and varies by transaction and local custom — sometimes the buyer, sometimes the seller. What matters most is that a qualified provider performs it and that the findings are documented in time to inform the decision.',
+  },
+  {
+    question: 'What if the inspection finds a problem?',
+    answer:
+      'Findings become part of the conversation between buyer and seller — repairs, price adjustments or timing. The value of the inspection is having that conversation before closing rather than discovering the issue afterward.',
+  },
+  {
+    question: 'Is this guide legal or real-estate advice?',
+    answer:
+      'No — it is general information. Real-estate terms and septic requirements vary by property and county, so confirm specifics with your agent, a qualified provider and the appropriate authority.',
+  },
+];
+---
+
+<ServicePage
+  title="Septic Inspections When Buying a Home | Cumberland Septic Hub"
+  description="What Upper Cumberland buyers should know about septic inspections — why they matter, what they may include, how findings fit a transaction, and why scope and documentation vary."
+  h1="Septic Inspections When Buying a Home"
+  eyebrow="Septic Inspections & Property Buying"
+  breadcrumbLabel="Septic Inspections When Buying a Home"
+  serviceName="Septic Inspection Information"
+  intro="A home on septic comes with a private wastewater system and usually very little paperwork. This guide covers why a dedicated septic inspection matters when buying, what it can involve, and how the findings fit into the purchase."
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: 'Septic Inspections in Cookeville', href: '/septic-inspection-cookeville-tn/', blurb: 'request an inspection' },
+    { label: 'Septic Tank Locating in Cookeville', href: '/septic-tank-locating-cookeville-tn/', blurb: 'when the tank location is unknown' },
+    { label: 'Septic Pumping in Cookeville', href: '/septic-pumping-cookeville-tn/', blurb: 'often part of a fuller inspection' },
+    { label: 'Septic Repair in Cookeville', href: '/septic-repair-cookeville-tn/', blurb: 'if findings call for it' },
+  ]}
+  guides={[
+    { label: 'Septic Inspections and Property Buying', href: '/resources/septic-inspections-property-buying/', blurb: 'more guides in this topic' },
+    { label: 'Upper Cumberland Septic Guide', href: '/resources/upper-cumberland-septic-guide/', blurb: 'context for rural purchases' },
+    { label: 'Septic Costs and Pricing Factors', href: '/resources/septic-costs/', blurb: 'what inspection scope depends on' },
+  ]}
+>
+  <p>
+    When you buy a home on a septic system, you are buying something you can’t see — a private
+    wastewater system that a standard home inspection usually doesn’t open or evaluate in depth.
+    A dedicated septic inspection is how buyers turn that unknown into information before closing,
+    which is exactly when it’s easiest to act on.
+  </p>
+
+  {/* Intended asset: /images/resources/septic-inspections-when-buying-a-home-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt="Illustration of a septic inspection at a home being purchased, with a provider evaluating an opened tank in a rural yard"
+    width={1600}
+    height={900}
+  />
+
+  <h2>Why It Matters Before Closing</h2>
+  <p>
+    Septic components are buried, and the more involved repairs sit at the expensive end of home
+    ownership. Understanding the system’s condition before closing means any findings can inform
+    the negotiation — repairs, timing or price — rather than becoming a surprise afterward. It also
+    establishes a baseline for the maintenance the system will need going forward.
+  </p>
+
+  <h2>What an Inspection May Include</h2>
+  <ul>
+    <li><strong>Locating the system.</strong> Finding the tank and, where relevant, the drain field — records are often incomplete on older properties.</li>
+    <li><strong>Opening and evaluating.</strong> Accessing lids and assessing the condition of components rather than just glancing at the surface.</li>
+    <li><strong>Fuller testing.</strong> Some inspections include pumping and flow testing to see how the system handles use.</li>
+    <li><strong>Documentation.</strong> A written record of what was found, which is what makes the inspection useful in a transaction.</li>
+  </ul>
+  <p>
+    Scope — and therefore what an inspection depends on — varies, so ask what a given inspection
+    includes before comparing options. The
+    <a href="/resources/septic-costs/">costs and pricing hub</a> explains why scope drives that.
+  </p>
+
+  {/* Intended asset: /images/resources/septic-inspections-when-buying-a-home-checklist.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt="Illustration representing a septic inspection checklist for a home purchase: locate, open, evaluate, document"
+    width={1600}
+    height={900}
+  />
+
+  <h2>A Regional Note for Upper Cumberland Buyers</h2>
+  <p>
+    Rural and lake properties across the region often have long histories, older systems and
+    limited records — which makes locating and documenting the system especially worthwhile before
+    a purchase. The <a href="/resources/upper-cumberland-septic-guide/">Upper Cumberland septic guide</a>
+    covers the terrain and access realities that shape rural systems here.
+  </p>
+
+  <h2>Arranging an Inspection</h2>
+  <p>
+    Who arranges and pays for the inspection is negotiable and varies by transaction; what matters
+    is that a qualified provider performs it and documents the findings in time to inform the
+    decision. To get started, <a href="/request-service/">request a septic inspection</a> with the
+    property details and your timeline.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information, not legal or real-estate advice for any specific transaction.
+    Real-estate terms and septic requirements vary by property and county — confirm specifics with
+    your agent, a qualified provider and the appropriate authority. Cumberland Septic Hub is an
+    independent referral service; provider availability, qualifications, pricing and service terms
+    are determined by the provider.
+  </p>
+</ServicePage>

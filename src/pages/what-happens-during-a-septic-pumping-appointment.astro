@@ -1,0 +1,86 @@
+---
+/**
+ * Knowledge-catalog guide — "What Happens During a Septic Pumping Appointment"
+ * Cluster: septic-pumping-maintenance
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "How long does a septic pumping appointment take?",
+    answer: "Often under an hour for an accessible tank, though locating a buried tank or digging up lids adds time.",
+  },
+  {
+    question: "Do I need to be home?",
+    answer: "Usually it helps for access and to hear what the provider observed, but arrangements vary by provider.",
+  },
+  {
+    question: "What should I do to prepare?",
+    answer: "Clear truck access, make the lids reachable, and know the tank's approximate location to avoid a locating step.",
+  },
+  {
+    question: "Is this guide a substitute for the provider's guidance?",
+    answer: "No — it is general information. Your provider's observations about your specific tank are what matter most.",
+  },
+];
+---
+
+<ServicePage
+  title={"What Happens During a Septic Pumping Appointment"}
+  description={"A plain walkthrough of a septic pumping visit — truck positioning, locating and opening the tank, pumping, and what the provider observes."}
+  h1={"What to Expect During a Septic Pumping Appointment"}
+  eyebrow={"Septic Pumping & Maintenance"}
+  breadcrumbLabel={"What Happens During a Pumping Appointment"}
+  serviceName={"Septic Pumping Information"}
+  intro={"Knowing how a pumping visit goes takes the mystery out of it and helps you prepare the property. Here is the general flow, start to finish."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "book a pump-out" },
+    { label: "Septic Tank Cleaning in Cookeville", href: "/septic-tank-cleaning-cookeville-tn/", blurb: "pumping vs cleaning" },
+    { label: "Septic Inspections in Cookeville", href: "/septic-inspection-cookeville-tn/", blurb: "condition checks" },
+  ]}
+  guides={[
+    { label: "Septic Pumping and Maintenance", href: "/resources/septic-pumping-maintenance/", blurb: "the maintenance hub" },
+    { label: "Septic Maintenance Guide for Property Owners", href: "/septic-maintenance/", blurb: "the full owner guide" },
+    { label: "Septic Problems and Warning Signs", href: "/resources/septic-problems/", blurb: "symptoms to watch" },
+  ]}
+>
+  <p>A routine pump-out is a straightforward visit, but a little preparation makes it faster and gives the provider a chance to note anything worth watching.</p>
+
+  {/* Intended asset: /images/resources/what-happens-during-a-septic-pumping-appointment-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a septic pumping appointment showing a truck, an opened tank lid and a technician at work"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>The General Steps</h2>
+  <ul>
+    <li><strong>Truck positioning.</strong> The provider parks within hose reach of the tank.</li>
+    <li><strong>Locating and opening.</strong> The tank is found (if needed) and the lids are opened.</li>
+    <li><strong>Pumping.</strong> Liquid and settled solids are removed from each compartment.</li>
+    <li><strong>A look at condition.</strong> The provider can observe sludge levels, baffles and obvious concerns.</li>
+  </ul>
+
+  <h2>How to Prepare — and What to Ask</h2>
+  <p>
+    Clear a path for the truck, make sure the lids are accessible, and know roughly where the tank is. Afterward, ask how full the tank was and what that suggests for your <a href="/how-often-to-pump-septic-tank/">pumping interval</a>. When you are ready, <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

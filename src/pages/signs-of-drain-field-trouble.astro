@@ -1,0 +1,86 @@
+---
+/**
+ * Knowledge-catalog guide — "Signs of Drain-Field Trouble"
+ * Cluster: septic-repairs-drain-fields
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "What is the first sign of drain-field trouble?",
+    answer: "Often wet or unusually green ground over the field, sometimes with odors or drains that back up again after pumping.",
+  },
+  {
+    question: "Does lush grass always mean a problem?",
+    answer: "Not always, but a bright patch over the field that stands out from the rest of the yard is worth having checked.",
+  },
+  {
+    question: "Can a struggling field be saved?",
+    answer: "Sometimes function can be restored if caught early; the sooner it is evaluated, the more options tend to exist.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. An on-site evaluation confirms the cause.",
+  },
+];
+---
+
+<ServicePage
+  title={"Signs of Drain-Field Trouble"}
+  description={"Surface clues that a septic drain field is struggling — wet spots, odors, lush grass and slow drains — and why early action matters."}
+  h1={"Signs Your Drain Field May Be Struggling"}
+  eyebrow={"Septic Repairs & Drain Fields"}
+  breadcrumbLabel={"Signs of Drain-Field Trouble"}
+  serviceName={"Septic Repair Information"}
+  intro={"The drain field is where wastewater returns to the soil, and it gives surface clues when it starts to struggle. Catching them early is what keeps a repair from becoming a replacement."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "repair requests" },
+    { label: "Drain-Field Repair in Cookeville", href: "/drain-field-repair-cookeville-tn/", blurb: "field evaluation" },
+    { label: "Septic Installation in Cookeville", href: "/septic-installation-cookeville-tn/", blurb: "when replacement is needed" },
+  ]}
+  guides={[
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "the repairs hub" },
+    { label: "Septic Problems and Warning Signs", href: "/resources/septic-problems/", blurb: "symptoms that lead here" },
+    { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "the replacement path" },
+  ]}
+>
+  <p>A drain field rarely fails overnight. The ground above it tends to signal trouble first, and those signals are your chance to act while options are still simpler.</p>
+
+  {/* Intended asset: /images/resources/signs-of-drain-field-trouble-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a residential drain field showing wet spots and unusually green grass as warning signs"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>What to Watch For</h2>
+  <ul>
+    <li>Wet, soggy or spongy ground over the field with no recent rain.</li>
+    <li>Unusually lush, green grass in a stripe or patch over the field.</li>
+    <li>Odors over the field area.</li>
+    <li>Slow drains or backups that return after pumping.</li>
+  </ul>
+
+  <h2>Why Early Action Matters</h2>
+  <p>
+    Field problems sit at the expensive end of septic ownership, so acting early genuinely pays. A <a href="/drain-field-repair-cookeville-tn/">drain-field evaluation</a> identifies what is happening before it grows. If you are seeing these signs, <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

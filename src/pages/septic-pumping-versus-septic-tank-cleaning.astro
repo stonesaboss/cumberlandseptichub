@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "Septic Pumping Versus Septic Tank Cleaning"
+ * Cluster: septic-pumping-maintenance
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "Is cleaning always better than pumping?",
+    answer: "Not necessarily — it depends on the tank's condition and your goals. Confirm the scope so the service matches your need.",
+  },
+  {
+    question: "Can a tank be pumped but still not clean?",
+    answer: "Yes. Removing liquid without fully removing the settled sludge can leave material behind, which is the distinction between the two.",
+  },
+  {
+    question: "Which do I need?",
+    answer: "Describe the situation to a provider; they can recommend the appropriate scope after seeing the tank.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. The provider determines the right service for your specific tank.",
+  },
+];
+---
+
+<ServicePage
+  title={"Septic Pumping Versus Septic Tank Cleaning"}
+  description={"Two terms, sometimes two different jobs — what pumping and cleaning each mean and what to confirm when you request service."}
+  h1={"Septic Pumping vs. Septic Tank Cleaning: What's the Difference?"}
+  eyebrow={"Septic Pumping & Maintenance"}
+  breadcrumbLabel={"Pumping Versus Tank Cleaning"}
+  serviceName={"Septic Pumping Information"}
+  intro={"\"Pumping\" and \"cleaning\" are often used interchangeably, but they can describe different scopes of work. Knowing the difference helps you ask for what you actually want."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "book a pump-out" },
+    { label: "Septic Tank Cleaning in Cookeville", href: "/septic-tank-cleaning-cookeville-tn/", blurb: "pumping vs cleaning" },
+    { label: "Septic Inspections in Cookeville", href: "/septic-inspection-cookeville-tn/", blurb: "condition checks" },
+  ]}
+  guides={[
+    { label: "Septic Pumping and Maintenance", href: "/resources/septic-pumping-maintenance/", blurb: "the maintenance hub" },
+    { label: "Septic Maintenance Guide for Property Owners", href: "/septic-maintenance/", blurb: "the full owner guide" },
+    { label: "Septic Problems and Warning Signs", href: "/resources/septic-problems/", blurb: "symptoms to watch" },
+  ]}
+>
+  <p>Removing the liquid from a tank is one job; agitating and removing the settled sludge blanket from every compartment is a more thorough one. Both are useful, but they are not always the same service.</p>
+
+  {/* Intended asset: /images/resources/septic-pumping-versus-septic-tank-cleaning-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration contrasting pumping liquid from a septic tank with fully cleaning the settled sludge from each compartment"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>What Each Typically Means</h2>
+  <ul>
+    <li><strong>Pumping.</strong> Generally removing the liquid and accessible contents from the tank.</li>
+    <li><strong>Cleaning.</strong> Generally a more thorough removal of the settled sludge from each compartment.</li>
+    <li><strong>Why it matters.</strong> A tank that looks pumped can still hold a compacted sludge layer.</li>
+  </ul>
+
+  <h2>What to Confirm</h2>
+  <p>
+    When you request service, confirm which scope a quote covers so expectations match. If you are unsure which you need, describe the situation and let the provider advise. See <a href="/septic-tank-cleaning-cookeville-tn/">septic tank cleaning</a>, or <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

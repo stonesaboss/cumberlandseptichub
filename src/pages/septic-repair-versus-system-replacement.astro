@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "Septic Repair Versus System Replacement"
+ * Cluster: septic-repairs-drain-fields
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "When does replacement make more sense than repair?",
+    answer: "Often when the drain field has failed, the system is aging with repeated problems, or repairs would no longer be reliable. An evaluation clarifies it.",
+  },
+  {
+    question: "Is repair always cheaper than replacement?",
+    answer: "Usually in the short term, but repeated repairs on a failing system can point toward replacement being the practical choice.",
+  },
+  {
+    question: "How do I decide?",
+    answer: "Start with an evaluation; a provider can lay out the trade-offs for your specific system and site.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. The provider assesses your system and site.",
+  },
+];
+---
+
+<ServicePage
+  title={"Septic Repair Versus System Replacement"}
+  description={"The considerations behind the biggest septic decision — when a repair makes sense and when planning a replacement is the practical path."}
+  h1={"Should You Repair or Replace Your Septic System?"}
+  eyebrow={"Septic Repairs & Drain Fields"}
+  breadcrumbLabel={"Repair Versus System Replacement"}
+  serviceName={"Septic Repair Information"}
+  intro={"Repair or replace is the biggest decision in septic ownership. This guide lays out the considerations that shape it so the conversation with a provider is clearer."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "repair requests" },
+    { label: "Drain-Field Repair in Cookeville", href: "/drain-field-repair-cookeville-tn/", blurb: "field evaluation" },
+    { label: "Septic Installation in Cookeville", href: "/septic-installation-cookeville-tn/", blurb: "when replacement is needed" },
+  ]}
+  guides={[
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "the repairs hub" },
+    { label: "Septic Problems and Warning Signs", href: "/resources/septic-problems/", blurb: "symptoms that lead here" },
+    { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "the replacement path" },
+  ]}
+>
+  <p>There is no single rule for repair versus replacement. It depends on what failed, the system's age and condition, and what the site allows — which is why an evaluation comes first.</p>
+
+  {/* Intended asset: /images/resources/septic-repair-versus-system-replacement-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration weighing a targeted septic repair against a full system replacement on a rural property"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>What Feeds the Decision</h2>
+  <ul>
+    <li><strong>What failed and how.</strong> A single component is a different story than a failed field.</li>
+    <li><strong>Age and history.</strong> Repeated problems on an older system change the math.</li>
+    <li><strong>Site conditions.</strong> What the soil and layout allow shapes the options.</li>
+  </ul>
+
+  <h2>Approaching the Choice</h2>
+  <p>
+    A good provider explains the trade-offs rather than defaulting to the biggest job. The <a href="/resources/septic-installation-replacement/">installation and replacement hub</a> covers how replacements proceed. To weigh your situation, <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

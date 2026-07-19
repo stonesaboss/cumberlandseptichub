@@ -1,0 +1,85 @@
+---
+/**
+ * Knowledge-catalog guide — "How Terrain and Access Affect Septic Service"
+ * Cluster: upper-cumberland-septic-guide
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "How does terrain affect septic service?",
+    answer: "Slopes, rock, soft ground and distance all influence how a truck reaches the tank and how systems are designed and serviced.",
+  },
+  {
+    question: "Does access affect what I should include in a request?",
+    answer: "Yes — noting long drives, gates, slopes or soft ground helps a provider arrive prepared.",
+  },
+  {
+    question: "Is rural service always harder?",
+    answer: "Not always, but access realities are more common on rural lots and are worth planning around.",
+  },
+  {
+    question: "Is this guide professional advice?",
+    answer: "No — it is general information. A provider can advise for your specific property.",
+  },
+];
+---
+
+<ServicePage
+  title={"How Terrain and Access Affect Septic Service"}
+  description={"Slopes, rock, soft ground and hose distance — how Upper Cumberland terrain and access shape septic service."}
+  h1={"How Terrain and Access Affect Septic Service"}
+  eyebrow={"Upper Cumberland Septic Guide"}
+  breadcrumbLabel={"How Terrain and Access Affect Service"}
+  serviceName={"Upper Cumberland Septic Information"}
+  intro={"The lay of the land has a real effect on septic service. This guide explains how slopes, rock, soft ground and distance come into play across the region."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Upper Cumberland Service Area", href: "/service-area/", blurb: "regional coverage" },
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "service in Cookeville" },
+    { label: "Septic Pumping in Crossville", href: "/septic-pumping-crossville-tn/", blurb: "service in Crossville" },
+  ]}
+  guides={[
+    { label: "Upper Cumberland Septic Guide", href: "/resources/upper-cumberland-septic-guide/", blurb: "the regional hub" },
+    { label: "Septic Installation and Replacement", href: "/resources/septic-installation-replacement/", blurb: "regional planning" },
+    { label: "Septic Inspections and Property Buying", href: "/resources/septic-inspections-property-buying/", blurb: "rural purchases" },
+  ]}
+>
+  <p>Two similar homes can be very different to service if one sits at the end of a long, soft, sloped drive. Terrain and access shape both the work and the planning.</p>
+
+  {/* Intended asset: /images/resources/how-terrain-and-access-affect-septic-service-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a septic service truck navigating sloped, wooded Upper Cumberland terrain to reach a tank"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>What Comes Into Play</h2>
+  <ul>
+    <li><strong>Hose distance.</strong> Vacuum hoses have practical limits from truck to tank.</li>
+    <li><strong>Slopes and rock.</strong> Plateau terrain affects access and system design.</li>
+    <li><strong>Soft ground.</strong> River-valley and spring conditions can complicate truck access.</li>
+  </ul>
+
+  <h2>Planning Around It</h2>
+  <p>
+    Noting your access realities in a service request helps a provider come prepared. For regional planning, see <a href="/resources/upper-cumberland-septic-guide/">the Upper Cumberland guide</a>, or <a href="/request-service/">request septic service</a>.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>

@@ -1,0 +1,86 @@
+---
+/**
+ * Knowledge-catalog guide — "New Septic Installation Cost Factors"
+ * Cluster: septic-costs
+ * Author: Cumberland Septic Hub Editorial Team (reviewedBy intentionally empty)
+ * Images: ResourceImageSlot placeholder(s) (src={null}) with intended-asset
+ *   comments and rich alt text; intended filenames + generation briefs live in
+ *   public/images/resources/README.md. OpenClaw discovers these empty slots
+ *   during its repository scan.
+ */
+import ServicePage from '@layouts/ServicePage.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import type { Faq } from '@data/site';
+
+const faqs: Faq[] = [
+  {
+    question: "Why can't installation be priced from a standard figure?",
+    answer: "Because the system is designed for your specific soil, site and needs, which are established during planning.",
+  },
+  {
+    question: "What is the biggest cost driver?",
+    answer: "Usually soil and site conditions, since they determine the system type and the amount of work involved.",
+  },
+  {
+    question: "Is a replacement cheaper than a new install?",
+    answer: "Not necessarily — replacement adds removing or working around an old system, which can offset other factors. It depends on the site.",
+  },
+  {
+    question: "Is this guide a price quote?",
+    answer: "No. It explains what shapes an installation budget; the provider prices the project after site evaluation and design.",
+  },
+];
+---
+
+<ServicePage
+  title={"New Septic Installation Cost Factors"}
+  description={"How site conditions, soil, system type, access and approvals shape the budget for a new or replacement septic system."}
+  h1={"What Shapes the Cost of a New Septic System"}
+  eyebrow={"Septic Costs & Pricing"}
+  breadcrumbLabel={"New Septic Installation Cost Factors"}
+  serviceName={"Septic Service Information"}
+  intro={"Installing or replacing a septic system is the largest septic project, and its budget comes together during planning rather than from a standard figure. Here are the factors that shape it."}
+  faqs={faqs}
+  formHeading="Request Septic Service"
+  related={[
+    { label: "Septic Pumping in Cookeville", href: "/septic-pumping-cookeville-tn/", blurb: "routine pump-outs" },
+    { label: "Septic Repair in Cookeville", href: "/septic-repair-cookeville-tn/", blurb: "when repairs are needed" },
+    { label: "Septic Installation in Cookeville", href: "/septic-installation-cookeville-tn/", blurb: "new and replacement systems" },
+  ]}
+  guides={[
+    { label: "Septic Costs and Pricing Factors", href: "/resources/septic-costs/", blurb: "the cost topic hub" },
+    { label: "Septic Pumping and Maintenance", href: "/resources/septic-pumping-maintenance/", blurb: "routine service basics" },
+    { label: "Septic Repairs and Drain Fields", href: "/resources/septic-repairs-drain-fields/", blurb: "where repair costs come from" },
+  ]}
+>
+  <p>A new system is designed for a specific site, so the budget reflects that site. Understanding the drivers helps you plan and ask good questions before ground breaks.</p>
+
+  {/* Intended asset: /images/resources/new-septic-installation-cost-factors-hero.webp — see public/images/resources/README.md */}
+  <ResourceImageSlot
+    src={null}
+    alt={"Illustration of a new residential septic system installation in progress on a rural Tennessee lot"}
+    width={1600}
+    height={900}
+  />
+
+  <h2>The Budget Drivers</h2>
+  <ul>
+    <li><strong>Soil and site evaluation.</strong> What the ground allows shapes the system that can be installed.</li>
+    <li><strong>System type and design.</strong> Conventional and alternative systems involve different work.</li>
+    <li><strong>Access and layout.</strong> Equipment access, slope and distance affect the project.</li>
+    <li><strong>Approvals and restoration.</strong> Applicable approvals and putting the property back together both matter.</li>
+  </ul>
+
+  <h2>Planning Comes First</h2>
+  <p>
+    Budgets firm up after the site is evaluated and a design is chosen — see the <a href="/resources/septic-installation-replacement/">installation and replacement hub</a> for how these projects generally proceed. To begin, <a href="/request-service/">request septic service</a> with your property details.
+  </p>
+
+  <p class="disclosure">
+    This guide is general information for property owners, not professional advice for any specific
+    system. Systems, soils and requirements vary by property and county — confirm specifics with a
+    qualified provider or the appropriate authority. Cumberland Septic Hub is an independent referral
+    service; provider availability, qualifications, pricing and service terms are determined by the
+    provider.
+  </p>
+</ServicePage>
