@@ -1,0 +1,216 @@
+---
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import CtaBand from '@components/CtaBand.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import ResourceCategoryGrid from '@components/resources/ResourceCategoryGrid.astro';
+import ResourceGuideCard from '@components/resources/ResourceGuideCard.astro';
+import {
+  RESOURCES_HOME,
+  RESOURCE_CATEGORIES,
+  AVAILABLE_GUIDES,
+  RESOURCE_DISCLOSURE_NOTE,
+} from '@data/resources';
+
+const siteUrl = (Astro.site?.href ?? 'https://cumberlandseptichub.com/').replace(/\/$/, '');
+
+// ItemList of the seven real category hub pages (all exist at build time).
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Septic System Resource Categories',
+  itemListElement: RESOURCE_CATEGORIES.map((category, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: category.title,
+    url: `${siteUrl}${category.href}`,
+  })),
+};
+
+const situations = [
+  {
+    label: 'Routine pumping or maintenance',
+    href: '/resources/septic-pumping-maintenance/',
+    note: 'how pumping works and what good upkeep looks like',
+  },
+  {
+    label: 'Slow drains, odors or backups',
+    href: '/resources/septic-problems/',
+    note: 'what the warning signs can mean',
+  },
+  {
+    label: 'Drain-field or repair concerns',
+    href: '/resources/septic-repairs-drain-fields/',
+    note: 'components, evaluations and repair decisions',
+  },
+  {
+    label: 'New installation or replacement',
+    href: '/resources/septic-installation-replacement/',
+    note: 'the project process from evaluation to restoration',
+  },
+  {
+    label: 'Buying or selling a property',
+    href: '/resources/septic-inspections-property-buying/',
+    note: 'inspections, records and transaction questions',
+  },
+  {
+    label: 'Questions about cost',
+    href: '/resources/septic-costs/',
+    note: 'the factors behind septic pricing',
+  },
+  {
+    label: 'Regional planning questions',
+    href: '/resources/upper-cumberland-septic-guide/',
+    note: 'terrain, access and Upper Cumberland conditions',
+  },
+];
+---
+
+<Base title={RESOURCES_HOME.title} description={RESOURCES_HOME.metaDescription} schema={[itemListSchema]}>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs crumbs={[{ label: 'Home', href: '/' }, { label: 'Septic Resources' }]} />
+      <div class="resources-hero">
+        <div>
+          <span class="eyebrow">Knowledge Center</span>
+          <h1>{RESOURCES_HOME.h1}</h1>
+          <p>
+            Plain-language answers about septic pumping, maintenance, warning signs, repairs,
+            drain fields, inspections, installation and the property conditions that shape septic
+            decisions across the Upper Cumberland.
+          </p>
+          <div class="resources-hero__actions">
+            <a href="#categories" class="btn btn--green">Browse the Categories</a>
+            <a href="/request-service/" class="btn btn--outline-light" data-analytics="resources-hero-request-cta">Request Septic Service</a>
+          </div>
+        </div>
+        <div>
+          {/* Intended asset: /images/resources/septic-resources-hero.webp — see public/images/resources/README.md */}
+          <ResourceImageSlot
+            src={RESOURCES_HOME.heroImage}
+            alt={RESOURCES_HOME.heroImage ? RESOURCES_HOME.heroAlt : ''}
+            eager={true}
+            width={640}
+            height={360}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="categories" aria-labelledby="categories-heading">
+    <div class="container">
+      <h2 id="categories-heading">Browse by Topic</h2>
+      <p class="section-intro">
+        Seven knowledge areas covering the questions septic owners actually ask — each hub
+        introduces its topic and will grow as new guides are published.
+      </p>
+      <ResourceCategoryGrid />
+    </div>
+  </section>
+
+  <section class="section section--pale" aria-labelledby="situation-heading">
+    <div class="container">
+      <h2 id="situation-heading">Start With Your Situation</h2>
+      <p class="section-intro">Not sure where to begin? Pick the description closest to yours.</p>
+      <ul class="situation-list">
+        {situations.map((s) => (
+          <li>
+            <a href={s.href}>{s.label}</a>
+            <span> — {s.note}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="available-heading">
+    <div class="container">
+      <h2 id="available-heading">Currently Available Guides</h2>
+      <p class="section-intro">
+        Published, ready-to-read guides. More are being researched and written — each category hub
+        shows what is coming next.
+      </p>
+      <div class="grid grid--2 available-grid">
+        {AVAILABLE_GUIDES.map((guide) => <ResourceGuideCard guide={guide} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--pale" aria-labelledby="regional-heading">
+    <div class="container prose" style="max-width: 52rem;">
+      <h2 id="regional-heading">Septic Decisions Are Property Decisions</h2>
+      <p>
+        No two septic situations are quite alike. Property conditions, system design and age,
+        tank and lid access, household size and water use, maintenance history and applicable
+        requirements all shape what a system needs and what any service involves. The guides here
+        explain how septic systems generally work and what questions to ask — they cannot diagnose
+        a specific system or replace an on-site evaluation.
+      </p>
+      <p>
+        When a guide raises a question about your own property, the practical next step is simple:
+        describe the property and the situation, and
+        <a href="/request-service/">request septic service</a> so an independent local provider can
+        take a look. For requirements that involve permits or approvals, confirm current rules
+        with the provider and the appropriate government authority.
+      </p>
+      <p class="disclosure">{RESOURCE_DISCLOSURE_NOTE}</p>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Have a Septic Question About Your Property?"
+    copy="Describe the property, the symptoms and the service you may need — the request can be connected with an independent local septic provider."
+  />
+</Base>
+
+<style>
+  .resources-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .resources-hero {
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    }
+  }
+
+  .resources-hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .situation-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: grid;
+    gap: 0.65rem;
+    max-width: 46rem;
+  }
+
+  .situation-list li {
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius);
+    padding: 0.8rem 1.1rem;
+    font-size: 0.98rem;
+  }
+
+  .situation-list a {
+    font-weight: 700;
+  }
+
+  .situation-list span {
+    color: #3a4a55;
+  }
+
+  .available-grid {
+    margin-top: 1.5rem;
+    max-width: 52rem;
+  }
+</style>

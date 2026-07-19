@@ -4,6 +4,7 @@ import Breadcrumbs from '@components/Breadcrumbs.astro';
 import LeadForm from '@components/LeadForm.astro';
 import FaqAccordion from '@components/FaqAccordion.astro';
 import CtaBand from '@components/CtaBand.astro';
+import HelpfulGuides from '@components/resources/HelpfulGuides.astro';
 import type { Faq } from '@data/site';
 import { PHONE_DISPLAY, PHONE_TEL } from '@data/site';
 
@@ -25,6 +26,8 @@ interface Props {
   faqs?: Faq[];
   faqHeading?: string;
   related?: RelatedLink[];
+  /** Contextual "Helpful Septic Guides" links (real pages only). */
+  guides?: RelatedLink[];
   formHeading?: string;
 }
 
@@ -40,6 +43,7 @@ const {
   faqs = [],
   faqHeading = 'Frequently Asked Questions',
   related = [],
+  guides = [],
   formHeading = 'Request Septic Service',
 } = Astro.props;
 
@@ -89,6 +93,8 @@ const serviceSchema = {
             </ul>
           </section>
         )}
+
+        {guides.length > 0 && <HelpfulGuides links={guides} />}
 
         <p class="disclosure" style="margin-top:2rem;">
           Cumberland Septic Hub is an independent referral service. Requests may be shared with an

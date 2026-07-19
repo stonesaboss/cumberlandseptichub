@@ -1,0 +1,76 @@
+---
+import ResourcePage from '@layouts/ResourcePage.astro';
+import { RESOURCE_CATEGORIES } from '@data/resources';
+
+const category = RESOURCE_CATEGORIES.find((c) => c.slug === 'septic-inspections-property-buying')!;
+---
+
+<ResourcePage
+  category={category}
+  title="Septic Inspections & Property Buying | Cumberland Septic Hub"
+>
+  <h2>Three Inspections, Three Purposes</h2>
+  <p>
+    “Septic inspection” covers three fairly different services, and knowing which one you need
+    changes what to request. A <strong>maintenance inspection</strong> checks a working system's
+    condition — baffles, levels, lids, visible components — to catch small issues early and build
+    a paper trail. A <strong>problem-focused inspection</strong> is diagnostic: something smells,
+    gurgles, or backs up, and the goal is finding out why. A
+    <strong>real-estate transaction inspection</strong> documents system condition for a purchase
+    or sale, where the audience includes buyers, sellers, agents and sometimes lenders.
+  </p>
+
+  <h2>Why Transactions Are Where Inspections Matter Most</h2>
+  <p>
+    A house on septic includes a buried system worth many thousands of dollars, and the buyer
+    usually inherits it with no history whatsoever. The seller may genuinely not know where the
+    tank is. In this region's rural and lake markets — covered in the
+    <a href="/resources/upper-cumberland-septic-guide/">regional guide</a> — the septic system is
+    routinely the largest unknown on the property. An inspection converts that unknown into
+    information while there is still time to act on it: before closing, not after the first
+    backup.
+  </p>
+
+  <h2>What an Inspection May Involve</h2>
+  <ul>
+    <li><strong>Locating the tank and access points</strong> — sometimes a project in itself when records are missing; see <a href="/septic-tank-locating-cookeville-tn/">tank locating</a></li>
+    <li><strong>Reviewing available records</strong> — service receipts, past inspections, any county documentation the owner can produce</li>
+    <li><strong>Visual inspection</strong> — lids, baffles, liquid levels and visible components, often with the tank opened</li>
+    <li><strong>More extensive testing where the scope calls for it</strong> — flow or load testing, pumping the tank for a full interior look, walking and probing the field</li>
+  </ul>
+  <p>
+    Scope is the whole game. A visual check with lids already exposed and a
+    locate-excavate-pump-document engagement are both honestly called inspections — at very
+    different depths and fees. <strong>Confirm the scope before service</strong>, in writing
+    where a transaction depends on it.
+  </p>
+
+  <h2>Questions Buyers and Sellers Should Ask</h2>
+  <ul>
+    <li>Will the tank be opened? Pumped? Is the drain field walked and probed?</li>
+    <li>What documentation is produced, and is it suitable for this transaction?</li>
+    <li>What did previous owners keep — service records, tank location, lid depth?</li>
+    <li>What is the system's age, and does its capacity match the household moving in?</li>
+    <li>For sellers: is it worth inspecting and servicing before listing, ahead of buyer questions?</li>
+  </ul>
+
+  <h2>The Limits of an Inspection</h2>
+  <p>
+    An honest inspection describes what could be observed on the day — it is not a warranty, a
+    prediction of system lifespan, or a guarantee against future problems. Buried components can
+    only be evaluated to the extent access allows, and a field that performed under inspection
+    conditions can still struggle under a bigger household's load. Just as important: lender,
+    buyer, seller, county and provider requirements may all differ, and no inspection can be
+    guaranteed acceptable to a lender, a county or a government authority. Confirm what your
+    specific transaction requires with the parties who will rely on the result.
+  </p>
+
+  <h2>Requesting an Inspection</h2>
+  <p>
+    Say what the inspection is for — maintenance, a suspected problem, or a transaction with a
+    closing date — and what is already known about the tank location and records. Purpose drives
+    scope, and scope drives everything else.
+    <a href="/septic-inspection-cookeville-tn/">Request a septic inspection</a> and include the
+    transaction timeline if there is one.
+  </p>
+</ResourcePage>

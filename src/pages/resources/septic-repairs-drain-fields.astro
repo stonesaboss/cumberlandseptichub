@@ -1,0 +1,86 @@
+---
+import ResourcePage from '@layouts/ResourcePage.astro';
+import { RESOURCE_CATEGORIES } from '@data/resources';
+
+const category = RESOURCE_CATEGORIES.find((c) => c.slug === 'septic-repairs-drain-fields')!;
+---
+
+<ResourcePage
+  category={category}
+  title="Septic Repair & Drain-Field Guides | Cumberland Septic Hub"
+>
+  <h2>The System, Component by Component</h2>
+  <p>
+    A septic system is a chain, and repairs are about finding the weak link. Wastewater leaves
+    the house through the <strong>inlet pipe</strong> and enters the tank past an
+    <strong>inlet baffle</strong> that calms the flow. Inside, solids settle while liquid exits
+    through an <strong>outlet baffle</strong> — the guard that keeps floating scum out of the
+    field. Some systems then rely on a <strong>pump with float switches</strong> to lift effluent
+    uphill; many pass it through a <strong>distribution box</strong> that splits flow evenly
+    among the <strong>drain-field lines</strong>, where perforated pipe releases it into the soil.
+  </p>
+  <p>
+    Each link fails differently. Baffles rust and crumble. Pumps burn out and floats stick.
+    Pipes crack, settle or crush under traffic. Distribution boxes tilt and send everything down
+    one line. Field lines clog with roots or biological mat. The repair conversation starts with
+    which link — never with the assumption.
+  </p>
+
+  <h2>How Providers Evaluate a Suspected Failure</h2>
+  <p>
+    Evaluation usually starts at the tank, because tank levels tell stories. Liquid sitting
+    <em>above</em> the outlet suggests trouble downstream — the field or the line to it isn't
+    accepting flow. Liquid <em>below</em> normal level hints at a leak. From there providers
+    look at baffle condition, test pumps and floats where fitted, check how the distribution box
+    is balancing flow, and read the field's surface for wet ground and odor. It is systematic
+    elimination, and it is the reason a diagnosis over the phone — or from a website — is not a
+    real diagnosis.
+  </p>
+
+  <h2>Why Pumping Doesn't Fix Every Backup</h2>
+  <p>
+    Pumping empties the tank; it does not repair anything. If the cause was simply a tank full of
+    solids, pumping solves it. If the cause is a collapsed pipe, a dead pump or a field that has
+    stopped absorbing, the tank refills with wastewater in a few days of normal use — and the
+    backup returns on schedule. Repeated pump-outs that buy shorter and shorter relief are not
+    maintenance; they are a symptom being billed monthly. That pattern is covered from the
+    symptom side in the <a href="/resources/septic-problems/">warning-signs hub</a>.
+  </p>
+
+  <h2>Drain-Field Warning Signs</h2>
+  <ul>
+    <li>Wet, soft or spongy ground over the field</li>
+    <li>Wastewater surfacing, especially after heavy household use</li>
+    <li>Sewage odor outdoors near the field</li>
+    <li>Stripes or patches of unusually green, fast-growing grass</li>
+    <li>Slow drainage house-wide that pumping only briefly improves</li>
+  </ul>
+  <p>
+    Important caution: none of these signs, alone, proves the field has failed. Saturated ground
+    can follow a wet season. Green stripes can follow shallow lines doing their job. Odor can
+    come from the tank area rather than the field. The signs justify an evaluation — the
+    <a href="/drain-field-repair-cookeville-tn/">drain-field evaluation process</a> determines
+    the cause.
+  </p>
+
+  <h2>Contained Repair or Larger Problem?</h2>
+  <p>
+    The good news in septic repair: many failures are contained. A baffle, a pump, a float
+    switch, a section of pipe or a distribution box can each be replaced without touching the
+    rest of the system. The harder conversations involve the field itself or a structurally
+    failing tank, where repair-versus-replacement depends on the system's age, the soil's
+    condition, how the property is used and what current requirements allow. That decision is
+    made after evaluation, on site — not from a symptom list. When replacement enters the
+    picture, the <a href="/resources/septic-installation-replacement/">installation and
+    replacement hub</a> covers what that project involves.
+  </p>
+
+  <h2>Getting a Repair Request Right</h2>
+  <p>
+    Tell the provider what the system has already been telling you: the symptoms and when they
+    started, whether they recur after pumping, any alarms, the system's age if known, and what
+    service has been done. Then let the evaluation lead.
+    <a href="/septic-repair-cookeville-tn/">Request a repair evaluation</a> and put the timeline
+    in the details field — it is the most useful thing you can write.
+  </p>
+</ResourcePage>

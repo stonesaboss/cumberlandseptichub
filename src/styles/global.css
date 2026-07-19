@@ -14,12 +14,14 @@
   --warn-amber: #c77816;
 
   --font-sans:
-    'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
 
   --radius: 8px;
   --radius-lg: 12px;
-  --shadow-card: 0 1px 3px rgba(13, 41, 66, 0.08), 0 4px 14px rgba(13, 41, 66, 0.06);
-  --shadow-card-hover: 0 4px 10px rgba(13, 41, 66, 0.12), 0 10px 28px rgba(13, 41, 66, 0.1);
+  --shadow-card:
+    0 1px 3px rgba(13, 41, 66, 0.08), 0 4px 14px rgba(13, 41, 66, 0.06);
+  --shadow-card-hover:
+    0 4px 10px rgba(13, 41, 66, 0.12), 0 10px 28px rgba(13, 41, 66, 0.1);
   --container: 1180px;
 }
 

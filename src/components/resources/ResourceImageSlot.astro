@@ -1,0 +1,60 @@
+---
+/**
+ * Image slot for the resources section. Renders the real image once a path
+ * is set in src/data/resources.ts; until then it renders a polished
+ * placeholder (no broken <img> references, no stock photos, no remote URLs).
+ * Intended future filenames are documented in public/images/resources/README.md.
+ */
+interface Props {
+  src: string | null;
+  alt: string;
+  /** Set for the LCP hero image on the resources landing page. */
+  eager?: boolean;
+  width?: number;
+  height?: number;
+}
+
+const { src, alt, eager = false, width = 1200, height = 675 } = Astro.props;
+---
+
+{
+  src ? (
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+      class="resource-img"
+    />
+  ) : (
+    <div class="resource-img resource-img--placeholder" role="img" aria-label="Resource image coming soon">
+      <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <circle cx="8.5" cy="10" r="1.6" />
+        <path d="M21 16l-5-5-6 6-2.5-2.5L3 19" />
+      </svg>
+    </div>
+  )
+}
+
+<style>
+  .resource-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-gray);
+    display: block;
+  }
+
+  .resource-img--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+      linear-gradient(145deg, #eaf2f0 0%, var(--bg-pale) 55%, #e3ecf0 100%);
+    color: #9db2c0;
+  }
+</style>

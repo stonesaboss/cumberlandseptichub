@@ -1,0 +1,83 @@
+---
+import ResourcePage from '@layouts/ResourcePage.astro';
+import { RESOURCE_CATEGORIES } from '@data/resources';
+
+const category = RESOURCE_CATEGORIES.find((c) => c.slug === 'septic-pumping-maintenance')!;
+---
+
+<ResourcePage
+  category={category}
+  title="Septic Pumping & Maintenance Guides | Cumberland Septic Hub"
+>
+  <h2>How a Septic System Actually Works</h2>
+  <p>
+    Every drain in a septic home leads to the same place: a buried tank that separates what water
+    carries. Heavy solids sink and compact into sludge. Fats and lighter material float as scum.
+    The clarified liquid in between flows out to the drain field, where soil finishes the
+    treatment. It is a simple, passive design — and it works only as long as the tank keeps
+    holding the solids back.
+  </p>
+  <p>
+    Sludge and scum never stop accumulating. Pumping exists to remove them before they claim so
+    much of the tank that solids escape toward the drain field, because field damage is where
+    septic problems become expensive.
+  </p>
+
+  <h2>Why There Is No Universal Pumping Interval</h2>
+  <p>
+    Rules of thumb about pumping every few years are averages, not physics. What actually sets
+    the pace: the tank's size relative to the household, how many people the system serves, how
+    water use is spread across the week, whether a garbage disposal accelerates solids, and the
+    system's overall condition. A vacation cabin and a full-time family home can share identical
+    tanks and need service on completely different schedules. The most reliable data point is the
+    one a provider gives you after opening the tank: how full it actually was, which calibrates
+    your own interval going forward.
+  </p>
+
+  <h2>Pumping Versus Tank Cleaning</h2>
+  <p>
+    The terms get used interchangeably, but the scope can differ: a pump-down of liquid is not
+    the same service as breaking up and removing the compacted sludge blanket from every
+    compartment. Neither is wrong — they are different jobs. What matters is knowing which one a
+    provider is quoting. The
+    <a href="/septic-tank-cleaning-cookeville-tn/">tank cleaning service page</a> covers the
+    scope questions worth asking.
+  </p>
+
+  <h2>Access, Lids and Records</h2>
+  <p>
+    Maintenance goes smoothly on properties where the tank location is known, the lids can be
+    reached, and somebody kept the paperwork. If any of those are missing, they are worth fixing
+    once: <a href="/septic-tank-locating-cookeville-tn/">locate the tank</a>, record measurements
+    from two fixed points on the house, note the lid depth, and keep every service date and
+    provider observation in one folder. Records turn every future visit from an exploration into
+    an appointment — and they carry real weight when a property is sold.
+  </p>
+
+  <h2>Habits That Protect the System</h2>
+  <ul>
+    <li>Keep wipes (including “flushable” ones), grease and solvents out of the drains</li>
+    <li>Spread laundry through the week instead of marathon wash days</li>
+    <li>Fix running toilets promptly — constant clean water can overwhelm a drain field</li>
+    <li>Keep vehicles, structures and deep-rooted trees off the field</li>
+    <li>Direct roof and surface drainage away from the tank and field</li>
+  </ul>
+
+  <h2>When Maintenance Symptoms Mean Something More</h2>
+  <p>
+    Routine service assumes a healthy system. Backups that return soon after pumping, alarms,
+    odors that persist, or wet ground over the field suggest the problem lives beyond the tank —
+    territory covered in the
+    <a href="/resources/septic-problems/">problems and warning signs hub</a> and, when a
+    diagnosis is needed, by
+    <a href="/septic-repair-cookeville-tn/">a repair evaluation</a>.
+  </p>
+
+  <h2>The Full Owner's Guide</h2>
+  <p>
+    Ready for the complete checklist treatment? The
+    <a href="/septic-maintenance/"><strong>Septic Maintenance Guide for Property Owners</strong></a>
+    is the site's full published guide — pumping-frequency factors, water habits, drain and field
+    protection, warning signs, record-keeping and the questions worth asking any provider.
+  </p>
+</ResourcePage>

@@ -1,0 +1,59 @@
+---
+/**
+ * "Helpful Septic Guides" — a compact, secondary block of contextual
+ * resource links for service pages. Links only to real, existing pages.
+ */
+import type { ResourceLink } from '@data/resources';
+
+interface Props {
+  links: ResourceLink[];
+  heading?: string;
+}
+
+const { links, heading = 'Helpful Septic Guides' } = Astro.props;
+---
+
+<section class="helpful-guides" aria-label={heading}>
+  <h2>{heading}</h2>
+  <ul>
+    {links.map((link) => (
+      <li>
+        <a href={link.href}>{link.label}</a>
+        {link.blurb && <span> — {link.blurb}</span>}
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .helpful-guides {
+    margin-top: 2.25rem;
+    background: var(--bg-pale);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: 1.4rem 1.6rem;
+  }
+
+  .helpful-guides h2 {
+    font-size: 1.15rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .helpful-guides ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .helpful-guides li {
+    margin-bottom: 0.45rem;
+    font-size: 0.97rem;
+  }
+
+  .helpful-guides a {
+    font-weight: 700;
+  }
+
+  .helpful-guides span {
+    color: #3a4a55;
+  }
+</style>

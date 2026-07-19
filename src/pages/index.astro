@@ -451,6 +451,33 @@ const faqs: Faq[] = [
     </div>
   </section>
 
+  <!-- RESOURCE CENTER -->
+  <section class="section section--pale" aria-labelledby="resources-heading">
+    <div class="container">
+      <h2 id="resources-heading">Septic Resources for Property Owners</h2>
+      <p class="section-intro">
+        Plain-language guides that explain how septic systems work, what the warning signs mean
+        and what different services involve. Start with a topic below, or browse the full
+        resource center.
+      </p>
+      <div class="grid grid--3 home-resources">
+        <a href="/resources/septic-pumping-maintenance/" class="card home-resources__card">
+          <h3>Septic Pumping and Maintenance</h3>
+          <p>How tanks work, why pumping intervals vary, and the habits that extend system life.</p>
+        </a>
+        <a href="/resources/septic-problems/" class="card home-resources__card">
+          <h3>Septic Problems and Warning Signs</h3>
+          <p>Slow drains, odors, gurgling and backups — what the symptoms can mean.</p>
+        </a>
+        <a href="/resources/septic-costs/" class="card home-resources__card">
+          <h3>Septic Costs and Pricing Factors</h3>
+          <p>The property and service factors that actually drive septic pricing.</p>
+        </a>
+      </div>
+      <a href="/resources/" class="btn btn--navy" style="margin-top:1.5rem;">Browse All Septic Resources</a>
+    </div>
+  </section>
+
   <!-- SECTION 12 — SERVICE AREA -->
   <section class="section section--pale" aria-labelledby="area-heading">
     <div class="container area-section">
@@ -819,6 +846,31 @@ const faqs: Faq[] = [
   .card--separate {
     background: #f6f9fb;
     border-style: dashed;
+  }
+
+  /* homepage resource cards */
+  .home-resources {
+    margin-top: 1.5rem;
+  }
+
+  .home-resources__card {
+    display: block;
+    text-decoration: none;
+  }
+
+  .home-resources__card h3 {
+    font-size: 1.05rem;
+    color: var(--navy-deep);
+  }
+
+  .home-resources__card:hover h3 {
+    color: var(--green-dark);
+  }
+
+  .home-resources__card p {
+    font-size: 0.95rem;
+    color: #3a4a55;
+    margin: 0;
   }
 
   /* service area section */

@@ -1,0 +1,118 @@
+---
+/**
+ * Layout for the seven resource category hub pages. Uses the existing
+ * design system (page-hero, prose, cards, CtaBand) so the resources
+ * section reads as native to the site.
+ */
+import Base from '@layouts/Base.astro';
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import CtaBand from '@components/CtaBand.astro';
+import ResourceImageSlot from '@components/resources/ResourceImageSlot.astro';
+import ResourceGuideCard from '@components/resources/ResourceGuideCard.astro';
+import RelatedResources from '@components/resources/RelatedResources.astro';
+import { RESOURCE_DISCLOSURE_NOTE, type ResourceCategory } from '@data/resources';
+
+interface Props {
+  category: ResourceCategory;
+  title: string;
+}
+
+const { category, title } = Astro.props;
+const guides = [...category.publishedGuides, ...category.plannedGuides];
+---
+
+<Base title={title} description={category.metaDescription}>
+  <div class="page-hero">
+    <div class="container">
+      <Breadcrumbs
+        crumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Septic Resources', href: '/resources/' },
+          { label: category.title },
+        ]}
+      />
+      <div class="resource-hero__grid">
+        <div>
+          <span class="eyebrow">Septic Resources</span>
+          <h1>{category.h1}</h1>
+          <p>{category.intro}</p>
+          <div class="resource-hero__actions">
+            <a href="/request-service/" class="btn btn--green" data-analytics="resource-hub-request-cta">Request Septic Service</a>
+            <a href="/resources/" class="btn btn--outline-light">All Resource Topics</a>
+          </div>
+        </div>
+        <div class="resource-hero__media">
+          {/* Intended asset: /images/resources/{category.heroImageFile} — see public/images/resources/README.md */}
+          <ResourceImageSlot src={category.heroImage} alt={category.heroImage ? category.heroAlt : ''} width={640} height={360} />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container resource-content">
+      <article class="prose">
+        <slot />
+      </article>
+
+      <section class="explore-topic" aria-labelledby="explore-heading">
+        <h2 id="explore-heading">Explore This Topic</h2>
+        <p class="explore-topic__note">
+          Guides in this category are being developed. Topics marked “Coming Soon” are planned —
+          they will be published here as they are completed.
+        </p>
+        <div class="grid grid--2">
+          {guides.map((guide) => <ResourceGuideCard guide={guide} />)}
+        </div>
+      </section>
+
+      <RelatedResources
+        serviceLinks={category.relatedServiceLinks}
+        categoryLinks={category.relatedCategoryLinks}
+      />
+
+      <p class="disclosure" style="margin-top:2.25rem;">
+        {RESOURCE_DISCLOSURE_NOTE}
+        Read the full <a href="/referral-disclosure/">referral disclosure</a>.
+      </p>
+    </div>
+  </div>
+
+  <CtaBand />
+</Base>
+
+<style>
+  .resource-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .resource-hero__grid {
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    }
+  }
+
+  .resource-hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .resource-content {
+    max-width: 60rem;
+  }
+
+  .explore-topic {
+    margin-top: 2.75rem;
+    border-top: 1px solid var(--border-gray);
+    padding-top: 1.75rem;
+  }
+
+  .explore-topic__note {
+    color: #3a4a55;
+    max-width: 44rem;
+  }
+</style>

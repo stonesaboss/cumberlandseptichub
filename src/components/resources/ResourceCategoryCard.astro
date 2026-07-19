@@ -1,0 +1,79 @@
+---
+import type { ResourceCategory } from '@data/resources';
+import ResourceImageSlot from './ResourceImageSlot.astro';
+
+interface Props {
+  category: ResourceCategory;
+}
+
+const { category } = Astro.props;
+---
+
+<a href={category.href} class="cat-card">
+  <ResourceImageSlot src={category.heroImage} alt={category.heroImage ? category.heroAlt : ''} width={640} height={360} />
+  <div class="cat-card__body">
+    <h3>{category.title}</h3>
+    <p>{category.shortDescription}</p>
+    <span class="cat-card__cta">Explore {category.title.toLowerCase().startsWith('upper') ? 'the regional guide' : 'this topic'}</span>
+  </div>
+</a>
+
+<style>
+  .cat-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: var(--shadow-card);
+    transition:
+      box-shadow 0.18s ease,
+      transform 0.18s ease;
+    height: 100%;
+  }
+
+  .cat-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .cat-card :global(.resource-img) {
+    border: none;
+    border-radius: 0;
+    aspect-ratio: 16 / 8;
+  }
+
+  .cat-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.15rem 1.25rem 1.3rem;
+    flex: 1;
+  }
+
+  .cat-card__body h3 {
+    font-size: 1.08rem;
+    margin: 0;
+    color: var(--navy-deep);
+  }
+
+  .cat-card:hover .cat-card__body h3 {
+    color: var(--green-dark);
+  }
+
+  .cat-card__body p {
+    font-size: 0.93rem;
+    color: #3a4a55;
+    margin: 0;
+  }
+
+  .cat-card__cta {
+    margin-top: auto;
+    padding-top: 0.6rem;
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--green-dark);
+  }
+</style>

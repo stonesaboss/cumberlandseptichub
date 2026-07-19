@@ -1,0 +1,14 @@
+---
+import { RESOURCE_CATEGORIES } from '@data/resources';
+import ResourceCategoryCard from './ResourceCategoryCard.astro';
+---
+
+<div class="grid grid--3 cat-grid">
+  {RESOURCE_CATEGORIES.map((category) => <ResourceCategoryCard category={category} />)}
+</div>
+
+<style>
+  .cat-grid {
+    margin-top: 1.75rem;
+  }
+</style>

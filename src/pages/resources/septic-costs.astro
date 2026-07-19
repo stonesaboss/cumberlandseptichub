@@ -1,0 +1,89 @@
+---
+import ResourcePage from '@layouts/ResourcePage.astro';
+import { RESOURCE_CATEGORIES } from '@data/resources';
+
+const category = RESOURCE_CATEGORIES.find((c) => c.slug === 'septic-costs')!;
+---
+
+<ResourcePage category={category} title="Septic Costs and Pricing Factors | Cumberland Septic Hub">
+  <h2>Why Septic Pricing Varies So Much</h2>
+  <p>
+    Ask what septic pumping costs and any honest answer begins with “it depends” — not as a
+    dodge, but because the work genuinely differs from property to property. Two houses on the
+    same road can involve different tank sizes, different lid depths, different truck access and
+    different amounts of accumulated material. Providers price the job in front of them, which is
+    why exact pricing requires the property and the requested service to be reviewed rather than
+    quoted from a chart.
+  </p>
+  <p>
+    What this page can do is show you the levers — the factors that consistently move septic
+    pricing up or down — so quotes make sense when you receive them and so you can spot which
+    details about your property are worth mentioning in a request.
+  </p>
+
+  <h2>The Factors Behind Pumping and Cleaning Prices</h2>
+  <ul>
+    <li>
+      <strong>Tank size and compartments.</strong> A 1,500-gallon two-compartment tank holds more
+      material and takes longer to service than a small single-compartment tank.
+    </li>
+    <li>
+      <strong>Lid accessibility.</strong> Exposed lids at grade are the easy case. Lids buried
+      under a foot of soil — or a deck — involve locating and excavation work.
+    </li>
+    <li>
+      <strong>Whether the tank must be found first.</strong> Unknown tank locations add a
+      locating step before any service can happen.
+    </li>
+    <li>
+      <strong>Distance and equipment access.</strong> Vacuum hoses have practical length limits.
+      Long driveways, gates, slopes and soft ground all affect how a truck reaches the tank.
+    </li>
+    <li>
+      <strong>Pumping versus cleaning scope.</strong> Removing liquid is one job; agitating and
+      removing the settled sludge blanket from every compartment is a bigger one. Confirm which
+      service a quote covers.
+    </li>
+  </ul>
+
+  <h2>Why Repair Pricing Is Harder to Predict</h2>
+  <p>
+    Repair costs follow the diagnosis, and the diagnosis follows an evaluation. A deteriorated
+    baffle is a different job than a failed effluent pump, which is a different job than a crushed
+    line under a driveway, which is different again from a drain field that no longer accepts
+    water. Symptoms alone rarely identify the failed component — the same slow drains can come
+    from any of them — so providers evaluate before they price. Recurring problems, the system's
+    age and how the property is used all feed into the repair conversation.
+  </p>
+  <p>
+    Drain-field concerns sit at the expensive end of the spectrum because they can involve soil,
+    excavation and, in some cases, replacement planning. That range is exactly why
+    <a href="/drain-field-repair-cookeville-tn/">a drain-field evaluation</a> comes before any
+    responsible repair recommendation.
+  </p>
+
+  <h2>Inspection and Installation Pricing</h2>
+  <p>
+    Inspection fees track scope: a visual check of an already-open tank is not the same service as
+    locating a tank, excavating lids, pumping, evaluating components and producing documentation
+    for a real-estate closing. Ask what an inspection includes before comparing prices.
+  </p>
+  <p>
+    Installation and replacement are the largest septic projects, shaped by site and soil
+    conditions, system type and design, equipment access, applicable approvals and property
+    restoration. Budgets come together during planning — after the site has been evaluated —
+    rather than from a standard figure. The
+    <a href="/resources/septic-installation-replacement/">installation and replacement hub</a>
+    walks through how those projects generally proceed.
+  </p>
+
+  <h2>Getting a Useful Price</h2>
+  <p>
+    The fastest route to a realistic number is a request that describes the property well: where
+    it is, what the symptoms are, whether the tank location and lids are known, how a truck gets
+    close, and when the system was last serviced. Providers quote confidently when they can
+    picture the job. Exact pricing is always determined by the provider —
+    <a href="/request-service/">request septic service</a> with good detail and the estimate
+    conversation gets much shorter.
+  </p>
+</ResourcePage>

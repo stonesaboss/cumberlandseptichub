@@ -1,0 +1,69 @@
+---
+/**
+ * Related service pages and related resource categories for a hub page.
+ */
+import type { ResourceLink } from '@data/resources';
+
+interface Props {
+  serviceLinks: ResourceLink[];
+  categoryLinks: ResourceLink[];
+}
+
+const { serviceLinks, categoryLinks } = Astro.props;
+---
+
+<section class="related-resources" aria-label="Related services and resources">
+  <div class="grid grid--2">
+    <div>
+      <h2>Related Septic Services</h2>
+      <ul>
+        {serviceLinks.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h2>Related Resource Topics</h2>
+      <ul>
+        {categoryLinks.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+            {link.blurb && <span> — {link.blurb}</span>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .related-resources {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--border-gray);
+    padding-top: 1.75rem;
+  }
+
+  .related-resources h2 {
+    font-size: 1.15rem;
+  }
+
+  .related-resources ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .related-resources li {
+    margin-bottom: 0.45rem;
+    font-size: 0.97rem;
+  }
+
+  .related-resources a {
+    font-weight: 700;
+  }
+
+  .related-resources span {
+    color: #3a4a55;
+  }
+</style>

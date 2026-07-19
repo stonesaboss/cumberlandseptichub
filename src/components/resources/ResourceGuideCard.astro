@@ -1,0 +1,101 @@
+---
+/**
+ * Guide card. "planned" guides render as non-interactive cards with a
+ * visible Coming Soon label — never an anchor, never focusable, no URL.
+ * "published" guides render as links only when a valid internal href exists.
+ */
+import type { ResourceGuide } from '@data/resources';
+
+interface Props {
+  guide: ResourceGuide;
+}
+
+const { guide } = Astro.props;
+const isLink = guide.status === 'published' && !!guide.href && guide.href.startsWith('/');
+---
+
+{
+  isLink ? (
+    <a href={guide.href} class="guide-card guide-card--link">
+      <h3>{guide.title}</h3>
+      <p>{guide.description}</p>
+      <span class="guide-card__cta">Read the guide</span>
+    </a>
+  ) : (
+    <div class="guide-card guide-card--planned" aria-hidden="false">
+      <span class="guide-card__badge">Coming Soon</span>
+      <h3>{guide.title}</h3>
+      <p>{guide.description}</p>
+    </div>
+  )
+}
+
+<style>
+  .guide-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: var(--white);
+    border: 1px solid var(--border-gray);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    height: 100%;
+  }
+
+  .guide-card h3 {
+    font-size: 1.02rem;
+    margin: 0;
+  }
+
+  .guide-card p {
+    font-size: 0.92rem;
+    color: #3a4a55;
+    margin: 0;
+  }
+
+  .guide-card--link {
+    text-decoration: none;
+    box-shadow: var(--shadow-card);
+    transition:
+      box-shadow 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .guide-card--link:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .guide-card--link h3 {
+    color: var(--blue-mid);
+  }
+
+  .guide-card__cta {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--green-dark);
+  }
+
+  .guide-card--planned {
+    background: var(--bg-pale);
+    border-style: dashed;
+  }
+
+  .guide-card--planned h3 {
+    color: #4a5c68;
+  }
+
+  .guide-card__badge {
+    align-self: flex-start;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    background: #e3ecf2;
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+  }
+</style>
