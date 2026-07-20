@@ -59,7 +59,7 @@ export const RESOURCES_HOME = {
   href: "/resources/",
   metaDescription:
     "A septic resource center for Upper Cumberland property owners — understand septic pumping, maintenance, warning signs, repairs, drain fields, inspections, installations and regional property considerations.",
-  heroImage: null as string | null,
+  heroImage: "/images/resources/septic-resources-hero.webp" as string | null,
   heroImageFile: "septic-resources-hero.webp",
   heroAlt:
     "Illustration of a residential septic system and rural Upper Cumberland property",
@@ -77,7 +77,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       "Understand the factors that drive septic service pricing in Upper Cumberland, TN — tank size, access, service scope, repair complexity and why exact pricing requires a property review.",
     intro:
       "Septic pricing questions are usually the first questions. This hub explains what actually drives the cost of pumping, repair, inspection and installation work — and why honest answers start with the property, not a price list.",
-    heroImage: null,
+    heroImage: "/images/resources/septic-costs.webp",
     heroImageFile: "septic-costs.webp",
     heroAlt:
       "Septic service provider reviewing tank access and property conditions before estimating service",
@@ -175,7 +175,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       "Septic pumping and maintenance guides for Upper Cumberland property owners — how tanks work, why pumping intervals vary, pumping versus cleaning, records and drain-field protection.",
     intro:
       "A septic system that gets pumped on time and treated well can quietly serve a property for decades. This hub organizes the pumping and maintenance fundamentals every septic owner eventually needs.",
-    heroImage: null,
+    heroImage: "/images/resources/septic-pumping-maintenance.webp",
     heroImageFile: "septic-pumping-maintenance.webp",
     heroAlt:
       "Septic pumping equipment servicing an accessible residential septic tank",
@@ -279,7 +279,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       "Recognize septic warning signs — slow drains, gurgling, odors, backups, wet drain-field areas and alarms — and learn why similar symptoms can have very different causes.",
     intro:
       "Septic systems rarely fail without warning. This hub covers the symptoms property owners notice first, what they can (and cannot) tell you, and the safety basics for active backups.",
-    heroImage: null,
+    heroImage: "/images/resources/septic-problems.webp",
     heroImageFile: "septic-problems.webp",
     heroAlt:
       "Property owner observing warning signs near a residential septic system",
@@ -377,7 +377,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       "Understand septic repairs and drain fields — system components, how failures are evaluated, why pumping does not fix every backup, and repair-versus-replacement considerations.",
     intro:
       "Between the house and the soil sits a chain of components that can each fail in its own way. This hub explains the system, the evaluation process and the decisions that follow a diagnosis.",
-    heroImage: null,
+    heroImage: "/images/resources/septic-repairs-drain-fields.webp",
     heroImageFile: "septic-repairs-drain-fields.webp",
     heroAlt:
       "Septic professional evaluating tank components and a residential drain field",
@@ -475,7 +475,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       "Septic installation and replacement guides — the general project process, site evaluation, planning, approvals, access considerations and how new construction differs from replacement.",
     intro:
       "Installing or replacing a septic system is the largest project in septic ownership. This hub walks through the general process and the questions worth asking before ground breaks.",
-    heroImage: null,
+    heroImage: "/images/resources/septic-installation-replacement.webp",
     heroImageFile: "septic-installation-replacement.webp",
     heroAlt:
       "Residential septic system installation on a rural Tennessee property",
@@ -570,7 +570,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       "Septic inspection guides for owners, buyers and sellers — inspection types, real-estate transactions, tank locating, records, scope questions and inspection limitations.",
     intro:
       "A house on septic comes with a private wastewater system — and usually very little paperwork. This hub covers inspections for maintenance, for problems and for the property transactions where they matter most.",
-    heroImage: null,
+    heroImage: "/images/resources/septic-inspections-property-buying.webp",
     heroImageFile: "septic-inspections-property-buying.webp",
     heroAlt:
       "Septic inspection being performed for a residential property transaction",
@@ -664,7 +664,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       "A regional septic guide for the Upper Cumberland — Cookeville, Crossville, Sparta, Livingston, Smithville and rural communities — covering terrain, access, weather and planning considerations.",
     intro:
       "Septic service is local by nature, and the Upper Cumberland is distinctive: plateau rock, lake slopes, farm hollows and long gravel drives. This hub connects general septic knowledge to the region’s actual conditions.",
-    heroImage: null,
+    heroImage: "/images/resources/upper-cumberland-septic-guide.webp",
     heroImageFile: "upper-cumberland-septic-guide.webp",
     heroAlt:
       "Rural Upper Cumberland property with wooded terrain and septic service access",
